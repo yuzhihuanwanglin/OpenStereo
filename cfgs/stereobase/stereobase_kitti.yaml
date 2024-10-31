@@ -18,15 +18,6 @@ DATA_CONFIG:
             DATA_PATH: /yourpath/kitti15
             RETURN_RIGHT_DISP: false
 
-#        -   DATASET: KittiDataset
-#            DATA_SPLIT: {
-#                TRAINING: ./data/KITTI15//kitti15_test_pseudo_stereo.txt,
-#                EVALUATING: '',
-#                TESTING: ''
-#            }
-#            DATA_PATH: ''
-#            RETURN_RIGHT_DISP: false
-
     DATA_TRANSFORM:
         TRAINING:
             - { NAME: StereoColorJitter, BRIGHTNESS: [ 0.7, 1.3 ], CONTRAST: [ 0.7, 1.3 ], SATURATION: [ 0.7, 1.3 ], HUE: 0.3, ASYMMETRIC_PROB: 0 }
