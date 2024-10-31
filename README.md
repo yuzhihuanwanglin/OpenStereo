@@ -4,6 +4,7 @@
 OpenStereo is a flexible and extensible project for stereo matching.
 
 ## What's New
+- **[Oct 31st, 2024]**: The code of StereoBase is available.
 - **[July 11th, 2024]**: The code of LightStereo is available.
 - **[July 1st, 2024]**: The paper of LightStereo makes public: [LightStereo: Channel Boost Is All Your Need for Efficient 2D Cost Aggregation](https://arxiv.org/abs/2406.19833).
 - **[June 26th, 2024]**: TensorRT has been integrated, please see the [Deployment documentation](deploy/README.md).
