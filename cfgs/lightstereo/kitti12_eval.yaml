@@ -10,9 +10,10 @@ DATA_CONFIG:
 
     DATA_TRANSFORM:
         EVALUATING:
-            - { NAME: RightTopPad, SIZE: [ 384, 1248 ], MODE: round }
+            - { NAME: RightTopPad, SIZE: [ 384, 1248 ] }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
+            - { NAME: NormalizeImage, MEAN: [ 0.485, 0.456, 0.406 ], STD: [ 0.229, 0.224, 0.225 ] }
         TESTING:
             - { NAME: DivisiblePad, BY: 32 }
             - { NAME: TransposeImage }

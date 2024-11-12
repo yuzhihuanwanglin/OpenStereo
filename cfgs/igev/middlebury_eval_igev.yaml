@@ -9,7 +9,7 @@ DATA_CONFIG:
 
     DATA_TRANSFORM:
         EVALUATING:
-            - { NAME: DivisiblePad, BY: 32 }
+            - { NAME: DivisiblePad, BY: 32, MODE: round }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
 

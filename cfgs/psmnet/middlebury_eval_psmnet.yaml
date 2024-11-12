@@ -9,9 +9,11 @@ DATA_CONFIG:
 
     DATA_TRANSFORM:
         EVALUATING:
-            - { NAME: DivisiblePad, BY: 32 }
+            - { NAME: DivisiblePad, BY: 32, MODE: round }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
+            - { NAME: NormalizeImage, MEAN: [ 0.485, 0.456, 0.406 ], STD: [ 0.229, 0.224, 0.225 ] }
+
 
 EVALUATOR:
     BATCH_SIZE_PER_GPU: 1

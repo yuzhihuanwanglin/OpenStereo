@@ -2,15 +2,15 @@ DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: KittiDataset
             DATA_SPLIT: {
-                EVALUATING: ./data/KITTI12/kitti12_train194.txt,
-                TESTING: ./data/KITTI12/kitti12_test.txt
+                EVALUATING: ./data/KITTI15//kitti15_train200.txt,
+                TESTING: ./data/KITTI15//kitti15_test.txt
             }
-            DATA_PATH: /yourpath/KITTI/kitti2012
+            DATA_PATH: /yourpath/KITTI/kitti2015
             RETURN_RIGHT_DISP: false
 
     DATA_TRANSFORM:
         EVALUATING:
-            - { NAME: RightTopPad, SIZE: [ 384, 1248 ], MODE: round }
+            - { NAME: RightTopPad, SIZE: [ 384, 1248 ] }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
         TESTING:

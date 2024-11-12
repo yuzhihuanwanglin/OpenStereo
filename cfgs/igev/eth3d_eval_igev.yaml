@@ -1,15 +1,15 @@
 DATA_CONFIG:
     DATA_INFOS:
-        -   DATASET: MiddleburyDataset
+        -   DATASET: ETH3DDataset
             DATA_SPLIT: {
-                EVALUATING: ./data/Middlebury/MiddEval3_train_h.txt,
+                EVALUATING: ./data/ETH3D/ETH3D_train.txt,
             }
-            DATA_PATH: /yourpath/Middlebury
+            DATA_PATH: /yourpath/eth3d
             RETURN_RIGHT_DISP: false
 
     DATA_TRANSFORM:
         EVALUATING:
-            - { NAME: DivisiblePad, BY: 32 }
+            - { NAME: DivisiblePad, BY: 32, MODE: round }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
 
