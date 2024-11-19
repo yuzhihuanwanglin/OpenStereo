@@ -10,7 +10,7 @@ DATA_CONFIG:
 
     DATA_TRANSFORM:
         EVALUATING:
-            - { NAME: RightTopPad, SIZE: [ 384, 1248 ], MODE: round }
+            - { NAME: RightTopPad, SIZE: [ 384, 1248 ]}
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
         TESTING:
