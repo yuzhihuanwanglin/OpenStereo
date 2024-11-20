@@ -1,5 +1,0 @@
-.idea
-**__pycache__**
-**.DS_Store**
-stereo/config
-tools/lazyconfig_train.py
