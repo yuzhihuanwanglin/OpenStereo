@@ -4,6 +4,7 @@
 OpenStereo is a flexible and extensible project for stereo matching.
 
 ## What's New
+- **[Nov 22nd, 2024]**: The paper of StereoAnything makes public: [Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data](https://arxiv.org/abs/2411.14053).
 - **[Oct 31st, 2024]**: The code of StereoBase is available.
 - **[July 11th, 2024]**: The code of LightStereo is available.
 - **[July 1st, 2024]**: The paper of LightStereo makes public: [LightStereo: Channel Boost Is All Your Need for Efficient 2D Cost Aggregation](https://arxiv.org/abs/2406.19833).
@@ -14,6 +15,7 @@ OpenStereo is a flexible and extensible project for stereo matching.
 - **[March 2023]**:OpenStereo is available!!!
 
 ## Our Publications
+- **[Arxiv'24]** Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data, [*Paper*](https://arxiv.org/abs/2411.14053)
 - **[Arxiv'24]** LightStereo: Channel Boost Is All Your Need for Efficient 2D Cost Aggregation, [*Paper*](https://arxiv.org/abs/2406.19833) and [*Code*](stereo/modeling/models/lightstereo).
 - **[Arxiv'23]** OpenStereo: A Comprehensive Benchmark for Stereo Matching and Strong Baseline,  [*Paper*](https://arxiv.org/abs/2312.00343) and [*Code*](cfgs/).
 
@@ -55,6 +57,12 @@ Results and models are available in the [model zoo](docs/1.model_zoo.md).
         title={LightStereo: Channel Boost Is All Your Need for Efficient 2D Cost Aggregation},
         author={Guo, Xianda and Zhang, Chenming and Nie, Dujun and Zheng, Wenzhao and Zhang, Youmin and Chen, Long},
         journal={arXiv preprint arXiv:2406.19833},
+        year={2024}
+}
+@article{guo2024stereoanything,
+        title={Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data},
+        author={Guo, Xianda and Zhang, Chenming and Zhang, Youmin and Nie, Dujun and Wang, Ruilin and Zheng, Wenzhao and Poggi, Matteo and Chen, Long},
+        journal={arXiv preprint arXiv:2411.14053},
         year={2024}
 }
 ```
