@@ -19,6 +19,8 @@ OpenStereo is a flexible and extensible project for stereo matching.
 - **[Arxiv'24]** LightStereo: Channel Boost Is All Your Need for Efficient 2D Cost Aggregation, [*Paper*](https://arxiv.org/abs/2406.19833) and [*Code*](stereo/modeling/models/lightstereo).
 - **[Arxiv'23]** OpenStereo: A Comprehensive Benchmark for Stereo Matching and Strong Baseline,  [*Paper*](https://arxiv.org/abs/2312.00343) and [*Code*](cfgs/).
 
+## Overall
+![vis](misc/OpenStereo.png)
   
 ## Highlighted features
 - **Multiple Dataset supported**: OpenStereo supports 15 popular stereo datasets: [SceneFlow](data/SceneFlow/README.md), [KITTI12](data/KITTI12/README.md) & [KITTI15](data/KITTI15/README.md), 
