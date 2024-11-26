@@ -59,11 +59,11 @@ Results and models are available in the [model zoo](docs/1.model_zoo.md).
         journal={arXiv preprint arXiv:2406.19833},
         year={2024}
 }
-@article{guo2024stereoanything,
-        title={Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data},
-        author={Guo, Xianda and Zhang, Chenming and Zhang, Youmin and Nie, Dujun and Wang, Ruilin and Zheng, Wenzhao and Poggi, Matteo and Chen, Long},
-        journal={arXiv preprint arXiv:2411.14053},
-        year={2024}
+@article{guo2024stereo,
+  title={Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data},
+  author={Guo, Xianda and Zhang, Chenming and Zhang, Youmin and Nie, Dujun and Wang, Ruilin and Zheng, Wenzhao and Poggi, Matteo and Chen, Long},
+  journal={arXiv preprint arXiv:2411.14053},
+  year={2024}
 }
 ```
 **Note**: This code is only used for academic purposes, people cannot use this code for anything that might be considered commercial use.
