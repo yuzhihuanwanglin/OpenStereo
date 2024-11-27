@@ -7,8 +7,6 @@
 <sup>1</sup>Wuhan University&emsp;&emsp;&emsp;&emsp;<sup>2</sup>Xi'an Jiaotong University&emsp;&emsp;&emsp;&emsp;<sup>3</sup>Waytous&emsp;&emsp;&emsp;&emsp;<sup>4</sup>University of Bologna  
 <sup>5</sup>Rock Universe&emsp;&emsp;&emsp;&emsp; <sup>6</sup> Institute of Automation, Chinese Academy of Sciences&emsp;&emsp;&emsp;&emsp; <sup>7</sup>University of California, Berkeley&emsp;&emsp;&emsp;&emsp;
 
-&dagger;corresponding author 
-
 **arXiv**
 
 <a href="https://arxiv.org/pdf/2411.14053"><img src='https://img.shields.io/badge/arXiv-Stereo Anything-red' alt='Paper PDF'></a> <a href='https://github.com/XiandaGuo/OpenStereo'><img src='https://img.shields.io/badge/Code-Stereo Anything-green' alt='Project Page'></a>
