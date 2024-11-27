@@ -21,7 +21,7 @@ This work presents Stereo Anything, a highly practical solution for stereo estim
 ## News
 
 * **2024-11-26:** [Stereo Anything](https://github.com/XiandaGuo/OpenStereo) is released.
-* **2024-11-14:** Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data, [*Paper*](https://arxiv.org/abs/2411.14053)
+* **2024-11-14:** Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data, [*Paper*](https://arxiv.org/abs/2411.14053).
 
 ## Performance
 
