@@ -1,7 +1,7 @@
 <div align="center">
 <h2>Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data</h2>
 
-[**Xianda Guo**](https://scholar.google.com.hk/citations?hl=zh-CN&user=jPvOqgYAAAAJ)<sup>1</sup> · **Chenming Zhang**<sup>2,3</sup> · [**Youmin Zhang**](https://youmi-zym.github.io/)<sup>4,5</sup> · **Dujun Nie**<sup>6</sup> · **Ruilin Wang**<sup>6</sup> 
+[**Xianda Guo**](https://scholar.google.com.hk/citations?hl=zh-CN&user=jPvOqgYAAAAJ)<sup>1</sup> · [**Chenming Zhang**]()<sup>2,3</sup> · [**Youmin Zhang**](https://youmi-zym.github.io/)<sup>4,5</sup> · [**Dujun Nie**]()<sup>6</sup> · [**Ruilin Wang**]()<sup>6</sup>   
 [**Wenzhao Zheng**](https://wzzheng.net/)<sup>7</sup> · [**Matteo Poggi**](https://mattpoggi.github.io/)<sup>4</sup> · [**Long Chen**](https://scholar.google.com.hk/citations?hl=zh-CN&user=jzvXnkcAAAAJ)<sup>6,2,3,&dagger;</sup>
 <sup>1</sup>Wuhan University&emsp;&emsp;&emsp;&emsp;<sup>2</sup>Xi'an Jiaotong University&emsp;&emsp;&emsp;&emsp;<sup>3</sup>Waytous&emsp;&emsp;&emsp;&emsp;<sup>4</sup>University of Bologna  
 <sup>5</sup>Rock Universe&emsp;&emsp;&emsp;&emsp; <sup>6</sup> Institute of Automation, Chinese Academy of Sciences&emsp;&emsp;&emsp;&emsp; <sup>7</sup>University of California, Berkeley&emsp;&emsp;&emsp;&emsp;
