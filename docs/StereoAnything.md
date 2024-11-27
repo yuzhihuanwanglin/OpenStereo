@@ -14,7 +14,7 @@
 
 This work presents Stereo Anything, a highly practical solution for stereo estimation by training on a combination of  **20M+ unlabeled images**.
 
-![teaser](./title.png)
+![teaser](../misc/StereoAnything.png)
 
 ## News
 
