@@ -1,13 +1,12 @@
 <div align="center">
 <h2>Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data</h2>
 
-[**Xianda Guo**](https://scholar.google.com.hk/citations?hl=zh-CN&user=jPvOqgYAAAAJ)<sup>1,* </sup> · [**Chenming Zhang**]()<sup>2,3,* </sup> · [**Youmin Zhang**](https://youmi-zym.github.io/)<sup>4,5</sup> · [**Dujun Nie**]()<sup>6</sup> · [**Ruilin Wang**]()<sup>6</sup>   
+[**Xianda Guo**](https://scholar.google.com.hk/citations?hl=zh-CN&user=jPvOqgYAAAAJ)<sup>1,* </sup> · **Chenming Zhang**<sup>2,3,* </sup> · [**Youmin Zhang**](https://youmi-zym.github.io/)<sup>4,5</sup> · **Dujun Nie**<sup>6</sup> · **Ruilin Wang**<sup>6</sup>   
 [**Wenzhao Zheng**](https://wzzheng.net/)<sup>7</sup> · [**Matteo Poggi**](https://mattpoggi.github.io/)<sup>4</sup> · [**Long Chen**](https://scholar.google.com.hk/citations?hl=zh-CN&user=jzvXnkcAAAAJ)<sup>6,2,3,&dagger;</sup>  
 
 <sup>1</sup>Wuhan University&emsp;&emsp;&emsp;&emsp;<sup>2</sup>Xi'an Jiaotong University&emsp;&emsp;&emsp;&emsp;<sup>3</sup>Waytous&emsp;&emsp;&emsp;&emsp;<sup>4</sup>University of Bologna  
 <sup>5</sup>Rock Universe&emsp;&emsp;&emsp;&emsp; <sup>6</sup> Institute of Automation, Chinese Academy of Sciences&emsp;&emsp;&emsp;&emsp; <sup>7</sup>University of California, Berkeley&emsp;&emsp;&emsp;&emsp;
 
-**arXiv**
 
 <a href="https://arxiv.org/pdf/2411.14053"><img src='https://img.shields.io/badge/arXiv-Stereo Anything-red' alt='Paper PDF'></a> <a href='https://github.com/XiandaGuo/OpenStereo'><img src='https://img.shields.io/badge/Code-Stereo Anything-green' alt='Project Page'></a>
 
@@ -24,7 +23,7 @@ This work presents Stereo Anything, a highly practical solution for stereo estim
 
 ## Performance
 
-Here we compare our Stereo Anything with the previously best  model.
+Here we compare our Stereo Anything with the previous best model.
 
 | Method               | K12   | K15   | Midd  | E3D   | DR    | Mean  |
 |--------|-------|---------|-------|-------|-------|-------|
@@ -47,19 +46,15 @@ We highlight the **best** results in **bold** (**better results**: $\downarrow$)
 
 We provide the models for robust stereo disparity estimation:
 
-| Model | Params |
-|:-|-:|
-| StereoAnything | 32.6M |
 
 You can easily load our pre-trained models by:
 ```python
 python tools/infer.py --cfg_file cfgs/nmrf/nmrf_swint_sceneflow.py \
---pretrained_model output/MixDataset/NMRF/mix6mono/ckpt/epoch_0/pytorch_model.bin \
+--pretrained_model Your_model_path \
 --left_img_path your/path \
 --right_img_path your/path \
 --savename your/path
 ```
-
 
 
 ## Citation
@@ -67,14 +62,10 @@ python tools/infer.py --cfg_file cfgs/nmrf/nmrf_swint_sceneflow.py \
 If you find this project useful, please consider citing:
 
 ```bibtex
-
-@misc{guo2024stereoanythingunifyingstereo,
-      title={Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data}, 
-      author={Xianda Guo and Chenming Zhang and Youmin Zhang and Dujun Nie and Ruilin Wang and Wenzhao Zheng and Matteo Poggi and Long Chen},
-      year={2024},
-      eprint={2411.14053},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2411.14053}, 
+@article{guo2024stereo,
+  title={Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data},
+  author={Guo, Xianda and Zhang, Chenming and Zhang, Youmin and Nie, Dujun and Wang, Ruilin and Zheng, Wenzhao and Poggi, Matteo and Chen, Long},
+  journal={arXiv preprint arXiv:2411.14053},
+  year={2024}
 }
 ```
