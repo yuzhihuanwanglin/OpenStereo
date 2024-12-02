@@ -37,7 +37,7 @@ Here we compare our Stereo Anything with the previous best model.
 | IGEV                |  4.88 |  5.16 |  8.47 |  3.53 |  **6.20** |  5.67 |
 | StereoBase          |  4.85 |  5.35 |  9.76 |  3.12 | 11.84 |  6.98 |
 | NMRFStereo          |  **4.20** |  5.10 |  7.50 |  3.80 | 11.92 |  6.50 |
-| NMRFStereo$^*$      |  8.67 |  7.46 | 16.36 | 23.46 | 34.58 | 18.11 |
+| NMRFStereo*      |  8.67 |  7.46 | 16.36 | 23.46 | 34.58 | 18.11 |
 | **StereoAnything**  |  4.29 |  **4.31** |  **6.96** |  **1.84** |  7.64 |  **5.01** |
 
 We highlight the **best** results in **bold** (**better results**: $\downarrow$).
