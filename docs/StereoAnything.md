@@ -17,8 +17,8 @@ This work presents Stereo Anything, a highly practical solution for stereo estim
 ![teaser](../misc/StereoAnything.png)
 
 ## News
-
-* **2024-11-26:** [Stereo Anything](https://github.com/XiandaGuo/OpenStereo) is released.
+* **2024-12-3:** Checkpoint of Stereo Anything is [here](https://drive.google.com/file/d/18BBk2y7f86PgiEBij3SlCSBwDIurp0K7/view?usp=sharing)
+* **2024-11-26:** Code of [Stereo Anything](https://github.com/XiandaGuo/OpenStereo/cfgs/nerf) is released.
 * **2024-11-14:** Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data, [*Paper*](https://arxiv.org/abs/2411.14053).
 
 ## Performance
