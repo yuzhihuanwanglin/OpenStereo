@@ -33,7 +33,7 @@ def parse_config():
     args.run_mode = 'infer'
     return args, cfgs
 
-
+@torch.no_grad()
 def main():
     args, cfgs = parse_config()
     if args.dist_mode:
