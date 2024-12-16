@@ -50,7 +50,7 @@ We provide the models for robust stereo disparity estimation:
 
 You can easily load our pre-trained models by:
 ```python
-python tools/infer.py --cfg_file cfgs/nmrf/nmrf_swint_sceneflow.py \
+python tools/infer.py --cfg_file cfgs/nmrf/nmrf_swint_sceneflow.yaml \
 --pretrained_model Your_model_path \
 --left_img_path your/path \
 --right_img_path your/path \
