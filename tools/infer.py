@@ -20,11 +20,16 @@ def parse_config():
     # data
     parser.add_argument('--left_img_path', type=str, default=None)
     parser.add_argument('--right_img_path', type=str, default=None)
+    parser.add_argument('--pretrained_model', type=str, default=None, help='pretrained_model')
+    parser.add_argument('--savename', type=str, default=None)
 
     args = parser.parse_args()
     yaml_config = common_utils.config_loader(args.cfg_file)
     cfgs = EasyDict(yaml_config)
 
+    if args.pretrained_model is not None:
+        cfgs.MODEL.PRETRAINED_MODEL = args.pretrained_model
+    
     args.run_mode = 'infer'
     return args, cfgs
 
