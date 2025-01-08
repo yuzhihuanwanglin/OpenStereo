@@ -4,7 +4,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 import argparse
 
-def resize_image(input_path, input_path_replace,output_path_replace,target_size=(768, 384)):
+def resize_image(input_path, input_path_root,output_path_root,target_size=(768, 384)):
     try:
         img = cv2.imread(input_path)
         if img is None:
@@ -14,7 +14,7 @@ def resize_image(input_path, input_path_replace,output_path_replace,target_size=
         print("File does not exist:", input_path)
         return
 
-    output_path = input_path.replace(input_path_replace, output_path_replace)
+    output_path = input_path.replace(input_path_root, output_path_root)
     output_dir = os.path.dirname(output_path)
     os.makedirs(output_dir, exist_ok=True)
     original_height, original_width = img.shape[:2]
@@ -40,14 +40,14 @@ def resize_image(input_path, input_path_replace,output_path_replace,target_size=
     cv2.imwrite(output_path, resized_img)
 
 
-def resize_all_images(all_img_txt,input_path_replace,output_path_replace):
+def resize_all_images(all_img_txt,input_path_root,output_path_root):
     # Use ThreadPoolExecutor to process files in parallel 
     with open(all_img_txt, 'r') as f:
         input_files = sorted([file.strip() for file in f.readlines()])
 
     with ThreadPoolExecutor() as executor:
         with tqdm.tqdm(total=len(input_files), desc="Resizing images", unit="img") as pbar:
-            for _ in executor.map(lambda img_path: resize_image(img_path, input_path_replace,output_path_replace),input_files):
+            for _ in executor.map(lambda img_path: resize_image(img_path, input_path_root,output_path_root),input_files):
                 pbar.update(1)
 
 def main():

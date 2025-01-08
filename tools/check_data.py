@@ -37,7 +37,6 @@ def main():
 
     read_all_images(input_txt,error_txt)
 
-
 if __name__ == "__main__":
     main()
 
