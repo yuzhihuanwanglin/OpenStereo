@@ -39,7 +39,6 @@ def resize_image(input_path, input_path_root,output_path_root,target_size=(768, 
     # save images
     cv2.imwrite(output_path, resized_img)
 
-
 def resize_all_images(all_img_txt,input_path_root,output_path_root):
     # Use ThreadPoolExecutor to process files in parallel 
     with open(all_img_txt, 'r') as f:
