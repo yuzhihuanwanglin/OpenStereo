@@ -44,6 +44,7 @@ class SceneFlowDataset(DatasetTemplate):
             assert not np.isnan(disp_img_right).any(), 'disp_img_right has nan'
 
         sample = self.transform(sample)
+        sample['valid'] = sample['disp'] < 512
         sample['index'] = idx
         sample['name'] = left_img_path
         return sample
