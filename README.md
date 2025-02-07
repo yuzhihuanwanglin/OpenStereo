@@ -63,8 +63,8 @@ Results and models are available in the [model zoo](docs/1.model_zoo.md).
 @article{guo2024lightstereo,
         title={LightStereo: Channel Boost Is All Your Need for Efficient 2D Cost Aggregation},
         author={Guo, Xianda and Zhang, Chenming and Nie, Dujun and Zheng, Wenzhao and Zhang, Youmin and Chen, Long},
-        journal={arXiv preprint arXiv:2406.19833},
-        year={2024}
+        journal={ICRA},
+        year={2025}
 }
 @article{guo2024stereo,
   title={Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data},
