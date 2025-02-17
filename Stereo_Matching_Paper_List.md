@@ -1,4 +1,9 @@
 ### Paper list for stereo matching and continue to update this list.
+
+## 2025
+
+
+
 ## 2024
 * **MC-Stereo: Multi-peak Lookup and Cascade Search Range for Stereo Matching**, M. Feng, J. Cheng, H. Jia, L. Liu, G. Xu, and X. Yang, et al. [[Paper](https://arxiv.org/abs/2311.02340)][[code](https://github.com/MiaoJieF/MC-Stereo)]. 3DV2024
 * **Learning Representations from Foundation Models for Domain Generalized Stereo Matching**, Zhang Y, Wang L, Li K, et al. [[Paper](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/05841.pdf)]. ECCV 2024
@@ -90,15 +95,3 @@
 * **Pyramid Stereo Matching Network**, Jia-Ren Chang,Yong-Sheng Chen, et al. [[Paper](https://arxiv.org/abs/1803.08669)][[Code](https://github.com/JiaRenChang/RealtimeStereo)]. CVPR2018
 * **StereoNet: Guided Hierarchical Refinement for Real-Time Edge-Aware Depth Prediction**, Sameh Khamis, Sean Fanello, et al. [[Paper](https://arxiv.org/abs/1807.08865)][[Code](https://github.com/meteorshowers/X-StereoLab)]. ECCV2018
 * **Learning Monocular Depth by Distilling Cross-domain Stereo Networks**, Xiaoyang Guo, Hongsheng Li, et al. [[paper](https://arxiv.org/abs/1808.06586)][[code](https://github.com/xy-guo/Learning-Monocular-Depth-by-Stereo)]. ECCV2018
-  
-## Dataset
-* **Spring: A High-Resolution High-Detail Dataset and Benchmark for Scene Flow, Optical Flow and Stereo**, Lukas Mehl, Jenny Schmalfuss, et al. [[paper](https://arxiv.org/pdf/2303.01943.pdf)][[code](https://github.com/cv-stuttgart/springwebsite)]. CVPR2023
-* **SMD-Nets: Stereo Mixture Density Networks(UnrealStereo4K)**, Fabio Tosi, Yiyi Liao, et al. [[paper](https://arxiv.org/abs/2104.03866)][[code](https://github.com/fabiotosi92/SMD-Nets)]. CVPR2021 
-* **Virtual KITTI 2(Virtual KITTI 2)**, Yohann Cabon, Naila Murray, et al. [[paper](https://arxiv.org/abs/2001.10773)][[Homepage](https://europe.naverlabs.com/Research/Computer-Vision/Proxy-Virtual-Worlds)]. arxiv
-* **DrivingStereo: A Large-Scale Dataset for Stereo Matching in Autonomous Driving Scenarios(DrivingStereo)**, Guorun Yang, Xiao Song. [[Paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Yang_DrivingStereo_A_Large-Scale_Dataset_for_Stereo_Matching_in_Autonomous_Driving_CVPR_2019_paper.pdf)][[Homepage](https://drivingstereo-dataset.github.io)]. CVPR2019
-* **A Multi-View Stereo Benchmark with High-Resolution Images and Multi-Camera Videos(ETH3D)**, Thomas Sch¨ops, Johannes L. [[Paper](https://ieeexplore.ieee.org/document/8099755)][[Homepage](http://www.eth3d.net)]. CVPR2017
-* **A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation(SceneFlow)**, Nikolaus Mayer, Eddy Ilg. [[Paper](https://arxiv.org/abs/1512.02134)][[Download](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html)]. CVPR2016
-* **Virtual Worlds as Proxy for Multi-Object Tracking Analysis(Virtual KITTI)**, Adrien Gaidon, Qiao Wang. [[Paper](https://arxiv.org/abs/1512.02134)][[Homepage](http://www.xrce.xerox.com/Research-Development/Computer-Vision/Proxy-Virtual-Worlds)]. CVPR2016
-* **Object Scene Flow for Autonomous Vehicles(KITTI 15)**, Moritz Menze, Andreas Geiger. [[Paper](https://www.cvlibs.net/publications/Menze2015CVPR.pdf)][[Homepage](https://www.cvlibs.net/datasets/kitti/index.php)]. CVPR2015
-* **High-Resolution Stereo Datasets with Subpixel-Accurate Ground Truth(Middlebury)**, Daniel Scharstein, Heiko Hirschm¨uller. [[Paper](https://link.springer.com/chapter/10.1007/978-3-319-11752-2_3)][[Homepage](https://vision.middlebury.edu/stereo/data/)]. GCPR2014
-* **Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite(KITTI 12)**, Andreas Geiger, Philip Lenz. [[Paper](https://www.cvlibs.net/publications/Geiger2012CVPR.pdf)][[Homepage](https://www.cvlibs.net/datasets/kitti/index.php)]. CVPR2012
