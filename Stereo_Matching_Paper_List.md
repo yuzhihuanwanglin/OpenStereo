@@ -1,6 +1,8 @@
 ### Paper list for stereo matching and continue to update this list.
 
 ## 2025
+* **All-in-One: Transferring Vision Foundation Models into Stereo Matching**, J. Zhou, H. Zhang, J. Yuan, P. Ye, T. Chen, H. Jiang, M. Chen and Y. Zhang. [[Paper](https://arxiv.org/pdf/2412.09912)]. AAAI2025
+* **ADStereo: Efficient Stereo Matching with Adaptive Downsampling and Disparity Alignment**, Y. Wang, K. Li, L. Wang, J. Hu, D. Wu and Y. Guo. [[Paper](https://ieeexplore.ieee.org/document/10890914)]. TIP2025
 
 
 
@@ -17,7 +19,10 @@
 * **IINet: Implicit Intra-inter Information Fusion for Real-Time Stereo Matching**, Ximeng Li, Chen Zhang. [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/28107)[[Code](https://github.com/blindwatch/IINet)]. AAAI2024
 * **Any-Stereo: Arbitrary Scale Disparity Estimation for Iterative Stereo Matching**, Zhaohuai Liang, Changhe Li. [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/28119)[[Code](https://github.com/Zhaohuai-L/Any-Stereo)]. AAAI2024
 * **TinyStereo: A Tiny Coarse-to-Fine Framework for Vision-Based Depth Estimation on Embedded GPUs**,Q. Chang, X. Xu, A. Zha, M. Er, Y. Sun and Y. Li. [[Paper](https://ieeexplore.ieee.org/abstract/document/10536167)]. IEEE Transactions on Systems, Man, and Cybernetics: Systems2024
-* **Exploring the Usage of Pre-trained Features for Stereo Matching**, J. Zhang, L. Huang, X. Bai, J. Zheng, L. Gu, and E. Hancock, et al. [[Paper](https://link.springer.com/article/10.1007/s11263-024-02090-y)]. IJCV2024
+* **Exploring the Usage of Pre-trained Features for Stereo Matching**, J. Zhang, L. Huang, X. Bai, J. Zheng, L. Gu, and E. Hancock. [[Paper](https://link.springer.com/article/10.1007/s11263-024-02090-y)]. IJCV2024
+* **Zero-Shot Event-Intensity Asymmetric Stereo via Visual Prompting from Image Domain**, H. Lou, J. Liang, M. Teng, B. Fan, Y. Xu, and B. Shi. [[Paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/17f21a0a111c9e3a4cd96708d30064f2-Paper-Conference.pdf)]. NeurIPS2024
+* **Hierarchical Object-Aware Dual-Level Contrastive Learning for Domain Generalized Stereo Matching**, Y. Miao, M. Wu, S. Lam, C. Li, and T. Srikanthan. [[Paper](https://openreview.net/pdf?id=HcqV2bPFKz)]. NeurIPS2024
+* **Playing to Vision Foundation Model's Strengths in Stereo Matching**, C. Liu, Q. Chen and F. Rui. [[Paper](https://arxiv.org/abs/2404.06261)]. TIV2024
 
 ## 2023
 * **Efficient Spatial-Temporal Stereo Matching Network**, Youmin Zhang, Matteo Poggi, et al. [[paper](https://ieeexplore.ieee.org/abstract/document/10341598)][[code](https://github.com/youmi-zym/TemporalStereo)]. IROS2023
