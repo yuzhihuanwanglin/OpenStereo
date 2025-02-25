@@ -9,6 +9,7 @@
 OpenStereo is a flexible and extensible project for stereo matching.
 
 ## What's New
+- **[Jan 28th, 2025]**: The paper of LightStereo has been accepted by ICRA 2025.
 - **[Nov 22nd, 2024]**: The paper of StereoAnything makes public: [Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data](https://arxiv.org/abs/2411.14053).
 - **[Oct 31st, 2024]**: The code of StereoBase is available.
 - **[July 11th, 2024]**: The code of LightStereo is available.
