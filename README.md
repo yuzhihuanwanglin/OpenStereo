@@ -65,11 +65,11 @@ Results and models are available in the [model zoo](docs/1.model_zoo.md).
   journal={arXiv preprint arXiv:2411.14053},
   year={2024}
 }
-@inproceedings{guo2024lightstereo,
-  title={Lightstereo: Channel boost is all your need for efficient 2d cost aggregation},
+@inproceedings{guo2025lightstereo,
+  title={Lightstereo: Channel boost is all you need for efficient 2d cost aggregation},
   author={Guo, Xianda and Zhang, Chenming and Nie, Dujun and Zheng, Wenzhao and Zhang, Youmin and Chen, Long},
   booktitle={ICRA},
-  year={2024}
+  year={2025}
 }
 ```
 **Note**: This code is only used for academic purposes, people cannot use this code for anything that might be considered commercial use.
