@@ -1,3 +1,4 @@
+# Using 2 GPUs for training is the best practice.
 DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: SceneFlowDataset
