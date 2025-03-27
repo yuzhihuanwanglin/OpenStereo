@@ -56,6 +56,7 @@ class SceneFlowDataset(DatasetTemplate):
         if self.retrun_super_pixel and self.mode == 'training':
             sample['occ_mask'] = occ_mask
             sample['super_pixel_label'] = super_pixel_label
+            assert not sample['occ_mask'].any(), 'there is a True in Sceneflow occ mask'
         if self.retrun_pos and self.mode == 'training':
             sample['pos'] = get_pos_fullres(800, sample['left'].shape[1], sample['left'].shape[0])
 
@@ -68,7 +69,6 @@ class SceneFlowDataset(DatasetTemplate):
 
         sample = self.transform(sample)
         sample['valid'] = sample['disp'] < 512
-        assert not sample['occ_mask'].any(), 'there is a True in Sceneflow occ mask'
         sample['index'] = idx
         sample['name'] = left_img_path
         return sample
