@@ -214,6 +214,8 @@ class StereoColorJitter(object):
         self.brightness = list(config.BRIGHTNESS)
         self.contrast = list(config.CONTRAST)
         self.saturation = list(config.SATURATION)
+        if isinstance(config.HUE, float):
+            config.HUE = [-config.HUE, config.HUE]
         self.hue = list(config.HUE)
         self.asymmetric_color_aug_prob = config.ASYMMETRIC_PROB
         self.color_jitter = ColorJitter(brightness=self.brightness, contrast=self.contrast,
