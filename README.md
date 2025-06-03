@@ -1,6 +1,6 @@
 <div align="center">
 <!-- PROJECT LOGO -->
-<h1 align="center">OpenStereo: A Comprehensive Benchmark for Stereo Matching and Strong Baseline</h1>
+<h1 align="center">OpenStereo: A Comprehensive Benchmark for Stereo Matching</h1>
 <a href="https://arxiv.org/abs/2312.00343"><img src='https://img.shields.io/badge/arXiv-OpenStereo-red' alt='Paper PDF'></a> 
 </div>
 
