@@ -13,6 +13,7 @@ from .models.psmnet.trainer import Trainer as PSMNetTrainer
 from .models.sttr.trainer import Trainer as STTRTrainer
 from .models.lightstereo.trainer import Trainer as LightStereoTrainer
 from .models.stereobase.trainer import Trainer as StereoBaseGRUTrainer
+from .models.foundationstereo.trainer import Trainer as FoundationStereoTrainer
 # from .models.iinet.trainer import Trainer as IINetTrainer
 
 # If you want to train/eval NMRF-Stereo, you need to build deformable attention and superpixel-guided disparity downsample operator: 'cd stereo/modeling/models/nmrf/ops && sh make.sh && cd ..'
@@ -34,8 +35,9 @@ __all__ = {
     'CasPSMNet': CasStereoTrainer,
     'LightStereo': LightStereoTrainer,
     'StereoBaseGRU': StereoBaseGRUTrainer,
+    'FoundationStereo': FoundationStereoTrainer,
     # 'IInet': IINetTrainer,
-    'NMRF': NMRFTrainer
+    # 'NMRF': NMRFTrainer
 }
 
 
