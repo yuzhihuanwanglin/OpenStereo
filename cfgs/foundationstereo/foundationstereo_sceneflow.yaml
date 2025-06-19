@@ -26,17 +26,18 @@ DATA_CONFIG:
 
 MODEL:
     NAME: FoundationStereo
-    CORR_LEVELS: 2
-    CORR_RADIUS: 4
-    HIDDEN_DIMS: [ 128, 128, 128 ]
-    LOW_MEMORY: 0
-    MAX_DISP: &max_disp 416
-    N_DOWNSAMPLE: 2
-    N_GRU_LAYERS: 3
-    VIT_SIZE: 'vitl'
-    TRAIN_ITERS: 22
-    EVAL_ITERS: 32
-    FIND_UNUSED_PARAMETERS: false
+    corr_levels: 2
+    corr_radius: 4
+    hidden_dims: [ 128, 128, 128 ]
+    low_memory: 0
+    max_disp: 416
+    mixed_precision: true
+    n_downsample: 2
+    n_gru_layers: 3
+    vit_size: 'vitl'
+    train_iters: 22
+    eval_iters: 32
+    FIND_UNUSED_PARAMETERS: true
     CKPT: -1
     PRETRAINED_MODEL: ''
 
