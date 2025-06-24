@@ -17,7 +17,7 @@ from .models.foundationstereo.trainer import Trainer as FoundationStereoTrainer
 # from .models.iinet.trainer import Trainer as IINetTrainer
 
 # If you want to train/eval NMRF-Stereo, you need to build deformable attention and superpixel-guided disparity downsample operator: 'cd stereo/modeling/models/nmrf/ops && sh make.sh && cd ..'
-# from .models.nmrf.trainer import Trainer as NMRFTrainer  
+from .models.nmrf.trainer import Trainer as NMRFTrainer
 
 
 __all__ = {

@@ -18,6 +18,10 @@ from .unrealstereo4k_dataset import UnrealStereo4KDataset
 from .crestereo_dataset import CREStereoDataset
 from .argoverse_dataset import ArgoverseDataset
 from .spring import SpringDataset
+from .tartanair_dataset import TartanAirDataset
+from .vkitti2_dataset import VirtualKitti2Dataset
+from .carla_dataset import CarlaDataset
+
 __all__ = {
     'SceneFlowDataset': SceneFlowDataset,
     'KittiDataset': KittiDataset,
@@ -31,7 +35,10 @@ __all__ = {
     'UnrealStereo4KDataset': UnrealStereo4KDataset,
     'CREStereoDataset': CREStereoDataset,
     'ArgoverseDataset': ArgoverseDataset,
-    'SpringDataset': SpringDataset
+    'SpringDataset': SpringDataset,
+    'TartanAirDataset': TartanAirDataset,
+    'VirtualKitti2Dataset': VirtualKitti2Dataset,
+    'CarlaDataset': CarlaDataset
 }
 
 
