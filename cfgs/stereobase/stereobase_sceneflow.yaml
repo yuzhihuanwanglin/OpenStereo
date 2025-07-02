@@ -17,10 +17,12 @@ DATA_CONFIG:
             - { NAME: RandomCrop, SIZE: [ 320, 736 ], Y_JITTER: False }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
+            - { NAME: NormalizeImage, MEAN: [ 0.5, 0.5, 0.5 ], STD: [ 0.5, 0.5, 0.5 ] }
         EVALUATING:
             - { NAME: RightTopPad, SIZE: [ 544, 960 ] }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
+            - { NAME: NormalizeImage, MEAN: [ 0.5, 0.5, 0.5 ], STD: [ 0.5, 0.5, 0.5 ] }
 
 MODEL:
     NAME: StereoBaseGRU
