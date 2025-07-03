@@ -6,7 +6,6 @@ DATA_CONFIG:
                 EVALUATING: ./data/CREStereo/crestereo_all.txt,
                 TESTING: ./data/CREStereo/crestereo_all.txt
             }
-            DATA_PATH: /yourpath/CREStereoDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 

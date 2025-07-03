@@ -6,7 +6,6 @@ DATA_CONFIG:
                 EVALUATING: ./data/InStereo2K/instereo2k_train_2010.txt,
                 TESTING: ./data/InStereo2K/instereo2k_train_2010.txt
             }
-            DATA_PATH: /yourpath/InStereo2KDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 

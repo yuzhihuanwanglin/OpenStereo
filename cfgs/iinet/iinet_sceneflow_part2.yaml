@@ -5,7 +5,6 @@ DATA_CONFIG:
                 TRAINING: data/SceneFlow/sceneflow_finalpass_train.txt,
                 EVALUATING: data/SceneFlow/sceneflow_finalpass_test.txt
             }
-            DATA_PATH: /mnt/nas/public_data/stereo/SceneFlow
             RETURN_POS: true
             RETURN_RIGHT_DISP: false 
 

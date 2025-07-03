@@ -6,7 +6,6 @@ DATA_CONFIG:
                 EVALUATING: ./data/FallingThings/fat_all.txt,
                 TESTING: ./data/FallingThings/fat_all.txt
             }
-            DATA_PATH: /yourpath/FallingThingsDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 

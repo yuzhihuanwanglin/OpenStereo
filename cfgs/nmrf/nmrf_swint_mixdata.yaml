@@ -4,7 +4,6 @@ DATA_CONFIG:
             DATA_SPLIT: {
                 TRAINING: ./data/CREStereo/crestereo_all.txt,
             }
-            DATA_PATH: /yourpath/CREStereoDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 
@@ -12,7 +11,6 @@ DATA_CONFIG:
             DATA_SPLIT: {
                 TRAINING: ./data/FallingThings/fat_all.txt,
             }
-            DATA_PATH: /yourpath/FallingThingsDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 
@@ -20,7 +18,6 @@ DATA_CONFIG:
             DATA_SPLIT: {
                 TRAINING: ./data/InStereo2K/instereo2k_train_2010.txt,
             }
-            DATA_PATH: /yourpath/InStereo2KDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 
@@ -28,21 +25,18 @@ DATA_CONFIG:
             DATA_SPLIT: {
                 TRAINING: ./data/TartanAir/all_306637.txt,
             }
-            DATA_PATH: /yourpath/TartanAirDataset/
             RETURN_SUPER_PIXEL: true
 
         -   DATASET: SintelDataset
             DATA_SPLIT: {
                 TRAINING: ./data/Sintel/Sintel_final_all.txt,
             }
-            DATA_PATH: /yourpath/SintelDataset/
             RETURN_SUPER_PIXEL: true
 
         -   DATASET: SpringDataset
             DATA_SPLIT: {
                 TRAINING: ./data/Spring/spring_train.txt,
             }
-            DATA_PATH: /yourpath/SpringDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 
@@ -50,7 +44,6 @@ DATA_CONFIG:
             DATA_SPLIT: {
                 TRAINING: ./data/VirtualKitti2/virtualkitti2_trainval21260.txt,
             }
-            DATA_PATH: /yourpath/VirtualKitti2Dataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 
@@ -58,7 +51,6 @@ DATA_CONFIG:
             DATA_SPLIT: {
                 TRAINING: ./data/UnrealStereo4K/unrealstereo4k_all.txt,
             }
-            DATA_PATH: /yourpath/UnrealStereo4KDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 
@@ -66,7 +58,6 @@ DATA_CONFIG:
             DATA_SPLIT: {
                 TRAINING: ./data/Carla/CarlaStereo.txt,
             }
-            DATA_PATH: /yourpath/CarlaDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 
