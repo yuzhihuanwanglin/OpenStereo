@@ -21,7 +21,7 @@ OpenStereo is a flexible and extensible project for stereo matching.
 
 ## Our Publications
 - **[ICRA25]** LightStereo: Channel Boost Is All Your Need for Efficient 2D Cost Aggregation, [*Paper*](https://arxiv.org/abs/2406.19833) and [*Code*](stereo/modeling/models/lightstereo).
-- **[Arxiv'24]** Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data, [*Paper*](https://arxiv.org/abs/2411.14053) and [*ProjectPage*](https://xiandaguo.net/StereoAnything/)
+- **[Arxiv'24]** Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data, [*Paper*](https://arxiv.org/abs/2411.14053), [*ProjectPage*](https://xiandaguo.net/StereoAnything/) and [*Code*](docs/StereoAnything.md).
 - **[Arxiv'23]** OpenStereo: A Comprehensive Benchmark for Stereo Matching and Strong Baseline,  [*Paper*](https://arxiv.org/abs/2312.00343) and [*Code*](cfgs/).
 
 ## Overall
@@ -50,7 +50,7 @@ Results and models are available in the [model zoo](docs/1.model_zoo.md).
 
 
 ## Acknowledgement
-[AANet](https://github.com/haofeixu/aanet) &nbsp; [ACVNet](https://github.com/gangweiX/ACVNet) &nbsp; [CascadeStereo](https://github.com/alibaba/cascade-stereo) &nbsp; [CFNet](https://github.com/gallenszl/CFNet) &nbsp; [COEX](https://github.com/antabangun/coex) &nbsp; [DenseMatching](https://github.com/DeepMotionAIResearch/DenseMatchingBenchmark) &nbsp; [FADNet++](https://github.com/HKBU-HPML/FADNet/tree/fadnet-pp) &nbsp; [GwcNet](https://github.com/xy-guo/GwcNet) &nbsp; [MSNet](https://github.com/cogsys-tuebingen/mobilestereonet) &nbsp; [PSMNet](https://github.com/JiaRenChang/PSMNet) &nbsp; [RAFT](https://github.com/princeton-vl/RAFT-Stereo) &nbsp; [STTR](https://github.com/mli0603/stereo-transformer) &nbsp; [OpenGait](https://github.com/ShiqiYu/OpenGait) &nbsp; [IGEV](https://github.com/gangweiX/IGEV/tree/main/IGEV-Stereo) &nbsp; [NMRF](https://github.com/aeolusguan/NMRF) &nbsp;
+[AANet](https://github.com/haofeixu/aanet) &nbsp; [ACVNet](https://github.com/gangweiX/ACVNet) &nbsp; [CascadeStereo](https://github.com/alibaba/cascade-stereo) &nbsp; [CFNet](https://github.com/gallenszl/CFNet) &nbsp; [COEX](https://github.com/antabangun/coex) &nbsp; [DenseMatching](https://github.com/DeepMotionAIResearch/DenseMatchingBenchmark) &nbsp; [FADNet++](https://github.com/HKBU-HPML/FADNet/tree/fadnet-pp) &nbsp; [GwcNet](https://github.com/xy-guo/GwcNet) &nbsp; [MSNet](https://github.com/cogsys-tuebingen/mobilestereonet) &nbsp; [PSMNet](https://github.com/JiaRenChang/PSMNet) &nbsp; [RAFT](https://github.com/princeton-vl/RAFT-Stereo) &nbsp; [STTR](https://github.com/mli0603/stereo-transformer) &nbsp; [OpenGait](https://github.com/ShiqiYu/OpenGait) &nbsp; [IGEV](https://github.com/gangweiX/IGEV/tree/main/IGEV-Stereo) &nbsp; [NMRF](https://github.com/aeolusguan/NMRF) &nbsp; [FoundationStereo](https://github.com/NVlabs/FoundationStereo) &nbsp;
 
 ## Citation
 ```

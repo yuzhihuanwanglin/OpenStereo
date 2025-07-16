@@ -6,7 +6,6 @@ DATA_CONFIG:
                 EVALUATING: ./data/TartanAir/all_306637.txt,
                 TESTING: ./data/TartanAir/all_306637.txt
             }
-            DATA_PATH: /yourpath/TartanAirDataset/
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
 

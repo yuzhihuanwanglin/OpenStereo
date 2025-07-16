@@ -48,6 +48,7 @@ def parse_config():
         if dataset_name == 'KittiDataset':
             dataset_name = 'KittiDataset15' if 'kitti15' in each.DATA_SPLIT.EVALUATING else 'KittiDataset12'
         each.DATA_PATH = DATA_PATH_DICT[dataset_name]
+        assert os.path.exists(each.DATA_PATH), '[Errno 2] No such file or directory: {}, You must modify the data root path in cfgs/databasic.py to the path of your own dataset.'.format(each.DATA_PATH)
 
     args.run_mode = 'train'
     return args, cfgs

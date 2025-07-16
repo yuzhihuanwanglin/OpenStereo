@@ -13,8 +13,9 @@ class Trainer(TrainerTemplate):
     def __init__(self, args, cfgs, local_rank, global_rank, logger, tb_writer):
         model = __all__[cfgs.MODEL.NAME](cfgs.MODEL)
         super().__init__(args, cfgs, local_rank, global_rank, logger, tb_writer, model)
-        self.optimizer = self.build_optimizer(self.model, 0.0005)
-        self.scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer=self.optimizer, max_lr=0.0005,
+        if self.args.run_mode == 'train':
+            self.optimizer = self.build_optimizer(self.model, 0.0005)
+            self.scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer=self.optimizer, max_lr=0.0005,
                                                              total_steps=self.total_epochs * len(self.train_loader), pct_start=0.05, cycle_momentum=False, anneal_strategy='cos')
 
     def build_optimizer(self, params, base_lr):
