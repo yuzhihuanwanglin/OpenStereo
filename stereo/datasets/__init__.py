@@ -21,6 +21,8 @@ from .spring import SpringDataset
 from .tartanair_dataset import TartanAirDataset
 from .vkitti2_dataset import VirtualKitti2Dataset
 from .carla_dataset import CarlaDataset
+from .foundationstereo import FoundationStereoDataset
+from .dynamic_replica import DynamicReplicaDataset
 
 __all__ = {
     'SceneFlowDataset': SceneFlowDataset,
@@ -38,6 +40,8 @@ __all__ = {
     'SpringDataset': SpringDataset,
     'TartanAirDataset': TartanAirDataset,
     'VirtualKitti2Dataset': VirtualKitti2Dataset,
+    'FoundationStereoDataset': FoundationStereoDataset,
+    'DynamicReplicaDataset': DynamicReplicaDataset,
     'CarlaDataset': CarlaDataset
 }
 

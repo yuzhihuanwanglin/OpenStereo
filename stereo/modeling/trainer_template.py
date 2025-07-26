@@ -37,7 +37,7 @@ class TrainerTemplate:
 
             if 'MAX_ITER' in cfgs.OPTIMIZATION and cfgs.OPTIMIZATION.MAX_ITER > 0:
                 self.max_iter = cfgs.OPTIMIZATION.MAX_ITER
-                self.total_epochs = math.ceil(cfgs.OPTIMIZATION.NUM_EPOCHS.MAX_ITER / len(self.train_loader))
+                self.total_epochs = math.ceil(cfgs.OPTIMIZATION.MAX_ITER / len(self.train_loader))
             else:
                 self.total_epochs = cfgs.OPTIMIZATION.NUM_EPOCHS
                 self.max_iter = self.total_epochs * len(self.train_loader)

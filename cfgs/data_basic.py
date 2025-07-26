@@ -18,4 +18,6 @@ DATA_PATH_DICT = {
     'VirtualKitti2Dataset': '/file_system/vepfs/public_data/stereo/virtualkitti2',
     'UnrealStereo4KDataset': '/file_system/vepfs/public_data/stereo/UnrealStereo4K',
     'CarlaDataset': '/file_system/vepfs/public_data/stereo/StereoFromCarlaV2',
+    'FoundationStereoDataset': '/file_system/vepfs/public_data/stereo/foundationstereo',
+    'DynamicReplicaDataset': '/file_system/vepfs/public_data/stereo/dynamic_stereo',
 }

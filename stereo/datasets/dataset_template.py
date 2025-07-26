@@ -34,8 +34,8 @@ class DatasetTemplate(torch_data.Dataset):
         if os.path.exists(self.split_file):
             with open(self.split_file, 'r') as fp:
                 self.data_list.extend([x.strip().split(' ') for x in fp.readlines()])
-        else:
-            raise ValueError("[Errno 2] No such file or directory: {}, You must modify the txt path in the yaml to your own.".format(self.split_file))
+        # else:
+        #     raise ValueError("[Errno 2] No such file or directory: {}, You must modify the txt path in the yaml to your own.".format(self.split_file))
 
     def __len__(self):
         return len(self.data_list)
