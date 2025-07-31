@@ -35,7 +35,7 @@ MODEL:
     n_gru_layers: 3
     vit_size: 'vitl'
     train_iters: 22
-    eval_iters: 32
+    valid_iters: 32
     FIND_UNUSED_PARAMETERS: true
     CKPT: -1
     PRETRAINED_MODEL: ''
