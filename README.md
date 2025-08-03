@@ -11,8 +11,6 @@ OpenStereo is a flexible and extensible project for stereo matching.
 ## What's New
 - **[June 12, 2025]**: We have integrated the [FoundationStereo](https://arxiv.org/abs/2501.09898) model (training and inference). For details, please refer to [prepare_foundationstereo](docs/prepare_foundationstereo.md).
 - **[Jan 28th, 2025]**: The paper of LightStereo has been accepted by ICRA 2025.
-- **[Nov 22nd, 2024]**: The paper of StereoAnything makes public: [Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data](https://arxiv.org/abs/2411.14053).
-- **[July 1st, 2024]**: The paper of LightStereo makes public: [LightStereo: Channel Boost Is All You Need for Efficient 2D Cost Aggregation](https://arxiv.org/abs/2406.19833).
 - **[June 26th, 2024]**: TensorRT has been integrated, please see the [Deployment documentation](deploy/README.md).
 - **[May 2024]**: The 2.0 version of OpenStereo is available, featuring an optimized training and testing framework.
 - **[January 2024]**: Our proposed StereoBase rank 1st on the [KITTI15 leaderboard](https://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo)!!!
