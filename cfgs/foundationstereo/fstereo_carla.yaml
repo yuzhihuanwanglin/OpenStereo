@@ -2,9 +2,9 @@ DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: CarlaDataset
             DATA_SPLIT: {
-                TRAINING: ./data/Carla/CarlaStereo.txt,
-                EVALUATING: ./data/Carla/CarlaStereo.txt,
-                TESTING: ./data/Carla/CarlaStereo.txt
+                TRAINING: ./data/StereoCarla/StereoCarla_all.txt,
+                EVALUATING: ./data/StereoCarla/StereoCarla_test.txt,
+                TESTING: ./data/StereoCarla/StereoCarla_test.txt
             }
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
@@ -13,7 +13,7 @@ DATA_CONFIG:
         TRAINING:
             - { NAME: StereoColorJitter, BRIGHTNESS: [ 0.6, 1.4 ], CONTRAST: [ 0.6, 1.4 ], SATURATION: [ 0.6, 1.4 ], HUE: [-0.5, 0.5], ASYMMETRIC_PROB: 0.2 }
             - { NAME: RandomErase, PROB: 0.5, MAX_TIME: 2, BOUNDS: [ 50, 100 ] }
-            - { NAME: RandomCrop, SIZE: [ 384, 768 ], Y_JITTER: false }
+            - { NAME: RandomCrop, SIZE: [ 320, 736 ], Y_JITTER: false }
             - { NAME: TransposeImage }
             - { NAME: ToTensor }
             - { NAME: NormalizeImage, MEAN: [ 0.485, 0.456, 0.406 ], STD: [ 0.229, 0.224, 0.225 ] }
@@ -24,14 +24,21 @@ DATA_CONFIG:
             - { NAME: NormalizeImage, MEAN: [ 0.485, 0.456, 0.406 ], STD: [ 0.229, 0.224, 0.225 ] }
 
 MODEL:
-    NAME: NMRF
-    MODEL_TYPE: swin
-    OUT_CHANNELS: 128
-    DIVIS_BY: 32
-    COMPAT: false
-    FIND_UNUSED_PARAMETERS: false
+    NAME: FoundationStereo
+    corr_levels: 2
+    corr_radius: 4
+    hidden_dims: [ 128, 128, 128 ]
+    low_memory: 0
+    max_disp: 416
+    mixed_precision: true
+    n_downsample: 2
+    n_gru_layers: 3
+    vit_size: 'vitl'
+    train_iters: 22
+    valid_iters: 32
+    FIND_UNUSED_PARAMETERS: true
     CKPT: -1
-    PRETRAINED_MODEL: 'nmrf/sceneflow.pt'
+    PRETRAINED_MODEL: '/file_system/vepfs/algorithm/ruilin.wang/code/LightStereoX/output/v2/Foundation.pt'
 
 OPTIMIZATION:
     FREEZE_BN: false
