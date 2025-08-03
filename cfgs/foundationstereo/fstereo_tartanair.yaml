@@ -65,7 +65,7 @@ OPTIMIZATION:
         MAX_NORM: 1.0
 
 EVALUATOR:
-    BATCH_SIZE_PER_GPU: 4
+    BATCH_SIZE_PER_GPU: 2
     MAX_DISP: 192
     METRIC:
         - d1_all

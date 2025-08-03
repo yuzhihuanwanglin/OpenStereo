@@ -29,7 +29,7 @@ DATA_CONFIG:
 
         -   DATASET: SintelDataset
             DATA_SPLIT: {
-                TRAINING: ./data/Sintel/Sintel_final_all.txt,
+                TRAINING: ./data/Sintel/Sintel_final_train.txt,
             }
             RETURN_SUPER_PIXEL: true
 
@@ -56,7 +56,7 @@ DATA_CONFIG:
 
         -   DATASET: CarlaDataset
             DATA_SPLIT: {
-                TRAINING: ./data/Carla/CarlaStereo.txt,
+                TRAINING: ./data/Carla/StereoCarla_all.txt,
             }
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true

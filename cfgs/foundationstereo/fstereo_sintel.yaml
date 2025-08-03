@@ -2,9 +2,9 @@ DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: SintelDataset
             DATA_SPLIT: {
-                TRAINING: ./data/Sintel/Sintel_final_all.txt,
-                EVALUATING: ./data/Sintel/Sintel_final_all.txt,
-                TESTING: ./data/Sintel/Sintel_final_all.txt
+                TRAINING: ./data/Sintel/Sintel_final_train.txt,
+                EVALUATING: ./data/Sintel/Sintel_final_train.txt,
+                TESTING: ./data/Sintel/Sintel_final_train.txt
             }
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true

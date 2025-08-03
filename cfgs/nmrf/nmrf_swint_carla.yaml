@@ -2,9 +2,9 @@ DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: CarlaDataset
             DATA_SPLIT: {
-                TRAINING: ./data/Carla/CarlaStereo.txt,
-                EVALUATING: ./data/Carla/CarlaStereo.txt,
-                TESTING: ./data/Carla/CarlaStereo.txt
+                TRAINING: ./data/Carla/StereoCarla_train.txt,
+                EVALUATING: ./data/Carla/StereoCarla_test.txt,
+                TESTING: ./data/Carla/StereoCarla_test.txt
             }
             RETURN_RIGHT_DISP: false
             RETURN_SUPER_PIXEL: true
