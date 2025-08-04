@@ -194,6 +194,10 @@ class TrainerTemplate:
 
         train_loader_iter = iter(self.train_loader)
         for i in range(0, len(self.train_loader)):
+            total_iter = current_epoch * len(self.train_loader) + i
+            if total_iter >= self.max_iter:
+                break
+
             self.optimizer.zero_grad()
             lr = self.optimizer.param_groups[0]['lr']
 
@@ -227,9 +231,7 @@ class TrainerTemplate:
                     self.scheduler.step()
 
             total_loss += loss.item()
-            total_iter = current_epoch * len(self.train_loader) + i
-            if total_iter >= self.max_iter:
-                break
+
             trained_time_past_all = tbar.format_dict['elapsed']
             single_iter_second = trained_time_past_all / (total_iter + 1 - start_epoch * len(self.train_loader))
             remaining_second_all = single_iter_second * (self.total_epochs * len(self.train_loader) - total_iter - 1)
