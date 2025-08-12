@@ -43,14 +43,14 @@ MODEL:
 OPTIMIZATION:
     FREEZE_BN: false
     SYNC_BN: true
-    AMP: false
+    AMP: true
     BATCH_SIZE_PER_GPU: 2
     NUM_EPOCHS: 90
     MAX_ITER: 31250
 
     OPTIMIZER:
         NAME: AdamW
-        LR: &lr 0.0005
+        LR: &lr 0.0002
         WEIGHT_DECAY: 1.0e-05
         EPS: 1.0e-08
 

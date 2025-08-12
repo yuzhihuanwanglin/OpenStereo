@@ -2,7 +2,7 @@ DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: FoundationStereoDataset
             DATA_SPLIT: {
-                TRAINING: None,
+                TRAINING: None,  # 直接读取文件夹
             }
             RETURN_SUPER_PIXEL: true
 
@@ -35,13 +35,13 @@ MODEL:
 OPTIMIZATION:
     FREEZE_BN: false
     SYNC_BN: true
-    AMP: false
+    AMP: true
     BATCH_SIZE_PER_GPU: 2
     NUM_EPOCHS: 1
 
     OPTIMIZER:
         NAME: AdamW
-        LR: &lr 0.0005
+        LR: &lr 0.0002
         WEIGHT_DECAY: 1.0e-05
         EPS: 1.0e-08
 

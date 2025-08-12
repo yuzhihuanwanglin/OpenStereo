@@ -2,7 +2,7 @@ DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: FoundationStereoDataset
             DATA_SPLIT: {
-                TRAINING: None,
+                TRAINING: None,  #直接读取文件夹
             }
             RETURN_SUPER_PIXEL: true
 

@@ -29,19 +29,19 @@ MODEL:
     train_iters: 22
     valid_iters: 32
     FIND_UNUSED_PARAMETERS: true
-    CKPT: -1
-    PRETRAINED_MODEL: '/file_system/vepfs/algorithm/ruilin.wang/code/LightStereoX/output/v2/Foundation.pt'
+    CKPT: 2
+    PRETRAINED_MODEL: ''
 
 OPTIMIZATION:
     FREEZE_BN: false
     SYNC_BN: true
-    AMP: false
+    AMP: true
     BATCH_SIZE_PER_GPU: 2
     MAX_ITER: 31250
 
     OPTIMIZER:
         NAME: AdamW
-        LR: &lr 0.0005
+        LR: &lr 0.0002
         WEIGHT_DECAY: 1.0e-05
         EPS: 1.0e-08
 
