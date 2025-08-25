@@ -8,3 +8,5 @@ timm==0.4.12
 scikit-image
 thop
 matplotlib
+h5py
+einops

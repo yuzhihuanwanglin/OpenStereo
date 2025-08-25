@@ -1,7 +1,8 @@
 # @Time    : 2024/4/1 13:41
 # @Author  : zhangchenming
 DATA_PATH_DICT = {
-    'SceneFlowDataset': '/file_system/vepfs/public_data/SceneFlow',
+    'SceneFlowDataset': '/media/wanglin/Elements/datasets/SceneFlow',
+    # 'SceneFlowDataset': '/file_system/vepfs/public_data/SceneFlow',
     'FlyingThings3DSubsetDataset': '/mnt/nas/algorithm/chenming.zhang/dataset/SceneFlow',
     'KittiDataset12': '/file_system/vepfs/public_data/stereo/kitti12',
     'KittiDataset15': '/file_system/vepfs/public_data/stereo/kitti15',

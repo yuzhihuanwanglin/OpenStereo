@@ -1,3 +1,48 @@
-1.下载代码，安装环境
-2.
+1.下载代码   
+https://github.com/yuzhihuanwanglin/OpenStereo   
+分支v2和main两个分支  
+v2来自拷贝 ：github.com/XiandaGuo/OpenStereo
+main新建修改分支
+
+ 
+2.安装环境
+1）nvidia cuda 环境安装   
+11.7是开软指定默认环境   12.8 我的环境  nvidia-smi查看是否成功安装，详细网络搜索安装办法
+2）软件依赖环境 
+https://github.com/yuzhihuanwanglin/OpenStereo/blob/v2/docs/0.get_started.md  Installation部分
+可能缺少python库，已经requirement.txt添加
+
+3.数据准备 
+https://github.com/yuzhihuanwanglin/OpenStereo/blob/v2/docs/2.prepare_dataset.md
+cfgs/data_basic.py  修改为数据硬盘文件路径，文件大小会非常大，数据集每个都可能几百G
+
+4.模型准备
+https://github.com/yuzhihuanwanglin/OpenStereo/blob/v2/docs/1.model_zoo.md
+
+
+
+5.模型训练
+基于sceneflow数据集的训练
+python tools/train.py --cfg_file cfgs/lightstereo/lightstereo_s_sceneflow.yaml     (small)
+python tools/train.py --cfg_file cfgs/lightstereo/lightstereo_l_sceneflow.yaml     (large)
+python tools/train.py --cfg_file cfgs/lightstereo/lightstereo_lx_sceneflow.yaml    (large*)
+
+cfgs/lightstereo/lightstereo_l_sceneflow.yaml
+可能出现超出GPU内存的问题  ：修改BATCH_SIZE_PER_GPU
+过拟合nano：   去掉半精度  AMP: false
+
+
+
+6. 其他问题：
+
+'NMRF': NMRFTrainer 暂时去掉问题：   stereo/modeling/__init__.py
+https://github.com/XiandaGuo/OpenStereo/issues
+ 
+
+
+
+
+
+
+
 

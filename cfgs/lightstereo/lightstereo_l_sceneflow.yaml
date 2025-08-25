@@ -34,7 +34,7 @@ OPTIMIZATION:
     FREEZE_BN: false
     SYNC_BN: true
     AMP: true
-    BATCH_SIZE_PER_GPU: 8
+    BATCH_SIZE_PER_GPU: 2
     NUM_EPOCHS: 90
 
     OPTIMIZER:
