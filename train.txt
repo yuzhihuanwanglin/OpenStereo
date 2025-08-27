@@ -16,7 +16,7 @@ https://github.com/yuzhihuanwanglin/OpenStereo/blob/v2/docs/0.get_started.md  In
 https://github.com/yuzhihuanwanglin/OpenStereo/blob/v2/docs/2.prepare_dataset.md
 cfgs/data_basic.py  修改为数据硬盘文件路径，文件大小会非常大，数据集每个都可能几百G
 
-4.模型准备
+4.模型准备  (模型训练情况下可选)
 https://github.com/yuzhihuanwanglin/OpenStereo/blob/v2/docs/1.model_zoo.md
 
 
