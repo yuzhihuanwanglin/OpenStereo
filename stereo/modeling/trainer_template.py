@@ -285,9 +285,10 @@ class TrainerTemplate:
             with torch.cuda.amp.autocast(enabled=self.cfgs.OPTIMIZATION.AMP):
                 infer_start = time.time()
                 model_pred = self.model(data)
+                torch.cuda.synchronize()
                 infer_time = time.time() - infer_start
-
-            elapsed_list.append(infer_time)
+            if i > 0:
+                elapsed_list.append(infer_time)
             model_size = get_model_size(self.model)
             memory_usage = get_memory_usage()
             gpu_memory = get_gpu_memory_global(0)
