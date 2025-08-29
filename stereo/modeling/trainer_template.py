@@ -4,6 +4,8 @@ import os
 import time
 import glob
 import math
+from evaluate_industrial_metrics import res as shape_res, compute_avgerr, compute_rmse, get_gpu_memory_global, get_memory_usage, get_model_size
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.distributed as dist
@@ -257,13 +259,16 @@ class TrainerTemplate:
 
     @torch.no_grad()
     def eval_one_epoch(self, current_epoch):
-
+        reslist, model_size_list, memory_list, elapsed_list, gpu_memory_list = [], [], [], [], []
+        rmse_list, avgerr_list = [], []
         metric_func_dict = {
             'epe': epe_metric,
             'd1_all': d1_metric,
             'thres_1': partial(threshold_metric, threshold=1),
             'thres_2': partial(threshold_metric, threshold=2),
             'thres_3': partial(threshold_metric, threshold=3),
+            'avgerr': compute_avgerr,
+            'rmse': compute_rmse,
         }
 
         evaluator_cfgs = self.cfgs.EVALUATOR
@@ -282,8 +287,20 @@ class TrainerTemplate:
                 model_pred = self.model(data)
                 infer_time = time.time() - infer_start
 
+            elapsed_list.append(infer_time)
+            model_size = get_model_size(self.model)
+            memory_usage = get_memory_usage()
+            gpu_memory = get_gpu_memory_global(0)
+            model_size_list.append(model_size)
+            memory_list.append(memory_usage)
+            gpu_memory_list.append(gpu_memory)
+            
             disp_pred = model_pred['disp_pred']
+
             disp_gt = data["disp"]
+            if 'left' in data:
+                reslist = shape_res(data['left'].shape, disp_pred.shape)
+
             mask = (disp_gt < evaluator_cfgs.MAX_DISP) & (disp_gt > 0)
             if 'occ_mask' in data and evaluator_cfgs.get('APPLY_OCC_MASK', False):
                 mask = mask & ~data['occ_mask'].to(torch.bool)
@@ -295,6 +312,10 @@ class TrainerTemplate:
                 res = metric_func(disp_pred.squeeze(1), disp_gt, mask)
                 epoch_metrics[m]['indexes'].extend(data['index'].tolist())
                 epoch_metrics[m]['values'].extend(res.tolist())
+
+            
+            rmse_list.append(compute_rmse(disp_pred.squeeze(1), disp_gt, mask))
+            avgerr_list.append(compute_avgerr(disp_pred.squeeze(1), disp_gt, mask))
 
             if i % self.cfgs.TRAINER.LOGGER_ITER_INTERVAL == 0:
                 message = ('Evaluating Epoch:{:>2d} Iter:{:>4d}/{} InferTime: {:.2f}ms'
@@ -339,3 +360,12 @@ class TrainerTemplate:
             write_tensorboard(self.tb_writer, tb_info, current_epoch)
 
         self.logger.info(f"Epoch {current_epoch} metrics: {results}")
+        avg_runtime = np.mean(elapsed_list)
+        model_size_mean = np.mean(model_size_list)
+        memory_mean = np.mean(memory_list)
+        gpu_memory_mean = np.mean(gpu_memory_list)
+        rmse_mean = np.mean(rmse_list)
+        avgerr_mean = np.mean(avgerr_list)
+        avg_fps = 1 / avg_runtime if avg_runtime > 0 else 0
+        self.logger.info(f"other metrics key inputshape outputshape epe d1_all thres_1 thres_2 thres_3 rmse avgerr model_size(MB) memory(MB) fps latency(s) gpu_memory(MB)")
+        self.logger.info(f"other metrics val {reslist[0]} {reslist[1]} {results['epe']} {results['d1_all']} {results['thres_1']} {results['thres_2']} {results['thres_3']} {rmse_mean} {avgerr_mean} {model_size_mean} {memory_mean} {avg_fps} {avg_runtime} {gpu_memory_mean}")
