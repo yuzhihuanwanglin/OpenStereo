@@ -1,0 +1,99 @@
+model: ./lightstereo_s_sceneflow_general_opt_256_512_sim_conv_deploy_model.onnx
+quantize: ./lightstereo_s_sceneflow_general_opt_256_512_sim_conv_quant_param.yaml
+output: ./output/
+
+# Optimize Level
+# 0 - Single Layer Mode
+# 1 - Simple Layer Group
+# 2 - Advanced Layer Group
+optimze_level: 2  
+
+# LogLevel
+# 1 - Err, 2 - Warn, 3 - Info, 4 - Debug.
+log_level: 4
+
+# target: VS919 (default) or VS919L
+target: VS919
+# mode 0 --single (default),1 --hybrid (unsupport yet)
+mode: 0
+# cluster_id 0 -- core 0(default),1 -- core 1
+cluster_id: 0
+# core num: 1 -- 1 core(defualt),2 -- 2 cores (unsupport yet)
+core_num: 1
+
+# 0 - no-cast, 1 - cast to float32
+output_tensor_cast: 0
+
+# 0 - disable preprocess, 1 - enable preprocess.
+preprocess_en: 0  
+preprocess:
+  model_input_type: 1  # 0 - BGR, 1 - RGB
+
+  # runtime_input_type
+    # E_RT_RGB_PACKED = 0,
+    # E_RT_RGB_PLANAR = 1,
+    # E_RT_BGR_PACKED = 2,
+    # E_RT_BGR_PLANAR = 3,
+    # E_RT_NV12 = 4,
+    # E_RT_NV21 = 5,
+    # E_RT_NV16 = 6,
+    # E_RT_NV61 = 7,  
+  pre_input_type: 1 
+
+  # runtime_color_range
+    # BT709_FULL_RANGE = 0x0,
+    # BT709_LIMIT_RANGE = 1,
+    # BT601_FULL_RANGE = 2,
+    # BT601_LIMIT_RANGE = 3,  
+  pre_color_range: 0
+  pre_shape:
+    - 1
+    - 3
+    - 640
+    - 640
+  pre_stride:
+    - 1
+    - 3
+    - 640
+    - 640
+  mean: 
+    - 0.485
+    - 0.456
+    - 0.406
+  std: 
+    - 0.229
+    - 0.224    
+    - 0.225
+  #crop rectange [x, y, h, w]
+  crop_rect:
+    - 0
+    - 0
+    - 640
+    - 640
+  
+    
+#0 - disable debug, 1 - enable debug
+debug_en: 1
+debug_cfg: 
+  # 0 - disable print middle MLIR graph, 1 - enable print middle MLIR graph
+  save_middle_graph: 1
+  # 0 - disable layer dump, 1 - enable layer dump
+  layer_dump: 1
+  
+soc_cfg:
+  # 0 --- use default ddr bandwith, 5 -- 5GB bandwidth for npu [0,50]
+  ddr_bandwidth: 0
+  # set ddr size for featuremap and param.bin,
+  # only set when size > 0x18000000=384M
+  # example, ddr_base_addr=0xb0000000, ddr_size=0x38000000
+  # for featuremap+param size < 896M
+  ddr_base_addr: 0xd0000000
+  ddr_size: 0x18000000
+  
+  mbuf_base_addr: 0x20000000
+  # 0 -- disable media buffer,  unit (kB), [0, 4096]
+  mbuf_size: 0
+
+  # 1 -- (input_num + output_num) address (default),  0  -- (1 + 1) address , 2 -- (input_num + 1) address,  3 -- (1 + output_num) address
+  io_mem_mode: 1
+  

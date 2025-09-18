@@ -20,10 +20,12 @@ from torchvision.transforms.functional import normalize
 from torch.onnx import TrainingMode
 # open env
 device = 'cuda'#'cuda' if torch.cuda.is_available() else 'cpu'
-# onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_256x512.onnx'
-onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_640x1280.onnx'
-input_shape=(1, 3, 640, 1280)
-input_size = (1280,640)
+onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_256x512.onnx'
+# onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_640x1280.onnx'
+# input_shape=(1, 3, 640, 1280)
+# input_size = (1280,640)
+input_shape=(1, 3, 256, 512)
+input_size = (512,256)
 
 class ExportWrapper(torch.nn.Module):
     def __init__(self,ori_mode):
@@ -32,16 +34,22 @@ class ExportWrapper(torch.nn.Module):
         
     def forward(self,left,right):
         
-        left = left.permute(2, 0, 1)
-        right = right.permute(2, 0, 1)
-        
-        mean = [0.485, 0.456, 0.406]
-        std =  [0.229, 0.224, 0.225]
-        left = normalize(left / 255.0,mean, std)
-        right = normalize(right / 255.0, mean, std)
-        
-        left = left.unsqueeze(0).to(device)
-        right = right.unsqueeze(0).to(device)
+        left = left.permute(2, 0, 1).float() / 255.0
+        right = right.permute(2, 0, 1).float() / 255.0
+
+        # 标准化
+        left[0] = (left[0] - 0.485) / 0.229
+        left[1] = (left[1] - 0.456) / 0.224
+        left[2] = (left[2] - 0.406) / 0.225
+
+        right[0] = (right[0] - 0.485) / 0.229
+        right[1] = (right[1] - 0.456) / 0.224
+        right[2] = (right[2] - 0.406) / 0.225
+
+        # 增加 batch 维度
+        left = left.unsqueeze(0)
+        right = right.unsqueeze(0)
+
         inputs = {'left':left,'right':right}
         return self.mode(inputs)
     

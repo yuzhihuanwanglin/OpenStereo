@@ -1,0 +1,36 @@
+model:
+  onnx_model: ./lightstereo_s_sceneflow_general_opt_256_512_sim_conv.onnx
+  
+work_mode: PTQ
+
+quant:
+  activation:
+    observer: MinMaxObserver
+    dtype: int8
+    symmetry: True
+  
+  weight:
+    observer: MinMaxObserver
+    dtype: int8
+    symmetry: True
+    per_channel: True
+
+#dataset:
+#  calibrate_rand: True
+#  random_low: {"left_img": 0.0,"right_img": 0.0}
+#  random_high: 10.0
+  
+dataset:
+    calibrate:
+      source: ./kitti_loader.py
+      target: custom_dataloader
+      parameters:
+        root: /share/datas/testing
+        num_samples: 20
+
+
+out_dir: ./lightstereo_ptq_out
+
+
+
+
