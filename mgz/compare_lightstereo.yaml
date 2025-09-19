@@ -1,0 +1,18 @@
+model:
+    onnx_model: ./lightstereo_ptq_out/lightstereo_s_sceneflow_general_opt_256_512_sim_conv_deploy_model.onnx
+    quant_param: ./lightstereo_ptq_out/lightstereo_s_sceneflow_general_opt_256_512_sim_conv_quant_param.yaml
+
+work_mode: Compare
+
+dataset:
+    transform: {}
+
+Compare:
+    input_file:
+        image_0: ./npy_pairs/left_000.npy
+        image_1: ./npy_pairs/right_000.npy
+    layer_dump: True
+    result_file: compare_result.csv
+
+out_dir: ./compare_light_out
+
