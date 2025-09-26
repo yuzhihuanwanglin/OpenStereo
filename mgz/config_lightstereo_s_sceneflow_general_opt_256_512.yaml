@@ -22,7 +22,7 @@ quant:
   
 dataset:
     calibrate:
-      source: ./kitti_loader.py
+      source: ./custom_loader.py
       target: custom_dataloader
       parameters:
         root: /share/datas/testing

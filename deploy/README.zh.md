@@ -10,6 +10,10 @@
 python deploy/export.py --config cfgs/psmnet/psmnet_kitti15.yaml --weights output/KittiDataset/PSMNet/psmnet_kitti15/default/ckpt/checkpoint_epoch_0.pth --device 0 --simplify --half --include onnx
 ```
 
+```bash
+python deploy/export.py --config cfgs/lightstereo/lightstereo_l_sceneflow_general.yaml --weights premodels/StereoAnything-LightStereo_L.pt --device 0 --simplify --half --include onnx
+```bash
+
 如果希望使用我们的 C++ 示例代码在 NVIDIA 设备上进行部署，可以在 `--include` 参数后添加 `engine` 以导出 TensorRT 的 IR：
 
 ```bash

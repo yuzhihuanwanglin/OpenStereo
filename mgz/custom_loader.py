@@ -39,37 +39,49 @@ class KITTIStereoDataset(Dataset):
         return left_img, right_img
 
 
-def custom_dataloader(normalize_mean, normalize_std, batch_size,
-                      num_samples, num_workers, kitti_root):
+def custom_dataloader(root,num_samples):
+    normalize_mean=[0.485, 0.456, 0.406]
+    normalize_std=[0.229, 0.224, 0.225]
     transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(normalize_mean, normalize_std)
     ])
 
-    dataset = KITTIStereoDataset(root=kitti_root, transform=transform)
+    dataset = KITTIStereoDataset(root=root, transform=transform)
 
     sampler = RandomSampler(dataset, replacement=True, num_samples=num_samples)
 
     dataloader = DataLoader(dataset,
-                            batch_size=batch_size,
+                            batch_size=1,
                             sampler=sampler,
                             shuffle=False,
-                            num_workers=num_workers,
+                            num_workers=1,
                             pin_memory=True)   # 避免多进程拷贝问题
     return dataloader
 
 
 if __name__ == "__main__":
-    kitti_root = "/media/wanglin/Elements/datasets/KITTI2015/testing"
+    kitti_root = "/home/lc/gaoshan/Workspace/dataset/kitti/dataset2015/testing"
 
     dataloader = custom_dataloader(
-        normalize_mean=[0.485, 0.456, 0.406],
-        normalize_std=[0.229, 0.224, 0.225],
-        batch_size=1,
-        num_samples=10,
-        num_workers=1,   
-        kitti_root=kitti_root
+        root=kitti_root,
+        num_samples=10
     )
 
-    for left, right in dataloader:
-        print(left.shape, right.shape)  # torch.Size([B, 3, H, W])
+    save_dir = "./npy"
+    os.makedirs(save_dir, exist_ok=True)
+
+    # 构建 dataloader，每次返回单张左右图像
+    loader = custom_dataloader(kitti_root, num_samples=10)
+
+    # 测试迭代
+    for i, (left, right) in enumerate(loader):
+        print("Left:", left.shape, "Right:", right.shape)  # 输出 (256, 512, 3)
+        # 可以直接喂给模型
+        left_npy = left.numpy()
+        right_npy = right.numpy()
+
+        np.save(os.path.join(save_dir, f"left_{i:03d}.npy"), left_npy)
+        np.save(os.path.join(save_dir, f"right_{i:03d}.npy"), right_npy)
+
+        print(f"保存完成：left_{i:03d}.npy, right_{i:03d}.npy")

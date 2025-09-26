@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 from stereo.modeling.common.basic_block_3d import BasicConv3d
 from stereo.modeling.common.basic_block_2d import BasicConv2d
+import torch.nn.functional as F
 
 
 class CoExCostVolume(nn.Module):

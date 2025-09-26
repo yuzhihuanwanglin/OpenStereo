@@ -19,39 +19,46 @@ from stereo.datasets.dataset_template import build_transform_by_cfg
 from torchvision.transforms.functional import normalize
 from torch.onnx import TrainingMode
 # open env
+original_input_size = (0,0)
 device = 'cuda'#'cuda' if torch.cuda.is_available() else 'cpu'
-onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_256x512.onnx'
-# onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_640x1280.onnx'
+onnx_model_path = '/home/lc/gaoshan/Workspace/OpenStereo/output/model_480x640.onnx'
+# onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_256x512.onnx'
+# onnx_model_path = '/home/lc/gaoshan/Workspace/OpenStereo/output/model_640x1280.onnx'
 # input_shape=(1, 3, 640, 1280)
 # input_size = (1280,640)
 input_shape=(1, 3, 256, 512)
 input_size = (512,256)
+# input_shape=(1, 3, 256, 512)
+# input_size = (512,256)
 
 class ExportWrapper(torch.nn.Module):
     def __init__(self,ori_mode):
         super().__init__()
         self.mode = ori_mode
         
+    
+    
     def forward(self,left,right):
         
-        left = left.permute(2, 0, 1).float() / 255.0
-        right = right.permute(2, 0, 1).float() / 255.0
+        # left = left.permute(2, 0, 1).float() / 255.0
+        # right = right.permute(2, 0, 1).float() / 255.0
 
-        # 标准化
-        left[0] = (left[0] - 0.485) / 0.229
-        left[1] = (left[1] - 0.456) / 0.224
-        left[2] = (left[2] - 0.406) / 0.225
+        # # 标准化
+        # left[0] = (left[0] - 0.485) / 0.229
+        # left[1] = (left[1] - 0.456) / 0.224
+        # left[2] = (left[2] - 0.406) / 0.225
 
-        right[0] = (right[0] - 0.485) / 0.229
-        right[1] = (right[1] - 0.456) / 0.224
-        right[2] = (right[2] - 0.406) / 0.225
+        # right[0] = (right[0] - 0.485) / 0.229
+        # right[1] = (right[1] - 0.456) / 0.224
+        # right[2] = (right[2] - 0.406) / 0.225
 
-        # 增加 batch 维度
-        left = left.unsqueeze(0)
-        right = right.unsqueeze(0)
+        # # 增加 batch 维度
+        # left = left.unsqueeze(0)
+        # right = right.unsqueeze(0)
 
         inputs = {'left':left,'right':right}
         return self.mode(inputs)
+    
     
     def eval(self):
         self.mode.eval()
@@ -76,8 +83,8 @@ def parse_config():
     args.dist_mode = False
     args.run_mode = 'infer'
     args.restore_ckpt = cfgs.MODEL.PRETRAINED_MODEL
-    args.left_img_path = "/home/wanglin/workspace/sample/left/left.png"
-    args.right_img_path = "/home/wanglin/workspace/sample/right/right.png"
+    args.left_img_path = "/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/im0.png"
+    args.right_img_path = "/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/im1.png"
     return args, cfgs
    
         
@@ -143,7 +150,10 @@ def load_stereo_model():
     transform = build_transform_by_cfg(transform_config)
     left_img = np.array(Image.open(args.left_img_path).convert('RGB'), dtype=np.float32)
     right_img = np.array(Image.open(args.right_img_path).convert('RGB'), dtype=np.float32)
-    
+    global original_input_size
+    original_input_size = right_img.shape[:2]
+    print(original_input_size)
+
     left_img = cv2.resize(left_img, input_size,cv2.INTER_LINEAR)
     right_img = cv2.resize(right_img, input_size,cv2.INTER_LINEAR)
     
@@ -152,26 +162,24 @@ def load_stereo_model():
     left_img = torch.from_numpy(left_img)
     right_img = torch.from_numpy(right_img)
     
-    # left = left_img.transpose(2, 0, 1).astype(np.float32)#data['left'].cpu().numpy()
-    # right = right_img.transpose(2, 0, 1).astype(np.float32)
+    
+    left = left_img.permute(2, 0, 1).float() 
+    right = right_img.permute(2, 0, 1).float()
         
-    # left = torch.from_numpy(left).to(torch.float32)
-    # right = torch.from_numpy(right).to(torch.float32)
-        
-    # mean = [0.485, 0.456, 0.406]
-    # std =  [0.229, 0.224, 0.225]
-    # left = normalize(left / 255.0,mean, std)
-    # right = normalize(right / 255.0, mean, std)
+    mean = [0.485, 0.456, 0.406]
+    std =  [0.229, 0.224, 0.225]
+    left = normalize(left / 255.0,mean, std)
+    right = normalize(right / 255.0, mean, std)
     
     
     sample = {
-        'left': left_img,
-        'right': right_img,
+        'left': left,
+        'right': right,
     }
     
     print(sample['left'].shape)
-    # sample['left'] = sample['left'].unsqueeze(0)
-    # sample['right'] = sample['right'].unsqueeze(0)
+    sample['left'] = sample['left'].unsqueeze(0)
+    sample['right'] = sample['right'].unsqueeze(0)
     
     data = sample
     for k, v in data.items():
@@ -225,8 +233,8 @@ def export_to_onnx(model, data,input_shape=input_shape):
     dumy_right = data['right']
     
     with torch.no_grad():
-        torch.onnx.export(model,(dumy_left,dumy_right),onnx_model_path,training=TrainingMode.EVAL,export_params=True,opset_version=17,
-                            do_constant_folding=True,input_names=['left','right'],output_names=['disp']
+        torch.onnx.export(model,(dumy_left,dumy_right),onnx_model_path,opset_version=17,
+                            do_constant_folding=True,input_names=['left_img','right_img'],output_names=['disp_pred']
         )
     print(f"模型已导出为 {onnx_model_path}")
 
@@ -253,20 +261,10 @@ def validate_onnx_model(data,disp_pred):
     dummy_right = np.round(dummy_right, decimals=4)
     
     
-    # dumy_left = data['left']
-    # dumy_right = data['right']
-    
-    # sess_options = ort.SessionOptions()
-    # sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
-    # providers = [('CUDAExecutionProvider',{"device_id":0})]
-    # session = ort.InferenceSession(onnx_model_path, sess_options, providers=providers)
     
     session = ort.InferenceSession(onnx_model_path)
-    outputs = torch.tensor(session.run(['disp'], ({'left': dummy_left,'right':dummy_right})))
+    outputs = torch.tensor(session.run(['disp_pred'], ({'left_img': dummy_left,'right_img':dummy_right})))
     disp_pred_onnx = outputs.squeeze().cpu().numpy()
-    
-    # disp_pred_onnx = session.run(['disp'], {'left': dummy_left,'right':dummy_right})
-    # disp_pred_onnx = disp_pred_onnx[0].squeeze()
     
     print('---------------------------\n\n\n')
     
@@ -282,9 +280,15 @@ def validate_onnx_model(data,disp_pred):
     max_disparity = np.max(disp_pred)
     normalized = ((disp_pred - min_disparity) / (max_disparity - min_disparity) * 255).astype(np.uint8)
     disp_pred_color = cv2.applyColorMap(normalized, cv2.COLORMAP_JET)
+    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/export_apt.png', disp_pred_color)
     
-    cv2.imwrite('/home/wanglin/export_apt.png', disp_pred_color)
-    cv2.imwrite('/home/wanglin/export_onnx.png', disp_pred_onnx)
+    min_disparity = np.min(disp_pred_onnx)
+    max_disparity = np.max(disp_pred_onnx)
+    normalized = ((disp_pred_onnx - min_disparity) / (max_disparity - min_disparity) * 255).astype(np.uint8)
+    disp_pred_color = cv2.applyColorMap(normalized, cv2.COLORMAP_JET)
+    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/export_onnx.png', disp_pred_color)
+    
+    
     print("最大绝对误差:", diff.max())
     print("平均绝对误差:", diff.mean())
     
@@ -300,10 +304,47 @@ def validate_onnx_model(data,disp_pred):
     print("ONNX 模型推理成功！输出形状：", outputs[0].shape)
     np.testing.assert_allclose(disp_pred, disp_pred_onnx, rtol=1e-02, atol=1e-04)
 
+    from stereo.datasets.dataset_utils.readpfm import readpfm
+    disp_img = readpfm("/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/disp0GT.pfm")[0].astype(np.float32)
+    disp_img[disp_img == np.inf] = 0
+    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/disparity.png', disp_img)
+    
+    # occ_mask = Image.open("/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/mask0nocc.png")
+    # occ_mask = np.array(occ_mask, dtype=np.float32)
+    # occ_mask = occ_mask != 255.0
+
+    occ_mask = Image.open("/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/mask0nocc.png").convert('L')
+    occ_mask = np.array(occ_mask, dtype=np.float32)
+    occ_mask = occ_mask < 1
+
+   
+
+    global original_input_size   # 声明使用全局变量
+    original_input_size = (707,481)
+    print(original_input_size)
+
+    disp_pred = disp_pred * (707.0 / input_size[0])
+    disp_pred = cv2.resize(disp_pred, original_input_size,cv2.INTER_LINEAR)
+    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/disparity_infer.png', disp_pred)
+    
+
+    #  遮挡区域置 0
+    disp_pred = np.where(occ_mask == 1, 0, disp_pred)
+    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/disparity_infer_occ.png', disp_pred)
+    
+    diff = np.abs(disp_img - disp_pred)
+    print("最大绝对误差:", diff.max())
+    print("平均绝对误差:", diff.mean())
+    print(f"差异超过阈值的比例: {(diff > 1e-5).mean():.2%}")
+
+    # 定位差异最大的前10个位置
+    top_indices = np.unravel_index(np.argsort(-diff.ravel())[:10], diff.shape)
+    print("最大差异位置及值：")
+    for idx in zip(*top_indices):
+        print(f"PyTorch: {disp_pred[idx]:.4f} vs disp_img: {disp_img[idx]:.4f} Δ={diff[idx]:.2e}")
 # 主函数
 '''
-python tools/export.py --cfg_file /home/wanglin/workspace/OpenStereo/cfgs/lightstereo/lightstereo_l_sceneflow_general.yaml \n
---pretrained_model /home/wanglin/workspace/OpenStereo/premodels/StereoAnything-LightStereo_L.pt
+python tools/export.py --cfg_file ./cfgs/lightstereo/lightstereo_l_sceneflow_general.yaml --pretrained_model ./premodels/StereoAnything-LightStereo_L.pt
 
 '''
 
