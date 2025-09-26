@@ -1,8 +1,13 @@
 import cv2
 import numpy as np
 
-arr = np.load("/home/lc/share/mgz/compare_light_out/layerdump/disp_pred_quanted.npy")
-# arr = np.load("/home/lc/share/datas/00000/Disp0/00001.npy")
+arr = np.load("/home/extra/share/mgz3/compare_light_out/layerdump/disp_pred_quanted.npy")
+# arr = np.load("/home/wanglin/workspace/backup/OpenStereo/board.npy")
+
+arr2 = np.fromfile("/home/wanglin/disp.bin", dtype=np.float32).astype(np.float32)
+print(arr2)
+print(arr2.shape)
+
 
 arr = arr.squeeze()
 print(arr.shape)

@@ -148,12 +148,12 @@ SCALE_RIGHT = 0.017288
 ZERO_POINT  = 0
 
 # 输入 bin 文件路径
-LEFT_BIN_PATH  = "left_img_input.bin"
-RIGHT_BIN_PATH = "right_img_input.bin"
+LEFT_BIN_PATH  = "left.npy"
+RIGHT_BIN_PATH = "right.npy"
 
 # 输出 PNG 路径
-LEFT_PNG_PATH  = "left_image_u8c3.png"
-RIGHT_PNG_PATH = "right_image_u8c3.png"
+LEFT_PNG_PATH  = "output/left_image_u8c3.png"
+RIGHT_PNG_PATH = "output/right_image_u8c3.png"
 
 # ================================
 # 函数定义

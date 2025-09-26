@@ -23,7 +23,10 @@ def txt_to_png(txt_file_path, output_png_path, width=512, height=256):
     
     # 转换为numpy数组并重塑为图像尺寸
     disp_array = np.array(disp_values).reshape(height, width).astype(np.float32)
-    disp_array.tofile("board.raw")
+    # disp_array.tofile("board.bin")
+    np.save('board.npy', disp_array)
+    
+    
     
     print(disp_array)   
     print(disp_array.dtype)   
@@ -60,8 +63,10 @@ def txt_to_png(txt_file_path, output_png_path, width=512, height=256):
     disp_vis = disp_vis.astype(np.uint8)
     cv2.imshow("Disparity Map", disp_vis)
     
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    while True:
+        if cv2.waitKey(1) == ord('q'):
+            cv2.destroyAllWindows()
+            break
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
