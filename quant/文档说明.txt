@@ -1,0 +1,37 @@
+1.量化模型  
+
+2.编译模型  
+模型编译的optimza_level改为0
+debug_en:1  把它打开
+vs_model_info查看输入的信息,主要是scale因子 scale_left/scale_right
+
+说明 :  1.2步骤执行 run.sh 就行
+
+3./home/lc/gaoshan/Workspace/OpenStereo/quant/convertTotal.py 生成用于模型compare和模型推理输入的文件
+路径在/home/lc/gaoshan/Workspace/OpenStereo/output/quant/
+1)修改代码中的scale
+scale_left = 0.020706   
+scale_right = 0.020706
+
+2)运行生成双目图像数据
+bin文件为模型推理输入的文件
+npy 32位的为模型compare的两张输入
+npy 8位的是第一个bin文件的npy格式,可用vscode打开查看是否正确
+
+4.compare模型
+1)left_32.npy right_32.npy  作为配置文件的输入
+2)可查看评测的cos指标
+
+5./home/lc/share/mgz/compare_light_out/layerdump/目录  
+1)查看 最后一层的disp_pred_quanted.npy效果,用vscode打开就能看
+2)拷贝整个layerdump到一个目录(可选)   这里命名为npy目录(***)
+
+
+
+5.将数据 left_8.bin/right_8.bin 推送到板端推理
+vs_model_exec   xxxx  -y /dev/tensor  (推理端的dumplayer)
+
+6.scp将板子/dev/tensor下的目录拷贝到本地 tensor目录(***)
+
+7./home/lc/gaoshan/Workspace/OpenStereo/quant/tensor_file_diff.py
+修改里面的文件路径并运行  1.compare csv评测表   2.前面步骤涉及的 npy + tensor 目录 带(***)

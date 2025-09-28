@@ -102,21 +102,15 @@ print(right_npy_4)
 
 print(f" -----------------------------------------------------")
 #float32 转 int8
-scale_left = 0.019612
-scale_right = 0.018929
-
-left_scale_str = f"{scale_left:.5f}".replace(".", "")
-right_scale_str = f"{scale_right:.5f}".replace(".", "")
-
-left_npy_2 = left_npy/scale_left
-right_npy_2 = right_npy/scale_right
-
-print(left_npy_2.dtype, left_npy_2.min(), left_npy_2.max())
-print(right_npy_2.dtype, right_npy_2.min(), right_npy_2.max())
+scale_left = 0.017674
+zp_left = 120
+scale_right = 0.017207
+zp_right = 123
 
 
-left_int8 = np.clip(np.round(left_npy / scale_left), -128, 127).astype(np.int8)
-right_int8 = np.clip(np.round(right_npy / scale_right), -128, 127).astype(np.int8)
+
+left_int8 = np.clip(np.round(left_npy / scale_left + zp_left), 0, 255).astype(np.uint8)
+right_int8 = np.clip(np.round(right_npy / scale_right + zp_right), 0, 255).astype(np.uint8)
 
 
 print(left_int8.dtype, left_int8.min(), left_int8.max())
@@ -128,22 +122,22 @@ right_int8 = np.expand_dims(right_int8, axis=0)
 print(left_int8)
 print(right_int8)
 
-left_int8.tofile(f"output/quant/left_8_{left_scale_str}.bin")
-right_int8.tofile(f"output/quant/right_8_{right_scale_str}.bin")
+left_int8.tofile(f"output/quant/left_8.bin")
+right_int8.tofile(f"output/quant/right_8.bin")
 # np.save('output/quant/right_8.npy', right_int8)
 
-np.save(f"output/quant/left_8_float_{left_scale_str}.npy", left_int8.astype(np.float32))
-np.save(f"output/quant/right_8_float_{right_scale_str}.npy", right_int8.astype(np.float32))
+np.save(f"output/quant/left_8_float.npy", left_int8.astype(np.float32))
+np.save(f"output/quant/right_8_float.npy", right_int8.astype(np.float32))
 
 print(f" -----------------------------------------------------")
 
 # 两个数据的余弦计算
-# left_float = np.clip(np.round(left_npy_4 / scale_left), -128, 127).astype(np.float32)   #  left_int8.astype(np.float32)
-# right_float = np.clip(np.round(right_npy_4 / scale_right), -128, 127).astype(np.float32)
+# left_float = np.clip(np.round(left_npy_4 / scale_left + zp_left), 0, 255).astype(np.float32)   #  left_int8.astype(np.float32)
+# right_float = np.clip(np.round(right_npy_4 / scale_right  + zp_right), 0, 255).astype(np.float32)
 
 # 反量化回 float32
-left_float = left_int8.astype(np.float32) 
-right_float = right_int8.astype(np.float32) 
+left_float = (left_int8.astype(np.float32) - zp_left) * scale_left
+right_float = (right_int8.astype(np.float32) - zp_right) * scale_right
 
 print(left_float)
 print(right_float)

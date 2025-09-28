@@ -3,7 +3,9 @@ import numpy as np
 import os
 
 # 输入 CSV 文件路径
-input_file = "/home/extra/share/mgz3/compare_light_out/compare_result.csv"
+input_file = "/home/lc/share/gaoshantest/compare_light_out/compare_result.csv"
+
+
 
 # 读取 CSV
 df = pd.read_csv(input_file)
@@ -14,8 +16,8 @@ pairs = list(zip(df.iloc[:, 1], df.iloc[:, 2]))
 for layer, node in pairs:
     # print(layer, " -> ", node)
     
-    npy_file = '/home/wanglin/tensors/npy/' + layer + '_quanted.npy'
-    bin_file = '/home/wanglin/tensors/tensor/' + node
+    npy_file = '/home/lc/share/gaoshantest/compare_light_out/layerdump/' + layer + '_quanted.npy'
+    bin_file = '/home/lc/share/gaoshantest/model_exec_out/TENSOR/tensor/' + node
 
 
     if os.path.exists(npy_file) == False:
