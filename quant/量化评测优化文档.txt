@@ -34,7 +34,7 @@
 量化int8  和 onnx float32 生成数据对比
 
 1） sh export.sh 生成onnx下的推理npy输出： ./output/export_disparity.npy   （只需要操作一次）
-2） python quant/tensor_show.py xxx/disp_pred_cast_output_0_1_1_256_512.tensor ./output/quant/tensor_show.png
+2） python quant/tensor_show.py xxx/disp_pred_cast_output_0_1_1_256_512.tensor
 中间会产生板子推理的npy文件：./output/quant/disparity.npy   （每次操作需要使用新产生的tensor文件）
 3） python quant/disparity_diff.py --board ./output/quant/disparity.npy --onnx ./output/export_disparity.npy
 
