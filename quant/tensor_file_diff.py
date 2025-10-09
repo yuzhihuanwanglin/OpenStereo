@@ -17,7 +17,7 @@ for layer, node in pairs:
     # print(layer, " -> ", node)
     
     npy_file = '/home/lc/share/gaoshantest/compare_light_out/layerdump/' + layer + '_quanted.npy'
-    bin_file = '/home/lc/share/gaoshantest/model_exec_out/TENSOR/tensor/' + node
+    bin_file = '/home/lc/share/gaoshantest/model_exec_out/TENSOR_01/tensor/' + node
 
 
     if os.path.exists(npy_file) == False:
