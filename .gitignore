@@ -3,3 +3,12 @@
 **.DS_Store**
 #data
 output
+tools/gaoshan_vs919/
+stereoanything-lightstereo-l-1248-384.onnx
+stereoanything-lightstereo-s-1248-384.onnx
+tools/checkimagesize.py
+tools/gaoshan_vs919/
+tools/infershape.py
+tools/testpytorch2onnx.py
+**.onnx
+premodels

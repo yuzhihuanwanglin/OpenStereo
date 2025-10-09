@@ -10,7 +10,7 @@ DATA_CONFIG:
 
         -   DATASET: KittiDataset
             DATA_SPLIT: {
-                TRAINING: ./data/KITTI5/kitti15_train200.txt,
+                TRAINING: ./data/KITTI15/kitti15_train200.txt,
                 EVALUATING: ./data/KITTI15/kitti15_val20.txt,
                 TESTING: ./data/KITTI15/kitti15_test.txt
             }
@@ -35,22 +35,22 @@ MODEL:
     NAME: LightStereo
     MAX_DISP: 192
     EXPANSE_RATIO: 4
-    AGGREGATION_BLOCKS: [ 4, 8, 16 ]
+    AGGREGATION_BLOCKS: [4, 8, 16]
     LEFT_ATT: true
     FIND_UNUSED_PARAMETERS: false
     CKPT: -1
-    PRETRAINED_MODEL: '' # The path of checkpoint trained with the Sceneflow dataset.
+    PRETRAINED_MODEL: '/home/lc/gaoshan/Workspace/OpenStereo/premodels/LightStereo-M-SceneFlow.ckpt' # The path of checkpoint trained with the Sceneflow dataset.
 
 OPTIMIZATION:
     FREEZE_BN: false
     SYNC_BN: true
-    AMP: false
+    AMP: true
     BATCH_SIZE_PER_GPU: 2
     NUM_EPOCHS: 500
 
     OPTIMIZER:
         NAME: AdamW
-        LR: &lr 0.0002
+        LR: &lr 0.0012
         WEIGHT_DECAY: 1.0e-05
         EPS: 1.0e-08
 

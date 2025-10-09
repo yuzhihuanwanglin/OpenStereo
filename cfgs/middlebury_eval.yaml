@@ -2,7 +2,7 @@ DATA_CONFIG:
     DATA_INFOS:
         -   DATASET: MiddleburyDataset
             DATA_SPLIT: {
-                EVALUATING: ./data/Middlebury/MiddEval3_train_h.txt,
+                EVALUATING: ./data/Middlebury/MiddEval3_train_q.txt,
             }
             RETURN_RIGHT_DISP: false
 

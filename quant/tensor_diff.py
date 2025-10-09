@@ -32,3 +32,9 @@ num = float(np.dot(arr_bin_flat,arr_npy_flat))
 demon = np.linalg.norm(arr_bin_flat)*np.linalg.norm(arr_npy_flat)
 
 print(num/demon)
+
+
+euclidean_distance = np.linalg.norm(arr_bin_flat - arr_npy_flat)
+print("最大绝对误差:", euclidean_distance.max())
+print("平均绝对误差:", euclidean_distance.mean())
+print(f"差异超过阈值的比例: {(euclidean_distance > 1e-3).mean():.2%}")

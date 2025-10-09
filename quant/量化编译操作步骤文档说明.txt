@@ -22,6 +22,8 @@ npy 8位的是第一个bin文件的npy格式,可用vscode打开查看是否正�
 1)left_32.npy right_32.npy  作为配置文件的输入
 2)可查看评测的cos指标
 
+StatlasQuant --quant_cfg compare_lightstereo.yaml
+
 5./home/lc/share/mgz/compare_light_out/layerdump/目录  
 1)查看 最后一层的disp_pred_quanted.npy效果,用vscode打开就能看
 2)拷贝整个layerdump到一个目录(可选)   这里命名为npy目录(***)
@@ -35,3 +37,5 @@ vs_model_exec   xxxx  -y /dev/tensor  (推理端的dumplayer)
 
 7./home/lc/gaoshan/Workspace/OpenStereo/quant/tensor_file_diff.py
 修改里面的文件路径并运行  1.compare csv评测表   2.前面步骤涉及的 npy + tensor 目录 带(***)
+
+tensor_show xxx.tensor 用于输出tensor为图片

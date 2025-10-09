@@ -24,7 +24,7 @@ def txt_to_png(txt_file_path, output_png_path, width=512, height=256):
     # 转换为numpy数组并重塑为图像尺寸
     disp_array = np.array(disp_values).reshape(height, width).astype(np.float32)
     # disp_array.tofile("board.bin")
-    np.save('board.npy', disp_array)
+    np.save('./output/quant/disparity.npy', disp_array)
     
     
     
@@ -33,7 +33,7 @@ def txt_to_png(txt_file_path, output_png_path, width=512, height=256):
     print(disp_array.shape)   
     
     
-    cv2.imwrite('./disparity.png', disp_array)
+    cv2.imwrite('./output/quant/disparity.png', disp_array)
     
     # 归一化到0-255范围（灰度图像）
     disp_min = np.min(disp_array)

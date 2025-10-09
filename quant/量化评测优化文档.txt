@@ -1,0 +1,88 @@
+模型rknn int8算力 9帧/6tops， 正常能在16tops下达到24帧左右。 之前简单看了下模型步骤，大概在550层，在mgz平台在780
+连扳推理类似代码（如不支持需要分步骤人工实现）
+验证量化端compare精度表是否一致，或直接使用tensor_diff依据的余弦相似度
+
+
+
+0.看下上限评测（如采用 int16做一次精度评测）
+1.现有int8非对称量化做一次评测  （低精度 + 低耗时）
+2.采用不同量化算法 + 非对称量化做一次评测
+
+
+
+
+1.精度优化：
+1）量化算法  KL-D
+2）非对称量化
+3）混合量化
+
+
+
+2.速度优化
+1）ONNX模型图合并
+2）编译层优化模型（rknn编译器提供了优化）
+3）尽量精度层面由低到高依次优化
+
+
+3.评测
+1）指标主要是每个点的像素值欧氏距离误差（列出误差最大前10，不超过某个阈值）以及平均误差（不超过某个阈值）
+2）余弦相似度
+
+
+4.实际操作
+评测数据来自同一个目录下的左右图： /home/lc/share/datas/left.png /home/lc/share/datas/right.png
+量化int8  和 onnx float32 生成数据对比
+
+1） sh export.sh 生成onnx下的推理npy输出： ./output/export_disparity.npy   （只需要操作一次）
+2） python quant/tensor_show.py xxx/disp_pred_cast_output_0_1_1_256_512.tensor ./output/quant/tensor_show.png
+中间会产生板子推理的npy文件：./output/quant/disparity.npy   （每次操作需要使用新产生的tensor文件）
+3） python quant/disparity_diff.py --board ./output/quant/disparity.npy --onnx ./output/export_disparity.npy
+
+
+代码执行：
+python quant/disparity_diff.py --board ./output/quant/disparity.npy --onnx ./output/export_disparity.npy
+
+输出：
+✅ 已加载文件:
+  Board: ./output/quant/disparity.npy  shape=(256, 512)
+  ONNX : ./output/export_disparity.npy  shape=(256, 512)
+
+📊 对比结果：
+余弦相似度: 0.993451
+欧式距离: 878.008667
+最大绝对误差: 1.509447e+01
+平均绝对误差: 1.770710e+00
+差异超过阈值(1e-03)的比例: 99.95%
+
+
+
+其他参考数据对比：
+
+1）量化fp16  和 onnx生成数据对比
+python quant/disparity_diff.py --board /home/lc/share/gaoshantest/compare_light_out/layerdump/disp_pred_ori.npy --onnx ./output/export_disparity.npy
+
+✅ 已加载文件:
+  Board: /home/lc/share/gaoshantest/compare_light_out/layerdump/disp_pred_ori.npy  shape=(1, 1, 256, 512)
+  ONNX : ./output/export_disparity.npy  shape=(256, 512)
+
+📊 对比结果：
+余弦相似度: 1.000000
+欧式距离: 0.003870
+最大绝对误差: 7.057190e-05
+平均绝对误差: 8.040486e-06
+差异超过阈值(1e-03)的比例: 0.00%
+
+2）量化fp16  和 量化int8对比
+python quant/disparity_diff.py --board /home/lc/share/gaoshantest/compare_light_out/layerdump/disp_pred_ori.npy --onnx /home/lc/share/gaoshantest/compare_light_out/layerdump/disp_pred_quanted.npy 
+
+✅ 已加载文件:
+  Board: /home/lc/share/gaoshantest/compare_light_out/layerdump/disp_pred_ori.npy  shape=(1, 1, 256, 512)
+  ONNX : /home/lc/share/gaoshantest/compare_light_out/layerdump/disp_pred_quanted.npy  shape=(1, 1, 256, 512)
+
+📊 对比结果：
+余弦相似度: 0.997416
+欧式距离: 582.384216
+最大绝对误差: 8.032778e+00
+平均绝对误差: 1.289533e+00
+差异超过阈值(1e-03)的比例: 99.95%
+
