@@ -6,4 +6,4 @@ cd stalas
 cp ../lightstereo_ptq_out/lightstereo_s_sceneflow_general_opt_256_512_sim_conv_deploy_model.onnx lightstereo_s_sceneflow_general_opt_256_512_sim_conv_deploy_model.onnx
 cp ../lightstereo_ptq_out/lightstereo_s_sceneflow_general_opt_256_512_sim_conv_quant_param.yaml lightstereo_s_sceneflow_general_opt_256_512_sim_conv_quant_param.yaml
 cp ../config_lightstereo.yaml config_lightstereo.yaml
-/home/compiler/statlas/StatlasCompile -c config_lightstereo.yaml
+/share/statlas/StatlasCompile -c config_lightstereo.yaml

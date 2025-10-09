@@ -3,31 +3,38 @@ model:
   
 work_mode: PTQ
 
+
 quant:
   activation:
-    observer: MinMaxObserver
+    observer: KLDObserver
     dtype: int8
-    symmetry: True
+    symmetry: False
   
   weight:
-    observer: MinMaxObserver
+    observer: KLDObserver
     dtype: int8
-    symmetry: True
-    per_channel: True
+    symmetry: False
+    per_channel: False
 
-#dataset:
-#  calibrate_rand: True
-#  random_low: {"left_img": 0.0,"right_img": 0.0}
-#  random_high: 10.0
-  
+#automix:
+#    bitwidth_list: [8,16]
+#    algo: naive
+    
 dataset:
     calibrate:
       source: ./custom_loader.py
       target: custom_dataloader
       parameters:
-        root: /share/datas/testing
-        num_samples: 20
-
+        root: /share/datas/00000
+        num_samples: 50
+        
+analysis_cfg:
+   sim_compare:
+   analysis_minmax: True
+   analysis_percentile: True
+   analysis_outlier: True
+   analysis_save_histgram_path: ./compare_sim_his_out
+   analysis_result_path:  ./compare_sim_out
 
 out_dir: ./lightstereo_ptq_out
 
