@@ -21,15 +21,16 @@ from torch.onnx import TrainingMode
 # open env
 original_input_size = (0,0)
 device = 'cuda'#'cuda' if torch.cuda.is_available() else 'cpu'
-onnx_model_path = '/home/lc/gaoshan/Workspace/OpenStereo/output/model_480x640.onnx'
+onnx_model_path = './output/model_480x640.onnx'
 # onnx_model_path = '/home/wanglin/workspace/OpenStereo/premodels/model_256x512.onnx'
 # onnx_model_path = '/home/lc/gaoshan/Workspace/OpenStereo/output/model_640x1280.onnx'
 # input_shape=(1, 3, 640, 1280)
 # input_size = (1280,640)
 input_shape=(1, 3, 256, 512)
 input_size = (512,256)
-# input_shape=(1, 3, 480, 640)
-# input_size = (640,480)
+# input_shape=(1, 3, 256, 512)
+# input_size = (512,256)
+
 
 class ExportWrapper(torch.nn.Module):
     def __init__(self,ori_mode):
@@ -70,7 +71,7 @@ class ExportWrapper(torch.nn.Module):
 
 def parse_config():
     parser = argparse.ArgumentParser(description='arg parser')
-    parser.add_argument('--cfg_file', type=str, default="/home/lc/gaoshan/Workspace/OpenStereo/cfgs/lightstereo/lightstereo_l_sceneflow_general.yaml", help='specify the config for eval')
+    parser.add_argument('--cfg_file', type=str, default="/home/wanglin/workspace/OpenStereo/cfgs/lightstereo/lightstereo_l_sceneflow_general.yaml", help='specify the config for eval')
     parser.add_argument('--pretrained_model', type=str, default=None, help='pretrained_model')
 
     args = parser.parse_args()
@@ -83,15 +84,8 @@ def parse_config():
     args.dist_mode = False
     args.run_mode = 'infer'
     args.restore_ckpt = cfgs.MODEL.PRETRAINED_MODEL
-    args.left_img_path = "/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/im0.png"
-    args.right_img_path = "/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/im1.png"
-
-    args.left_img_path = "/home/lc/share/datas/left.png"
-    args.right_img_path = "/home/lc/share/datas/right.png"
-
-    # args.left_img_path = "/home/lc/share/datas/00000/Image0/00050.jpg"
-    # args.right_img_path = "/home/lc/share/datas/00000/Image1/00050.jpg"
-
+    args.left_img_path = "/media/wanglin/Elements/datasets/MiddEval3/MiddEval3/trainingQ/Piano/im0.png"
+    args.right_img_path = "/media/wanglin/Elements/datasets/MiddEval3/MiddEval3/trainingQ/Piano/im1.png"
     return args, cfgs
    
         
@@ -155,9 +149,8 @@ def load_stereo_model():
     
     transform_config = cfgs.DATA_CONFIG.DATA_TRANSFORM.EVALUATING
     transform = build_transform_by_cfg(transform_config)
-    # left_img = np.array(Image.open(args.left_img_path).convert('RGB'), dtype=np.float32)
-    # right_img = np.array(Image.open(args.right_img_path).convert('RGB'), dtype=np.float32)
-
+    
+    
     from torchvision import transforms
     left_img = Image.open(args.left_img_path).convert("RGB")
     right_img = Image.open(args.right_img_path).convert("RGB")
@@ -171,30 +164,8 @@ def load_stereo_model():
         
     left = transform(left_img)
     right = transform(right_img)
-
-
-    # left_img = cv2.resize(left_img, input_size,cv2.INTER_LINEAR)
-    # right_img = cv2.resize(right_img, input_size,cv2.INTER_LINEAR)
     
     
-    # sample = transform(sample)
-    # left_img = torch.from_numpy(left_img)
-    # right_img = torch.from_numpy(right_img)
-    
-    
-    # left = left_img.permute(2, 0, 1).float() 
-    # right = right_img.permute(2, 0, 1).float()
-        
-    # mean = [0.485, 0.456, 0.406]
-    # std =  [0.229, 0.224, 0.225]
-    # left = normalize(left / 255.0,mean, std)
-    # right = normalize(right / 255.0, mean, std)
-    
-    print(f"输出转化后的图片数据")
-    print(left)
-    print(right)
-
-
     sample = {
         'left': left,
         'right': right,
@@ -254,11 +225,6 @@ def export_to_onnx(model, data,input_shape=input_shape):
     
     dumy_left = data['left']
     dumy_right = data['right']
-
-
-    print(f"export_to_onnx  输入数据是:")
-    print(dumy_left)
-    print(dumy_right)
     
     with torch.no_grad():
         torch.onnx.export(model,(dumy_left,dumy_right),onnx_model_path,opset_version=17,
@@ -292,15 +258,7 @@ def validate_onnx_model(data,disp_pred):
     
     session = ort.InferenceSession(onnx_model_path)
     outputs = torch.tensor(session.run(['disp_pred'], ({'left_img': dummy_left,'right_img':dummy_right})))
-
-    # torch.save(outputs, '/home/lc/gaoshan/Workspace/OpenStereo/output/outputs_tensor.pt')
-    # np.save('/home/lc/gaoshan/Workspace/OpenStereo/output/outputs.txt', outputs.squeeze().cpu().numpy())
-
-
     disp_pred_onnx = outputs.squeeze().cpu().numpy()
-
-    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/export_onnx_origin.png', disp_pred_onnx)
-    np.save("./output/export_disparity.npy", disp_pred_onnx)
     
     print('---------------------------\n\n\n')
     
@@ -316,19 +274,19 @@ def validate_onnx_model(data,disp_pred):
     max_disparity = np.max(disp_pred)
     normalized = ((disp_pred - min_disparity) / (max_disparity - min_disparity) * 255).astype(np.uint8)
     disp_pred_color = cv2.applyColorMap(normalized, cv2.COLORMAP_JET)
-    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/export_apt.png', disp_pred_color)
+    cv2.imwrite('./output/export_apt.png', disp_pred_color)
     
     min_disparity = np.min(disp_pred_onnx)
     max_disparity = np.max(disp_pred_onnx)
     normalized = ((disp_pred_onnx - min_disparity) / (max_disparity - min_disparity) * 255).astype(np.uint8)
     disp_pred_color = cv2.applyColorMap(normalized, cv2.COLORMAP_JET)
-    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/export_onnx.png', disp_pred_color)
+    cv2.imwrite('./output/export_onnx.png', disp_pred_color)
     
     
     print("最大绝对误差:", diff.max())
     print("平均绝对误差:", diff.mean())
     
-    print(f"差异超过阈值的比例: {(diff > 1e-3).mean():.2%}")
+    print(f"差异超过阈值的比例: {(diff > 1e-5).mean():.2%}")
 
     # 定位差异最大的前10个位置
     top_indices = np.unravel_index(np.argsort(-diff.ravel())[:10], diff.shape)
@@ -338,18 +296,18 @@ def validate_onnx_model(data,disp_pred):
     
     
     print("ONNX 模型推理成功！输出形状：", outputs[0].shape)
-    np.testing.assert_allclose(disp_pred, disp_pred_onnx, rtol=1e-01, atol=1e-01)
+    np.testing.assert_allclose(disp_pred, disp_pred_onnx, rtol=1e-02, atol=1e-04)
 
     from stereo.datasets.dataset_utils.readpfm import readpfm
-    disp_img = readpfm("/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/disp0GT.pfm")[0].astype(np.float32)
+    disp_img = readpfm("/media/wanglin/Elements/datasets/MiddEval3/MiddEval3/trainingQ/Piano/disp0GT.pfm")[0].astype(np.float32)
     disp_img[disp_img == np.inf] = 0
-    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/disparity.png', disp_img)
+    cv2.imwrite('./output/disparity.png', disp_img)
     
     # occ_mask = Image.open("/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/mask0nocc.png")
     # occ_mask = np.array(occ_mask, dtype=np.float32)
     # occ_mask = occ_mask != 255.0
 
-    occ_mask = Image.open("/home/lc/gaoshan/Workspace/dataset/MiddEval3/trainingQ/Piano/mask0nocc.png").convert('L')
+    occ_mask = Image.open("/media/wanglin/Elements/datasets/MiddEval3/MiddEval3/trainingQ/Piano/mask0nocc.png").convert('L')
     occ_mask = np.array(occ_mask, dtype=np.float32)
     occ_mask = occ_mask < 1
 
@@ -361,17 +319,17 @@ def validate_onnx_model(data,disp_pred):
 
     disp_pred = disp_pred * (707.0 / input_size[0])
     disp_pred = cv2.resize(disp_pred, original_input_size,cv2.INTER_LINEAR)
-    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/disparity_infer.png', disp_pred)
+    cv2.imwrite('./output/disparity_infer.png', disp_pred)
     
 
     #  遮挡区域置 0
     disp_pred = np.where(occ_mask == 1, 0, disp_pred)
-    cv2.imwrite('/home/lc/gaoshan/Workspace/OpenStereo/output/disparity_infer_occ.png', disp_pred)
+    cv2.imwrite('./output/disparity_infer_occ.png', disp_pred)
     
     diff = np.abs(disp_img - disp_pred)
     print("最大绝对误差:", diff.max())
     print("平均绝对误差:", diff.mean())
-    print(f"差异超过阈值的比例: {(diff > 1e-3).mean():.2%}")
+    print(f"差异超过阈值的比例: {(diff > 1e-5).mean():.2%}")
 
     # 定位差异最大的前10个位置
     top_indices = np.unravel_index(np.argsort(-diff.ravel())[:10], diff.shape)

@@ -1,0 +1,82 @@
+一些典型支持的算子包括（非穷尽）：
+
+卷积层（Convolution / Deconvolution）
+
+全连接层（Fully Connected / Gemm）
+
+池化（Max Pool、Average Pool、Global Pool）
+
+激活函数（ReLU, LeakyReLU, Sigmoid, Tanh 等）
+
+逐元素算子（Add, Sub, Mul, Div, Exp, Log, Sqrt, etc）
+
+变换／重塑／索引算子（Reshape, Transpose, Slice, Pad, Gather, etc）
+
+矩阵运算（MatMul）
+
+扩展／广播／拼接（Concat, Tile, Expand）
+
+量化相关和 INT8/FP16 支持算子
+
+
+
+MatMul + Scale + Add + Softmax + MatMul  →  Attention
+QKV Linear + Split + Attention + Concat + Linear → MultiHeadAttention
+
+
+GRU/LSTM算子：
+GRU 是 LSTM 的简化版，它同样解决 RNN 的梯度消失问题，但去掉了单独的 Cell 状态，只保留一个隐藏状态 
+| 门                             | 作用        | 控制信号   |
+| ----------------------------- | --------- | ------ |
+| **更新门 (Update gate)** ( z_t ) | 决定保留多少旧信息 | 记忆更新程度 |
+| **重置门 (Reset gate)** ( r_t )  | 决定遗忘多少旧信息 | 短期记忆清除 |
+
+GRU：参数少、计算量小
+Transformer：并行化强，适合长序列
+但 LSTM 在小型序列建模和嵌入设备仍广泛使用
+
+
+
+HammingWindow算子:
+生成一个 Hamming 窗，用于加权信号（例如音频帧）以减少频谱泄漏，加窗平滑边缘过渡
+
+
+instanceNormal/LayerNormal/BatchNormal理解
+
+
+
+
+| 上采样方法  | ONNX 算子                     | 特点              | 应用                        |
+| ------ | --------------------------- | --------------- | ------------------------- |
+| 池化反向   | MaxUnpool                   | 保留池化索引，重建最大值    | UNet Decoder, Autoencoder |
+| 插值     | Resize / Upsample           | 最近邻/线性/双线性/三次插值 | 图像放大、Segmentation         |
+| 转置卷积   | ConvTranspose               | 可学习权重，上采样同时提取特征 | GAN, Segmentation         |
+| 通道到空间  | DepthToSpace / PixelShuffle | 通道重排到空间         | 超分辨率 SR                   |
+| 范数池化反向 | LpPool + MaxUnpool          | 保留局部能量信息        | 特征重建                      |
+
+
+
+
+SELU	λx	λ α (e^x - 1)	自动保持均值/方差归一化
+| 激活函数      | 输出范围    | 特性                    |
+| --------- | ------- | --------------------- |
+| ReLU      | [0, ∞)  | 非平滑，0 点不可导            |
+| LeakyReLU | (-∞, ∞) | 平滑负区间，线性              |
+| ELU       | (-α, ∞) | 平滑，可负输出               |
+| Softplus  | (0, ∞)  | 平滑近似 ReLU，梯度是 Sigmoid |
+| Sigmoid   | (0, 1)  | 平滑，压缩到 [0,1]          |
+| Swish     | (-∞, ∞) | 平滑自门控，非线性可调 |
+
+
+
+| 函数       | 输出范围     | 平滑性    | 特点          |
+| -------- | -------- | ------ | ----------- |
+| Sign     | {-1,0,1} | ❌ 不连续  | 精确符号，但不可导   |
+| Softsign | (-1,1)   | ✅ 连续可导 | 平滑符号函数      |
+| Tanh     | (-1,1)   | ✅ 连续可导 | 指数型收敛，平滑饱和  |
+| Sigmoid  | (0,1)    | ✅ 连续可导 | 平滑压缩到 [0,1] |
+| Softplus | (0,∞)    | ✅ 连续可导 | ReLU 平滑近似   |
+
+
+
+

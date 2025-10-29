@@ -12,3 +12,4 @@ tools/infershape.py
 tools/testpytorch2onnx.py
 **.onnx
 premodels
+**.npy

@@ -1,0 +1,9188 @@
+[
+  {
+    "name": "Conv_0",
+    "type": "Conv",
+    "inputs": [
+      "left_img",
+      "mode/backbone/conv_stem/Conv.weight",
+      "mode/backbone/conv_stem/Conv.bias"
+    ],
+    "outputs": [
+      "input"
+    ]
+  },
+  {
+    "name": "Clip_5",
+    "type": "Clip",
+    "inputs": [
+      "input",
+      "onnx::Clip_1466",
+      "onnx::Clip_1467"
+    ],
+    "outputs": [
+      "input.12"
+    ]
+  },
+  {
+    "name": "Conv_10",
+    "type": "Conv",
+    "inputs": [
+      "input.12",
+      "mode/backbone/block0/block0/0/conv_dw/Conv.weight",
+      "mode/backbone/block0/block0/0/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.24"
+    ]
+  },
+  {
+    "name": "Clip_15",
+    "type": "Clip",
+    "inputs": [
+      "input.24",
+      "onnx::Clip_1476",
+      "onnx::Clip_1477"
+    ],
+    "outputs": [
+      "input.36"
+    ]
+  },
+  {
+    "name": "Conv_20",
+    "type": "Conv",
+    "inputs": [
+      "input.36",
+      "mode/backbone/block0/block0/0/conv_pw/Conv.weight",
+      "mode/backbone/block0/block0/0/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.44"
+    ]
+  },
+  {
+    "name": "Conv_22",
+    "type": "Conv",
+    "inputs": [
+      "input.44",
+      "mode/backbone/block1/block1/0/conv_pw/Conv.weight",
+      "mode/backbone/block1/block1/0/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.52"
+    ]
+  },
+  {
+    "name": "Clip_26",
+    "type": "Clip",
+    "inputs": [
+      "input.52",
+      "onnx::Clip_1487",
+      "onnx::Clip_1488"
+    ],
+    "outputs": [
+      "input.60"
+    ]
+  },
+  {
+    "name": "Conv_30",
+    "type": "Conv",
+    "inputs": [
+      "input.60",
+      "mode/backbone/block1/block1/0/conv_dw/Conv.weight",
+      "mode/backbone/block1/block1/0/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.68"
+    ]
+  },
+  {
+    "name": "Clip_34",
+    "type": "Clip",
+    "inputs": [
+      "input.68",
+      "onnx::Clip_1495",
+      "onnx::Clip_1496"
+    ],
+    "outputs": [
+      "input.76"
+    ]
+  },
+  {
+    "name": "Conv_38",
+    "type": "Conv",
+    "inputs": [
+      "input.76",
+      "mode/backbone/block1/block1/0/conv_pwl/Conv.weight",
+      "mode/backbone/block1/block1/0/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "input.84"
+    ]
+  },
+  {
+    "name": "Conv_40",
+    "type": "Conv",
+    "inputs": [
+      "input.84",
+      "mode/backbone/block1/block1/1/conv_pw/Conv.weight",
+      "mode/backbone/block1/block1/1/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.92"
+    ]
+  },
+  {
+    "name": "Clip_44",
+    "type": "Clip",
+    "inputs": [
+      "input.92",
+      "onnx::Clip_1505",
+      "onnx::Clip_1506"
+    ],
+    "outputs": [
+      "input.100"
+    ]
+  },
+  {
+    "name": "Conv_48",
+    "type": "Conv",
+    "inputs": [
+      "input.100",
+      "mode/backbone/block1/block1/1/conv_dw/Conv.weight",
+      "mode/backbone/block1/block1/1/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.108"
+    ]
+  },
+  {
+    "name": "Clip_52",
+    "type": "Clip",
+    "inputs": [
+      "input.108",
+      "onnx::Clip_1513",
+      "onnx::Clip_1514"
+    ],
+    "outputs": [
+      "input.116"
+    ]
+  },
+  {
+    "name": "Conv_56",
+    "type": "Conv",
+    "inputs": [
+      "input.116",
+      "mode/backbone/block1/block1/1/conv_pwl/Conv.weight",
+      "mode/backbone/block1/block1/1/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1519"
+    ]
+  },
+  {
+    "name": "Add_58",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1519",
+      "input.84"
+    ],
+    "outputs": [
+      "input.124"
+    ]
+  },
+  {
+    "name": "Conv_60",
+    "type": "Conv",
+    "inputs": [
+      "input.124",
+      "mode/backbone/block2/block2/0/conv_pw/Conv.weight",
+      "mode/backbone/block2/block2/0/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.132"
+    ]
+  },
+  {
+    "name": "Clip_64",
+    "type": "Clip",
+    "inputs": [
+      "input.132",
+      "onnx::Clip_1525",
+      "onnx::Clip_1526"
+    ],
+    "outputs": [
+      "input.140"
+    ]
+  },
+  {
+    "name": "Conv_68",
+    "type": "Conv",
+    "inputs": [
+      "input.140",
+      "mode/backbone/block2/block2/0/conv_dw/Conv.weight",
+      "mode/backbone/block2/block2/0/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.148"
+    ]
+  },
+  {
+    "name": "Clip_72",
+    "type": "Clip",
+    "inputs": [
+      "input.148",
+      "onnx::Clip_1533",
+      "onnx::Clip_1534"
+    ],
+    "outputs": [
+      "input.156"
+    ]
+  },
+  {
+    "name": "Conv_76",
+    "type": "Conv",
+    "inputs": [
+      "input.156",
+      "mode/backbone/block2/block2/0/conv_pwl/Conv.weight",
+      "mode/backbone/block2/block2/0/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "input.164"
+    ]
+  },
+  {
+    "name": "Conv_78",
+    "type": "Conv",
+    "inputs": [
+      "input.164",
+      "mode/backbone/block2/block2/1/conv_pw/Conv.weight",
+      "mode/backbone/block2/block2/1/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.172"
+    ]
+  },
+  {
+    "name": "Clip_82",
+    "type": "Clip",
+    "inputs": [
+      "input.172",
+      "onnx::Clip_1543",
+      "onnx::Clip_1544"
+    ],
+    "outputs": [
+      "input.180"
+    ]
+  },
+  {
+    "name": "Conv_86",
+    "type": "Conv",
+    "inputs": [
+      "input.180",
+      "mode/backbone/block2/block2/1/conv_dw/Conv.weight",
+      "mode/backbone/block2/block2/1/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.188"
+    ]
+  },
+  {
+    "name": "Clip_90",
+    "type": "Clip",
+    "inputs": [
+      "input.188",
+      "onnx::Clip_1551",
+      "onnx::Clip_1552"
+    ],
+    "outputs": [
+      "input.196"
+    ]
+  },
+  {
+    "name": "Conv_94",
+    "type": "Conv",
+    "inputs": [
+      "input.196",
+      "mode/backbone/block2/block2/1/conv_pwl/Conv.weight",
+      "mode/backbone/block2/block2/1/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1557"
+    ]
+  },
+  {
+    "name": "Add_96",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1557",
+      "input.164"
+    ],
+    "outputs": [
+      "input.204"
+    ]
+  },
+  {
+    "name": "Conv_98",
+    "type": "Conv",
+    "inputs": [
+      "input.204",
+      "mode/backbone/block2/block2/2/conv_pw/Conv.weight",
+      "mode/backbone/block2/block2/2/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.212"
+    ]
+  },
+  {
+    "name": "Clip_102",
+    "type": "Clip",
+    "inputs": [
+      "input.212",
+      "onnx::Clip_1563",
+      "onnx::Clip_1564"
+    ],
+    "outputs": [
+      "input.220"
+    ]
+  },
+  {
+    "name": "Conv_106",
+    "type": "Conv",
+    "inputs": [
+      "input.220",
+      "mode/backbone/block2/block2/2/conv_dw/Conv.weight",
+      "mode/backbone/block2/block2/2/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.228"
+    ]
+  },
+  {
+    "name": "Clip_110",
+    "type": "Clip",
+    "inputs": [
+      "input.228",
+      "onnx::Clip_1571",
+      "onnx::Clip_1572"
+    ],
+    "outputs": [
+      "input.236"
+    ]
+  },
+  {
+    "name": "Conv_114",
+    "type": "Conv",
+    "inputs": [
+      "input.236",
+      "mode/backbone/block2/block2/2/conv_pwl/Conv.weight",
+      "mode/backbone/block2/block2/2/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1577"
+    ]
+  },
+  {
+    "name": "Add_116",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1577",
+      "input.204"
+    ],
+    "outputs": [
+      "input.244"
+    ]
+  },
+  {
+    "name": "Conv_118",
+    "type": "Conv",
+    "inputs": [
+      "input.244",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.252"
+    ]
+  },
+  {
+    "name": "Clip_122",
+    "type": "Clip",
+    "inputs": [
+      "input.252",
+      "onnx::Clip_1583",
+      "onnx::Clip_1584"
+    ],
+    "outputs": [
+      "input.260"
+    ]
+  },
+  {
+    "name": "Conv_126",
+    "type": "Conv",
+    "inputs": [
+      "input.260",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_dw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.268"
+    ]
+  },
+  {
+    "name": "Clip_130",
+    "type": "Clip",
+    "inputs": [
+      "input.268",
+      "onnx::Clip_1591",
+      "onnx::Clip_1592"
+    ],
+    "outputs": [
+      "input.276"
+    ]
+  },
+  {
+    "name": "Conv_134",
+    "type": "Conv",
+    "inputs": [
+      "input.276",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pwl/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "input.284"
+    ]
+  },
+  {
+    "name": "Conv_136",
+    "type": "Conv",
+    "inputs": [
+      "input.284",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.292"
+    ]
+  },
+  {
+    "name": "Clip_140",
+    "type": "Clip",
+    "inputs": [
+      "input.292",
+      "onnx::Clip_1601",
+      "onnx::Clip_1602"
+    ],
+    "outputs": [
+      "input.300"
+    ]
+  },
+  {
+    "name": "Conv_144",
+    "type": "Conv",
+    "inputs": [
+      "input.300",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_dw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.308"
+    ]
+  },
+  {
+    "name": "Clip_148",
+    "type": "Clip",
+    "inputs": [
+      "input.308",
+      "onnx::Clip_1609",
+      "onnx::Clip_1610"
+    ],
+    "outputs": [
+      "input.316"
+    ]
+  },
+  {
+    "name": "Conv_152",
+    "type": "Conv",
+    "inputs": [
+      "input.316",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pwl/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1615"
+    ]
+  },
+  {
+    "name": "Add_154",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1615",
+      "input.284"
+    ],
+    "outputs": [
+      "input.324"
+    ]
+  },
+  {
+    "name": "Conv_156",
+    "type": "Conv",
+    "inputs": [
+      "input.324",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.332"
+    ]
+  },
+  {
+    "name": "Clip_160",
+    "type": "Clip",
+    "inputs": [
+      "input.332",
+      "onnx::Clip_1621",
+      "onnx::Clip_1622"
+    ],
+    "outputs": [
+      "input.340"
+    ]
+  },
+  {
+    "name": "Conv_164",
+    "type": "Conv",
+    "inputs": [
+      "input.340",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_dw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.348"
+    ]
+  },
+  {
+    "name": "Clip_168",
+    "type": "Clip",
+    "inputs": [
+      "input.348",
+      "onnx::Clip_1629",
+      "onnx::Clip_1630"
+    ],
+    "outputs": [
+      "input.356"
+    ]
+  },
+  {
+    "name": "Conv_172",
+    "type": "Conv",
+    "inputs": [
+      "input.356",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pwl/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1635"
+    ]
+  },
+  {
+    "name": "Add_174",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1635",
+      "input.324"
+    ],
+    "outputs": [
+      "input.364"
+    ]
+  },
+  {
+    "name": "Conv_176",
+    "type": "Conv",
+    "inputs": [
+      "input.364",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.372"
+    ]
+  },
+  {
+    "name": "Clip_180",
+    "type": "Clip",
+    "inputs": [
+      "input.372",
+      "onnx::Clip_1641",
+      "onnx::Clip_1642"
+    ],
+    "outputs": [
+      "input.380"
+    ]
+  },
+  {
+    "name": "Conv_184",
+    "type": "Conv",
+    "inputs": [
+      "input.380",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_dw/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.388"
+    ]
+  },
+  {
+    "name": "Clip_188",
+    "type": "Clip",
+    "inputs": [
+      "input.388",
+      "onnx::Clip_1649",
+      "onnx::Clip_1650"
+    ],
+    "outputs": [
+      "input.396"
+    ]
+  },
+  {
+    "name": "Conv_192",
+    "type": "Conv",
+    "inputs": [
+      "input.396",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pwl/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1655"
+    ]
+  },
+  {
+    "name": "Add_194",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1655",
+      "input.364"
+    ],
+    "outputs": [
+      "input.404"
+    ]
+  },
+  {
+    "name": "Conv_196",
+    "type": "Conv",
+    "inputs": [
+      "input.404",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pw/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.412"
+    ]
+  },
+  {
+    "name": "Clip_200",
+    "type": "Clip",
+    "inputs": [
+      "input.412",
+      "onnx::Clip_1661",
+      "onnx::Clip_1662"
+    ],
+    "outputs": [
+      "input.420"
+    ]
+  },
+  {
+    "name": "Conv_204",
+    "type": "Conv",
+    "inputs": [
+      "input.420",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_dw/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.428"
+    ]
+  },
+  {
+    "name": "Clip_208",
+    "type": "Clip",
+    "inputs": [
+      "input.428",
+      "onnx::Clip_1669",
+      "onnx::Clip_1670"
+    ],
+    "outputs": [
+      "input.436"
+    ]
+  },
+  {
+    "name": "Conv_212",
+    "type": "Conv",
+    "inputs": [
+      "input.436",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pwl/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "input.444"
+    ]
+  },
+  {
+    "name": "Conv_214",
+    "type": "Conv",
+    "inputs": [
+      "input.444",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pw/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.452"
+    ]
+  },
+  {
+    "name": "Clip_218",
+    "type": "Clip",
+    "inputs": [
+      "input.452",
+      "onnx::Clip_1679",
+      "onnx::Clip_1680"
+    ],
+    "outputs": [
+      "input.460"
+    ]
+  },
+  {
+    "name": "Conv_222",
+    "type": "Conv",
+    "inputs": [
+      "input.460",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_dw/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.468"
+    ]
+  },
+  {
+    "name": "Clip_226",
+    "type": "Clip",
+    "inputs": [
+      "input.468",
+      "onnx::Clip_1687",
+      "onnx::Clip_1688"
+    ],
+    "outputs": [
+      "input.476"
+    ]
+  },
+  {
+    "name": "Conv_230",
+    "type": "Conv",
+    "inputs": [
+      "input.476",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pwl/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1693"
+    ]
+  },
+  {
+    "name": "Add_232",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1693",
+      "input.444"
+    ],
+    "outputs": [
+      "input.484"
+    ]
+  },
+  {
+    "name": "Conv_234",
+    "type": "Conv",
+    "inputs": [
+      "input.484",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pw/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.492"
+    ]
+  },
+  {
+    "name": "Clip_238",
+    "type": "Clip",
+    "inputs": [
+      "input.492",
+      "onnx::Clip_1699",
+      "onnx::Clip_1700"
+    ],
+    "outputs": [
+      "input.500"
+    ]
+  },
+  {
+    "name": "Conv_242",
+    "type": "Conv",
+    "inputs": [
+      "input.500",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_dw/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.508"
+    ]
+  },
+  {
+    "name": "Clip_246",
+    "type": "Clip",
+    "inputs": [
+      "input.508",
+      "onnx::Clip_1707",
+      "onnx::Clip_1708"
+    ],
+    "outputs": [
+      "input.516"
+    ]
+  },
+  {
+    "name": "Conv_250",
+    "type": "Conv",
+    "inputs": [
+      "input.516",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pwl/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1713"
+    ]
+  },
+  {
+    "name": "Add_252",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1713",
+      "input.484"
+    ],
+    "outputs": [
+      "input.524"
+    ]
+  },
+  {
+    "name": "Conv_254",
+    "type": "Conv",
+    "inputs": [
+      "input.524",
+      "mode/backbone/block4/block4/0/conv_pw/Conv.weight",
+      "mode/backbone/block4/block4/0/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.532"
+    ]
+  },
+  {
+    "name": "Clip_258",
+    "type": "Clip",
+    "inputs": [
+      "input.532",
+      "onnx::Clip_1719",
+      "onnx::Clip_1720"
+    ],
+    "outputs": [
+      "input.540"
+    ]
+  },
+  {
+    "name": "Conv_262",
+    "type": "Conv",
+    "inputs": [
+      "input.540",
+      "mode/backbone/block4/block4/0/conv_dw/Conv.weight",
+      "mode/backbone/block4/block4/0/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.548"
+    ]
+  },
+  {
+    "name": "Clip_266",
+    "type": "Clip",
+    "inputs": [
+      "input.548",
+      "onnx::Clip_1727",
+      "onnx::Clip_1728"
+    ],
+    "outputs": [
+      "input.556"
+    ]
+  },
+  {
+    "name": "Conv_270",
+    "type": "Conv",
+    "inputs": [
+      "input.556",
+      "mode/backbone/block4/block4/0/conv_pwl/Conv.weight",
+      "mode/backbone/block4/block4/0/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "input.564"
+    ]
+  },
+  {
+    "name": "Conv_272",
+    "type": "Conv",
+    "inputs": [
+      "input.564",
+      "mode/backbone/block4/block4/1/conv_pw/Conv.weight",
+      "mode/backbone/block4/block4/1/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.572"
+    ]
+  },
+  {
+    "name": "Clip_276",
+    "type": "Clip",
+    "inputs": [
+      "input.572",
+      "onnx::Clip_1737",
+      "onnx::Clip_1738"
+    ],
+    "outputs": [
+      "input.580"
+    ]
+  },
+  {
+    "name": "Conv_280",
+    "type": "Conv",
+    "inputs": [
+      "input.580",
+      "mode/backbone/block4/block4/1/conv_dw/Conv.weight",
+      "mode/backbone/block4/block4/1/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.588"
+    ]
+  },
+  {
+    "name": "Clip_284",
+    "type": "Clip",
+    "inputs": [
+      "input.588",
+      "onnx::Clip_1745",
+      "onnx::Clip_1746"
+    ],
+    "outputs": [
+      "input.596"
+    ]
+  },
+  {
+    "name": "Conv_288",
+    "type": "Conv",
+    "inputs": [
+      "input.596",
+      "mode/backbone/block4/block4/1/conv_pwl/Conv.weight",
+      "mode/backbone/block4/block4/1/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1751"
+    ]
+  },
+  {
+    "name": "Add_290",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1751",
+      "input.564"
+    ],
+    "outputs": [
+      "input.604"
+    ]
+  },
+  {
+    "name": "Conv_292",
+    "type": "Conv",
+    "inputs": [
+      "input.604",
+      "mode/backbone/block4/block4/2/conv_pw/Conv.weight",
+      "mode/backbone/block4/block4/2/conv_pw/Conv.bias"
+    ],
+    "outputs": [
+      "input.612"
+    ]
+  },
+  {
+    "name": "Clip_296",
+    "type": "Clip",
+    "inputs": [
+      "input.612",
+      "onnx::Clip_1757",
+      "onnx::Clip_1758"
+    ],
+    "outputs": [
+      "input.620"
+    ]
+  },
+  {
+    "name": "Conv_300",
+    "type": "Conv",
+    "inputs": [
+      "input.620",
+      "mode/backbone/block4/block4/2/conv_dw/Conv.weight",
+      "mode/backbone/block4/block4/2/conv_dw/Conv.bias"
+    ],
+    "outputs": [
+      "input.628"
+    ]
+  },
+  {
+    "name": "Clip_304",
+    "type": "Clip",
+    "inputs": [
+      "input.628",
+      "onnx::Clip_1765",
+      "onnx::Clip_1766"
+    ],
+    "outputs": [
+      "input.636"
+    ]
+  },
+  {
+    "name": "Conv_308",
+    "type": "Conv",
+    "inputs": [
+      "input.636",
+      "mode/backbone/block4/block4/2/conv_pwl/Conv.weight",
+      "mode/backbone/block4/block4/2/conv_pwl/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1771"
+    ]
+  },
+  {
+    "name": "Add_310",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1771",
+      "input.604"
+    ],
+    "outputs": [
+      "input.644"
+    ]
+  },
+  {
+    "name": "ConvTranspose_312",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.644",
+      "mode/backbone/fpn_layer4/deconv/block/block/0/ConvTranspose.weight",
+      "mode/backbone/fpn_layer4/deconv/block/block/0/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "input.652"
+    ]
+  },
+  {
+    "name": "LeakyRelu_314",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.652"
+    ],
+    "outputs": [
+      "onnx::Concat_1777"
+    ]
+  },
+  {
+    "name": "Concat_316",
+    "type": "Concat",
+    "inputs": [
+      "input.524",
+      "onnx::Concat_1777"
+    ],
+    "outputs": [
+      "input.660"
+    ]
+  },
+  {
+    "name": "Conv_318",
+    "type": "Conv",
+    "inputs": [
+      "input.660",
+      "mode/backbone/fpn_layer4/conv/block/block/0/Conv.weight",
+      "mode/backbone/fpn_layer4/conv/block/block/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.668"
+    ]
+  },
+  {
+    "name": "LeakyRelu_320",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.668"
+    ],
+    "outputs": [
+      "input.676"
+    ]
+  },
+  {
+    "name": "Conv_324",
+    "type": "Conv",
+    "inputs": [
+      "input.676",
+      "mode/cost_agg/att4/conv0/Conv.weight",
+      "mode/cost_agg/att4/conv0/Conv.bias"
+    ],
+    "outputs": [
+      "input.692"
+    ]
+  },
+  {
+    "name": "Conv_325",
+    "type": "Conv",
+    "inputs": [
+      "input.692",
+      "mode/cost_agg/att4/conv0_1/Conv.weight",
+      "mode/cost_agg/att4/conv0_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.696"
+    ]
+  },
+  {
+    "name": "Conv_330",
+    "type": "Conv",
+    "inputs": [
+      "input.696",
+      "mode/cost_agg/att4/conv0_2/Conv.weight",
+      "mode/cost_agg/att4/conv0_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1793"
+    ]
+  },
+  {
+    "name": "Add_335",
+    "type": "Add",
+    "inputs": [
+      "input.692",
+      "onnx::Add_1793"
+    ],
+    "outputs": [
+      "onnx::Add_1798"
+    ]
+  },
+  {
+    "name": "Conv_326",
+    "type": "Conv",
+    "inputs": [
+      "input.692",
+      "mode/cost_agg/att4/conv1_1/Conv.weight",
+      "mode/cost_agg/att4/conv1_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.700"
+    ]
+  },
+  {
+    "name": "Conv_331",
+    "type": "Conv",
+    "inputs": [
+      "input.700",
+      "mode/cost_agg/att4/conv1_2/Conv.weight",
+      "mode/cost_agg/att4/conv1_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1794"
+    ]
+  },
+  {
+    "name": "Add_338",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1798",
+      "onnx::Add_1794"
+    ],
+    "outputs": [
+      "onnx::Add_1801"
+    ]
+  },
+  {
+    "name": "Conv_327",
+    "type": "Conv",
+    "inputs": [
+      "input.692",
+      "mode/cost_agg/att4/conv2_1/Conv.weight",
+      "mode/cost_agg/att4/conv2_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.704"
+    ]
+  },
+  {
+    "name": "Conv_332",
+    "type": "Conv",
+    "inputs": [
+      "input.704",
+      "mode/cost_agg/att4/conv2_2/Conv.weight",
+      "mode/cost_agg/att4/conv2_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1795"
+    ]
+  },
+  {
+    "name": "Add_341",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1801",
+      "onnx::Add_1795"
+    ],
+    "outputs": [
+      "input.732"
+    ]
+  },
+  {
+    "name": "Conv_345",
+    "type": "Conv",
+    "inputs": [
+      "input.732",
+      "mode/cost_agg/att4/conv3/Conv.weight",
+      "mode/cost_agg/att4/conv3/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Mul_1808"
+    ]
+  },
+  {
+    "name": "ConvTranspose_322",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.676",
+      "mode/backbone/fpn_layer3/deconv/block/block/0/ConvTranspose.weight",
+      "mode/backbone/fpn_layer3/deconv/block/block/0/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "input.684"
+    ]
+  },
+  {
+    "name": "LeakyRelu_328",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.684"
+    ],
+    "outputs": [
+      "onnx::Concat_1791"
+    ]
+  },
+  {
+    "name": "Concat_333",
+    "type": "Concat",
+    "inputs": [
+      "input.244",
+      "onnx::Concat_1791"
+    ],
+    "outputs": [
+      "input.708"
+    ]
+  },
+  {
+    "name": "Conv_336",
+    "type": "Conv",
+    "inputs": [
+      "input.708",
+      "mode/backbone/fpn_layer3/conv/block/block/0/Conv.weight",
+      "mode/backbone/fpn_layer3/conv/block/block/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.716"
+    ]
+  },
+  {
+    "name": "LeakyRelu_339",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.716"
+    ],
+    "outputs": [
+      "input.724"
+    ]
+  },
+  {
+    "name": "Conv_344",
+    "type": "Conv",
+    "inputs": [
+      "input.724",
+      "mode/cost_agg/att2/conv0/Conv.weight",
+      "mode/cost_agg/att2/conv0/Conv.bias"
+    ],
+    "outputs": [
+      "input.744"
+    ]
+  },
+  {
+    "name": "Conv_346",
+    "type": "Conv",
+    "inputs": [
+      "input.744",
+      "mode/cost_agg/att2/conv0_1/Conv.weight",
+      "mode/cost_agg/att2/conv0_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.748"
+    ]
+  },
+  {
+    "name": "Conv_351",
+    "type": "Conv",
+    "inputs": [
+      "input.748",
+      "mode/cost_agg/att2/conv0_2/Conv.weight",
+      "mode/cost_agg/att2/conv0_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1814"
+    ]
+  },
+  {
+    "name": "Add_356",
+    "type": "Add",
+    "inputs": [
+      "input.744",
+      "onnx::Add_1814"
+    ],
+    "outputs": [
+      "onnx::Add_1819"
+    ]
+  },
+  {
+    "name": "Conv_347",
+    "type": "Conv",
+    "inputs": [
+      "input.744",
+      "mode/cost_agg/att2/conv1_1/Conv.weight",
+      "mode/cost_agg/att2/conv1_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.752"
+    ]
+  },
+  {
+    "name": "Conv_352",
+    "type": "Conv",
+    "inputs": [
+      "input.752",
+      "mode/cost_agg/att2/conv1_2/Conv.weight",
+      "mode/cost_agg/att2/conv1_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1815"
+    ]
+  },
+  {
+    "name": "Add_359",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1819",
+      "onnx::Add_1815"
+    ],
+    "outputs": [
+      "onnx::Add_1822"
+    ]
+  },
+  {
+    "name": "Conv_348",
+    "type": "Conv",
+    "inputs": [
+      "input.744",
+      "mode/cost_agg/att2/conv2_1/Conv.weight",
+      "mode/cost_agg/att2/conv2_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.756"
+    ]
+  },
+  {
+    "name": "Conv_353",
+    "type": "Conv",
+    "inputs": [
+      "input.756",
+      "mode/cost_agg/att2/conv2_2/Conv.weight",
+      "mode/cost_agg/att2/conv2_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1816"
+    ]
+  },
+  {
+    "name": "Add_362",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1822",
+      "onnx::Add_1816"
+    ],
+    "outputs": [
+      "input.776"
+    ]
+  },
+  {
+    "name": "Conv_365",
+    "type": "Conv",
+    "inputs": [
+      "input.776",
+      "mode/cost_agg/att2/conv3/Conv.weight",
+      "mode/cost_agg/att2/conv3/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Mul_1828"
+    ]
+  },
+  {
+    "name": "ConvTranspose_342",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.724",
+      "mode/backbone/fpn_layer2/deconv/block/block/0/ConvTranspose.weight",
+      "mode/backbone/fpn_layer2/deconv/block/block/0/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "input.736"
+    ]
+  },
+  {
+    "name": "LeakyRelu_349",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.736"
+    ],
+    "outputs": [
+      "onnx::Concat_1812"
+    ]
+  },
+  {
+    "name": "Concat_354",
+    "type": "Concat",
+    "inputs": [
+      "input.124",
+      "onnx::Concat_1812"
+    ],
+    "outputs": [
+      "input.760"
+    ]
+  },
+  {
+    "name": "Conv_357",
+    "type": "Conv",
+    "inputs": [
+      "input.760",
+      "mode/backbone/fpn_layer2/conv/block/block/0/Conv.weight",
+      "mode/backbone/fpn_layer2/conv/block/block/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.768"
+    ]
+  },
+  {
+    "name": "LeakyRelu_360",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.768"
+    ],
+    "outputs": [
+      "onnx::Pad_1823"
+    ]
+  },
+  {
+    "name": "Pad_363",
+    "type": "Pad",
+    "inputs": [
+      "onnx::Pad_1823",
+      "initializers.onnx_initializer_268"
+    ],
+    "outputs": [
+      "input.780"
+    ]
+  },
+  {
+    "name": "Conv_366",
+    "type": "Conv",
+    "inputs": [
+      "input.780",
+      "mode/backbone/out_conv/block/block/0/Conv.weight"
+    ],
+    "outputs": [
+      "input_data"
+    ]
+  },
+  {
+    "name": "InstanceNormalization_368",
+    "type": "InstanceNormalization",
+    "inputs": [
+      "input_data",
+      "initializers.onnx_initializer_274",
+      "initializers.onnx_initializer_275"
+    ],
+    "outputs": [
+      "input.788"
+    ]
+  },
+  {
+    "name": "Conv_371",
+    "type": "Conv",
+    "inputs": [
+      "input.788",
+      "mode/cost_agg/att0/conv0/Conv.weight",
+      "mode/cost_agg/att0/conv0/Conv.bias"
+    ],
+    "outputs": [
+      "input.792"
+    ]
+  },
+  {
+    "name": "Conv_421",
+    "type": "Conv",
+    "inputs": [
+      "input.792",
+      "mode/cost_agg/att0/conv0_1/Conv.weight",
+      "mode/cost_agg/att0/conv0_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.796"
+    ]
+  },
+  {
+    "name": "Conv_473",
+    "type": "Conv",
+    "inputs": [
+      "input.796",
+      "mode/cost_agg/att0/conv0_2/Conv.weight",
+      "mode/cost_agg/att0/conv0_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1936"
+    ]
+  },
+  {
+    "name": "Add_525",
+    "type": "Add",
+    "inputs": [
+      "input.792",
+      "onnx::Add_1936"
+    ],
+    "outputs": [
+      "onnx::Add_1988"
+    ]
+  },
+  {
+    "name": "Conv_422",
+    "type": "Conv",
+    "inputs": [
+      "input.792",
+      "mode/cost_agg/att0/conv1_1/Conv.weight",
+      "mode/cost_agg/att0/conv1_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.800"
+    ]
+  },
+  {
+    "name": "Conv_474",
+    "type": "Conv",
+    "inputs": [
+      "input.800",
+      "mode/cost_agg/att0/conv1_2/Conv.weight",
+      "mode/cost_agg/att0/conv1_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1937"
+    ]
+  },
+  {
+    "name": "Add_528",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1988",
+      "onnx::Add_1937"
+    ],
+    "outputs": [
+      "onnx::Add_1991"
+    ]
+  },
+  {
+    "name": "Conv_423",
+    "type": "Conv",
+    "inputs": [
+      "input.792",
+      "mode/cost_agg/att0/conv2_1/Conv.weight",
+      "mode/cost_agg/att0/conv2_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.804"
+    ]
+  },
+  {
+    "name": "Conv_475",
+    "type": "Conv",
+    "inputs": [
+      "input.804",
+      "mode/cost_agg/att0/conv2_2/Conv.weight",
+      "mode/cost_agg/att0/conv2_2/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1938"
+    ]
+  },
+  {
+    "name": "Add_531",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1991",
+      "onnx::Add_1938"
+    ],
+    "outputs": [
+      "input.828"
+    ]
+  },
+  {
+    "name": "Conv_536",
+    "type": "Conv",
+    "inputs": [
+      "input.828",
+      "mode/cost_agg/att0/conv3/Conv.weight",
+      "mode/cost_agg/att0/conv3/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Mul_1999"
+    ]
+  },
+  {
+    "name": "Conv_1",
+    "type": "Conv",
+    "inputs": [
+      "right_img",
+      "mode/backbone/conv_stem_1/Conv.weight",
+      "mode/backbone/conv_stem_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.4"
+    ]
+  },
+  {
+    "name": "Clip_8",
+    "type": "Clip",
+    "inputs": [
+      "input.4",
+      "onnx::Clip_1469",
+      "onnx::Clip_1470"
+    ],
+    "outputs": [
+      "input.16"
+    ]
+  },
+  {
+    "name": "Conv_11",
+    "type": "Conv",
+    "inputs": [
+      "input.16",
+      "mode/backbone/block0/block0/0/conv_dw_1/Conv.weight",
+      "mode/backbone/block0/block0/0/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.28"
+    ]
+  },
+  {
+    "name": "Clip_18",
+    "type": "Clip",
+    "inputs": [
+      "input.28",
+      "onnx::Clip_1479",
+      "onnx::Clip_1480"
+    ],
+    "outputs": [
+      "input.40"
+    ]
+  },
+  {
+    "name": "Conv_21",
+    "type": "Conv",
+    "inputs": [
+      "input.40",
+      "mode/backbone/block0/block0/0/conv_pw_1/Conv.weight",
+      "mode/backbone/block0/block0/0/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.48"
+    ]
+  },
+  {
+    "name": "Conv_23",
+    "type": "Conv",
+    "inputs": [
+      "input.48",
+      "mode/backbone/block1/block1/0/conv_pw_1/Conv.weight",
+      "mode/backbone/block1/block1/0/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.56"
+    ]
+  },
+  {
+    "name": "Clip_29",
+    "type": "Clip",
+    "inputs": [
+      "input.56",
+      "onnx::Clip_1490",
+      "onnx::Clip_1491"
+    ],
+    "outputs": [
+      "input.64"
+    ]
+  },
+  {
+    "name": "Conv_31",
+    "type": "Conv",
+    "inputs": [
+      "input.64",
+      "mode/backbone/block1/block1/0/conv_dw_1/Conv.weight",
+      "mode/backbone/block1/block1/0/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.72"
+    ]
+  },
+  {
+    "name": "Clip_37",
+    "type": "Clip",
+    "inputs": [
+      "input.72",
+      "onnx::Clip_1498",
+      "onnx::Clip_1499"
+    ],
+    "outputs": [
+      "input.80"
+    ]
+  },
+  {
+    "name": "Conv_39",
+    "type": "Conv",
+    "inputs": [
+      "input.80",
+      "mode/backbone/block1/block1/0/conv_pwl_1/Conv.weight",
+      "mode/backbone/block1/block1/0/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.88"
+    ]
+  },
+  {
+    "name": "Conv_41",
+    "type": "Conv",
+    "inputs": [
+      "input.88",
+      "mode/backbone/block1/block1/1/conv_pw_1/Conv.weight",
+      "mode/backbone/block1/block1/1/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.96"
+    ]
+  },
+  {
+    "name": "Clip_47",
+    "type": "Clip",
+    "inputs": [
+      "input.96",
+      "onnx::Clip_1508",
+      "onnx::Clip_1509"
+    ],
+    "outputs": [
+      "input.104"
+    ]
+  },
+  {
+    "name": "Conv_49",
+    "type": "Conv",
+    "inputs": [
+      "input.104",
+      "mode/backbone/block1/block1/1/conv_dw_1/Conv.weight",
+      "mode/backbone/block1/block1/1/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.112"
+    ]
+  },
+  {
+    "name": "Clip_55",
+    "type": "Clip",
+    "inputs": [
+      "input.112",
+      "onnx::Clip_1516",
+      "onnx::Clip_1517"
+    ],
+    "outputs": [
+      "input.120"
+    ]
+  },
+  {
+    "name": "Conv_57",
+    "type": "Conv",
+    "inputs": [
+      "input.120",
+      "mode/backbone/block1/block1/1/conv_pwl_1/Conv.weight",
+      "mode/backbone/block1/block1/1/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1520"
+    ]
+  },
+  {
+    "name": "Add_59",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1520",
+      "input.88"
+    ],
+    "outputs": [
+      "input.128"
+    ]
+  },
+  {
+    "name": "Conv_61",
+    "type": "Conv",
+    "inputs": [
+      "input.128",
+      "mode/backbone/block2/block2/0/conv_pw_1/Conv.weight",
+      "mode/backbone/block2/block2/0/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.136"
+    ]
+  },
+  {
+    "name": "Clip_67",
+    "type": "Clip",
+    "inputs": [
+      "input.136",
+      "onnx::Clip_1528",
+      "onnx::Clip_1529"
+    ],
+    "outputs": [
+      "input.144"
+    ]
+  },
+  {
+    "name": "Conv_69",
+    "type": "Conv",
+    "inputs": [
+      "input.144",
+      "mode/backbone/block2/block2/0/conv_dw_1/Conv.weight",
+      "mode/backbone/block2/block2/0/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.152"
+    ]
+  },
+  {
+    "name": "Clip_75",
+    "type": "Clip",
+    "inputs": [
+      "input.152",
+      "onnx::Clip_1536",
+      "onnx::Clip_1537"
+    ],
+    "outputs": [
+      "input.160"
+    ]
+  },
+  {
+    "name": "Conv_77",
+    "type": "Conv",
+    "inputs": [
+      "input.160",
+      "mode/backbone/block2/block2/0/conv_pwl_1/Conv.weight",
+      "mode/backbone/block2/block2/0/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.168"
+    ]
+  },
+  {
+    "name": "Conv_79",
+    "type": "Conv",
+    "inputs": [
+      "input.168",
+      "mode/backbone/block2/block2/1/conv_pw_1/Conv.weight",
+      "mode/backbone/block2/block2/1/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.176"
+    ]
+  },
+  {
+    "name": "Clip_85",
+    "type": "Clip",
+    "inputs": [
+      "input.176",
+      "onnx::Clip_1546",
+      "onnx::Clip_1547"
+    ],
+    "outputs": [
+      "input.184"
+    ]
+  },
+  {
+    "name": "Conv_87",
+    "type": "Conv",
+    "inputs": [
+      "input.184",
+      "mode/backbone/block2/block2/1/conv_dw_1/Conv.weight",
+      "mode/backbone/block2/block2/1/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.192"
+    ]
+  },
+  {
+    "name": "Clip_93",
+    "type": "Clip",
+    "inputs": [
+      "input.192",
+      "onnx::Clip_1554",
+      "onnx::Clip_1555"
+    ],
+    "outputs": [
+      "input.200"
+    ]
+  },
+  {
+    "name": "Conv_95",
+    "type": "Conv",
+    "inputs": [
+      "input.200",
+      "mode/backbone/block2/block2/1/conv_pwl_1/Conv.weight",
+      "mode/backbone/block2/block2/1/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1558"
+    ]
+  },
+  {
+    "name": "Add_97",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1558",
+      "input.168"
+    ],
+    "outputs": [
+      "input.208"
+    ]
+  },
+  {
+    "name": "Conv_99",
+    "type": "Conv",
+    "inputs": [
+      "input.208",
+      "mode/backbone/block2/block2/2/conv_pw_1/Conv.weight",
+      "mode/backbone/block2/block2/2/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.216"
+    ]
+  },
+  {
+    "name": "Clip_105",
+    "type": "Clip",
+    "inputs": [
+      "input.216",
+      "onnx::Clip_1566",
+      "onnx::Clip_1567"
+    ],
+    "outputs": [
+      "input.224"
+    ]
+  },
+  {
+    "name": "Conv_107",
+    "type": "Conv",
+    "inputs": [
+      "input.224",
+      "mode/backbone/block2/block2/2/conv_dw_1/Conv.weight",
+      "mode/backbone/block2/block2/2/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.232"
+    ]
+  },
+  {
+    "name": "Clip_113",
+    "type": "Clip",
+    "inputs": [
+      "input.232",
+      "onnx::Clip_1574",
+      "onnx::Clip_1575"
+    ],
+    "outputs": [
+      "input.240"
+    ]
+  },
+  {
+    "name": "Conv_115",
+    "type": "Conv",
+    "inputs": [
+      "input.240",
+      "mode/backbone/block2/block2/2/conv_pwl_1/Conv.weight",
+      "mode/backbone/block2/block2/2/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1578"
+    ]
+  },
+  {
+    "name": "Add_117",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1578",
+      "input.208"
+    ],
+    "outputs": [
+      "input.248"
+    ]
+  },
+  {
+    "name": "Conv_119",
+    "type": "Conv",
+    "inputs": [
+      "input.248",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.256"
+    ]
+  },
+  {
+    "name": "Clip_125",
+    "type": "Clip",
+    "inputs": [
+      "input.256",
+      "onnx::Clip_1586",
+      "onnx::Clip_1587"
+    ],
+    "outputs": [
+      "input.264"
+    ]
+  },
+  {
+    "name": "Conv_127",
+    "type": "Conv",
+    "inputs": [
+      "input.264",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_dw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.272"
+    ]
+  },
+  {
+    "name": "Clip_133",
+    "type": "Clip",
+    "inputs": [
+      "input.272",
+      "onnx::Clip_1594",
+      "onnx::Clip_1595"
+    ],
+    "outputs": [
+      "input.280"
+    ]
+  },
+  {
+    "name": "Conv_135",
+    "type": "Conv",
+    "inputs": [
+      "input.280",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pwl_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/0/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.288"
+    ]
+  },
+  {
+    "name": "Conv_137",
+    "type": "Conv",
+    "inputs": [
+      "input.288",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.296"
+    ]
+  },
+  {
+    "name": "Clip_143",
+    "type": "Clip",
+    "inputs": [
+      "input.296",
+      "onnx::Clip_1604",
+      "onnx::Clip_1605"
+    ],
+    "outputs": [
+      "input.304"
+    ]
+  },
+  {
+    "name": "Conv_145",
+    "type": "Conv",
+    "inputs": [
+      "input.304",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_dw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.312"
+    ]
+  },
+  {
+    "name": "Clip_151",
+    "type": "Clip",
+    "inputs": [
+      "input.312",
+      "onnx::Clip_1612",
+      "onnx::Clip_1613"
+    ],
+    "outputs": [
+      "input.320"
+    ]
+  },
+  {
+    "name": "Conv_153",
+    "type": "Conv",
+    "inputs": [
+      "input.320",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pwl_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/1/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1616"
+    ]
+  },
+  {
+    "name": "Add_155",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1616",
+      "input.288"
+    ],
+    "outputs": [
+      "input.328"
+    ]
+  },
+  {
+    "name": "Conv_157",
+    "type": "Conv",
+    "inputs": [
+      "input.328",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.336"
+    ]
+  },
+  {
+    "name": "Clip_163",
+    "type": "Clip",
+    "inputs": [
+      "input.336",
+      "onnx::Clip_1624",
+      "onnx::Clip_1625"
+    ],
+    "outputs": [
+      "input.344"
+    ]
+  },
+  {
+    "name": "Conv_165",
+    "type": "Conv",
+    "inputs": [
+      "input.344",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_dw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.352"
+    ]
+  },
+  {
+    "name": "Clip_171",
+    "type": "Clip",
+    "inputs": [
+      "input.352",
+      "onnx::Clip_1632",
+      "onnx::Clip_1633"
+    ],
+    "outputs": [
+      "input.360"
+    ]
+  },
+  {
+    "name": "Conv_173",
+    "type": "Conv",
+    "inputs": [
+      "input.360",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pwl_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/2/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1636"
+    ]
+  },
+  {
+    "name": "Add_175",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1636",
+      "input.328"
+    ],
+    "outputs": [
+      "input.368"
+    ]
+  },
+  {
+    "name": "Conv_177",
+    "type": "Conv",
+    "inputs": [
+      "input.368",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.376"
+    ]
+  },
+  {
+    "name": "Clip_183",
+    "type": "Clip",
+    "inputs": [
+      "input.376",
+      "onnx::Clip_1644",
+      "onnx::Clip_1645"
+    ],
+    "outputs": [
+      "input.384"
+    ]
+  },
+  {
+    "name": "Conv_185",
+    "type": "Conv",
+    "inputs": [
+      "input.384",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_dw_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.392"
+    ]
+  },
+  {
+    "name": "Clip_191",
+    "type": "Clip",
+    "inputs": [
+      "input.392",
+      "onnx::Clip_1652",
+      "onnx::Clip_1653"
+    ],
+    "outputs": [
+      "input.400"
+    ]
+  },
+  {
+    "name": "Conv_193",
+    "type": "Conv",
+    "inputs": [
+      "input.400",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pwl_1/Conv.weight",
+      "mode/backbone/block3/block3/3/block3/3/3/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1656"
+    ]
+  },
+  {
+    "name": "Add_195",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1656",
+      "input.368"
+    ],
+    "outputs": [
+      "input.408"
+    ]
+  },
+  {
+    "name": "Conv_197",
+    "type": "Conv",
+    "inputs": [
+      "input.408",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pw_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.416"
+    ]
+  },
+  {
+    "name": "Clip_203",
+    "type": "Clip",
+    "inputs": [
+      "input.416",
+      "onnx::Clip_1664",
+      "onnx::Clip_1665"
+    ],
+    "outputs": [
+      "input.424"
+    ]
+  },
+  {
+    "name": "Conv_205",
+    "type": "Conv",
+    "inputs": [
+      "input.424",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_dw_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.432"
+    ]
+  },
+  {
+    "name": "Clip_211",
+    "type": "Clip",
+    "inputs": [
+      "input.432",
+      "onnx::Clip_1672",
+      "onnx::Clip_1673"
+    ],
+    "outputs": [
+      "input.440"
+    ]
+  },
+  {
+    "name": "Conv_213",
+    "type": "Conv",
+    "inputs": [
+      "input.440",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pwl_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/0/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.448"
+    ]
+  },
+  {
+    "name": "Conv_215",
+    "type": "Conv",
+    "inputs": [
+      "input.448",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pw_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.456"
+    ]
+  },
+  {
+    "name": "Clip_221",
+    "type": "Clip",
+    "inputs": [
+      "input.456",
+      "onnx::Clip_1682",
+      "onnx::Clip_1683"
+    ],
+    "outputs": [
+      "input.464"
+    ]
+  },
+  {
+    "name": "Conv_223",
+    "type": "Conv",
+    "inputs": [
+      "input.464",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_dw_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.472"
+    ]
+  },
+  {
+    "name": "Clip_229",
+    "type": "Clip",
+    "inputs": [
+      "input.472",
+      "onnx::Clip_1690",
+      "onnx::Clip_1691"
+    ],
+    "outputs": [
+      "input.480"
+    ]
+  },
+  {
+    "name": "Conv_231",
+    "type": "Conv",
+    "inputs": [
+      "input.480",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pwl_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/1/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1694"
+    ]
+  },
+  {
+    "name": "Add_233",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1694",
+      "input.448"
+    ],
+    "outputs": [
+      "input.488"
+    ]
+  },
+  {
+    "name": "Conv_235",
+    "type": "Conv",
+    "inputs": [
+      "input.488",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pw_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.496"
+    ]
+  },
+  {
+    "name": "Clip_241",
+    "type": "Clip",
+    "inputs": [
+      "input.496",
+      "onnx::Clip_1702",
+      "onnx::Clip_1703"
+    ],
+    "outputs": [
+      "input.504"
+    ]
+  },
+  {
+    "name": "Conv_243",
+    "type": "Conv",
+    "inputs": [
+      "input.504",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_dw_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.512"
+    ]
+  },
+  {
+    "name": "Clip_249",
+    "type": "Clip",
+    "inputs": [
+      "input.512",
+      "onnx::Clip_1710",
+      "onnx::Clip_1711"
+    ],
+    "outputs": [
+      "input.520"
+    ]
+  },
+  {
+    "name": "Conv_251",
+    "type": "Conv",
+    "inputs": [
+      "input.520",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pwl_1/Conv.weight",
+      "mode/backbone/block3/block3/4/block3/4/2/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1714"
+    ]
+  },
+  {
+    "name": "Add_253",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1714",
+      "input.488"
+    ],
+    "outputs": [
+      "input.528"
+    ]
+  },
+  {
+    "name": "Conv_255",
+    "type": "Conv",
+    "inputs": [
+      "input.528",
+      "mode/backbone/block4/block4/0/conv_pw_1/Conv.weight",
+      "mode/backbone/block4/block4/0/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.536"
+    ]
+  },
+  {
+    "name": "Clip_261",
+    "type": "Clip",
+    "inputs": [
+      "input.536",
+      "onnx::Clip_1722",
+      "onnx::Clip_1723"
+    ],
+    "outputs": [
+      "input.544"
+    ]
+  },
+  {
+    "name": "Conv_263",
+    "type": "Conv",
+    "inputs": [
+      "input.544",
+      "mode/backbone/block4/block4/0/conv_dw_1/Conv.weight",
+      "mode/backbone/block4/block4/0/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.552"
+    ]
+  },
+  {
+    "name": "Clip_269",
+    "type": "Clip",
+    "inputs": [
+      "input.552",
+      "onnx::Clip_1730",
+      "onnx::Clip_1731"
+    ],
+    "outputs": [
+      "input.560"
+    ]
+  },
+  {
+    "name": "Conv_271",
+    "type": "Conv",
+    "inputs": [
+      "input.560",
+      "mode/backbone/block4/block4/0/conv_pwl_1/Conv.weight",
+      "mode/backbone/block4/block4/0/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.568"
+    ]
+  },
+  {
+    "name": "Conv_273",
+    "type": "Conv",
+    "inputs": [
+      "input.568",
+      "mode/backbone/block4/block4/1/conv_pw_1/Conv.weight",
+      "mode/backbone/block4/block4/1/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.576"
+    ]
+  },
+  {
+    "name": "Clip_279",
+    "type": "Clip",
+    "inputs": [
+      "input.576",
+      "onnx::Clip_1740",
+      "onnx::Clip_1741"
+    ],
+    "outputs": [
+      "input.584"
+    ]
+  },
+  {
+    "name": "Conv_281",
+    "type": "Conv",
+    "inputs": [
+      "input.584",
+      "mode/backbone/block4/block4/1/conv_dw_1/Conv.weight",
+      "mode/backbone/block4/block4/1/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.592"
+    ]
+  },
+  {
+    "name": "Clip_287",
+    "type": "Clip",
+    "inputs": [
+      "input.592",
+      "onnx::Clip_1748",
+      "onnx::Clip_1749"
+    ],
+    "outputs": [
+      "input.600"
+    ]
+  },
+  {
+    "name": "Conv_289",
+    "type": "Conv",
+    "inputs": [
+      "input.600",
+      "mode/backbone/block4/block4/1/conv_pwl_1/Conv.weight",
+      "mode/backbone/block4/block4/1/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1752"
+    ]
+  },
+  {
+    "name": "Add_291",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1752",
+      "input.568"
+    ],
+    "outputs": [
+      "input.608"
+    ]
+  },
+  {
+    "name": "Conv_293",
+    "type": "Conv",
+    "inputs": [
+      "input.608",
+      "mode/backbone/block4/block4/2/conv_pw_1/Conv.weight",
+      "mode/backbone/block4/block4/2/conv_pw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.616"
+    ]
+  },
+  {
+    "name": "Clip_299",
+    "type": "Clip",
+    "inputs": [
+      "input.616",
+      "onnx::Clip_1760",
+      "onnx::Clip_1761"
+    ],
+    "outputs": [
+      "input.624"
+    ]
+  },
+  {
+    "name": "Conv_301",
+    "type": "Conv",
+    "inputs": [
+      "input.624",
+      "mode/backbone/block4/block4/2/conv_dw_1/Conv.weight",
+      "mode/backbone/block4/block4/2/conv_dw_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.632"
+    ]
+  },
+  {
+    "name": "Clip_307",
+    "type": "Clip",
+    "inputs": [
+      "input.632",
+      "onnx::Clip_1768",
+      "onnx::Clip_1769"
+    ],
+    "outputs": [
+      "input.640"
+    ]
+  },
+  {
+    "name": "Conv_309",
+    "type": "Conv",
+    "inputs": [
+      "input.640",
+      "mode/backbone/block4/block4/2/conv_pwl_1/Conv.weight",
+      "mode/backbone/block4/block4/2/conv_pwl_1/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_1772"
+    ]
+  },
+  {
+    "name": "Add_311",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_1772",
+      "input.608"
+    ],
+    "outputs": [
+      "input.648"
+    ]
+  },
+  {
+    "name": "ConvTranspose_313",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.648",
+      "mode/backbone/fpn_layer4/deconv/block/block/0_1/ConvTranspose.weight",
+      "mode/backbone/fpn_layer4/deconv/block/block/0_1/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "input.656"
+    ]
+  },
+  {
+    "name": "LeakyRelu_315",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.656"
+    ],
+    "outputs": [
+      "onnx::Concat_1778"
+    ]
+  },
+  {
+    "name": "Concat_317",
+    "type": "Concat",
+    "inputs": [
+      "input.528",
+      "onnx::Concat_1778"
+    ],
+    "outputs": [
+      "input.664"
+    ]
+  },
+  {
+    "name": "Conv_319",
+    "type": "Conv",
+    "inputs": [
+      "input.664",
+      "mode/backbone/fpn_layer4/conv/block/block/0_1/Conv.weight",
+      "mode/backbone/fpn_layer4/conv/block/block/0_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.672"
+    ]
+  },
+  {
+    "name": "LeakyRelu_321",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.672"
+    ],
+    "outputs": [
+      "input.680"
+    ]
+  },
+  {
+    "name": "ConvTranspose_323",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.680",
+      "mode/backbone/fpn_layer3/deconv/block/block/0_1/ConvTranspose.weight",
+      "mode/backbone/fpn_layer3/deconv/block/block/0_1/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "input.688"
+    ]
+  },
+  {
+    "name": "LeakyRelu_329",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.688"
+    ],
+    "outputs": [
+      "onnx::Concat_1792"
+    ]
+  },
+  {
+    "name": "Concat_334",
+    "type": "Concat",
+    "inputs": [
+      "input.248",
+      "onnx::Concat_1792"
+    ],
+    "outputs": [
+      "input.712"
+    ]
+  },
+  {
+    "name": "Conv_337",
+    "type": "Conv",
+    "inputs": [
+      "input.712",
+      "mode/backbone/fpn_layer3/conv/block/block/0_1/Conv.weight",
+      "mode/backbone/fpn_layer3/conv/block/block/0_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.720"
+    ]
+  },
+  {
+    "name": "LeakyRelu_340",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.720"
+    ],
+    "outputs": [
+      "input.728"
+    ]
+  },
+  {
+    "name": "ConvTranspose_343",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.728",
+      "mode/backbone/fpn_layer2/deconv/block/block/0_1/ConvTranspose.weight",
+      "mode/backbone/fpn_layer2/deconv/block/block/0_1/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "input.740"
+    ]
+  },
+  {
+    "name": "LeakyRelu_350",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.740"
+    ],
+    "outputs": [
+      "onnx::Concat_1813"
+    ]
+  },
+  {
+    "name": "Concat_355",
+    "type": "Concat",
+    "inputs": [
+      "input.128",
+      "onnx::Concat_1813"
+    ],
+    "outputs": [
+      "input.764"
+    ]
+  },
+  {
+    "name": "Conv_358",
+    "type": "Conv",
+    "inputs": [
+      "input.764",
+      "mode/backbone/fpn_layer2/conv/block/block/0_1/Conv.weight",
+      "mode/backbone/fpn_layer2/conv/block/block/0_1/Conv.bias"
+    ],
+    "outputs": [
+      "input.772"
+    ]
+  },
+  {
+    "name": "LeakyRelu_361",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.772"
+    ],
+    "outputs": [
+      "onnx::Pad_1824"
+    ]
+  },
+  {
+    "name": "Pad_364",
+    "type": "Pad",
+    "inputs": [
+      "onnx::Pad_1824",
+      "initializers.onnx_initializer_269"
+    ],
+    "outputs": [
+      "input.784"
+    ]
+  },
+  {
+    "name": "Conv_367",
+    "type": "Conv",
+    "inputs": [
+      "input.784",
+      "mode/backbone/out_conv/block/block/0_1/Conv.weight"
+    ],
+    "outputs": [
+      "input_data.3"
+    ]
+  },
+  {
+    "name": "InstanceNormalization_369",
+    "type": "InstanceNormalization",
+    "inputs": [
+      "input_data.3",
+      "initializers.onnx_initializer_276",
+      "initializers.onnx_initializer_277"
+    ],
+    "outputs": [
+      "onnx::Pad_1832"
+    ]
+  },
+  {
+    "name": "Pad_370",
+    "type": "Pad",
+    "inputs": [
+      "onnx::Pad_1832",
+      "initializers.onnx_initializer_278"
+    ],
+    "outputs": [
+      "input_tensor"
+    ]
+  },
+  {
+    "name": "Slice_373",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_282",
+      "initializers.onnx_initializer_283",
+      "initializers.onnx_initializer_284",
+      "initializers.onnx_initializer_285"
+    ],
+    "outputs": [
+      "onnx::Mul_1836"
+    ]
+  },
+  {
+    "name": "Mul_425",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1836"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1888"
+    ]
+  },
+  {
+    "name": "ReduceMean_477",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1888"
+    ],
+    "outputs": [
+      "onnx::Concat_1940"
+    ]
+  },
+  {
+    "name": "Slice_374",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_286",
+      "initializers.onnx_initializer_287",
+      "initializers.onnx_initializer_288",
+      "initializers.onnx_initializer_289"
+    ],
+    "outputs": [
+      "onnx::Mul_1837"
+    ]
+  },
+  {
+    "name": "Mul_426",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1837"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1889"
+    ]
+  },
+  {
+    "name": "ReduceMean_478",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1889"
+    ],
+    "outputs": [
+      "onnx::Concat_1941"
+    ]
+  },
+  {
+    "name": "Slice_375",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_290",
+      "initializers.onnx_initializer_291",
+      "initializers.onnx_initializer_292",
+      "initializers.onnx_initializer_293"
+    ],
+    "outputs": [
+      "onnx::Mul_1838"
+    ]
+  },
+  {
+    "name": "Mul_427",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1838"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1890"
+    ]
+  },
+  {
+    "name": "ReduceMean_479",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1890"
+    ],
+    "outputs": [
+      "onnx::Concat_1942"
+    ]
+  },
+  {
+    "name": "Slice_376",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_294",
+      "initializers.onnx_initializer_295",
+      "initializers.onnx_initializer_296",
+      "initializers.onnx_initializer_297"
+    ],
+    "outputs": [
+      "onnx::Mul_1839"
+    ]
+  },
+  {
+    "name": "Mul_428",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1839"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1891"
+    ]
+  },
+  {
+    "name": "ReduceMean_480",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1891"
+    ],
+    "outputs": [
+      "onnx::Concat_1943"
+    ]
+  },
+  {
+    "name": "Slice_377",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_298",
+      "initializers.onnx_initializer_299",
+      "initializers.onnx_initializer_300",
+      "initializers.onnx_initializer_301"
+    ],
+    "outputs": [
+      "onnx::Mul_1840"
+    ]
+  },
+  {
+    "name": "Mul_429",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1840"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1892"
+    ]
+  },
+  {
+    "name": "ReduceMean_481",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1892"
+    ],
+    "outputs": [
+      "onnx::Concat_1944"
+    ]
+  },
+  {
+    "name": "Slice_378",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_302",
+      "initializers.onnx_initializer_303",
+      "initializers.onnx_initializer_304",
+      "initializers.onnx_initializer_305"
+    ],
+    "outputs": [
+      "onnx::Mul_1841"
+    ]
+  },
+  {
+    "name": "Mul_430",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1841"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1893"
+    ]
+  },
+  {
+    "name": "ReduceMean_482",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1893"
+    ],
+    "outputs": [
+      "onnx::Concat_1945"
+    ]
+  },
+  {
+    "name": "Slice_379",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_306",
+      "initializers.onnx_initializer_307",
+      "initializers.onnx_initializer_308",
+      "initializers.onnx_initializer_309"
+    ],
+    "outputs": [
+      "onnx::Mul_1842"
+    ]
+  },
+  {
+    "name": "Mul_431",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1842"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1894"
+    ]
+  },
+  {
+    "name": "ReduceMean_483",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1894"
+    ],
+    "outputs": [
+      "onnx::Concat_1946"
+    ]
+  },
+  {
+    "name": "Slice_380",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_310",
+      "initializers.onnx_initializer_311",
+      "initializers.onnx_initializer_312",
+      "initializers.onnx_initializer_313"
+    ],
+    "outputs": [
+      "onnx::Mul_1843"
+    ]
+  },
+  {
+    "name": "Mul_432",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1843"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1895"
+    ]
+  },
+  {
+    "name": "ReduceMean_484",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1895"
+    ],
+    "outputs": [
+      "onnx::Concat_1947"
+    ]
+  },
+  {
+    "name": "Slice_381",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_314",
+      "initializers.onnx_initializer_315",
+      "initializers.onnx_initializer_316",
+      "initializers.onnx_initializer_317"
+    ],
+    "outputs": [
+      "onnx::Mul_1844"
+    ]
+  },
+  {
+    "name": "Mul_433",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1844"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1896"
+    ]
+  },
+  {
+    "name": "ReduceMean_485",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1896"
+    ],
+    "outputs": [
+      "onnx::Concat_1948"
+    ]
+  },
+  {
+    "name": "Slice_382",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_318",
+      "initializers.onnx_initializer_319",
+      "initializers.onnx_initializer_320",
+      "initializers.onnx_initializer_321"
+    ],
+    "outputs": [
+      "onnx::Mul_1845"
+    ]
+  },
+  {
+    "name": "Mul_434",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1845"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1897"
+    ]
+  },
+  {
+    "name": "ReduceMean_486",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1897"
+    ],
+    "outputs": [
+      "onnx::Concat_1949"
+    ]
+  },
+  {
+    "name": "Slice_383",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_322",
+      "initializers.onnx_initializer_323",
+      "initializers.onnx_initializer_324",
+      "initializers.onnx_initializer_325"
+    ],
+    "outputs": [
+      "onnx::Mul_1846"
+    ]
+  },
+  {
+    "name": "Mul_435",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1846"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1898"
+    ]
+  },
+  {
+    "name": "ReduceMean_487",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1898"
+    ],
+    "outputs": [
+      "onnx::Concat_1950"
+    ]
+  },
+  {
+    "name": "Slice_384",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_326",
+      "initializers.onnx_initializer_327",
+      "initializers.onnx_initializer_328",
+      "initializers.onnx_initializer_329"
+    ],
+    "outputs": [
+      "onnx::Mul_1847"
+    ]
+  },
+  {
+    "name": "Mul_436",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1847"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1899"
+    ]
+  },
+  {
+    "name": "ReduceMean_488",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1899"
+    ],
+    "outputs": [
+      "onnx::Concat_1951"
+    ]
+  },
+  {
+    "name": "Slice_385",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_330",
+      "initializers.onnx_initializer_331",
+      "initializers.onnx_initializer_332",
+      "initializers.onnx_initializer_333"
+    ],
+    "outputs": [
+      "onnx::Mul_1848"
+    ]
+  },
+  {
+    "name": "Mul_437",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1848"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1900"
+    ]
+  },
+  {
+    "name": "ReduceMean_489",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1900"
+    ],
+    "outputs": [
+      "onnx::Concat_1952"
+    ]
+  },
+  {
+    "name": "Slice_386",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_334",
+      "initializers.onnx_initializer_335",
+      "initializers.onnx_initializer_336",
+      "initializers.onnx_initializer_337"
+    ],
+    "outputs": [
+      "onnx::Mul_1849"
+    ]
+  },
+  {
+    "name": "Mul_438",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1849"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1901"
+    ]
+  },
+  {
+    "name": "ReduceMean_490",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1901"
+    ],
+    "outputs": [
+      "onnx::Concat_1953"
+    ]
+  },
+  {
+    "name": "Slice_387",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_338",
+      "initializers.onnx_initializer_339",
+      "initializers.onnx_initializer_340",
+      "initializers.onnx_initializer_341"
+    ],
+    "outputs": [
+      "onnx::Mul_1850"
+    ]
+  },
+  {
+    "name": "Mul_439",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1850"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1902"
+    ]
+  },
+  {
+    "name": "ReduceMean_491",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1902"
+    ],
+    "outputs": [
+      "onnx::Concat_1954"
+    ]
+  },
+  {
+    "name": "Slice_388",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_342",
+      "initializers.onnx_initializer_343",
+      "initializers.onnx_initializer_344",
+      "initializers.onnx_initializer_345"
+    ],
+    "outputs": [
+      "onnx::Mul_1851"
+    ]
+  },
+  {
+    "name": "Mul_440",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1851"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1903"
+    ]
+  },
+  {
+    "name": "ReduceMean_492",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1903"
+    ],
+    "outputs": [
+      "onnx::Concat_1955"
+    ]
+  },
+  {
+    "name": "Slice_389",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_346",
+      "initializers.onnx_initializer_347",
+      "initializers.onnx_initializer_348",
+      "initializers.onnx_initializer_349"
+    ],
+    "outputs": [
+      "onnx::Mul_1852"
+    ]
+  },
+  {
+    "name": "Mul_441",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1852"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1904"
+    ]
+  },
+  {
+    "name": "ReduceMean_493",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1904"
+    ],
+    "outputs": [
+      "onnx::Concat_1956"
+    ]
+  },
+  {
+    "name": "Slice_390",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_350",
+      "initializers.onnx_initializer_351",
+      "initializers.onnx_initializer_352",
+      "initializers.onnx_initializer_353"
+    ],
+    "outputs": [
+      "onnx::Mul_1853"
+    ]
+  },
+  {
+    "name": "Mul_442",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1853"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1905"
+    ]
+  },
+  {
+    "name": "ReduceMean_494",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1905"
+    ],
+    "outputs": [
+      "onnx::Concat_1957"
+    ]
+  },
+  {
+    "name": "Slice_391",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_354",
+      "initializers.onnx_initializer_355",
+      "initializers.onnx_initializer_356",
+      "initializers.onnx_initializer_357"
+    ],
+    "outputs": [
+      "onnx::Mul_1854"
+    ]
+  },
+  {
+    "name": "Mul_443",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1854"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1906"
+    ]
+  },
+  {
+    "name": "ReduceMean_495",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1906"
+    ],
+    "outputs": [
+      "onnx::Concat_1958"
+    ]
+  },
+  {
+    "name": "Slice_392",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_358",
+      "initializers.onnx_initializer_359",
+      "initializers.onnx_initializer_360",
+      "initializers.onnx_initializer_361"
+    ],
+    "outputs": [
+      "onnx::Mul_1855"
+    ]
+  },
+  {
+    "name": "Mul_444",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1855"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1907"
+    ]
+  },
+  {
+    "name": "ReduceMean_496",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1907"
+    ],
+    "outputs": [
+      "onnx::Concat_1959"
+    ]
+  },
+  {
+    "name": "Slice_393",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_362",
+      "initializers.onnx_initializer_363",
+      "initializers.onnx_initializer_364",
+      "initializers.onnx_initializer_365"
+    ],
+    "outputs": [
+      "onnx::Mul_1856"
+    ]
+  },
+  {
+    "name": "Mul_445",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1856"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1908"
+    ]
+  },
+  {
+    "name": "ReduceMean_497",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1908"
+    ],
+    "outputs": [
+      "onnx::Concat_1960"
+    ]
+  },
+  {
+    "name": "Slice_394",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_366",
+      "initializers.onnx_initializer_367",
+      "initializers.onnx_initializer_368",
+      "initializers.onnx_initializer_369"
+    ],
+    "outputs": [
+      "onnx::Mul_1857"
+    ]
+  },
+  {
+    "name": "Mul_446",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1857"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1909"
+    ]
+  },
+  {
+    "name": "ReduceMean_498",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1909"
+    ],
+    "outputs": [
+      "onnx::Concat_1961"
+    ]
+  },
+  {
+    "name": "Slice_395",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_370",
+      "initializers.onnx_initializer_371",
+      "initializers.onnx_initializer_372",
+      "initializers.onnx_initializer_373"
+    ],
+    "outputs": [
+      "onnx::Mul_1858"
+    ]
+  },
+  {
+    "name": "Mul_447",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1858"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1910"
+    ]
+  },
+  {
+    "name": "ReduceMean_499",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1910"
+    ],
+    "outputs": [
+      "onnx::Concat_1962"
+    ]
+  },
+  {
+    "name": "Slice_396",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_374",
+      "initializers.onnx_initializer_375",
+      "initializers.onnx_initializer_376",
+      "initializers.onnx_initializer_377"
+    ],
+    "outputs": [
+      "onnx::Mul_1859"
+    ]
+  },
+  {
+    "name": "Mul_448",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1859"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1911"
+    ]
+  },
+  {
+    "name": "ReduceMean_500",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1911"
+    ],
+    "outputs": [
+      "onnx::Concat_1963"
+    ]
+  },
+  {
+    "name": "Slice_397",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_378",
+      "initializers.onnx_initializer_379",
+      "initializers.onnx_initializer_380",
+      "initializers.onnx_initializer_381"
+    ],
+    "outputs": [
+      "onnx::Mul_1860"
+    ]
+  },
+  {
+    "name": "Mul_449",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1860"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1912"
+    ]
+  },
+  {
+    "name": "ReduceMean_501",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1912"
+    ],
+    "outputs": [
+      "onnx::Concat_1964"
+    ]
+  },
+  {
+    "name": "Slice_398",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_382",
+      "initializers.onnx_initializer_383",
+      "initializers.onnx_initializer_384",
+      "initializers.onnx_initializer_385"
+    ],
+    "outputs": [
+      "onnx::Mul_1861"
+    ]
+  },
+  {
+    "name": "Mul_450",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1861"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1913"
+    ]
+  },
+  {
+    "name": "ReduceMean_502",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1913"
+    ],
+    "outputs": [
+      "onnx::Concat_1965"
+    ]
+  },
+  {
+    "name": "Slice_399",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_386",
+      "initializers.onnx_initializer_387",
+      "initializers.onnx_initializer_388",
+      "initializers.onnx_initializer_389"
+    ],
+    "outputs": [
+      "onnx::Mul_1862"
+    ]
+  },
+  {
+    "name": "Mul_451",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1862"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1914"
+    ]
+  },
+  {
+    "name": "ReduceMean_503",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1914"
+    ],
+    "outputs": [
+      "onnx::Concat_1966"
+    ]
+  },
+  {
+    "name": "Slice_400",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_390",
+      "initializers.onnx_initializer_391",
+      "initializers.onnx_initializer_392",
+      "initializers.onnx_initializer_393"
+    ],
+    "outputs": [
+      "onnx::Mul_1863"
+    ]
+  },
+  {
+    "name": "Mul_452",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1863"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1915"
+    ]
+  },
+  {
+    "name": "ReduceMean_504",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1915"
+    ],
+    "outputs": [
+      "onnx::Concat_1967"
+    ]
+  },
+  {
+    "name": "Slice_401",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_394",
+      "initializers.onnx_initializer_395",
+      "initializers.onnx_initializer_396",
+      "initializers.onnx_initializer_397"
+    ],
+    "outputs": [
+      "onnx::Mul_1864"
+    ]
+  },
+  {
+    "name": "Mul_453",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1864"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1916"
+    ]
+  },
+  {
+    "name": "ReduceMean_505",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1916"
+    ],
+    "outputs": [
+      "onnx::Concat_1968"
+    ]
+  },
+  {
+    "name": "Slice_402",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_398",
+      "initializers.onnx_initializer_399",
+      "initializers.onnx_initializer_400",
+      "initializers.onnx_initializer_401"
+    ],
+    "outputs": [
+      "onnx::Mul_1865"
+    ]
+  },
+  {
+    "name": "Mul_454",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1865"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1917"
+    ]
+  },
+  {
+    "name": "ReduceMean_506",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1917"
+    ],
+    "outputs": [
+      "onnx::Concat_1969"
+    ]
+  },
+  {
+    "name": "Slice_403",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_402",
+      "initializers.onnx_initializer_403",
+      "initializers.onnx_initializer_404",
+      "initializers.onnx_initializer_405"
+    ],
+    "outputs": [
+      "onnx::Mul_1866"
+    ]
+  },
+  {
+    "name": "Mul_455",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1866"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1918"
+    ]
+  },
+  {
+    "name": "ReduceMean_507",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1918"
+    ],
+    "outputs": [
+      "onnx::Concat_1970"
+    ]
+  },
+  {
+    "name": "Slice_404",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_406",
+      "initializers.onnx_initializer_407",
+      "initializers.onnx_initializer_408",
+      "initializers.onnx_initializer_409"
+    ],
+    "outputs": [
+      "onnx::Mul_1867"
+    ]
+  },
+  {
+    "name": "Mul_456",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1867"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1919"
+    ]
+  },
+  {
+    "name": "ReduceMean_508",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1919"
+    ],
+    "outputs": [
+      "onnx::Concat_1971"
+    ]
+  },
+  {
+    "name": "Slice_405",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_410",
+      "initializers.onnx_initializer_411",
+      "initializers.onnx_initializer_412",
+      "initializers.onnx_initializer_413"
+    ],
+    "outputs": [
+      "onnx::Mul_1868"
+    ]
+  },
+  {
+    "name": "Mul_457",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1868"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1920"
+    ]
+  },
+  {
+    "name": "ReduceMean_509",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1920"
+    ],
+    "outputs": [
+      "onnx::Concat_1972"
+    ]
+  },
+  {
+    "name": "Slice_406",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_414",
+      "initializers.onnx_initializer_415",
+      "initializers.onnx_initializer_416",
+      "initializers.onnx_initializer_417"
+    ],
+    "outputs": [
+      "onnx::Mul_1869"
+    ]
+  },
+  {
+    "name": "Mul_458",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1869"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1921"
+    ]
+  },
+  {
+    "name": "ReduceMean_510",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1921"
+    ],
+    "outputs": [
+      "onnx::Concat_1973"
+    ]
+  },
+  {
+    "name": "Slice_407",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_418",
+      "initializers.onnx_initializer_419",
+      "initializers.onnx_initializer_420",
+      "initializers.onnx_initializer_421"
+    ],
+    "outputs": [
+      "onnx::Mul_1870"
+    ]
+  },
+  {
+    "name": "Mul_459",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1870"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1922"
+    ]
+  },
+  {
+    "name": "ReduceMean_511",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1922"
+    ],
+    "outputs": [
+      "onnx::Concat_1974"
+    ]
+  },
+  {
+    "name": "Slice_408",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_422",
+      "initializers.onnx_initializer_423",
+      "initializers.onnx_initializer_424",
+      "initializers.onnx_initializer_425"
+    ],
+    "outputs": [
+      "onnx::Mul_1871"
+    ]
+  },
+  {
+    "name": "Mul_460",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1871"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1923"
+    ]
+  },
+  {
+    "name": "ReduceMean_512",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1923"
+    ],
+    "outputs": [
+      "onnx::Concat_1975"
+    ]
+  },
+  {
+    "name": "Slice_409",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_426",
+      "initializers.onnx_initializer_427",
+      "initializers.onnx_initializer_428",
+      "initializers.onnx_initializer_429"
+    ],
+    "outputs": [
+      "onnx::Mul_1872"
+    ]
+  },
+  {
+    "name": "Mul_461",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1872"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1924"
+    ]
+  },
+  {
+    "name": "ReduceMean_513",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1924"
+    ],
+    "outputs": [
+      "onnx::Concat_1976"
+    ]
+  },
+  {
+    "name": "Slice_410",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_430",
+      "initializers.onnx_initializer_431",
+      "initializers.onnx_initializer_432",
+      "initializers.onnx_initializer_433"
+    ],
+    "outputs": [
+      "onnx::Mul_1873"
+    ]
+  },
+  {
+    "name": "Mul_462",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1873"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1925"
+    ]
+  },
+  {
+    "name": "ReduceMean_514",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1925"
+    ],
+    "outputs": [
+      "onnx::Concat_1977"
+    ]
+  },
+  {
+    "name": "Slice_411",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_434",
+      "initializers.onnx_initializer_435",
+      "initializers.onnx_initializer_436",
+      "initializers.onnx_initializer_437"
+    ],
+    "outputs": [
+      "onnx::Mul_1874"
+    ]
+  },
+  {
+    "name": "Mul_463",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1874"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1926"
+    ]
+  },
+  {
+    "name": "ReduceMean_515",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1926"
+    ],
+    "outputs": [
+      "onnx::Concat_1978"
+    ]
+  },
+  {
+    "name": "Slice_412",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_438",
+      "initializers.onnx_initializer_439",
+      "initializers.onnx_initializer_440",
+      "initializers.onnx_initializer_441"
+    ],
+    "outputs": [
+      "onnx::Mul_1875"
+    ]
+  },
+  {
+    "name": "Mul_464",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1875"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1927"
+    ]
+  },
+  {
+    "name": "ReduceMean_516",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1927"
+    ],
+    "outputs": [
+      "onnx::Concat_1979"
+    ]
+  },
+  {
+    "name": "Slice_413",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_442",
+      "initializers.onnx_initializer_443",
+      "initializers.onnx_initializer_444",
+      "initializers.onnx_initializer_445"
+    ],
+    "outputs": [
+      "onnx::Mul_1876"
+    ]
+  },
+  {
+    "name": "Mul_465",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1876"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1928"
+    ]
+  },
+  {
+    "name": "ReduceMean_517",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1928"
+    ],
+    "outputs": [
+      "onnx::Concat_1980"
+    ]
+  },
+  {
+    "name": "Slice_414",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_446",
+      "initializers.onnx_initializer_447",
+      "initializers.onnx_initializer_448",
+      "initializers.onnx_initializer_449"
+    ],
+    "outputs": [
+      "onnx::Mul_1877"
+    ]
+  },
+  {
+    "name": "Mul_466",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1877"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1929"
+    ]
+  },
+  {
+    "name": "ReduceMean_518",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1929"
+    ],
+    "outputs": [
+      "onnx::Concat_1981"
+    ]
+  },
+  {
+    "name": "Slice_415",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_450",
+      "initializers.onnx_initializer_451",
+      "initializers.onnx_initializer_452",
+      "initializers.onnx_initializer_453"
+    ],
+    "outputs": [
+      "onnx::Mul_1878"
+    ]
+  },
+  {
+    "name": "Mul_467",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1878"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1930"
+    ]
+  },
+  {
+    "name": "ReduceMean_519",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1930"
+    ],
+    "outputs": [
+      "onnx::Concat_1982"
+    ]
+  },
+  {
+    "name": "Slice_416",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_454",
+      "initializers.onnx_initializer_455",
+      "initializers.onnx_initializer_456",
+      "initializers.onnx_initializer_457"
+    ],
+    "outputs": [
+      "onnx::Mul_1879"
+    ]
+  },
+  {
+    "name": "Mul_468",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1879"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1931"
+    ]
+  },
+  {
+    "name": "ReduceMean_520",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1931"
+    ],
+    "outputs": [
+      "onnx::Concat_1983"
+    ]
+  },
+  {
+    "name": "Slice_417",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_458",
+      "initializers.onnx_initializer_459",
+      "initializers.onnx_initializer_460",
+      "initializers.onnx_initializer_461"
+    ],
+    "outputs": [
+      "onnx::Mul_1880"
+    ]
+  },
+  {
+    "name": "Mul_469",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1880"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1932"
+    ]
+  },
+  {
+    "name": "ReduceMean_521",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1932"
+    ],
+    "outputs": [
+      "onnx::Concat_1984"
+    ]
+  },
+  {
+    "name": "Slice_418",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_462",
+      "initializers.onnx_initializer_463",
+      "initializers.onnx_initializer_464",
+      "initializers.onnx_initializer_465"
+    ],
+    "outputs": [
+      "onnx::Mul_1881"
+    ]
+  },
+  {
+    "name": "Mul_470",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1881"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1933"
+    ]
+  },
+  {
+    "name": "ReduceMean_522",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1933"
+    ],
+    "outputs": [
+      "onnx::Concat_1985"
+    ]
+  },
+  {
+    "name": "Slice_419",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_466",
+      "initializers.onnx_initializer_467",
+      "initializers.onnx_initializer_468",
+      "initializers.onnx_initializer_469"
+    ],
+    "outputs": [
+      "onnx::Mul_1882"
+    ]
+  },
+  {
+    "name": "Mul_471",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1882"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1934"
+    ]
+  },
+  {
+    "name": "ReduceMean_523",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1934"
+    ],
+    "outputs": [
+      "onnx::Concat_1986"
+    ]
+  },
+  {
+    "name": "Slice_420",
+    "type": "Slice",
+    "inputs": [
+      "input_tensor",
+      "initializers.onnx_initializer_470",
+      "initializers.onnx_initializer_471",
+      "initializers.onnx_initializer_472",
+      "initializers.onnx_initializer_473"
+    ],
+    "outputs": [
+      "onnx::Mul_1883"
+    ]
+  },
+  {
+    "name": "Mul_472",
+    "type": "Mul",
+    "inputs": [
+      "input.788",
+      "onnx::Mul_1883"
+    ],
+    "outputs": [
+      "onnx::ReduceMean_1935"
+    ]
+  },
+  {
+    "name": "ReduceMean_524",
+    "type": "ReduceMean",
+    "inputs": [
+      "onnx::ReduceMean_1935"
+    ],
+    "outputs": [
+      "onnx::Concat_1987"
+    ]
+  },
+  {
+    "name": "Concat_527",
+    "type": "Concat",
+    "inputs": [
+      "onnx::Concat_1940",
+      "onnx::Concat_1941",
+      "onnx::Concat_1942",
+      "onnx::Concat_1943",
+      "onnx::Concat_1944",
+      "onnx::Concat_1945",
+      "onnx::Concat_1946",
+      "onnx::Concat_1947",
+      "onnx::Concat_1948",
+      "onnx::Concat_1949",
+      "onnx::Concat_1950",
+      "onnx::Concat_1951",
+      "onnx::Concat_1952",
+      "onnx::Concat_1953",
+      "onnx::Concat_1954",
+      "onnx::Concat_1955",
+      "onnx::Concat_1956",
+      "onnx::Concat_1957",
+      "onnx::Concat_1958",
+      "onnx::Concat_1959",
+      "onnx::Concat_1960",
+      "onnx::Concat_1961",
+      "onnx::Concat_1962",
+      "onnx::Concat_1963",
+      "onnx::Concat_1964",
+      "onnx::Concat_1965",
+      "onnx::Concat_1966",
+      "onnx::Concat_1967",
+      "onnx::Concat_1968",
+      "onnx::Concat_1969",
+      "onnx::Concat_1970",
+      "onnx::Concat_1971",
+      "onnx::Concat_1972",
+      "onnx::Concat_1973",
+      "onnx::Concat_1974",
+      "onnx::Concat_1975",
+      "onnx::Concat_1976",
+      "onnx::Concat_1977",
+      "onnx::Concat_1978",
+      "onnx::Concat_1979",
+      "onnx::Concat_1980",
+      "onnx::Concat_1981",
+      "onnx::Concat_1982",
+      "onnx::Concat_1983",
+      "onnx::Concat_1984",
+      "onnx::Concat_1985",
+      "onnx::Concat_1986",
+      "onnx::Concat_1987"
+    ],
+    "outputs": [
+      "input.816"
+    ]
+  },
+  {
+    "name": "Conv_530",
+    "type": "Conv",
+    "inputs": [
+      "input.816",
+      "mode/cost_agg/conv0/conv0/0/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/0/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.824"
+    ]
+  },
+  {
+    "name": "Clip_535",
+    "type": "Clip",
+    "inputs": [
+      "input.824",
+      "onnx::Clip_1996",
+      "onnx::Clip_1997"
+    ],
+    "outputs": [
+      "input.836"
+    ]
+  },
+  {
+    "name": "Conv_538",
+    "type": "Conv",
+    "inputs": [
+      "input.836",
+      "mode/cost_agg/conv0/conv0/0/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/0/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.844"
+    ]
+  },
+  {
+    "name": "Clip_541",
+    "type": "Clip",
+    "inputs": [
+      "input.844",
+      "onnx::Clip_2002",
+      "onnx::Clip_2003"
+    ],
+    "outputs": [
+      "input.848"
+    ]
+  },
+  {
+    "name": "Conv_543",
+    "type": "Conv",
+    "inputs": [
+      "input.848",
+      "mode/cost_agg/conv0/conv0/0/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/0/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2006"
+    ]
+  },
+  {
+    "name": "Add_545",
+    "type": "Add",
+    "inputs": [
+      "input.816",
+      "onnx::Add_2006"
+    ],
+    "outputs": [
+      "input.856"
+    ]
+  },
+  {
+    "name": "Conv_547",
+    "type": "Conv",
+    "inputs": [
+      "input.856",
+      "mode/cost_agg/conv0/conv0/1/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/1/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.864"
+    ]
+  },
+  {
+    "name": "Clip_551",
+    "type": "Clip",
+    "inputs": [
+      "input.864",
+      "onnx::Clip_2012",
+      "onnx::Clip_2013"
+    ],
+    "outputs": [
+      "input.872"
+    ]
+  },
+  {
+    "name": "Conv_553",
+    "type": "Conv",
+    "inputs": [
+      "input.872",
+      "mode/cost_agg/conv0/conv0/1/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/1/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.876"
+    ]
+  },
+  {
+    "name": "Clip_557",
+    "type": "Clip",
+    "inputs": [
+      "input.876",
+      "onnx::Clip_2018",
+      "onnx::Clip_2019"
+    ],
+    "outputs": [
+      "input.880"
+    ]
+  },
+  {
+    "name": "Conv_558",
+    "type": "Conv",
+    "inputs": [
+      "input.880",
+      "mode/cost_agg/conv0/conv0/1/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/1/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2021"
+    ]
+  },
+  {
+    "name": "Add_559",
+    "type": "Add",
+    "inputs": [
+      "input.856",
+      "onnx::Add_2021"
+    ],
+    "outputs": [
+      "input.884"
+    ]
+  },
+  {
+    "name": "Conv_560",
+    "type": "Conv",
+    "inputs": [
+      "input.884",
+      "mode/cost_agg/conv0/conv0/2/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/2/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.888"
+    ]
+  },
+  {
+    "name": "Clip_563",
+    "type": "Clip",
+    "inputs": [
+      "input.888",
+      "onnx::Clip_2024",
+      "onnx::Clip_2025"
+    ],
+    "outputs": [
+      "input.892"
+    ]
+  },
+  {
+    "name": "Conv_564",
+    "type": "Conv",
+    "inputs": [
+      "input.892",
+      "mode/cost_agg/conv0/conv0/2/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/2/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.896"
+    ]
+  },
+  {
+    "name": "Clip_567",
+    "type": "Clip",
+    "inputs": [
+      "input.896",
+      "onnx::Clip_2028",
+      "onnx::Clip_2029"
+    ],
+    "outputs": [
+      "input.900"
+    ]
+  },
+  {
+    "name": "Conv_568",
+    "type": "Conv",
+    "inputs": [
+      "input.900",
+      "mode/cost_agg/conv0/conv0/2/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/2/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2031"
+    ]
+  },
+  {
+    "name": "Add_569",
+    "type": "Add",
+    "inputs": [
+      "input.884",
+      "onnx::Add_2031"
+    ],
+    "outputs": [
+      "input.904"
+    ]
+  },
+  {
+    "name": "Conv_570",
+    "type": "Conv",
+    "inputs": [
+      "input.904",
+      "mode/cost_agg/conv0/conv0/3/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/3/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.908"
+    ]
+  },
+  {
+    "name": "Clip_573",
+    "type": "Clip",
+    "inputs": [
+      "input.908",
+      "onnx::Clip_2034",
+      "onnx::Clip_2035"
+    ],
+    "outputs": [
+      "input.912"
+    ]
+  },
+  {
+    "name": "Conv_574",
+    "type": "Conv",
+    "inputs": [
+      "input.912",
+      "mode/cost_agg/conv0/conv0/3/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/3/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.916"
+    ]
+  },
+  {
+    "name": "Clip_577",
+    "type": "Clip",
+    "inputs": [
+      "input.916",
+      "onnx::Clip_2038",
+      "onnx::Clip_2039"
+    ],
+    "outputs": [
+      "input.920"
+    ]
+  },
+  {
+    "name": "Conv_578",
+    "type": "Conv",
+    "inputs": [
+      "input.920",
+      "mode/cost_agg/conv0/conv0/3/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/3/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2041"
+    ]
+  },
+  {
+    "name": "Add_579",
+    "type": "Add",
+    "inputs": [
+      "input.904",
+      "onnx::Add_2041"
+    ],
+    "outputs": [
+      "input.924"
+    ]
+  },
+  {
+    "name": "Conv_580",
+    "type": "Conv",
+    "inputs": [
+      "input.924",
+      "mode/cost_agg/conv0/conv0/4/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/4/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.928"
+    ]
+  },
+  {
+    "name": "Clip_583",
+    "type": "Clip",
+    "inputs": [
+      "input.928",
+      "onnx::Clip_2044",
+      "onnx::Clip_2045"
+    ],
+    "outputs": [
+      "input.932"
+    ]
+  },
+  {
+    "name": "Conv_584",
+    "type": "Conv",
+    "inputs": [
+      "input.932",
+      "mode/cost_agg/conv0/conv0/4/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/4/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.936"
+    ]
+  },
+  {
+    "name": "Clip_587",
+    "type": "Clip",
+    "inputs": [
+      "input.936",
+      "onnx::Clip_2048",
+      "onnx::Clip_2049"
+    ],
+    "outputs": [
+      "input.940"
+    ]
+  },
+  {
+    "name": "Conv_588",
+    "type": "Conv",
+    "inputs": [
+      "input.940",
+      "mode/cost_agg/conv0/conv0/4/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/4/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2051"
+    ]
+  },
+  {
+    "name": "Add_589",
+    "type": "Add",
+    "inputs": [
+      "input.924",
+      "onnx::Add_2051"
+    ],
+    "outputs": [
+      "input.944"
+    ]
+  },
+  {
+    "name": "Conv_590",
+    "type": "Conv",
+    "inputs": [
+      "input.944",
+      "mode/cost_agg/conv0/conv0/5/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/5/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.948"
+    ]
+  },
+  {
+    "name": "Clip_593",
+    "type": "Clip",
+    "inputs": [
+      "input.948",
+      "onnx::Clip_2054",
+      "onnx::Clip_2055"
+    ],
+    "outputs": [
+      "input.952"
+    ]
+  },
+  {
+    "name": "Conv_594",
+    "type": "Conv",
+    "inputs": [
+      "input.952",
+      "mode/cost_agg/conv0/conv0/5/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/5/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.956"
+    ]
+  },
+  {
+    "name": "Clip_597",
+    "type": "Clip",
+    "inputs": [
+      "input.956",
+      "onnx::Clip_2058",
+      "onnx::Clip_2059"
+    ],
+    "outputs": [
+      "input.960"
+    ]
+  },
+  {
+    "name": "Conv_598",
+    "type": "Conv",
+    "inputs": [
+      "input.960",
+      "mode/cost_agg/conv0/conv0/5/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/5/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2061"
+    ]
+  },
+  {
+    "name": "Add_599",
+    "type": "Add",
+    "inputs": [
+      "input.944",
+      "onnx::Add_2061"
+    ],
+    "outputs": [
+      "input.964"
+    ]
+  },
+  {
+    "name": "Conv_600",
+    "type": "Conv",
+    "inputs": [
+      "input.964",
+      "mode/cost_agg/conv0/conv0/6/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/6/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.968"
+    ]
+  },
+  {
+    "name": "Clip_603",
+    "type": "Clip",
+    "inputs": [
+      "input.968",
+      "onnx::Clip_2064",
+      "onnx::Clip_2065"
+    ],
+    "outputs": [
+      "input.972"
+    ]
+  },
+  {
+    "name": "Conv_604",
+    "type": "Conv",
+    "inputs": [
+      "input.972",
+      "mode/cost_agg/conv0/conv0/6/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/6/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.976"
+    ]
+  },
+  {
+    "name": "Clip_607",
+    "type": "Clip",
+    "inputs": [
+      "input.976",
+      "onnx::Clip_2068",
+      "onnx::Clip_2069"
+    ],
+    "outputs": [
+      "input.980"
+    ]
+  },
+  {
+    "name": "Conv_608",
+    "type": "Conv",
+    "inputs": [
+      "input.980",
+      "mode/cost_agg/conv0/conv0/6/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/6/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2071"
+    ]
+  },
+  {
+    "name": "Add_609",
+    "type": "Add",
+    "inputs": [
+      "input.964",
+      "onnx::Add_2071"
+    ],
+    "outputs": [
+      "input.984"
+    ]
+  },
+  {
+    "name": "Conv_610",
+    "type": "Conv",
+    "inputs": [
+      "input.984",
+      "mode/cost_agg/conv0/conv0/7/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/7/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.988"
+    ]
+  },
+  {
+    "name": "Clip_613",
+    "type": "Clip",
+    "inputs": [
+      "input.988",
+      "onnx::Clip_2074",
+      "onnx::Clip_2075"
+    ],
+    "outputs": [
+      "input.992"
+    ]
+  },
+  {
+    "name": "Conv_614",
+    "type": "Conv",
+    "inputs": [
+      "input.992",
+      "mode/cost_agg/conv0/conv0/7/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/7/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.996"
+    ]
+  },
+  {
+    "name": "Clip_617",
+    "type": "Clip",
+    "inputs": [
+      "input.996",
+      "onnx::Clip_2078",
+      "onnx::Clip_2079"
+    ],
+    "outputs": [
+      "input.1000"
+    ]
+  },
+  {
+    "name": "Conv_618",
+    "type": "Conv",
+    "inputs": [
+      "input.1000",
+      "mode/cost_agg/conv0/conv0/7/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv0/conv0/7/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2081"
+    ]
+  },
+  {
+    "name": "Add_619",
+    "type": "Add",
+    "inputs": [
+      "input.984",
+      "onnx::Add_2081"
+    ],
+    "outputs": [
+      "onnx::Mul_2082"
+    ]
+  },
+  {
+    "name": "Mul_620",
+    "type": "Mul",
+    "inputs": [
+      "onnx::Mul_1999",
+      "onnx::Mul_2082"
+    ],
+    "outputs": [
+      "input.1004"
+    ]
+  },
+  {
+    "name": "Conv_621",
+    "type": "Conv",
+    "inputs": [
+      "input.1004",
+      "mode/cost_agg/conv1/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv1/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1008"
+    ]
+  },
+  {
+    "name": "Clip_625",
+    "type": "Clip",
+    "inputs": [
+      "input.1008",
+      "onnx::Clip_2086",
+      "onnx::Clip_2087"
+    ],
+    "outputs": [
+      "input.1016"
+    ]
+  },
+  {
+    "name": "Conv_629",
+    "type": "Conv",
+    "inputs": [
+      "input.1016",
+      "mode/cost_agg/conv1/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv1/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1024"
+    ]
+  },
+  {
+    "name": "Clip_633",
+    "type": "Clip",
+    "inputs": [
+      "input.1024",
+      "onnx::Clip_2094",
+      "onnx::Clip_2095"
+    ],
+    "outputs": [
+      "input.1032"
+    ]
+  },
+  {
+    "name": "Conv_637",
+    "type": "Conv",
+    "inputs": [
+      "input.1032",
+      "mode/cost_agg/conv1/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv1/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1040"
+    ]
+  },
+  {
+    "name": "Conv_639",
+    "type": "Conv",
+    "inputs": [
+      "input.1040",
+      "mode/cost_agg/conv2/conv2/0/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/0/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1044"
+    ]
+  },
+  {
+    "name": "Clip_643",
+    "type": "Clip",
+    "inputs": [
+      "input.1044",
+      "onnx::Clip_2104",
+      "onnx::Clip_2105"
+    ],
+    "outputs": [
+      "input.1048"
+    ]
+  },
+  {
+    "name": "Conv_644",
+    "type": "Conv",
+    "inputs": [
+      "input.1048",
+      "mode/cost_agg/conv2/conv2/0/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/0/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1052"
+    ]
+  },
+  {
+    "name": "Clip_647",
+    "type": "Clip",
+    "inputs": [
+      "input.1052",
+      "onnx::Clip_2108",
+      "onnx::Clip_2109"
+    ],
+    "outputs": [
+      "input.1056"
+    ]
+  },
+  {
+    "name": "Conv_648",
+    "type": "Conv",
+    "inputs": [
+      "input.1056",
+      "mode/cost_agg/conv2/conv2/0/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/0/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2111"
+    ]
+  },
+  {
+    "name": "Add_649",
+    "type": "Add",
+    "inputs": [
+      "input.1040",
+      "onnx::Add_2111"
+    ],
+    "outputs": [
+      "input.1060"
+    ]
+  },
+  {
+    "name": "Conv_650",
+    "type": "Conv",
+    "inputs": [
+      "input.1060",
+      "mode/cost_agg/conv2/conv2/1/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/1/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1064"
+    ]
+  },
+  {
+    "name": "Clip_653",
+    "type": "Clip",
+    "inputs": [
+      "input.1064",
+      "onnx::Clip_2114",
+      "onnx::Clip_2115"
+    ],
+    "outputs": [
+      "input.1068"
+    ]
+  },
+  {
+    "name": "Conv_654",
+    "type": "Conv",
+    "inputs": [
+      "input.1068",
+      "mode/cost_agg/conv2/conv2/1/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/1/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1072"
+    ]
+  },
+  {
+    "name": "Clip_657",
+    "type": "Clip",
+    "inputs": [
+      "input.1072",
+      "onnx::Clip_2118",
+      "onnx::Clip_2119"
+    ],
+    "outputs": [
+      "input.1076"
+    ]
+  },
+  {
+    "name": "Conv_658",
+    "type": "Conv",
+    "inputs": [
+      "input.1076",
+      "mode/cost_agg/conv2/conv2/1/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/1/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2121"
+    ]
+  },
+  {
+    "name": "Add_659",
+    "type": "Add",
+    "inputs": [
+      "input.1060",
+      "onnx::Add_2121"
+    ],
+    "outputs": [
+      "input.1080"
+    ]
+  },
+  {
+    "name": "Conv_660",
+    "type": "Conv",
+    "inputs": [
+      "input.1080",
+      "mode/cost_agg/conv2/conv2/2/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/2/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1084"
+    ]
+  },
+  {
+    "name": "Clip_663",
+    "type": "Clip",
+    "inputs": [
+      "input.1084",
+      "onnx::Clip_2124",
+      "onnx::Clip_2125"
+    ],
+    "outputs": [
+      "input.1088"
+    ]
+  },
+  {
+    "name": "Conv_664",
+    "type": "Conv",
+    "inputs": [
+      "input.1088",
+      "mode/cost_agg/conv2/conv2/2/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/2/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1092"
+    ]
+  },
+  {
+    "name": "Clip_667",
+    "type": "Clip",
+    "inputs": [
+      "input.1092",
+      "onnx::Clip_2128",
+      "onnx::Clip_2129"
+    ],
+    "outputs": [
+      "input.1096"
+    ]
+  },
+  {
+    "name": "Conv_668",
+    "type": "Conv",
+    "inputs": [
+      "input.1096",
+      "mode/cost_agg/conv2/conv2/2/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/2/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2131"
+    ]
+  },
+  {
+    "name": "Add_669",
+    "type": "Add",
+    "inputs": [
+      "input.1080",
+      "onnx::Add_2131"
+    ],
+    "outputs": [
+      "input.1100"
+    ]
+  },
+  {
+    "name": "Conv_670",
+    "type": "Conv",
+    "inputs": [
+      "input.1100",
+      "mode/cost_agg/conv2/conv2/3/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/3/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1104"
+    ]
+  },
+  {
+    "name": "Clip_673",
+    "type": "Clip",
+    "inputs": [
+      "input.1104",
+      "onnx::Clip_2134",
+      "onnx::Clip_2135"
+    ],
+    "outputs": [
+      "input.1108"
+    ]
+  },
+  {
+    "name": "Conv_674",
+    "type": "Conv",
+    "inputs": [
+      "input.1108",
+      "mode/cost_agg/conv2/conv2/3/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/3/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1112"
+    ]
+  },
+  {
+    "name": "Clip_677",
+    "type": "Clip",
+    "inputs": [
+      "input.1112",
+      "onnx::Clip_2138",
+      "onnx::Clip_2139"
+    ],
+    "outputs": [
+      "input.1116"
+    ]
+  },
+  {
+    "name": "Conv_678",
+    "type": "Conv",
+    "inputs": [
+      "input.1116",
+      "mode/cost_agg/conv2/conv2/3/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/3/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2141"
+    ]
+  },
+  {
+    "name": "Add_679",
+    "type": "Add",
+    "inputs": [
+      "input.1100",
+      "onnx::Add_2141"
+    ],
+    "outputs": [
+      "input.1120"
+    ]
+  },
+  {
+    "name": "Conv_680",
+    "type": "Conv",
+    "inputs": [
+      "input.1120",
+      "mode/cost_agg/conv2/conv2/4/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/4/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1124"
+    ]
+  },
+  {
+    "name": "Clip_683",
+    "type": "Clip",
+    "inputs": [
+      "input.1124",
+      "onnx::Clip_2144",
+      "onnx::Clip_2145"
+    ],
+    "outputs": [
+      "input.1128"
+    ]
+  },
+  {
+    "name": "Conv_684",
+    "type": "Conv",
+    "inputs": [
+      "input.1128",
+      "mode/cost_agg/conv2/conv2/4/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/4/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1132"
+    ]
+  },
+  {
+    "name": "Clip_687",
+    "type": "Clip",
+    "inputs": [
+      "input.1132",
+      "onnx::Clip_2148",
+      "onnx::Clip_2149"
+    ],
+    "outputs": [
+      "input.1136"
+    ]
+  },
+  {
+    "name": "Conv_688",
+    "type": "Conv",
+    "inputs": [
+      "input.1136",
+      "mode/cost_agg/conv2/conv2/4/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/4/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2151"
+    ]
+  },
+  {
+    "name": "Add_689",
+    "type": "Add",
+    "inputs": [
+      "input.1120",
+      "onnx::Add_2151"
+    ],
+    "outputs": [
+      "input.1140"
+    ]
+  },
+  {
+    "name": "Conv_690",
+    "type": "Conv",
+    "inputs": [
+      "input.1140",
+      "mode/cost_agg/conv2/conv2/5/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/5/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1144"
+    ]
+  },
+  {
+    "name": "Clip_693",
+    "type": "Clip",
+    "inputs": [
+      "input.1144",
+      "onnx::Clip_2154",
+      "onnx::Clip_2155"
+    ],
+    "outputs": [
+      "input.1148"
+    ]
+  },
+  {
+    "name": "Conv_694",
+    "type": "Conv",
+    "inputs": [
+      "input.1148",
+      "mode/cost_agg/conv2/conv2/5/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/5/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1152"
+    ]
+  },
+  {
+    "name": "Clip_697",
+    "type": "Clip",
+    "inputs": [
+      "input.1152",
+      "onnx::Clip_2158",
+      "onnx::Clip_2159"
+    ],
+    "outputs": [
+      "input.1156"
+    ]
+  },
+  {
+    "name": "Conv_698",
+    "type": "Conv",
+    "inputs": [
+      "input.1156",
+      "mode/cost_agg/conv2/conv2/5/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/5/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2161"
+    ]
+  },
+  {
+    "name": "Add_699",
+    "type": "Add",
+    "inputs": [
+      "input.1140",
+      "onnx::Add_2161"
+    ],
+    "outputs": [
+      "input.1160"
+    ]
+  },
+  {
+    "name": "Conv_700",
+    "type": "Conv",
+    "inputs": [
+      "input.1160",
+      "mode/cost_agg/conv2/conv2/6/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/6/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1164"
+    ]
+  },
+  {
+    "name": "Clip_703",
+    "type": "Clip",
+    "inputs": [
+      "input.1164",
+      "onnx::Clip_2164",
+      "onnx::Clip_2165"
+    ],
+    "outputs": [
+      "input.1168"
+    ]
+  },
+  {
+    "name": "Conv_704",
+    "type": "Conv",
+    "inputs": [
+      "input.1168",
+      "mode/cost_agg/conv2/conv2/6/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/6/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1172"
+    ]
+  },
+  {
+    "name": "Clip_707",
+    "type": "Clip",
+    "inputs": [
+      "input.1172",
+      "onnx::Clip_2168",
+      "onnx::Clip_2169"
+    ],
+    "outputs": [
+      "input.1176"
+    ]
+  },
+  {
+    "name": "Conv_708",
+    "type": "Conv",
+    "inputs": [
+      "input.1176",
+      "mode/cost_agg/conv2/conv2/6/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/6/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2171"
+    ]
+  },
+  {
+    "name": "Add_709",
+    "type": "Add",
+    "inputs": [
+      "input.1160",
+      "onnx::Add_2171"
+    ],
+    "outputs": [
+      "input.1180"
+    ]
+  },
+  {
+    "name": "Conv_710",
+    "type": "Conv",
+    "inputs": [
+      "input.1180",
+      "mode/cost_agg/conv2/conv2/7/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/7/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1184"
+    ]
+  },
+  {
+    "name": "Clip_713",
+    "type": "Clip",
+    "inputs": [
+      "input.1184",
+      "onnx::Clip_2174",
+      "onnx::Clip_2175"
+    ],
+    "outputs": [
+      "input.1188"
+    ]
+  },
+  {
+    "name": "Conv_714",
+    "type": "Conv",
+    "inputs": [
+      "input.1188",
+      "mode/cost_agg/conv2/conv2/7/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/7/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1192"
+    ]
+  },
+  {
+    "name": "Clip_717",
+    "type": "Clip",
+    "inputs": [
+      "input.1192",
+      "onnx::Clip_2178",
+      "onnx::Clip_2179"
+    ],
+    "outputs": [
+      "input.1196"
+    ]
+  },
+  {
+    "name": "Conv_718",
+    "type": "Conv",
+    "inputs": [
+      "input.1196",
+      "mode/cost_agg/conv2/conv2/7/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/7/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2181"
+    ]
+  },
+  {
+    "name": "Add_719",
+    "type": "Add",
+    "inputs": [
+      "input.1180",
+      "onnx::Add_2181"
+    ],
+    "outputs": [
+      "input.1200"
+    ]
+  },
+  {
+    "name": "Conv_720",
+    "type": "Conv",
+    "inputs": [
+      "input.1200",
+      "mode/cost_agg/conv2/conv2/8/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/8/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1204"
+    ]
+  },
+  {
+    "name": "Clip_723",
+    "type": "Clip",
+    "inputs": [
+      "input.1204",
+      "onnx::Clip_2184",
+      "onnx::Clip_2185"
+    ],
+    "outputs": [
+      "input.1208"
+    ]
+  },
+  {
+    "name": "Conv_724",
+    "type": "Conv",
+    "inputs": [
+      "input.1208",
+      "mode/cost_agg/conv2/conv2/8/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/8/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1212"
+    ]
+  },
+  {
+    "name": "Clip_727",
+    "type": "Clip",
+    "inputs": [
+      "input.1212",
+      "onnx::Clip_2188",
+      "onnx::Clip_2189"
+    ],
+    "outputs": [
+      "input.1216"
+    ]
+  },
+  {
+    "name": "Conv_728",
+    "type": "Conv",
+    "inputs": [
+      "input.1216",
+      "mode/cost_agg/conv2/conv2/8/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/8/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2191"
+    ]
+  },
+  {
+    "name": "Add_729",
+    "type": "Add",
+    "inputs": [
+      "input.1200",
+      "onnx::Add_2191"
+    ],
+    "outputs": [
+      "input.1220"
+    ]
+  },
+  {
+    "name": "Conv_730",
+    "type": "Conv",
+    "inputs": [
+      "input.1220",
+      "mode/cost_agg/conv2/conv2/9/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/9/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1224"
+    ]
+  },
+  {
+    "name": "Clip_733",
+    "type": "Clip",
+    "inputs": [
+      "input.1224",
+      "onnx::Clip_2194",
+      "onnx::Clip_2195"
+    ],
+    "outputs": [
+      "input.1228"
+    ]
+  },
+  {
+    "name": "Conv_734",
+    "type": "Conv",
+    "inputs": [
+      "input.1228",
+      "mode/cost_agg/conv2/conv2/9/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/9/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1232"
+    ]
+  },
+  {
+    "name": "Clip_737",
+    "type": "Clip",
+    "inputs": [
+      "input.1232",
+      "onnx::Clip_2198",
+      "onnx::Clip_2199"
+    ],
+    "outputs": [
+      "input.1236"
+    ]
+  },
+  {
+    "name": "Conv_738",
+    "type": "Conv",
+    "inputs": [
+      "input.1236",
+      "mode/cost_agg/conv2/conv2/9/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/9/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2201"
+    ]
+  },
+  {
+    "name": "Add_739",
+    "type": "Add",
+    "inputs": [
+      "input.1220",
+      "onnx::Add_2201"
+    ],
+    "outputs": [
+      "input.1240"
+    ]
+  },
+  {
+    "name": "Conv_740",
+    "type": "Conv",
+    "inputs": [
+      "input.1240",
+      "mode/cost_agg/conv2/conv2/10/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/10/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1244"
+    ]
+  },
+  {
+    "name": "Clip_743",
+    "type": "Clip",
+    "inputs": [
+      "input.1244",
+      "onnx::Clip_2204",
+      "onnx::Clip_2205"
+    ],
+    "outputs": [
+      "input.1248"
+    ]
+  },
+  {
+    "name": "Conv_744",
+    "type": "Conv",
+    "inputs": [
+      "input.1248",
+      "mode/cost_agg/conv2/conv2/10/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/10/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1252"
+    ]
+  },
+  {
+    "name": "Clip_747",
+    "type": "Clip",
+    "inputs": [
+      "input.1252",
+      "onnx::Clip_2208",
+      "onnx::Clip_2209"
+    ],
+    "outputs": [
+      "input.1256"
+    ]
+  },
+  {
+    "name": "Conv_748",
+    "type": "Conv",
+    "inputs": [
+      "input.1256",
+      "mode/cost_agg/conv2/conv2/10/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/10/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2211"
+    ]
+  },
+  {
+    "name": "Add_749",
+    "type": "Add",
+    "inputs": [
+      "input.1240",
+      "onnx::Add_2211"
+    ],
+    "outputs": [
+      "input.1260"
+    ]
+  },
+  {
+    "name": "Conv_750",
+    "type": "Conv",
+    "inputs": [
+      "input.1260",
+      "mode/cost_agg/conv2/conv2/11/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/11/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1264"
+    ]
+  },
+  {
+    "name": "Clip_753",
+    "type": "Clip",
+    "inputs": [
+      "input.1264",
+      "onnx::Clip_2214",
+      "onnx::Clip_2215"
+    ],
+    "outputs": [
+      "input.1268"
+    ]
+  },
+  {
+    "name": "Conv_754",
+    "type": "Conv",
+    "inputs": [
+      "input.1268",
+      "mode/cost_agg/conv2/conv2/11/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/11/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1272"
+    ]
+  },
+  {
+    "name": "Clip_757",
+    "type": "Clip",
+    "inputs": [
+      "input.1272",
+      "onnx::Clip_2218",
+      "onnx::Clip_2219"
+    ],
+    "outputs": [
+      "input.1276"
+    ]
+  },
+  {
+    "name": "Conv_758",
+    "type": "Conv",
+    "inputs": [
+      "input.1276",
+      "mode/cost_agg/conv2/conv2/11/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/11/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2221"
+    ]
+  },
+  {
+    "name": "Add_759",
+    "type": "Add",
+    "inputs": [
+      "input.1260",
+      "onnx::Add_2221"
+    ],
+    "outputs": [
+      "input.1280"
+    ]
+  },
+  {
+    "name": "Conv_760",
+    "type": "Conv",
+    "inputs": [
+      "input.1280",
+      "mode/cost_agg/conv2/conv2/12/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/12/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1284"
+    ]
+  },
+  {
+    "name": "Clip_763",
+    "type": "Clip",
+    "inputs": [
+      "input.1284",
+      "onnx::Clip_2224",
+      "onnx::Clip_2225"
+    ],
+    "outputs": [
+      "input.1288"
+    ]
+  },
+  {
+    "name": "Conv_764",
+    "type": "Conv",
+    "inputs": [
+      "input.1288",
+      "mode/cost_agg/conv2/conv2/12/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/12/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1292"
+    ]
+  },
+  {
+    "name": "Clip_767",
+    "type": "Clip",
+    "inputs": [
+      "input.1292",
+      "onnx::Clip_2228",
+      "onnx::Clip_2229"
+    ],
+    "outputs": [
+      "input.1296"
+    ]
+  },
+  {
+    "name": "Conv_768",
+    "type": "Conv",
+    "inputs": [
+      "input.1296",
+      "mode/cost_agg/conv2/conv2/12/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/12/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2231"
+    ]
+  },
+  {
+    "name": "Add_769",
+    "type": "Add",
+    "inputs": [
+      "input.1280",
+      "onnx::Add_2231"
+    ],
+    "outputs": [
+      "input.1300"
+    ]
+  },
+  {
+    "name": "Conv_770",
+    "type": "Conv",
+    "inputs": [
+      "input.1300",
+      "mode/cost_agg/conv2/conv2/13/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/13/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1304"
+    ]
+  },
+  {
+    "name": "Clip_773",
+    "type": "Clip",
+    "inputs": [
+      "input.1304",
+      "onnx::Clip_2234",
+      "onnx::Clip_2235"
+    ],
+    "outputs": [
+      "input.1308"
+    ]
+  },
+  {
+    "name": "Conv_774",
+    "type": "Conv",
+    "inputs": [
+      "input.1308",
+      "mode/cost_agg/conv2/conv2/13/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/13/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1312"
+    ]
+  },
+  {
+    "name": "Clip_777",
+    "type": "Clip",
+    "inputs": [
+      "input.1312",
+      "onnx::Clip_2238",
+      "onnx::Clip_2239"
+    ],
+    "outputs": [
+      "input.1316"
+    ]
+  },
+  {
+    "name": "Conv_778",
+    "type": "Conv",
+    "inputs": [
+      "input.1316",
+      "mode/cost_agg/conv2/conv2/13/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/13/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2241"
+    ]
+  },
+  {
+    "name": "Add_779",
+    "type": "Add",
+    "inputs": [
+      "input.1300",
+      "onnx::Add_2241"
+    ],
+    "outputs": [
+      "input.1320"
+    ]
+  },
+  {
+    "name": "Conv_780",
+    "type": "Conv",
+    "inputs": [
+      "input.1320",
+      "mode/cost_agg/conv2/conv2/14/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/14/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1324"
+    ]
+  },
+  {
+    "name": "Clip_783",
+    "type": "Clip",
+    "inputs": [
+      "input.1324",
+      "onnx::Clip_2244",
+      "onnx::Clip_2245"
+    ],
+    "outputs": [
+      "input.1328"
+    ]
+  },
+  {
+    "name": "Conv_784",
+    "type": "Conv",
+    "inputs": [
+      "input.1328",
+      "mode/cost_agg/conv2/conv2/14/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/14/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1332"
+    ]
+  },
+  {
+    "name": "Clip_787",
+    "type": "Clip",
+    "inputs": [
+      "input.1332",
+      "onnx::Clip_2248",
+      "onnx::Clip_2249"
+    ],
+    "outputs": [
+      "input.1336"
+    ]
+  },
+  {
+    "name": "Conv_788",
+    "type": "Conv",
+    "inputs": [
+      "input.1336",
+      "mode/cost_agg/conv2/conv2/14/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv2/conv2/14/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2251"
+    ]
+  },
+  {
+    "name": "Add_789",
+    "type": "Add",
+    "inputs": [
+      "input.1320",
+      "onnx::Add_2251"
+    ],
+    "outputs": [
+      "onnx::Mul_2252"
+    ]
+  },
+  {
+    "name": "Mul_790",
+    "type": "Mul",
+    "inputs": [
+      "onnx::Mul_1828",
+      "onnx::Mul_2252"
+    ],
+    "outputs": [
+      "input.1340"
+    ]
+  },
+  {
+    "name": "Conv_791",
+    "type": "Conv",
+    "inputs": [
+      "input.1340",
+      "mode/cost_agg/conv3/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv3/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1344"
+    ]
+  },
+  {
+    "name": "Clip_795",
+    "type": "Clip",
+    "inputs": [
+      "input.1344",
+      "onnx::Clip_2256",
+      "onnx::Clip_2257"
+    ],
+    "outputs": [
+      "input.1352"
+    ]
+  },
+  {
+    "name": "Conv_799",
+    "type": "Conv",
+    "inputs": [
+      "input.1352",
+      "mode/cost_agg/conv3/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv3/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1360"
+    ]
+  },
+  {
+    "name": "Clip_803",
+    "type": "Clip",
+    "inputs": [
+      "input.1360",
+      "onnx::Clip_2264",
+      "onnx::Clip_2265"
+    ],
+    "outputs": [
+      "input.1368"
+    ]
+  },
+  {
+    "name": "Conv_807",
+    "type": "Conv",
+    "inputs": [
+      "input.1368",
+      "mode/cost_agg/conv3/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv3/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1376"
+    ]
+  },
+  {
+    "name": "Conv_809",
+    "type": "Conv",
+    "inputs": [
+      "input.1376",
+      "mode/cost_agg/conv4/conv4/0/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/0/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1380"
+    ]
+  },
+  {
+    "name": "Clip_813",
+    "type": "Clip",
+    "inputs": [
+      "input.1380",
+      "onnx::Clip_2274",
+      "onnx::Clip_2275"
+    ],
+    "outputs": [
+      "input.1384"
+    ]
+  },
+  {
+    "name": "Conv_814",
+    "type": "Conv",
+    "inputs": [
+      "input.1384",
+      "mode/cost_agg/conv4/conv4/0/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/0/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1388"
+    ]
+  },
+  {
+    "name": "Clip_817",
+    "type": "Clip",
+    "inputs": [
+      "input.1388",
+      "onnx::Clip_2278",
+      "onnx::Clip_2279"
+    ],
+    "outputs": [
+      "input.1392"
+    ]
+  },
+  {
+    "name": "Conv_818",
+    "type": "Conv",
+    "inputs": [
+      "input.1392",
+      "mode/cost_agg/conv4/conv4/0/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/0/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2281"
+    ]
+  },
+  {
+    "name": "Add_819",
+    "type": "Add",
+    "inputs": [
+      "input.1376",
+      "onnx::Add_2281"
+    ],
+    "outputs": [
+      "input.1396"
+    ]
+  },
+  {
+    "name": "Conv_820",
+    "type": "Conv",
+    "inputs": [
+      "input.1396",
+      "mode/cost_agg/conv4/conv4/1/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/1/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1400"
+    ]
+  },
+  {
+    "name": "Clip_823",
+    "type": "Clip",
+    "inputs": [
+      "input.1400",
+      "onnx::Clip_2284",
+      "onnx::Clip_2285"
+    ],
+    "outputs": [
+      "input.1404"
+    ]
+  },
+  {
+    "name": "Conv_824",
+    "type": "Conv",
+    "inputs": [
+      "input.1404",
+      "mode/cost_agg/conv4/conv4/1/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/1/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1408"
+    ]
+  },
+  {
+    "name": "Clip_827",
+    "type": "Clip",
+    "inputs": [
+      "input.1408",
+      "onnx::Clip_2288",
+      "onnx::Clip_2289"
+    ],
+    "outputs": [
+      "input.1412"
+    ]
+  },
+  {
+    "name": "Conv_828",
+    "type": "Conv",
+    "inputs": [
+      "input.1412",
+      "mode/cost_agg/conv4/conv4/1/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/1/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2291"
+    ]
+  },
+  {
+    "name": "Add_829",
+    "type": "Add",
+    "inputs": [
+      "input.1396",
+      "onnx::Add_2291"
+    ],
+    "outputs": [
+      "input.1416"
+    ]
+  },
+  {
+    "name": "Conv_830",
+    "type": "Conv",
+    "inputs": [
+      "input.1416",
+      "mode/cost_agg/conv4/conv4/2/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/2/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1420"
+    ]
+  },
+  {
+    "name": "Clip_833",
+    "type": "Clip",
+    "inputs": [
+      "input.1420",
+      "onnx::Clip_2294",
+      "onnx::Clip_2295"
+    ],
+    "outputs": [
+      "input.1424"
+    ]
+  },
+  {
+    "name": "Conv_834",
+    "type": "Conv",
+    "inputs": [
+      "input.1424",
+      "mode/cost_agg/conv4/conv4/2/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/2/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1428"
+    ]
+  },
+  {
+    "name": "Clip_837",
+    "type": "Clip",
+    "inputs": [
+      "input.1428",
+      "onnx::Clip_2298",
+      "onnx::Clip_2299"
+    ],
+    "outputs": [
+      "input.1432"
+    ]
+  },
+  {
+    "name": "Conv_838",
+    "type": "Conv",
+    "inputs": [
+      "input.1432",
+      "mode/cost_agg/conv4/conv4/2/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/2/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2301"
+    ]
+  },
+  {
+    "name": "Add_839",
+    "type": "Add",
+    "inputs": [
+      "input.1416",
+      "onnx::Add_2301"
+    ],
+    "outputs": [
+      "input.1436"
+    ]
+  },
+  {
+    "name": "Conv_840",
+    "type": "Conv",
+    "inputs": [
+      "input.1436",
+      "mode/cost_agg/conv4/conv4/3/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/3/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1440"
+    ]
+  },
+  {
+    "name": "Clip_843",
+    "type": "Clip",
+    "inputs": [
+      "input.1440",
+      "onnx::Clip_2304",
+      "onnx::Clip_2305"
+    ],
+    "outputs": [
+      "input.1444"
+    ]
+  },
+  {
+    "name": "Conv_844",
+    "type": "Conv",
+    "inputs": [
+      "input.1444",
+      "mode/cost_agg/conv4/conv4/3/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/3/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1448"
+    ]
+  },
+  {
+    "name": "Clip_847",
+    "type": "Clip",
+    "inputs": [
+      "input.1448",
+      "onnx::Clip_2308",
+      "onnx::Clip_2309"
+    ],
+    "outputs": [
+      "input.1452"
+    ]
+  },
+  {
+    "name": "Conv_848",
+    "type": "Conv",
+    "inputs": [
+      "input.1452",
+      "mode/cost_agg/conv4/conv4/3/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/3/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2311"
+    ]
+  },
+  {
+    "name": "Add_849",
+    "type": "Add",
+    "inputs": [
+      "input.1436",
+      "onnx::Add_2311"
+    ],
+    "outputs": [
+      "input.1456"
+    ]
+  },
+  {
+    "name": "Conv_850",
+    "type": "Conv",
+    "inputs": [
+      "input.1456",
+      "mode/cost_agg/conv4/conv4/4/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/4/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1460"
+    ]
+  },
+  {
+    "name": "Clip_853",
+    "type": "Clip",
+    "inputs": [
+      "input.1460",
+      "onnx::Clip_2314",
+      "onnx::Clip_2315"
+    ],
+    "outputs": [
+      "input.1464"
+    ]
+  },
+  {
+    "name": "Conv_854",
+    "type": "Conv",
+    "inputs": [
+      "input.1464",
+      "mode/cost_agg/conv4/conv4/4/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/4/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1468"
+    ]
+  },
+  {
+    "name": "Clip_857",
+    "type": "Clip",
+    "inputs": [
+      "input.1468",
+      "onnx::Clip_2318",
+      "onnx::Clip_2319"
+    ],
+    "outputs": [
+      "input.1472"
+    ]
+  },
+  {
+    "name": "Conv_858",
+    "type": "Conv",
+    "inputs": [
+      "input.1472",
+      "mode/cost_agg/conv4/conv4/4/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/4/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2321"
+    ]
+  },
+  {
+    "name": "Add_859",
+    "type": "Add",
+    "inputs": [
+      "input.1456",
+      "onnx::Add_2321"
+    ],
+    "outputs": [
+      "input.1476"
+    ]
+  },
+  {
+    "name": "Conv_860",
+    "type": "Conv",
+    "inputs": [
+      "input.1476",
+      "mode/cost_agg/conv4/conv4/5/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/5/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1480"
+    ]
+  },
+  {
+    "name": "Clip_863",
+    "type": "Clip",
+    "inputs": [
+      "input.1480",
+      "onnx::Clip_2324",
+      "onnx::Clip_2325"
+    ],
+    "outputs": [
+      "input.1484"
+    ]
+  },
+  {
+    "name": "Conv_864",
+    "type": "Conv",
+    "inputs": [
+      "input.1484",
+      "mode/cost_agg/conv4/conv4/5/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/5/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1488"
+    ]
+  },
+  {
+    "name": "Clip_867",
+    "type": "Clip",
+    "inputs": [
+      "input.1488",
+      "onnx::Clip_2328",
+      "onnx::Clip_2329"
+    ],
+    "outputs": [
+      "input.1492"
+    ]
+  },
+  {
+    "name": "Conv_868",
+    "type": "Conv",
+    "inputs": [
+      "input.1492",
+      "mode/cost_agg/conv4/conv4/5/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/5/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2331"
+    ]
+  },
+  {
+    "name": "Add_869",
+    "type": "Add",
+    "inputs": [
+      "input.1476",
+      "onnx::Add_2331"
+    ],
+    "outputs": [
+      "input.1496"
+    ]
+  },
+  {
+    "name": "Conv_870",
+    "type": "Conv",
+    "inputs": [
+      "input.1496",
+      "mode/cost_agg/conv4/conv4/6/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/6/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1500"
+    ]
+  },
+  {
+    "name": "Clip_873",
+    "type": "Clip",
+    "inputs": [
+      "input.1500",
+      "onnx::Clip_2334",
+      "onnx::Clip_2335"
+    ],
+    "outputs": [
+      "input.1504"
+    ]
+  },
+  {
+    "name": "Conv_874",
+    "type": "Conv",
+    "inputs": [
+      "input.1504",
+      "mode/cost_agg/conv4/conv4/6/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/6/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1508"
+    ]
+  },
+  {
+    "name": "Clip_877",
+    "type": "Clip",
+    "inputs": [
+      "input.1508",
+      "onnx::Clip_2338",
+      "onnx::Clip_2339"
+    ],
+    "outputs": [
+      "input.1512"
+    ]
+  },
+  {
+    "name": "Conv_878",
+    "type": "Conv",
+    "inputs": [
+      "input.1512",
+      "mode/cost_agg/conv4/conv4/6/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/6/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2341"
+    ]
+  },
+  {
+    "name": "Add_879",
+    "type": "Add",
+    "inputs": [
+      "input.1496",
+      "onnx::Add_2341"
+    ],
+    "outputs": [
+      "input.1516"
+    ]
+  },
+  {
+    "name": "Conv_880",
+    "type": "Conv",
+    "inputs": [
+      "input.1516",
+      "mode/cost_agg/conv4/conv4/7/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/7/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1520"
+    ]
+  },
+  {
+    "name": "Clip_883",
+    "type": "Clip",
+    "inputs": [
+      "input.1520",
+      "onnx::Clip_2344",
+      "onnx::Clip_2345"
+    ],
+    "outputs": [
+      "input.1524"
+    ]
+  },
+  {
+    "name": "Conv_884",
+    "type": "Conv",
+    "inputs": [
+      "input.1524",
+      "mode/cost_agg/conv4/conv4/7/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/7/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1528"
+    ]
+  },
+  {
+    "name": "Clip_887",
+    "type": "Clip",
+    "inputs": [
+      "input.1528",
+      "onnx::Clip_2348",
+      "onnx::Clip_2349"
+    ],
+    "outputs": [
+      "input.1532"
+    ]
+  },
+  {
+    "name": "Conv_888",
+    "type": "Conv",
+    "inputs": [
+      "input.1532",
+      "mode/cost_agg/conv4/conv4/7/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/7/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2351"
+    ]
+  },
+  {
+    "name": "Add_889",
+    "type": "Add",
+    "inputs": [
+      "input.1516",
+      "onnx::Add_2351"
+    ],
+    "outputs": [
+      "input.1536"
+    ]
+  },
+  {
+    "name": "Conv_890",
+    "type": "Conv",
+    "inputs": [
+      "input.1536",
+      "mode/cost_agg/conv4/conv4/8/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/8/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1540"
+    ]
+  },
+  {
+    "name": "Clip_893",
+    "type": "Clip",
+    "inputs": [
+      "input.1540",
+      "onnx::Clip_2354",
+      "onnx::Clip_2355"
+    ],
+    "outputs": [
+      "input.1544"
+    ]
+  },
+  {
+    "name": "Conv_894",
+    "type": "Conv",
+    "inputs": [
+      "input.1544",
+      "mode/cost_agg/conv4/conv4/8/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/8/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1548"
+    ]
+  },
+  {
+    "name": "Clip_897",
+    "type": "Clip",
+    "inputs": [
+      "input.1548",
+      "onnx::Clip_2358",
+      "onnx::Clip_2359"
+    ],
+    "outputs": [
+      "input.1552"
+    ]
+  },
+  {
+    "name": "Conv_898",
+    "type": "Conv",
+    "inputs": [
+      "input.1552",
+      "mode/cost_agg/conv4/conv4/8/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/8/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2361"
+    ]
+  },
+  {
+    "name": "Add_899",
+    "type": "Add",
+    "inputs": [
+      "input.1536",
+      "onnx::Add_2361"
+    ],
+    "outputs": [
+      "input.1556"
+    ]
+  },
+  {
+    "name": "Conv_900",
+    "type": "Conv",
+    "inputs": [
+      "input.1556",
+      "mode/cost_agg/conv4/conv4/9/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/9/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1560"
+    ]
+  },
+  {
+    "name": "Clip_903",
+    "type": "Clip",
+    "inputs": [
+      "input.1560",
+      "onnx::Clip_2364",
+      "onnx::Clip_2365"
+    ],
+    "outputs": [
+      "input.1564"
+    ]
+  },
+  {
+    "name": "Conv_904",
+    "type": "Conv",
+    "inputs": [
+      "input.1564",
+      "mode/cost_agg/conv4/conv4/9/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/9/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1568"
+    ]
+  },
+  {
+    "name": "Clip_907",
+    "type": "Clip",
+    "inputs": [
+      "input.1568",
+      "onnx::Clip_2368",
+      "onnx::Clip_2369"
+    ],
+    "outputs": [
+      "input.1572"
+    ]
+  },
+  {
+    "name": "Conv_908",
+    "type": "Conv",
+    "inputs": [
+      "input.1572",
+      "mode/cost_agg/conv4/conv4/9/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/9/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2371"
+    ]
+  },
+  {
+    "name": "Add_909",
+    "type": "Add",
+    "inputs": [
+      "input.1556",
+      "onnx::Add_2371"
+    ],
+    "outputs": [
+      "input.1576"
+    ]
+  },
+  {
+    "name": "Conv_910",
+    "type": "Conv",
+    "inputs": [
+      "input.1576",
+      "mode/cost_agg/conv4/conv4/10/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/10/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1580"
+    ]
+  },
+  {
+    "name": "Clip_913",
+    "type": "Clip",
+    "inputs": [
+      "input.1580",
+      "onnx::Clip_2374",
+      "onnx::Clip_2375"
+    ],
+    "outputs": [
+      "input.1584"
+    ]
+  },
+  {
+    "name": "Conv_914",
+    "type": "Conv",
+    "inputs": [
+      "input.1584",
+      "mode/cost_agg/conv4/conv4/10/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/10/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1588"
+    ]
+  },
+  {
+    "name": "Clip_917",
+    "type": "Clip",
+    "inputs": [
+      "input.1588",
+      "onnx::Clip_2378",
+      "onnx::Clip_2379"
+    ],
+    "outputs": [
+      "input.1592"
+    ]
+  },
+  {
+    "name": "Conv_918",
+    "type": "Conv",
+    "inputs": [
+      "input.1592",
+      "mode/cost_agg/conv4/conv4/10/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/10/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2381"
+    ]
+  },
+  {
+    "name": "Add_919",
+    "type": "Add",
+    "inputs": [
+      "input.1576",
+      "onnx::Add_2381"
+    ],
+    "outputs": [
+      "input.1596"
+    ]
+  },
+  {
+    "name": "Conv_920",
+    "type": "Conv",
+    "inputs": [
+      "input.1596",
+      "mode/cost_agg/conv4/conv4/11/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/11/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1600"
+    ]
+  },
+  {
+    "name": "Clip_923",
+    "type": "Clip",
+    "inputs": [
+      "input.1600",
+      "onnx::Clip_2384",
+      "onnx::Clip_2385"
+    ],
+    "outputs": [
+      "input.1604"
+    ]
+  },
+  {
+    "name": "Conv_924",
+    "type": "Conv",
+    "inputs": [
+      "input.1604",
+      "mode/cost_agg/conv4/conv4/11/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/11/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1608"
+    ]
+  },
+  {
+    "name": "Clip_927",
+    "type": "Clip",
+    "inputs": [
+      "input.1608",
+      "onnx::Clip_2388",
+      "onnx::Clip_2389"
+    ],
+    "outputs": [
+      "input.1612"
+    ]
+  },
+  {
+    "name": "Conv_928",
+    "type": "Conv",
+    "inputs": [
+      "input.1612",
+      "mode/cost_agg/conv4/conv4/11/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/11/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2391"
+    ]
+  },
+  {
+    "name": "Add_929",
+    "type": "Add",
+    "inputs": [
+      "input.1596",
+      "onnx::Add_2391"
+    ],
+    "outputs": [
+      "input.1616"
+    ]
+  },
+  {
+    "name": "Conv_930",
+    "type": "Conv",
+    "inputs": [
+      "input.1616",
+      "mode/cost_agg/conv4/conv4/12/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/12/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1620"
+    ]
+  },
+  {
+    "name": "Clip_933",
+    "type": "Clip",
+    "inputs": [
+      "input.1620",
+      "onnx::Clip_2394",
+      "onnx::Clip_2395"
+    ],
+    "outputs": [
+      "input.1624"
+    ]
+  },
+  {
+    "name": "Conv_934",
+    "type": "Conv",
+    "inputs": [
+      "input.1624",
+      "mode/cost_agg/conv4/conv4/12/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/12/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1628"
+    ]
+  },
+  {
+    "name": "Clip_937",
+    "type": "Clip",
+    "inputs": [
+      "input.1628",
+      "onnx::Clip_2398",
+      "onnx::Clip_2399"
+    ],
+    "outputs": [
+      "input.1632"
+    ]
+  },
+  {
+    "name": "Conv_938",
+    "type": "Conv",
+    "inputs": [
+      "input.1632",
+      "mode/cost_agg/conv4/conv4/12/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/12/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2401"
+    ]
+  },
+  {
+    "name": "Add_939",
+    "type": "Add",
+    "inputs": [
+      "input.1616",
+      "onnx::Add_2401"
+    ],
+    "outputs": [
+      "input.1636"
+    ]
+  },
+  {
+    "name": "Conv_940",
+    "type": "Conv",
+    "inputs": [
+      "input.1636",
+      "mode/cost_agg/conv4/conv4/13/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/13/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1640"
+    ]
+  },
+  {
+    "name": "Clip_943",
+    "type": "Clip",
+    "inputs": [
+      "input.1640",
+      "onnx::Clip_2404",
+      "onnx::Clip_2405"
+    ],
+    "outputs": [
+      "input.1644"
+    ]
+  },
+  {
+    "name": "Conv_944",
+    "type": "Conv",
+    "inputs": [
+      "input.1644",
+      "mode/cost_agg/conv4/conv4/13/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/13/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1648"
+    ]
+  },
+  {
+    "name": "Clip_947",
+    "type": "Clip",
+    "inputs": [
+      "input.1648",
+      "onnx::Clip_2408",
+      "onnx::Clip_2409"
+    ],
+    "outputs": [
+      "input.1652"
+    ]
+  },
+  {
+    "name": "Conv_948",
+    "type": "Conv",
+    "inputs": [
+      "input.1652",
+      "mode/cost_agg/conv4/conv4/13/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/13/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2411"
+    ]
+  },
+  {
+    "name": "Add_949",
+    "type": "Add",
+    "inputs": [
+      "input.1636",
+      "onnx::Add_2411"
+    ],
+    "outputs": [
+      "input.1656"
+    ]
+  },
+  {
+    "name": "Conv_950",
+    "type": "Conv",
+    "inputs": [
+      "input.1656",
+      "mode/cost_agg/conv4/conv4/14/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/14/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1660"
+    ]
+  },
+  {
+    "name": "Clip_953",
+    "type": "Clip",
+    "inputs": [
+      "input.1660",
+      "onnx::Clip_2414",
+      "onnx::Clip_2415"
+    ],
+    "outputs": [
+      "input.1664"
+    ]
+  },
+  {
+    "name": "Conv_954",
+    "type": "Conv",
+    "inputs": [
+      "input.1664",
+      "mode/cost_agg/conv4/conv4/14/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/14/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1668"
+    ]
+  },
+  {
+    "name": "Clip_957",
+    "type": "Clip",
+    "inputs": [
+      "input.1668",
+      "onnx::Clip_2418",
+      "onnx::Clip_2419"
+    ],
+    "outputs": [
+      "input.1672"
+    ]
+  },
+  {
+    "name": "Conv_958",
+    "type": "Conv",
+    "inputs": [
+      "input.1672",
+      "mode/cost_agg/conv4/conv4/14/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/14/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2421"
+    ]
+  },
+  {
+    "name": "Add_959",
+    "type": "Add",
+    "inputs": [
+      "input.1656",
+      "onnx::Add_2421"
+    ],
+    "outputs": [
+      "input.1676"
+    ]
+  },
+  {
+    "name": "Conv_960",
+    "type": "Conv",
+    "inputs": [
+      "input.1676",
+      "mode/cost_agg/conv4/conv4/15/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/15/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1680"
+    ]
+  },
+  {
+    "name": "Clip_963",
+    "type": "Clip",
+    "inputs": [
+      "input.1680",
+      "onnx::Clip_2424",
+      "onnx::Clip_2425"
+    ],
+    "outputs": [
+      "input.1684"
+    ]
+  },
+  {
+    "name": "Conv_964",
+    "type": "Conv",
+    "inputs": [
+      "input.1684",
+      "mode/cost_agg/conv4/conv4/15/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/15/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1688"
+    ]
+  },
+  {
+    "name": "Clip_967",
+    "type": "Clip",
+    "inputs": [
+      "input.1688",
+      "onnx::Clip_2428",
+      "onnx::Clip_2429"
+    ],
+    "outputs": [
+      "input.1692"
+    ]
+  },
+  {
+    "name": "Conv_968",
+    "type": "Conv",
+    "inputs": [
+      "input.1692",
+      "mode/cost_agg/conv4/conv4/15/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/15/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2431"
+    ]
+  },
+  {
+    "name": "Add_969",
+    "type": "Add",
+    "inputs": [
+      "input.1676",
+      "onnx::Add_2431"
+    ],
+    "outputs": [
+      "input.1696"
+    ]
+  },
+  {
+    "name": "Conv_970",
+    "type": "Conv",
+    "inputs": [
+      "input.1696",
+      "mode/cost_agg/conv4/conv4/16/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/16/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1700"
+    ]
+  },
+  {
+    "name": "Clip_973",
+    "type": "Clip",
+    "inputs": [
+      "input.1700",
+      "onnx::Clip_2434",
+      "onnx::Clip_2435"
+    ],
+    "outputs": [
+      "input.1704"
+    ]
+  },
+  {
+    "name": "Conv_974",
+    "type": "Conv",
+    "inputs": [
+      "input.1704",
+      "mode/cost_agg/conv4/conv4/16/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/16/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1708"
+    ]
+  },
+  {
+    "name": "Clip_977",
+    "type": "Clip",
+    "inputs": [
+      "input.1708",
+      "onnx::Clip_2438",
+      "onnx::Clip_2439"
+    ],
+    "outputs": [
+      "input.1712"
+    ]
+  },
+  {
+    "name": "Conv_978",
+    "type": "Conv",
+    "inputs": [
+      "input.1712",
+      "mode/cost_agg/conv4/conv4/16/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/16/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2441"
+    ]
+  },
+  {
+    "name": "Add_979",
+    "type": "Add",
+    "inputs": [
+      "input.1696",
+      "onnx::Add_2441"
+    ],
+    "outputs": [
+      "input.1716"
+    ]
+  },
+  {
+    "name": "Conv_980",
+    "type": "Conv",
+    "inputs": [
+      "input.1716",
+      "mode/cost_agg/conv4/conv4/17/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/17/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1720"
+    ]
+  },
+  {
+    "name": "Clip_983",
+    "type": "Clip",
+    "inputs": [
+      "input.1720",
+      "onnx::Clip_2444",
+      "onnx::Clip_2445"
+    ],
+    "outputs": [
+      "input.1724"
+    ]
+  },
+  {
+    "name": "Conv_984",
+    "type": "Conv",
+    "inputs": [
+      "input.1724",
+      "mode/cost_agg/conv4/conv4/17/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/17/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1728"
+    ]
+  },
+  {
+    "name": "Clip_987",
+    "type": "Clip",
+    "inputs": [
+      "input.1728",
+      "onnx::Clip_2448",
+      "onnx::Clip_2449"
+    ],
+    "outputs": [
+      "input.1732"
+    ]
+  },
+  {
+    "name": "Conv_988",
+    "type": "Conv",
+    "inputs": [
+      "input.1732",
+      "mode/cost_agg/conv4/conv4/17/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/17/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2451"
+    ]
+  },
+  {
+    "name": "Add_989",
+    "type": "Add",
+    "inputs": [
+      "input.1716",
+      "onnx::Add_2451"
+    ],
+    "outputs": [
+      "input.1736"
+    ]
+  },
+  {
+    "name": "Conv_990",
+    "type": "Conv",
+    "inputs": [
+      "input.1736",
+      "mode/cost_agg/conv4/conv4/18/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/18/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1740"
+    ]
+  },
+  {
+    "name": "Clip_993",
+    "type": "Clip",
+    "inputs": [
+      "input.1740",
+      "onnx::Clip_2454",
+      "onnx::Clip_2455"
+    ],
+    "outputs": [
+      "input.1744"
+    ]
+  },
+  {
+    "name": "Conv_994",
+    "type": "Conv",
+    "inputs": [
+      "input.1744",
+      "mode/cost_agg/conv4/conv4/18/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/18/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1748"
+    ]
+  },
+  {
+    "name": "Clip_997",
+    "type": "Clip",
+    "inputs": [
+      "input.1748",
+      "onnx::Clip_2458",
+      "onnx::Clip_2459"
+    ],
+    "outputs": [
+      "input.1752"
+    ]
+  },
+  {
+    "name": "Conv_998",
+    "type": "Conv",
+    "inputs": [
+      "input.1752",
+      "mode/cost_agg/conv4/conv4/18/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/18/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2461"
+    ]
+  },
+  {
+    "name": "Add_999",
+    "type": "Add",
+    "inputs": [
+      "input.1736",
+      "onnx::Add_2461"
+    ],
+    "outputs": [
+      "input.1756"
+    ]
+  },
+  {
+    "name": "Conv_1000",
+    "type": "Conv",
+    "inputs": [
+      "input.1756",
+      "mode/cost_agg/conv4/conv4/19/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/19/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1760"
+    ]
+  },
+  {
+    "name": "Clip_1003",
+    "type": "Clip",
+    "inputs": [
+      "input.1760",
+      "onnx::Clip_2464",
+      "onnx::Clip_2465"
+    ],
+    "outputs": [
+      "input.1764"
+    ]
+  },
+  {
+    "name": "Conv_1004",
+    "type": "Conv",
+    "inputs": [
+      "input.1764",
+      "mode/cost_agg/conv4/conv4/19/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/19/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1768"
+    ]
+  },
+  {
+    "name": "Clip_1007",
+    "type": "Clip",
+    "inputs": [
+      "input.1768",
+      "onnx::Clip_2468",
+      "onnx::Clip_2469"
+    ],
+    "outputs": [
+      "input.1772"
+    ]
+  },
+  {
+    "name": "Conv_1008",
+    "type": "Conv",
+    "inputs": [
+      "input.1772",
+      "mode/cost_agg/conv4/conv4/19/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/19/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2471"
+    ]
+  },
+  {
+    "name": "Add_1009",
+    "type": "Add",
+    "inputs": [
+      "input.1756",
+      "onnx::Add_2471"
+    ],
+    "outputs": [
+      "input.1776"
+    ]
+  },
+  {
+    "name": "Conv_1010",
+    "type": "Conv",
+    "inputs": [
+      "input.1776",
+      "mode/cost_agg/conv4/conv4/20/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/20/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1780"
+    ]
+  },
+  {
+    "name": "Clip_1013",
+    "type": "Clip",
+    "inputs": [
+      "input.1780",
+      "onnx::Clip_2474",
+      "onnx::Clip_2475"
+    ],
+    "outputs": [
+      "input.1784"
+    ]
+  },
+  {
+    "name": "Conv_1014",
+    "type": "Conv",
+    "inputs": [
+      "input.1784",
+      "mode/cost_agg/conv4/conv4/20/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/20/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1788"
+    ]
+  },
+  {
+    "name": "Clip_1017",
+    "type": "Clip",
+    "inputs": [
+      "input.1788",
+      "onnx::Clip_2478",
+      "onnx::Clip_2479"
+    ],
+    "outputs": [
+      "input.1792"
+    ]
+  },
+  {
+    "name": "Conv_1018",
+    "type": "Conv",
+    "inputs": [
+      "input.1792",
+      "mode/cost_agg/conv4/conv4/20/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/20/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2481"
+    ]
+  },
+  {
+    "name": "Add_1019",
+    "type": "Add",
+    "inputs": [
+      "input.1776",
+      "onnx::Add_2481"
+    ],
+    "outputs": [
+      "input.1796"
+    ]
+  },
+  {
+    "name": "Conv_1020",
+    "type": "Conv",
+    "inputs": [
+      "input.1796",
+      "mode/cost_agg/conv4/conv4/21/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/21/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1800"
+    ]
+  },
+  {
+    "name": "Clip_1023",
+    "type": "Clip",
+    "inputs": [
+      "input.1800",
+      "onnx::Clip_2484",
+      "onnx::Clip_2485"
+    ],
+    "outputs": [
+      "input.1804"
+    ]
+  },
+  {
+    "name": "Conv_1024",
+    "type": "Conv",
+    "inputs": [
+      "input.1804",
+      "mode/cost_agg/conv4/conv4/21/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/21/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1808"
+    ]
+  },
+  {
+    "name": "Clip_1027",
+    "type": "Clip",
+    "inputs": [
+      "input.1808",
+      "onnx::Clip_2488",
+      "onnx::Clip_2489"
+    ],
+    "outputs": [
+      "input.1812"
+    ]
+  },
+  {
+    "name": "Conv_1028",
+    "type": "Conv",
+    "inputs": [
+      "input.1812",
+      "mode/cost_agg/conv4/conv4/21/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/21/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2491"
+    ]
+  },
+  {
+    "name": "Add_1029",
+    "type": "Add",
+    "inputs": [
+      "input.1796",
+      "onnx::Add_2491"
+    ],
+    "outputs": [
+      "input.1816"
+    ]
+  },
+  {
+    "name": "Conv_1030",
+    "type": "Conv",
+    "inputs": [
+      "input.1816",
+      "mode/cost_agg/conv4/conv4/22/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/22/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1820"
+    ]
+  },
+  {
+    "name": "Clip_1033",
+    "type": "Clip",
+    "inputs": [
+      "input.1820",
+      "onnx::Clip_2494",
+      "onnx::Clip_2495"
+    ],
+    "outputs": [
+      "input.1824"
+    ]
+  },
+  {
+    "name": "Conv_1034",
+    "type": "Conv",
+    "inputs": [
+      "input.1824",
+      "mode/cost_agg/conv4/conv4/22/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/22/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1828"
+    ]
+  },
+  {
+    "name": "Clip_1037",
+    "type": "Clip",
+    "inputs": [
+      "input.1828",
+      "onnx::Clip_2498",
+      "onnx::Clip_2499"
+    ],
+    "outputs": [
+      "input.1832"
+    ]
+  },
+  {
+    "name": "Conv_1038",
+    "type": "Conv",
+    "inputs": [
+      "input.1832",
+      "mode/cost_agg/conv4/conv4/22/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/22/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2501"
+    ]
+  },
+  {
+    "name": "Add_1039",
+    "type": "Add",
+    "inputs": [
+      "input.1816",
+      "onnx::Add_2501"
+    ],
+    "outputs": [
+      "input.1836"
+    ]
+  },
+  {
+    "name": "Conv_1040",
+    "type": "Conv",
+    "inputs": [
+      "input.1836",
+      "mode/cost_agg/conv4/conv4/23/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/23/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1840"
+    ]
+  },
+  {
+    "name": "Clip_1043",
+    "type": "Clip",
+    "inputs": [
+      "input.1840",
+      "onnx::Clip_2504",
+      "onnx::Clip_2505"
+    ],
+    "outputs": [
+      "input.1844"
+    ]
+  },
+  {
+    "name": "Conv_1044",
+    "type": "Conv",
+    "inputs": [
+      "input.1844",
+      "mode/cost_agg/conv4/conv4/23/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/23/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1848"
+    ]
+  },
+  {
+    "name": "Clip_1047",
+    "type": "Clip",
+    "inputs": [
+      "input.1848",
+      "onnx::Clip_2508",
+      "onnx::Clip_2509"
+    ],
+    "outputs": [
+      "input.1852"
+    ]
+  },
+  {
+    "name": "Conv_1048",
+    "type": "Conv",
+    "inputs": [
+      "input.1852",
+      "mode/cost_agg/conv4/conv4/23/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/23/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2511"
+    ]
+  },
+  {
+    "name": "Add_1049",
+    "type": "Add",
+    "inputs": [
+      "input.1836",
+      "onnx::Add_2511"
+    ],
+    "outputs": [
+      "input.1856"
+    ]
+  },
+  {
+    "name": "Conv_1050",
+    "type": "Conv",
+    "inputs": [
+      "input.1856",
+      "mode/cost_agg/conv4/conv4/24/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/24/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1860"
+    ]
+  },
+  {
+    "name": "Clip_1053",
+    "type": "Clip",
+    "inputs": [
+      "input.1860",
+      "onnx::Clip_2514",
+      "onnx::Clip_2515"
+    ],
+    "outputs": [
+      "input.1864"
+    ]
+  },
+  {
+    "name": "Conv_1054",
+    "type": "Conv",
+    "inputs": [
+      "input.1864",
+      "mode/cost_agg/conv4/conv4/24/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/24/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1868"
+    ]
+  },
+  {
+    "name": "Clip_1057",
+    "type": "Clip",
+    "inputs": [
+      "input.1868",
+      "onnx::Clip_2518",
+      "onnx::Clip_2519"
+    ],
+    "outputs": [
+      "input.1872"
+    ]
+  },
+  {
+    "name": "Conv_1058",
+    "type": "Conv",
+    "inputs": [
+      "input.1872",
+      "mode/cost_agg/conv4/conv4/24/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/24/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2521"
+    ]
+  },
+  {
+    "name": "Add_1059",
+    "type": "Add",
+    "inputs": [
+      "input.1856",
+      "onnx::Add_2521"
+    ],
+    "outputs": [
+      "input.1876"
+    ]
+  },
+  {
+    "name": "Conv_1060",
+    "type": "Conv",
+    "inputs": [
+      "input.1876",
+      "mode/cost_agg/conv4/conv4/25/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/25/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1880"
+    ]
+  },
+  {
+    "name": "Clip_1063",
+    "type": "Clip",
+    "inputs": [
+      "input.1880",
+      "onnx::Clip_2524",
+      "onnx::Clip_2525"
+    ],
+    "outputs": [
+      "input.1884"
+    ]
+  },
+  {
+    "name": "Conv_1064",
+    "type": "Conv",
+    "inputs": [
+      "input.1884",
+      "mode/cost_agg/conv4/conv4/25/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/25/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1888"
+    ]
+  },
+  {
+    "name": "Clip_1067",
+    "type": "Clip",
+    "inputs": [
+      "input.1888",
+      "onnx::Clip_2528",
+      "onnx::Clip_2529"
+    ],
+    "outputs": [
+      "input.1892"
+    ]
+  },
+  {
+    "name": "Conv_1068",
+    "type": "Conv",
+    "inputs": [
+      "input.1892",
+      "mode/cost_agg/conv4/conv4/25/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/25/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2531"
+    ]
+  },
+  {
+    "name": "Add_1069",
+    "type": "Add",
+    "inputs": [
+      "input.1876",
+      "onnx::Add_2531"
+    ],
+    "outputs": [
+      "input.1896"
+    ]
+  },
+  {
+    "name": "Conv_1070",
+    "type": "Conv",
+    "inputs": [
+      "input.1896",
+      "mode/cost_agg/conv4/conv4/26/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/26/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1900"
+    ]
+  },
+  {
+    "name": "Clip_1073",
+    "type": "Clip",
+    "inputs": [
+      "input.1900",
+      "onnx::Clip_2534",
+      "onnx::Clip_2535"
+    ],
+    "outputs": [
+      "input.1904"
+    ]
+  },
+  {
+    "name": "Conv_1074",
+    "type": "Conv",
+    "inputs": [
+      "input.1904",
+      "mode/cost_agg/conv4/conv4/26/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/26/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1908"
+    ]
+  },
+  {
+    "name": "Clip_1077",
+    "type": "Clip",
+    "inputs": [
+      "input.1908",
+      "onnx::Clip_2538",
+      "onnx::Clip_2539"
+    ],
+    "outputs": [
+      "input.1912"
+    ]
+  },
+  {
+    "name": "Conv_1078",
+    "type": "Conv",
+    "inputs": [
+      "input.1912",
+      "mode/cost_agg/conv4/conv4/26/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/26/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2541"
+    ]
+  },
+  {
+    "name": "Add_1079",
+    "type": "Add",
+    "inputs": [
+      "input.1896",
+      "onnx::Add_2541"
+    ],
+    "outputs": [
+      "input.1916"
+    ]
+  },
+  {
+    "name": "Conv_1080",
+    "type": "Conv",
+    "inputs": [
+      "input.1916",
+      "mode/cost_agg/conv4/conv4/27/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/27/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1920"
+    ]
+  },
+  {
+    "name": "Clip_1083",
+    "type": "Clip",
+    "inputs": [
+      "input.1920",
+      "onnx::Clip_2544",
+      "onnx::Clip_2545"
+    ],
+    "outputs": [
+      "input.1924"
+    ]
+  },
+  {
+    "name": "Conv_1084",
+    "type": "Conv",
+    "inputs": [
+      "input.1924",
+      "mode/cost_agg/conv4/conv4/27/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/27/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1928"
+    ]
+  },
+  {
+    "name": "Clip_1087",
+    "type": "Clip",
+    "inputs": [
+      "input.1928",
+      "onnx::Clip_2548",
+      "onnx::Clip_2549"
+    ],
+    "outputs": [
+      "input.1932"
+    ]
+  },
+  {
+    "name": "Conv_1088",
+    "type": "Conv",
+    "inputs": [
+      "input.1932",
+      "mode/cost_agg/conv4/conv4/27/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/27/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2551"
+    ]
+  },
+  {
+    "name": "Add_1089",
+    "type": "Add",
+    "inputs": [
+      "input.1916",
+      "onnx::Add_2551"
+    ],
+    "outputs": [
+      "input.1936"
+    ]
+  },
+  {
+    "name": "Conv_1090",
+    "type": "Conv",
+    "inputs": [
+      "input.1936",
+      "mode/cost_agg/conv4/conv4/28/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/28/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1940"
+    ]
+  },
+  {
+    "name": "Clip_1093",
+    "type": "Clip",
+    "inputs": [
+      "input.1940",
+      "onnx::Clip_2554",
+      "onnx::Clip_2555"
+    ],
+    "outputs": [
+      "input.1944"
+    ]
+  },
+  {
+    "name": "Conv_1094",
+    "type": "Conv",
+    "inputs": [
+      "input.1944",
+      "mode/cost_agg/conv4/conv4/28/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/28/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1948"
+    ]
+  },
+  {
+    "name": "Clip_1097",
+    "type": "Clip",
+    "inputs": [
+      "input.1948",
+      "onnx::Clip_2558",
+      "onnx::Clip_2559"
+    ],
+    "outputs": [
+      "input.1952"
+    ]
+  },
+  {
+    "name": "Conv_1098",
+    "type": "Conv",
+    "inputs": [
+      "input.1952",
+      "mode/cost_agg/conv4/conv4/28/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/28/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2561"
+    ]
+  },
+  {
+    "name": "Add_1099",
+    "type": "Add",
+    "inputs": [
+      "input.1936",
+      "onnx::Add_2561"
+    ],
+    "outputs": [
+      "input.1956"
+    ]
+  },
+  {
+    "name": "Conv_1100",
+    "type": "Conv",
+    "inputs": [
+      "input.1956",
+      "mode/cost_agg/conv4/conv4/29/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/29/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1960"
+    ]
+  },
+  {
+    "name": "Clip_1103",
+    "type": "Clip",
+    "inputs": [
+      "input.1960",
+      "onnx::Clip_2564",
+      "onnx::Clip_2565"
+    ],
+    "outputs": [
+      "input.1964"
+    ]
+  },
+  {
+    "name": "Conv_1104",
+    "type": "Conv",
+    "inputs": [
+      "input.1964",
+      "mode/cost_agg/conv4/conv4/29/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/29/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1968"
+    ]
+  },
+  {
+    "name": "Clip_1107",
+    "type": "Clip",
+    "inputs": [
+      "input.1968",
+      "onnx::Clip_2568",
+      "onnx::Clip_2569"
+    ],
+    "outputs": [
+      "input.1972"
+    ]
+  },
+  {
+    "name": "Conv_1108",
+    "type": "Conv",
+    "inputs": [
+      "input.1972",
+      "mode/cost_agg/conv4/conv4/29/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/29/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2571"
+    ]
+  },
+  {
+    "name": "Add_1109",
+    "type": "Add",
+    "inputs": [
+      "input.1956",
+      "onnx::Add_2571"
+    ],
+    "outputs": [
+      "input.1976"
+    ]
+  },
+  {
+    "name": "Conv_1110",
+    "type": "Conv",
+    "inputs": [
+      "input.1976",
+      "mode/cost_agg/conv4/conv4/30/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/30/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1980"
+    ]
+  },
+  {
+    "name": "Clip_1113",
+    "type": "Clip",
+    "inputs": [
+      "input.1980",
+      "onnx::Clip_2574",
+      "onnx::Clip_2575"
+    ],
+    "outputs": [
+      "input.1984"
+    ]
+  },
+  {
+    "name": "Conv_1114",
+    "type": "Conv",
+    "inputs": [
+      "input.1984",
+      "mode/cost_agg/conv4/conv4/30/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/30/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1988"
+    ]
+  },
+  {
+    "name": "Clip_1117",
+    "type": "Clip",
+    "inputs": [
+      "input.1988",
+      "onnx::Clip_2578",
+      "onnx::Clip_2579"
+    ],
+    "outputs": [
+      "input.1992"
+    ]
+  },
+  {
+    "name": "Conv_1118",
+    "type": "Conv",
+    "inputs": [
+      "input.1992",
+      "mode/cost_agg/conv4/conv4/30/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/conv4/conv4/30/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2581"
+    ]
+  },
+  {
+    "name": "Add_1119",
+    "type": "Add",
+    "inputs": [
+      "input.1976",
+      "onnx::Add_2581"
+    ],
+    "outputs": [
+      "onnx::Mul_2582"
+    ]
+  },
+  {
+    "name": "Mul_1120",
+    "type": "Mul",
+    "inputs": [
+      "onnx::Mul_1808",
+      "onnx::Mul_2582"
+    ],
+    "outputs": [
+      "input.1996"
+    ]
+  },
+  {
+    "name": "ConvTranspose_1121",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.1996",
+      "mode/cost_agg/conv5/conv5/0/ConvTranspose.weight",
+      "mode/cost_agg/conv5/conv5/0/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2584"
+    ]
+  },
+  {
+    "name": "Conv_792",
+    "type": "Conv",
+    "inputs": [
+      "input.1340",
+      "mode/cost_agg/redir2/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/redir2/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1348"
+    ]
+  },
+  {
+    "name": "Clip_798",
+    "type": "Clip",
+    "inputs": [
+      "input.1348",
+      "onnx::Clip_2259",
+      "onnx::Clip_2260"
+    ],
+    "outputs": [
+      "input.1356"
+    ]
+  },
+  {
+    "name": "Conv_800",
+    "type": "Conv",
+    "inputs": [
+      "input.1356",
+      "mode/cost_agg/redir2/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/redir2/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1364"
+    ]
+  },
+  {
+    "name": "Clip_806",
+    "type": "Clip",
+    "inputs": [
+      "input.1364",
+      "onnx::Clip_2267",
+      "onnx::Clip_2268"
+    ],
+    "outputs": [
+      "input.1372"
+    ]
+  },
+  {
+    "name": "Conv_808",
+    "type": "Conv",
+    "inputs": [
+      "input.1372",
+      "mode/cost_agg/redir2/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/redir2/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2271"
+    ]
+  },
+  {
+    "name": "Add_810",
+    "type": "Add",
+    "inputs": [
+      "input.1340",
+      "onnx::Add_2271"
+    ],
+    "outputs": [
+      "onnx::Add_2273"
+    ]
+  },
+  {
+    "name": "Add_1122",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_2584",
+      "onnx::Add_2273"
+    ],
+    "outputs": [
+      "input.2000"
+    ]
+  },
+  {
+    "name": "Relu_1123",
+    "type": "Relu",
+    "inputs": [
+      "input.2000"
+    ],
+    "outputs": [
+      "input.2004"
+    ]
+  },
+  {
+    "name": "ConvTranspose_1124",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.2004",
+      "mode/cost_agg/conv6/conv6/0/ConvTranspose.weight",
+      "mode/cost_agg/conv6/conv6/0/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2587"
+    ]
+  },
+  {
+    "name": "Conv_622",
+    "type": "Conv",
+    "inputs": [
+      "input.1004",
+      "mode/cost_agg/redir1/pwconv/pwconv/0/Conv.weight",
+      "mode/cost_agg/redir1/pwconv/pwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1012"
+    ]
+  },
+  {
+    "name": "Clip_628",
+    "type": "Clip",
+    "inputs": [
+      "input.1012",
+      "onnx::Clip_2089",
+      "onnx::Clip_2090"
+    ],
+    "outputs": [
+      "input.1020"
+    ]
+  },
+  {
+    "name": "Conv_630",
+    "type": "Conv",
+    "inputs": [
+      "input.1020",
+      "mode/cost_agg/redir1/dwconv/dwconv/0/Conv.weight",
+      "mode/cost_agg/redir1/dwconv/dwconv/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.1028"
+    ]
+  },
+  {
+    "name": "Clip_636",
+    "type": "Clip",
+    "inputs": [
+      "input.1028",
+      "onnx::Clip_2097",
+      "onnx::Clip_2098"
+    ],
+    "outputs": [
+      "input.1036"
+    ]
+  },
+  {
+    "name": "Conv_638",
+    "type": "Conv",
+    "inputs": [
+      "input.1036",
+      "mode/cost_agg/redir1/pwliner/pwliner/0/Conv.weight",
+      "mode/cost_agg/redir1/pwliner/pwliner/0/Conv.bias"
+    ],
+    "outputs": [
+      "onnx::Add_2101"
+    ]
+  },
+  {
+    "name": "Add_640",
+    "type": "Add",
+    "inputs": [
+      "input.1004",
+      "onnx::Add_2101"
+    ],
+    "outputs": [
+      "onnx::Add_2103"
+    ]
+  },
+  {
+    "name": "Add_1125",
+    "type": "Add",
+    "inputs": [
+      "onnx::Add_2587",
+      "onnx::Add_2103"
+    ],
+    "outputs": [
+      "input.2008"
+    ]
+  },
+  {
+    "name": "Relu_1126",
+    "type": "Relu",
+    "inputs": [
+      "input.2008"
+    ],
+    "outputs": [
+      "onnx::Softmax_2589"
+    ]
+  },
+  {
+    "name": "Softmax_1127",
+    "type": "Softmax",
+    "inputs": [
+      "onnx::Softmax_2589"
+    ],
+    "outputs": [
+      "onnx::Mul_2590"
+    ]
+  },
+  {
+    "name": "Mul_1128",
+    "type": "Mul",
+    "inputs": [
+      "onnx::Mul_2590",
+      "initializers.onnx_initializer_859"
+    ],
+    "outputs": [
+      "onnx::ReduceSum_2591"
+    ]
+  },
+  {
+    "name": "ReduceSum_1129",
+    "type": "ReduceSum",
+    "inputs": [
+      "onnx::ReduceSum_2591",
+      "initializers.onnx_initializer_860"
+    ],
+    "outputs": [
+      "onnx::Mul_2592"
+    ]
+  },
+  {
+    "name": "Mul_1130",
+    "type": "Mul",
+    "inputs": [
+      "onnx::Mul_2592",
+      "initializers.onnx_initializer_861"
+    ],
+    "outputs": [
+      "onnx::Pad_2593"
+    ]
+  },
+  {
+    "name": "Pad_1131",
+    "type": "Pad",
+    "inputs": [
+      "onnx::Pad_2593",
+      "initializers.onnx_initializer_862"
+    ],
+    "outputs": [
+      "onnx::Gather_2594"
+    ]
+  },
+  {
+    "name": "Gather_1132",
+    "type": "Gather",
+    "inputs": [
+      "onnx::Gather_2594",
+      "initializers.onnx_initializer_863"
+    ],
+    "outputs": [
+      "onnx::Gather_2595"
+    ]
+  },
+  {
+    "name": "Gather_1133",
+    "type": "Gather",
+    "inputs": [
+      "onnx::Gather_2595",
+      "initializers.onnx_initializer_864"
+    ],
+    "outputs": [
+      "onnx::Transpose_2596"
+    ]
+  },
+  {
+    "name": "Transpose_1134",
+    "type": "Transpose",
+    "inputs": [
+      "onnx::Transpose_2596"
+    ],
+    "outputs": [
+      "input_tensor.3"
+    ]
+  },
+  {
+    "name": "Reshape_1135",
+    "type": "Reshape",
+    "inputs": [
+      "input_tensor.3",
+      "initializers.onnx_initializer_865"
+    ],
+    "outputs": [
+      "input_tensor.7"
+    ]
+  },
+  {
+    "name": "Resize_1136",
+    "type": "Resize",
+    "inputs": [
+      "input_tensor.7",
+      "",
+      "",
+      "initializers.onnx_initializer_866"
+    ],
+    "outputs": [
+      "onnx::Mul_2601"
+    ]
+  },
+  {
+    "name": "Conv_2",
+    "type": "Conv",
+    "inputs": [
+      "left_img",
+      "mode/stem_2/stem_2/0/block/block/0/Conv.weight",
+      "mode/stem_2/stem_2/0/block/block/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.8"
+    ]
+  },
+  {
+    "name": "LeakyRelu_9",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.8"
+    ],
+    "outputs": [
+      "input.20"
+    ]
+  },
+  {
+    "name": "Conv_12",
+    "type": "Conv",
+    "inputs": [
+      "input.20",
+      "mode/stem_2/stem_2/1/block/block/0/Conv.weight",
+      "mode/stem_2/stem_2/1/block/block/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.32"
+    ]
+  },
+  {
+    "name": "Relu_19",
+    "type": "Relu",
+    "inputs": [
+      "input.32"
+    ],
+    "outputs": [
+      "onnx::Concat_1482"
+    ]
+  },
+  {
+    "name": "Conv_372",
+    "type": "Conv",
+    "inputs": [
+      "input.788",
+      "mode/refine_1/refine_1/0/block/block/0/Conv.weight"
+    ],
+    "outputs": [
+      "input_data.7"
+    ]
+  },
+  {
+    "name": "InstanceNormalization_424",
+    "type": "InstanceNormalization",
+    "inputs": [
+      "input_data.7",
+      "initializers.onnx_initializer_480",
+      "initializers.onnx_initializer_481"
+    ],
+    "outputs": [
+      "input.808"
+    ]
+  },
+  {
+    "name": "LeakyRelu_476",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.808"
+    ],
+    "outputs": [
+      "input.812"
+    ]
+  },
+  {
+    "name": "Conv_526",
+    "type": "Conv",
+    "inputs": [
+      "input.812",
+      "mode/refine_1/refine_1/1/block/block/0/Conv.weight"
+    ],
+    "outputs": [
+      "input_data.11"
+    ]
+  },
+  {
+    "name": "InstanceNormalization_529",
+    "type": "InstanceNormalization",
+    "inputs": [
+      "input_data.11",
+      "initializers.onnx_initializer_489",
+      "initializers.onnx_initializer_490"
+    ],
+    "outputs": [
+      "input.820"
+    ]
+  },
+  {
+    "name": "Relu_532",
+    "type": "Relu",
+    "inputs": [
+      "input.820"
+    ],
+    "outputs": [
+      "input.832"
+    ]
+  },
+  {
+    "name": "ConvTranspose_537",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.832",
+      "mode/refine_2/deconv/block/block/0/ConvTranspose.weight",
+      "mode/refine_2/deconv/block/block/0/ConvTranspose.bias"
+    ],
+    "outputs": [
+      "input.840"
+    ]
+  },
+  {
+    "name": "LeakyRelu_542",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.840"
+    ],
+    "outputs": [
+      "onnx::Concat_2005"
+    ]
+  },
+  {
+    "name": "Concat_544",
+    "type": "Concat",
+    "inputs": [
+      "onnx::Concat_1482",
+      "onnx::Concat_2005"
+    ],
+    "outputs": [
+      "input.852"
+    ]
+  },
+  {
+    "name": "Conv_546",
+    "type": "Conv",
+    "inputs": [
+      "input.852",
+      "mode/refine_2/conv/block/block/0/Conv.weight",
+      "mode/refine_2/conv/block/block/0/Conv.bias"
+    ],
+    "outputs": [
+      "input.860"
+    ]
+  },
+  {
+    "name": "LeakyRelu_548",
+    "type": "LeakyRelu",
+    "inputs": [
+      "input.860"
+    ],
+    "outputs": [
+      "input.868"
+    ]
+  },
+  {
+    "name": "ConvTranspose_552",
+    "type": "ConvTranspose",
+    "inputs": [
+      "input.868",
+      "mode/refine_3/block/block/0/ConvTranspose.weight"
+    ],
+    "outputs": [
+      "onnx::Softmax_2015"
+    ]
+  },
+  {
+    "name": "Softmax_554",
+    "type": "Softmax",
+    "inputs": [
+      "onnx::Softmax_2015"
+    ],
+    "outputs": [
+      "onnx::Mul_2017"
+    ]
+  },
+  {
+    "name": "Mul_1137",
+    "type": "Mul",
+    "inputs": [
+      "onnx::Mul_2601",
+      "onnx::Mul_2017"
+    ],
+    "outputs": [
+      "onnx::ReduceSum_2602"
+    ]
+  },
+  {
+    "name": "ReduceSum_1138",
+    "type": "ReduceSum",
+    "inputs": [
+      "onnx::ReduceSum_2602",
+      "initializers.onnx_initializer_867"
+    ],
+    "outputs": [
+      "disp_pred"
+    ]
+  }
+]

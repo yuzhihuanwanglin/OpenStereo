@@ -285,7 +285,7 @@ class TrainerTemplate:
             with torch.cuda.amp.autocast(enabled=self.cfgs.OPTIMIZATION.AMP):
                 infer_start = time.time()
                 model_pred = self.model(data)
-                
+                # torch.cuda.synchronize()
                 infer_time = time.time() - infer_start
                 if i > 0:
                     elapsed_list.append(infer_time)
@@ -371,52 +371,3 @@ class TrainerTemplate:
         avg_fps = 1 / avg_runtime if avg_runtime > 0 else 0
         self.logger.info(f"other metrics key inputshape outputshape epe d1_all thres_1 thres_2 thres_3 rmse avgerr model_size(MB) memory(MB) fps latency(s) gpu_memory(MB)")
         self.logger.info(f"other metrics val {reslist[0]} {reslist[1]} {results['epe']} {results['d1_all']} {results['thres_1']} {results['thres_2']} {results['thres_3']} {rmse_mean} {avgerr_mean} {model_size_mean} {memory_mean} {avg_fps} {avg_runtime} {gpu_memory_mean}")
-
-    @torch.no_grad()
-    def export_onnx(self, onnx_path='lightstereo.onnx',
-                    sample_h=384, sample_w=1242,
-                    opset=12, dynamic_shape=True):
-        import torch
-        self.logger.info('Start exporting ONNX to %s ...' % onnx_path)
-        self.model.eval()
-
-        
-        # 1. 构造 dummy，保持 dict 格式
-        dummy_left  = torch.randn(1, 3, sample_h, sample_w).to(self.local_rank)
-        dummy_right = torch.randn(1, 3, sample_h, sample_w).to(self.local_rank)
-        dummy_input = {'left': dummy_left, 'right': dummy_right}   # ← 关键点
-        h_min = min(dummy_left.size(2), dummy_right.size(2))
-        w_min = min(dummy_left.size(3), dummy_right.size(3))
-        dummy_left  = dummy_left [:, :, :h_min, :w_min]
-        dummy_right = dummy_right[:, :, :h_min, :w_min]
-        # 2. 用 lambda 或 wrapper 把 dict 传给 forward
-        class Wrapper(torch.nn.Module):
-            def __init__(self, net):
-                super().__init__()
-                self.net = net
-            def forward(self, left, right):        # ONNX 只能多输入，不能 dict
-                return self.net({'left': left, 'right': right})['disp_pred']
-
-        wrapped = Wrapper(self.model.module if hasattr(self.model, 'module') else self.model)
-
-        # 3. 动态维度
-        dynamic_axes = None
-        if dynamic_shape:
-            dynamic_axes = {
-                'left':  {0: 'B', 2: 'H', 3: 'W'},
-                'right': {0: 'B', 2: 'H', 3: 'W'},
-                'disp_pred': {0: 'B', 2: 'H', 3: 'W'}
-            }
-
-        # 4. 导出
-        torch.onnx.export(
-            wrapped,
-            (dummy_left, dummy_right),          # 现在匹配 Wrapper 的 (left, right)
-            onnx_path,
-            opset_version=opset,
-            input_names=['left', 'right'],
-            output_names=['disp_pred'],
-            dynamic_axes=dynamic_axes,
-            do_constant_folding=True
-        )
-        self.logger.info('ONNX exported successfully -> %s' % onnx_path)

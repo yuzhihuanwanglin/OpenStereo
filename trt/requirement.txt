@@ -1,0 +1,79 @@
+--loadEngine=<file>	加载已存在的 TensorRT engine
+--saveEngine=<file>	保存生成的 engine
+
+
+
+--fp16	启用 FP16 混合精度（半精度）
+--int8	启用 INT8 量化（需校准数据）
+--best	自动选择最快的精度组合（FP32、FP16、INT8）
+--strictTypes	严格限制数据类型转换（例如防止隐式 FP32→FP16）
+--calib=<file>	INT8 校准文件路径（.cache 文件）
+--dumpLayerInfo	输出每层信息（类型、精度、时间）
+--dumpProfile	打印推理性能 profile，包含每层耗时
+
+
+
+
+| 选项                     | 说明                                 |
+| ---------------------- | ---------------------------------- |
+| `--iterations=N`       | 执行 N 次推理（默认 10）                    |
+| `--warmUp=N`           | 预热次数（默认 200ms）                     |
+| `--avgRuns=N`          | 每次平均 N 次运行                         |
+| `--duration=N`         | 持续测试时间（秒）                          |
+| `--percentile=P`       | 输出性能分位值（默认 99%）                    |
+| `--dumpOutput`         | 打印输出 tensor 内容                     |
+| `--noDataTransfers`    | 跳过 Host↔Device 数据传输（仅计算 kernel 时间） |
+| `--separateProfileRun` | 分开 profile 和性能测试                   |
+
+
+
+| 选项                     | 说明                  |
+| ---------------------- | ------------------- |
+| `--plugins=<file>`     | 加载自定义插件库            |
+| `--memPoolSize`        | 设置 TensorRT 内部内存池大小 |
+| `--loadInputs=<file>`  | 从文件加载输入数据（可验证精度）    |
+| `--exportOutput=<dir>` | 导出输出 tensor 到文件夹    |
+
+
+| 选项                       | 说明                   |
+| ------------------------ | -------------------- |
+| `--verbose`              | 输出详细日志（构建 + 运行）      |
+| `--noBuilderCache`       | 不使用 builder 缓存       |
+| `--dumpRefit`            | 打印 refit 层对应信息       |
+| `--dumpLayerNames`       | 仅输出层名                |
+| `--dumpProfile`          | 打印每层性能 profile       |
+| `--exportProfile=<file>` | 导出 profile 到 JSON 文件 |
+| `--reportLayers`         | 输出每层延迟统计表            |
+
+ --uint8AsymmetricQuantizationDLA   Set `kENABLE_UINT8_AND_ASYMMETRIC_QUANTIZATION_DLA` to true in the ONNX parser. This directs the
+                                     onnx parser to allow UINT8 as a quantization data type and import zero point values directly
+                                     without converting to float type or all-zero values. Should only be set with DLA software version
+                                     >= 3.16.
+--builderOptimizationLevel
+
+
+1. fp32/fp16/int8/uint8  不同精度的数据格式的engine输出
+
+fp32:   trtexec   --onnx=onnx/lightstereo_s_sceneflow_general_opt_256_512_sim_conv.onnx   --saveEngine=onnx/light_fp32.trt   --verbose --dumpLayerInfo  --dumpProfile --exportLayerInfo=layer_info.json  --exportProfile=profile.json --profilingVerbosity=detailed  --separateProfileRun
+
+
+       trtexec   --onnx=onnx/lightstereo_s_sceneflow_general_opt_256_512_sim_conv.onnx   --saveEngine=onnx/light_fp32.trt 
+
+
+       trtexec   --onnx=onnx/models/da.onnx   --saveEngine=trt/engines/da_fp32.trt
+
+       trtexec   --onnx=onnx/models/da.onnx   --saveEngine=trt/engines/da_fp32.trt --dumpLayerInfo --exportLayerInfo=./trt/export_layer_fp32.json --profilingVerbosity=detailed  
+
+
+
+fp16:  --fp16
+
+int8:  --int8
+
+--exportOutput=disp_pred_output.bin
+
+
+2. 推理时间profile        layer各层的详细输出
+3. int8 的完整量化信息
+4. 不同精度和ground truth的精度对比
+

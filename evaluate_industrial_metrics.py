@@ -3,7 +3,7 @@ import torch
 import numpy as np
 import psutil
 import os
-from torchinfo import summary
+# from torchinfo import summary
 import pynvml
 import os
 
@@ -128,8 +128,8 @@ def get_flops(model, tup, device):
     
     dummy1 = tup[0].to(device)
     dummy2 = tup[1].to(device)
-    stats = summary(model, input_data=(dummy1, dummy2), verbose=0)
-    flops = stats.total_mult_adds
+    # stats = summary(model, input_data=(dummy1, dummy2), verbose=0)
+    # flops = stats.total_mult_adds
 
     # flops, macs, params = calculate_flops(
     #     model=model,
@@ -138,7 +138,7 @@ def get_flops(model, tup, device):
     #     output_precision=4,
     # )
 
-    return flops
+    return 0
 
 def evaluate(model, dataloader, device='cuda'):
     model.eval()

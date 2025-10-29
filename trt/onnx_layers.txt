@@ -1,0 +1,3118 @@
+Total ONNX layers: 779
+------------------------------------------------------------
+[001] Conv_0 (Conv)
+   inputs:  left_img, mode/backbone/conv_stem/Conv.weight, mode/backbone/conv_stem/Conv.bias
+   outputs: input
+
+[002] Conv_1 (Conv)
+   inputs:  right_img, mode/backbone/conv_stem_1/Conv.weight, mode/backbone/conv_stem_1/Conv.bias
+   outputs: input.4
+
+[003] Conv_2 (Conv)
+   inputs:  left_img, mode/stem_2/stem_2/0/block/block/0/Conv.weight, mode/stem_2/stem_2/0/block/block/0/Conv.bias
+   outputs: input.8
+
+[004] Clip_5 (Clip)
+   inputs:  input, onnx::Clip_1466, onnx::Clip_1467
+   outputs: input.12
+
+[005] Clip_8 (Clip)
+   inputs:  input.4, onnx::Clip_1469, onnx::Clip_1470
+   outputs: input.16
+
+[006] LeakyRelu_9 (LeakyRelu)
+   inputs:  input.8
+   outputs: input.20
+
+[007] Conv_10 (Conv)
+   inputs:  input.12, mode/backbone/block0/block0/0/conv_dw/Conv.weight, mode/backbone/block0/block0/0/conv_dw/Conv.bias
+   outputs: input.24
+
+[008] Conv_11 (Conv)
+   inputs:  input.16, mode/backbone/block0/block0/0/conv_dw_1/Conv.weight, mode/backbone/block0/block0/0/conv_dw_1/Conv.bias
+   outputs: input.28
+
+[009] Conv_12 (Conv)
+   inputs:  input.20, mode/stem_2/stem_2/1/block/block/0/Conv.weight, mode/stem_2/stem_2/1/block/block/0/Conv.bias
+   outputs: input.32
+
+[010] Clip_15 (Clip)
+   inputs:  input.24, onnx::Clip_1476, onnx::Clip_1477
+   outputs: input.36
+
+[011] Clip_18 (Clip)
+   inputs:  input.28, onnx::Clip_1479, onnx::Clip_1480
+   outputs: input.40
+
+[012] Relu_19 (Relu)
+   inputs:  input.32
+   outputs: onnx::Concat_1482
+
+[013] Conv_20 (Conv)
+   inputs:  input.36, mode/backbone/block0/block0/0/conv_pw/Conv.weight, mode/backbone/block0/block0/0/conv_pw/Conv.bias
+   outputs: input.44
+
+[014] Conv_21 (Conv)
+   inputs:  input.40, mode/backbone/block0/block0/0/conv_pw_1/Conv.weight, mode/backbone/block0/block0/0/conv_pw_1/Conv.bias
+   outputs: input.48
+
+[015] Conv_22 (Conv)
+   inputs:  input.44, mode/backbone/block1/block1/0/conv_pw/Conv.weight, mode/backbone/block1/block1/0/conv_pw/Conv.bias
+   outputs: input.52
+
+[016] Conv_23 (Conv)
+   inputs:  input.48, mode/backbone/block1/block1/0/conv_pw_1/Conv.weight, mode/backbone/block1/block1/0/conv_pw_1/Conv.bias
+   outputs: input.56
+
+[017] Clip_26 (Clip)
+   inputs:  input.52, onnx::Clip_1487, onnx::Clip_1488
+   outputs: input.60
+
+[018] Clip_29 (Clip)
+   inputs:  input.56, onnx::Clip_1490, onnx::Clip_1491
+   outputs: input.64
+
+[019] Conv_30 (Conv)
+   inputs:  input.60, mode/backbone/block1/block1/0/conv_dw/Conv.weight, mode/backbone/block1/block1/0/conv_dw/Conv.bias
+   outputs: input.68
+
+[020] Conv_31 (Conv)
+   inputs:  input.64, mode/backbone/block1/block1/0/conv_dw_1/Conv.weight, mode/backbone/block1/block1/0/conv_dw_1/Conv.bias
+   outputs: input.72
+
+[021] Clip_34 (Clip)
+   inputs:  input.68, onnx::Clip_1495, onnx::Clip_1496
+   outputs: input.76
+
+[022] Clip_37 (Clip)
+   inputs:  input.72, onnx::Clip_1498, onnx::Clip_1499
+   outputs: input.80
+
+[023] Conv_38 (Conv)
+   inputs:  input.76, mode/backbone/block1/block1/0/conv_pwl/Conv.weight, mode/backbone/block1/block1/0/conv_pwl/Conv.bias
+   outputs: input.84
+
+[024] Conv_39 (Conv)
+   inputs:  input.80, mode/backbone/block1/block1/0/conv_pwl_1/Conv.weight, mode/backbone/block1/block1/0/conv_pwl_1/Conv.bias
+   outputs: input.88
+
+[025] Conv_40 (Conv)
+   inputs:  input.84, mode/backbone/block1/block1/1/conv_pw/Conv.weight, mode/backbone/block1/block1/1/conv_pw/Conv.bias
+   outputs: input.92
+
+[026] Conv_41 (Conv)
+   inputs:  input.88, mode/backbone/block1/block1/1/conv_pw_1/Conv.weight, mode/backbone/block1/block1/1/conv_pw_1/Conv.bias
+   outputs: input.96
+
+[027] Clip_44 (Clip)
+   inputs:  input.92, onnx::Clip_1505, onnx::Clip_1506
+   outputs: input.100
+
+[028] Clip_47 (Clip)
+   inputs:  input.96, onnx::Clip_1508, onnx::Clip_1509
+   outputs: input.104
+
+[029] Conv_48 (Conv)
+   inputs:  input.100, mode/backbone/block1/block1/1/conv_dw/Conv.weight, mode/backbone/block1/block1/1/conv_dw/Conv.bias
+   outputs: input.108
+
+[030] Conv_49 (Conv)
+   inputs:  input.104, mode/backbone/block1/block1/1/conv_dw_1/Conv.weight, mode/backbone/block1/block1/1/conv_dw_1/Conv.bias
+   outputs: input.112
+
+[031] Clip_52 (Clip)
+   inputs:  input.108, onnx::Clip_1513, onnx::Clip_1514
+   outputs: input.116
+
+[032] Clip_55 (Clip)
+   inputs:  input.112, onnx::Clip_1516, onnx::Clip_1517
+   outputs: input.120
+
+[033] Conv_56 (Conv)
+   inputs:  input.116, mode/backbone/block1/block1/1/conv_pwl/Conv.weight, mode/backbone/block1/block1/1/conv_pwl/Conv.bias
+   outputs: onnx::Add_1519
+
+[034] Conv_57 (Conv)
+   inputs:  input.120, mode/backbone/block1/block1/1/conv_pwl_1/Conv.weight, mode/backbone/block1/block1/1/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1520
+
+[035] Add_58 (Add)
+   inputs:  onnx::Add_1519, input.84
+   outputs: input.124
+
+[036] Add_59 (Add)
+   inputs:  onnx::Add_1520, input.88
+   outputs: input.128
+
+[037] Conv_60 (Conv)
+   inputs:  input.124, mode/backbone/block2/block2/0/conv_pw/Conv.weight, mode/backbone/block2/block2/0/conv_pw/Conv.bias
+   outputs: input.132
+
+[038] Conv_61 (Conv)
+   inputs:  input.128, mode/backbone/block2/block2/0/conv_pw_1/Conv.weight, mode/backbone/block2/block2/0/conv_pw_1/Conv.bias
+   outputs: input.136
+
+[039] Clip_64 (Clip)
+   inputs:  input.132, onnx::Clip_1525, onnx::Clip_1526
+   outputs: input.140
+
+[040] Clip_67 (Clip)
+   inputs:  input.136, onnx::Clip_1528, onnx::Clip_1529
+   outputs: input.144
+
+[041] Conv_68 (Conv)
+   inputs:  input.140, mode/backbone/block2/block2/0/conv_dw/Conv.weight, mode/backbone/block2/block2/0/conv_dw/Conv.bias
+   outputs: input.148
+
+[042] Conv_69 (Conv)
+   inputs:  input.144, mode/backbone/block2/block2/0/conv_dw_1/Conv.weight, mode/backbone/block2/block2/0/conv_dw_1/Conv.bias
+   outputs: input.152
+
+[043] Clip_72 (Clip)
+   inputs:  input.148, onnx::Clip_1533, onnx::Clip_1534
+   outputs: input.156
+
+[044] Clip_75 (Clip)
+   inputs:  input.152, onnx::Clip_1536, onnx::Clip_1537
+   outputs: input.160
+
+[045] Conv_76 (Conv)
+   inputs:  input.156, mode/backbone/block2/block2/0/conv_pwl/Conv.weight, mode/backbone/block2/block2/0/conv_pwl/Conv.bias
+   outputs: input.164
+
+[046] Conv_77 (Conv)
+   inputs:  input.160, mode/backbone/block2/block2/0/conv_pwl_1/Conv.weight, mode/backbone/block2/block2/0/conv_pwl_1/Conv.bias
+   outputs: input.168
+
+[047] Conv_78 (Conv)
+   inputs:  input.164, mode/backbone/block2/block2/1/conv_pw/Conv.weight, mode/backbone/block2/block2/1/conv_pw/Conv.bias
+   outputs: input.172
+
+[048] Conv_79 (Conv)
+   inputs:  input.168, mode/backbone/block2/block2/1/conv_pw_1/Conv.weight, mode/backbone/block2/block2/1/conv_pw_1/Conv.bias
+   outputs: input.176
+
+[049] Clip_82 (Clip)
+   inputs:  input.172, onnx::Clip_1543, onnx::Clip_1544
+   outputs: input.180
+
+[050] Clip_85 (Clip)
+   inputs:  input.176, onnx::Clip_1546, onnx::Clip_1547
+   outputs: input.184
+
+[051] Conv_86 (Conv)
+   inputs:  input.180, mode/backbone/block2/block2/1/conv_dw/Conv.weight, mode/backbone/block2/block2/1/conv_dw/Conv.bias
+   outputs: input.188
+
+[052] Conv_87 (Conv)
+   inputs:  input.184, mode/backbone/block2/block2/1/conv_dw_1/Conv.weight, mode/backbone/block2/block2/1/conv_dw_1/Conv.bias
+   outputs: input.192
+
+[053] Clip_90 (Clip)
+   inputs:  input.188, onnx::Clip_1551, onnx::Clip_1552
+   outputs: input.196
+
+[054] Clip_93 (Clip)
+   inputs:  input.192, onnx::Clip_1554, onnx::Clip_1555
+   outputs: input.200
+
+[055] Conv_94 (Conv)
+   inputs:  input.196, mode/backbone/block2/block2/1/conv_pwl/Conv.weight, mode/backbone/block2/block2/1/conv_pwl/Conv.bias
+   outputs: onnx::Add_1557
+
+[056] Conv_95 (Conv)
+   inputs:  input.200, mode/backbone/block2/block2/1/conv_pwl_1/Conv.weight, mode/backbone/block2/block2/1/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1558
+
+[057] Add_96 (Add)
+   inputs:  onnx::Add_1557, input.164
+   outputs: input.204
+
+[058] Add_97 (Add)
+   inputs:  onnx::Add_1558, input.168
+   outputs: input.208
+
+[059] Conv_98 (Conv)
+   inputs:  input.204, mode/backbone/block2/block2/2/conv_pw/Conv.weight, mode/backbone/block2/block2/2/conv_pw/Conv.bias
+   outputs: input.212
+
+[060] Conv_99 (Conv)
+   inputs:  input.208, mode/backbone/block2/block2/2/conv_pw_1/Conv.weight, mode/backbone/block2/block2/2/conv_pw_1/Conv.bias
+   outputs: input.216
+
+[061] Clip_102 (Clip)
+   inputs:  input.212, onnx::Clip_1563, onnx::Clip_1564
+   outputs: input.220
+
+[062] Clip_105 (Clip)
+   inputs:  input.216, onnx::Clip_1566, onnx::Clip_1567
+   outputs: input.224
+
+[063] Conv_106 (Conv)
+   inputs:  input.220, mode/backbone/block2/block2/2/conv_dw/Conv.weight, mode/backbone/block2/block2/2/conv_dw/Conv.bias
+   outputs: input.228
+
+[064] Conv_107 (Conv)
+   inputs:  input.224, mode/backbone/block2/block2/2/conv_dw_1/Conv.weight, mode/backbone/block2/block2/2/conv_dw_1/Conv.bias
+   outputs: input.232
+
+[065] Clip_110 (Clip)
+   inputs:  input.228, onnx::Clip_1571, onnx::Clip_1572
+   outputs: input.236
+
+[066] Clip_113 (Clip)
+   inputs:  input.232, onnx::Clip_1574, onnx::Clip_1575
+   outputs: input.240
+
+[067] Conv_114 (Conv)
+   inputs:  input.236, mode/backbone/block2/block2/2/conv_pwl/Conv.weight, mode/backbone/block2/block2/2/conv_pwl/Conv.bias
+   outputs: onnx::Add_1577
+
+[068] Conv_115 (Conv)
+   inputs:  input.240, mode/backbone/block2/block2/2/conv_pwl_1/Conv.weight, mode/backbone/block2/block2/2/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1578
+
+[069] Add_116 (Add)
+   inputs:  onnx::Add_1577, input.204
+   outputs: input.244
+
+[070] Add_117 (Add)
+   inputs:  onnx::Add_1578, input.208
+   outputs: input.248
+
+[071] Conv_118 (Conv)
+   inputs:  input.244, mode/backbone/block3/block3/3/block3/3/0/conv_pw/Conv.weight, mode/backbone/block3/block3/3/block3/3/0/conv_pw/Conv.bias
+   outputs: input.252
+
+[072] Conv_119 (Conv)
+   inputs:  input.248, mode/backbone/block3/block3/3/block3/3/0/conv_pw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/0/conv_pw_1/Conv.bias
+   outputs: input.256
+
+[073] Clip_122 (Clip)
+   inputs:  input.252, onnx::Clip_1583, onnx::Clip_1584
+   outputs: input.260
+
+[074] Clip_125 (Clip)
+   inputs:  input.256, onnx::Clip_1586, onnx::Clip_1587
+   outputs: input.264
+
+[075] Conv_126 (Conv)
+   inputs:  input.260, mode/backbone/block3/block3/3/block3/3/0/conv_dw/Conv.weight, mode/backbone/block3/block3/3/block3/3/0/conv_dw/Conv.bias
+   outputs: input.268
+
+[076] Conv_127 (Conv)
+   inputs:  input.264, mode/backbone/block3/block3/3/block3/3/0/conv_dw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/0/conv_dw_1/Conv.bias
+   outputs: input.272
+
+[077] Clip_130 (Clip)
+   inputs:  input.268, onnx::Clip_1591, onnx::Clip_1592
+   outputs: input.276
+
+[078] Clip_133 (Clip)
+   inputs:  input.272, onnx::Clip_1594, onnx::Clip_1595
+   outputs: input.280
+
+[079] Conv_134 (Conv)
+   inputs:  input.276, mode/backbone/block3/block3/3/block3/3/0/conv_pwl/Conv.weight, mode/backbone/block3/block3/3/block3/3/0/conv_pwl/Conv.bias
+   outputs: input.284
+
+[080] Conv_135 (Conv)
+   inputs:  input.280, mode/backbone/block3/block3/3/block3/3/0/conv_pwl_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/0/conv_pwl_1/Conv.bias
+   outputs: input.288
+
+[081] Conv_136 (Conv)
+   inputs:  input.284, mode/backbone/block3/block3/3/block3/3/1/conv_pw/Conv.weight, mode/backbone/block3/block3/3/block3/3/1/conv_pw/Conv.bias
+   outputs: input.292
+
+[082] Conv_137 (Conv)
+   inputs:  input.288, mode/backbone/block3/block3/3/block3/3/1/conv_pw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/1/conv_pw_1/Conv.bias
+   outputs: input.296
+
+[083] Clip_140 (Clip)
+   inputs:  input.292, onnx::Clip_1601, onnx::Clip_1602
+   outputs: input.300
+
+[084] Clip_143 (Clip)
+   inputs:  input.296, onnx::Clip_1604, onnx::Clip_1605
+   outputs: input.304
+
+[085] Conv_144 (Conv)
+   inputs:  input.300, mode/backbone/block3/block3/3/block3/3/1/conv_dw/Conv.weight, mode/backbone/block3/block3/3/block3/3/1/conv_dw/Conv.bias
+   outputs: input.308
+
+[086] Conv_145 (Conv)
+   inputs:  input.304, mode/backbone/block3/block3/3/block3/3/1/conv_dw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/1/conv_dw_1/Conv.bias
+   outputs: input.312
+
+[087] Clip_148 (Clip)
+   inputs:  input.308, onnx::Clip_1609, onnx::Clip_1610
+   outputs: input.316
+
+[088] Clip_151 (Clip)
+   inputs:  input.312, onnx::Clip_1612, onnx::Clip_1613
+   outputs: input.320
+
+[089] Conv_152 (Conv)
+   inputs:  input.316, mode/backbone/block3/block3/3/block3/3/1/conv_pwl/Conv.weight, mode/backbone/block3/block3/3/block3/3/1/conv_pwl/Conv.bias
+   outputs: onnx::Add_1615
+
+[090] Conv_153 (Conv)
+   inputs:  input.320, mode/backbone/block3/block3/3/block3/3/1/conv_pwl_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/1/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1616
+
+[091] Add_154 (Add)
+   inputs:  onnx::Add_1615, input.284
+   outputs: input.324
+
+[092] Add_155 (Add)
+   inputs:  onnx::Add_1616, input.288
+   outputs: input.328
+
+[093] Conv_156 (Conv)
+   inputs:  input.324, mode/backbone/block3/block3/3/block3/3/2/conv_pw/Conv.weight, mode/backbone/block3/block3/3/block3/3/2/conv_pw/Conv.bias
+   outputs: input.332
+
+[094] Conv_157 (Conv)
+   inputs:  input.328, mode/backbone/block3/block3/3/block3/3/2/conv_pw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/2/conv_pw_1/Conv.bias
+   outputs: input.336
+
+[095] Clip_160 (Clip)
+   inputs:  input.332, onnx::Clip_1621, onnx::Clip_1622
+   outputs: input.340
+
+[096] Clip_163 (Clip)
+   inputs:  input.336, onnx::Clip_1624, onnx::Clip_1625
+   outputs: input.344
+
+[097] Conv_164 (Conv)
+   inputs:  input.340, mode/backbone/block3/block3/3/block3/3/2/conv_dw/Conv.weight, mode/backbone/block3/block3/3/block3/3/2/conv_dw/Conv.bias
+   outputs: input.348
+
+[098] Conv_165 (Conv)
+   inputs:  input.344, mode/backbone/block3/block3/3/block3/3/2/conv_dw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/2/conv_dw_1/Conv.bias
+   outputs: input.352
+
+[099] Clip_168 (Clip)
+   inputs:  input.348, onnx::Clip_1629, onnx::Clip_1630
+   outputs: input.356
+
+[100] Clip_171 (Clip)
+   inputs:  input.352, onnx::Clip_1632, onnx::Clip_1633
+   outputs: input.360
+
+[101] Conv_172 (Conv)
+   inputs:  input.356, mode/backbone/block3/block3/3/block3/3/2/conv_pwl/Conv.weight, mode/backbone/block3/block3/3/block3/3/2/conv_pwl/Conv.bias
+   outputs: onnx::Add_1635
+
+[102] Conv_173 (Conv)
+   inputs:  input.360, mode/backbone/block3/block3/3/block3/3/2/conv_pwl_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/2/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1636
+
+[103] Add_174 (Add)
+   inputs:  onnx::Add_1635, input.324
+   outputs: input.364
+
+[104] Add_175 (Add)
+   inputs:  onnx::Add_1636, input.328
+   outputs: input.368
+
+[105] Conv_176 (Conv)
+   inputs:  input.364, mode/backbone/block3/block3/3/block3/3/3/conv_pw/Conv.weight, mode/backbone/block3/block3/3/block3/3/3/conv_pw/Conv.bias
+   outputs: input.372
+
+[106] Conv_177 (Conv)
+   inputs:  input.368, mode/backbone/block3/block3/3/block3/3/3/conv_pw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/3/conv_pw_1/Conv.bias
+   outputs: input.376
+
+[107] Clip_180 (Clip)
+   inputs:  input.372, onnx::Clip_1641, onnx::Clip_1642
+   outputs: input.380
+
+[108] Clip_183 (Clip)
+   inputs:  input.376, onnx::Clip_1644, onnx::Clip_1645
+   outputs: input.384
+
+[109] Conv_184 (Conv)
+   inputs:  input.380, mode/backbone/block3/block3/3/block3/3/3/conv_dw/Conv.weight, mode/backbone/block3/block3/3/block3/3/3/conv_dw/Conv.bias
+   outputs: input.388
+
+[110] Conv_185 (Conv)
+   inputs:  input.384, mode/backbone/block3/block3/3/block3/3/3/conv_dw_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/3/conv_dw_1/Conv.bias
+   outputs: input.392
+
+[111] Clip_188 (Clip)
+   inputs:  input.388, onnx::Clip_1649, onnx::Clip_1650
+   outputs: input.396
+
+[112] Clip_191 (Clip)
+   inputs:  input.392, onnx::Clip_1652, onnx::Clip_1653
+   outputs: input.400
+
+[113] Conv_192 (Conv)
+   inputs:  input.396, mode/backbone/block3/block3/3/block3/3/3/conv_pwl/Conv.weight, mode/backbone/block3/block3/3/block3/3/3/conv_pwl/Conv.bias
+   outputs: onnx::Add_1655
+
+[114] Conv_193 (Conv)
+   inputs:  input.400, mode/backbone/block3/block3/3/block3/3/3/conv_pwl_1/Conv.weight, mode/backbone/block3/block3/3/block3/3/3/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1656
+
+[115] Add_194 (Add)
+   inputs:  onnx::Add_1655, input.364
+   outputs: input.404
+
+[116] Add_195 (Add)
+   inputs:  onnx::Add_1656, input.368
+   outputs: input.408
+
+[117] Conv_196 (Conv)
+   inputs:  input.404, mode/backbone/block3/block3/4/block3/4/0/conv_pw/Conv.weight, mode/backbone/block3/block3/4/block3/4/0/conv_pw/Conv.bias
+   outputs: input.412
+
+[118] Conv_197 (Conv)
+   inputs:  input.408, mode/backbone/block3/block3/4/block3/4/0/conv_pw_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/0/conv_pw_1/Conv.bias
+   outputs: input.416
+
+[119] Clip_200 (Clip)
+   inputs:  input.412, onnx::Clip_1661, onnx::Clip_1662
+   outputs: input.420
+
+[120] Clip_203 (Clip)
+   inputs:  input.416, onnx::Clip_1664, onnx::Clip_1665
+   outputs: input.424
+
+[121] Conv_204 (Conv)
+   inputs:  input.420, mode/backbone/block3/block3/4/block3/4/0/conv_dw/Conv.weight, mode/backbone/block3/block3/4/block3/4/0/conv_dw/Conv.bias
+   outputs: input.428
+
+[122] Conv_205 (Conv)
+   inputs:  input.424, mode/backbone/block3/block3/4/block3/4/0/conv_dw_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/0/conv_dw_1/Conv.bias
+   outputs: input.432
+
+[123] Clip_208 (Clip)
+   inputs:  input.428, onnx::Clip_1669, onnx::Clip_1670
+   outputs: input.436
+
+[124] Clip_211 (Clip)
+   inputs:  input.432, onnx::Clip_1672, onnx::Clip_1673
+   outputs: input.440
+
+[125] Conv_212 (Conv)
+   inputs:  input.436, mode/backbone/block3/block3/4/block3/4/0/conv_pwl/Conv.weight, mode/backbone/block3/block3/4/block3/4/0/conv_pwl/Conv.bias
+   outputs: input.444
+
+[126] Conv_213 (Conv)
+   inputs:  input.440, mode/backbone/block3/block3/4/block3/4/0/conv_pwl_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/0/conv_pwl_1/Conv.bias
+   outputs: input.448
+
+[127] Conv_214 (Conv)
+   inputs:  input.444, mode/backbone/block3/block3/4/block3/4/1/conv_pw/Conv.weight, mode/backbone/block3/block3/4/block3/4/1/conv_pw/Conv.bias
+   outputs: input.452
+
+[128] Conv_215 (Conv)
+   inputs:  input.448, mode/backbone/block3/block3/4/block3/4/1/conv_pw_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/1/conv_pw_1/Conv.bias
+   outputs: input.456
+
+[129] Clip_218 (Clip)
+   inputs:  input.452, onnx::Clip_1679, onnx::Clip_1680
+   outputs: input.460
+
+[130] Clip_221 (Clip)
+   inputs:  input.456, onnx::Clip_1682, onnx::Clip_1683
+   outputs: input.464
+
+[131] Conv_222 (Conv)
+   inputs:  input.460, mode/backbone/block3/block3/4/block3/4/1/conv_dw/Conv.weight, mode/backbone/block3/block3/4/block3/4/1/conv_dw/Conv.bias
+   outputs: input.468
+
+[132] Conv_223 (Conv)
+   inputs:  input.464, mode/backbone/block3/block3/4/block3/4/1/conv_dw_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/1/conv_dw_1/Conv.bias
+   outputs: input.472
+
+[133] Clip_226 (Clip)
+   inputs:  input.468, onnx::Clip_1687, onnx::Clip_1688
+   outputs: input.476
+
+[134] Clip_229 (Clip)
+   inputs:  input.472, onnx::Clip_1690, onnx::Clip_1691
+   outputs: input.480
+
+[135] Conv_230 (Conv)
+   inputs:  input.476, mode/backbone/block3/block3/4/block3/4/1/conv_pwl/Conv.weight, mode/backbone/block3/block3/4/block3/4/1/conv_pwl/Conv.bias
+   outputs: onnx::Add_1693
+
+[136] Conv_231 (Conv)
+   inputs:  input.480, mode/backbone/block3/block3/4/block3/4/1/conv_pwl_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/1/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1694
+
+[137] Add_232 (Add)
+   inputs:  onnx::Add_1693, input.444
+   outputs: input.484
+
+[138] Add_233 (Add)
+   inputs:  onnx::Add_1694, input.448
+   outputs: input.488
+
+[139] Conv_234 (Conv)
+   inputs:  input.484, mode/backbone/block3/block3/4/block3/4/2/conv_pw/Conv.weight, mode/backbone/block3/block3/4/block3/4/2/conv_pw/Conv.bias
+   outputs: input.492
+
+[140] Conv_235 (Conv)
+   inputs:  input.488, mode/backbone/block3/block3/4/block3/4/2/conv_pw_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/2/conv_pw_1/Conv.bias
+   outputs: input.496
+
+[141] Clip_238 (Clip)
+   inputs:  input.492, onnx::Clip_1699, onnx::Clip_1700
+   outputs: input.500
+
+[142] Clip_241 (Clip)
+   inputs:  input.496, onnx::Clip_1702, onnx::Clip_1703
+   outputs: input.504
+
+[143] Conv_242 (Conv)
+   inputs:  input.500, mode/backbone/block3/block3/4/block3/4/2/conv_dw/Conv.weight, mode/backbone/block3/block3/4/block3/4/2/conv_dw/Conv.bias
+   outputs: input.508
+
+[144] Conv_243 (Conv)
+   inputs:  input.504, mode/backbone/block3/block3/4/block3/4/2/conv_dw_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/2/conv_dw_1/Conv.bias
+   outputs: input.512
+
+[145] Clip_246 (Clip)
+   inputs:  input.508, onnx::Clip_1707, onnx::Clip_1708
+   outputs: input.516
+
+[146] Clip_249 (Clip)
+   inputs:  input.512, onnx::Clip_1710, onnx::Clip_1711
+   outputs: input.520
+
+[147] Conv_250 (Conv)
+   inputs:  input.516, mode/backbone/block3/block3/4/block3/4/2/conv_pwl/Conv.weight, mode/backbone/block3/block3/4/block3/4/2/conv_pwl/Conv.bias
+   outputs: onnx::Add_1713
+
+[148] Conv_251 (Conv)
+   inputs:  input.520, mode/backbone/block3/block3/4/block3/4/2/conv_pwl_1/Conv.weight, mode/backbone/block3/block3/4/block3/4/2/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1714
+
+[149] Add_252 (Add)
+   inputs:  onnx::Add_1713, input.484
+   outputs: input.524
+
+[150] Add_253 (Add)
+   inputs:  onnx::Add_1714, input.488
+   outputs: input.528
+
+[151] Conv_254 (Conv)
+   inputs:  input.524, mode/backbone/block4/block4/0/conv_pw/Conv.weight, mode/backbone/block4/block4/0/conv_pw/Conv.bias
+   outputs: input.532
+
+[152] Conv_255 (Conv)
+   inputs:  input.528, mode/backbone/block4/block4/0/conv_pw_1/Conv.weight, mode/backbone/block4/block4/0/conv_pw_1/Conv.bias
+   outputs: input.536
+
+[153] Clip_258 (Clip)
+   inputs:  input.532, onnx::Clip_1719, onnx::Clip_1720
+   outputs: input.540
+
+[154] Clip_261 (Clip)
+   inputs:  input.536, onnx::Clip_1722, onnx::Clip_1723
+   outputs: input.544
+
+[155] Conv_262 (Conv)
+   inputs:  input.540, mode/backbone/block4/block4/0/conv_dw/Conv.weight, mode/backbone/block4/block4/0/conv_dw/Conv.bias
+   outputs: input.548
+
+[156] Conv_263 (Conv)
+   inputs:  input.544, mode/backbone/block4/block4/0/conv_dw_1/Conv.weight, mode/backbone/block4/block4/0/conv_dw_1/Conv.bias
+   outputs: input.552
+
+[157] Clip_266 (Clip)
+   inputs:  input.548, onnx::Clip_1727, onnx::Clip_1728
+   outputs: input.556
+
+[158] Clip_269 (Clip)
+   inputs:  input.552, onnx::Clip_1730, onnx::Clip_1731
+   outputs: input.560
+
+[159] Conv_270 (Conv)
+   inputs:  input.556, mode/backbone/block4/block4/0/conv_pwl/Conv.weight, mode/backbone/block4/block4/0/conv_pwl/Conv.bias
+   outputs: input.564
+
+[160] Conv_271 (Conv)
+   inputs:  input.560, mode/backbone/block4/block4/0/conv_pwl_1/Conv.weight, mode/backbone/block4/block4/0/conv_pwl_1/Conv.bias
+   outputs: input.568
+
+[161] Conv_272 (Conv)
+   inputs:  input.564, mode/backbone/block4/block4/1/conv_pw/Conv.weight, mode/backbone/block4/block4/1/conv_pw/Conv.bias
+   outputs: input.572
+
+[162] Conv_273 (Conv)
+   inputs:  input.568, mode/backbone/block4/block4/1/conv_pw_1/Conv.weight, mode/backbone/block4/block4/1/conv_pw_1/Conv.bias
+   outputs: input.576
+
+[163] Clip_276 (Clip)
+   inputs:  input.572, onnx::Clip_1737, onnx::Clip_1738
+   outputs: input.580
+
+[164] Clip_279 (Clip)
+   inputs:  input.576, onnx::Clip_1740, onnx::Clip_1741
+   outputs: input.584
+
+[165] Conv_280 (Conv)
+   inputs:  input.580, mode/backbone/block4/block4/1/conv_dw/Conv.weight, mode/backbone/block4/block4/1/conv_dw/Conv.bias
+   outputs: input.588
+
+[166] Conv_281 (Conv)
+   inputs:  input.584, mode/backbone/block4/block4/1/conv_dw_1/Conv.weight, mode/backbone/block4/block4/1/conv_dw_1/Conv.bias
+   outputs: input.592
+
+[167] Clip_284 (Clip)
+   inputs:  input.588, onnx::Clip_1745, onnx::Clip_1746
+   outputs: input.596
+
+[168] Clip_287 (Clip)
+   inputs:  input.592, onnx::Clip_1748, onnx::Clip_1749
+   outputs: input.600
+
+[169] Conv_288 (Conv)
+   inputs:  input.596, mode/backbone/block4/block4/1/conv_pwl/Conv.weight, mode/backbone/block4/block4/1/conv_pwl/Conv.bias
+   outputs: onnx::Add_1751
+
+[170] Conv_289 (Conv)
+   inputs:  input.600, mode/backbone/block4/block4/1/conv_pwl_1/Conv.weight, mode/backbone/block4/block4/1/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1752
+
+[171] Add_290 (Add)
+   inputs:  onnx::Add_1751, input.564
+   outputs: input.604
+
+[172] Add_291 (Add)
+   inputs:  onnx::Add_1752, input.568
+   outputs: input.608
+
+[173] Conv_292 (Conv)
+   inputs:  input.604, mode/backbone/block4/block4/2/conv_pw/Conv.weight, mode/backbone/block4/block4/2/conv_pw/Conv.bias
+   outputs: input.612
+
+[174] Conv_293 (Conv)
+   inputs:  input.608, mode/backbone/block4/block4/2/conv_pw_1/Conv.weight, mode/backbone/block4/block4/2/conv_pw_1/Conv.bias
+   outputs: input.616
+
+[175] Clip_296 (Clip)
+   inputs:  input.612, onnx::Clip_1757, onnx::Clip_1758
+   outputs: input.620
+
+[176] Clip_299 (Clip)
+   inputs:  input.616, onnx::Clip_1760, onnx::Clip_1761
+   outputs: input.624
+
+[177] Conv_300 (Conv)
+   inputs:  input.620, mode/backbone/block4/block4/2/conv_dw/Conv.weight, mode/backbone/block4/block4/2/conv_dw/Conv.bias
+   outputs: input.628
+
+[178] Conv_301 (Conv)
+   inputs:  input.624, mode/backbone/block4/block4/2/conv_dw_1/Conv.weight, mode/backbone/block4/block4/2/conv_dw_1/Conv.bias
+   outputs: input.632
+
+[179] Clip_304 (Clip)
+   inputs:  input.628, onnx::Clip_1765, onnx::Clip_1766
+   outputs: input.636
+
+[180] Clip_307 (Clip)
+   inputs:  input.632, onnx::Clip_1768, onnx::Clip_1769
+   outputs: input.640
+
+[181] Conv_308 (Conv)
+   inputs:  input.636, mode/backbone/block4/block4/2/conv_pwl/Conv.weight, mode/backbone/block4/block4/2/conv_pwl/Conv.bias
+   outputs: onnx::Add_1771
+
+[182] Conv_309 (Conv)
+   inputs:  input.640, mode/backbone/block4/block4/2/conv_pwl_1/Conv.weight, mode/backbone/block4/block4/2/conv_pwl_1/Conv.bias
+   outputs: onnx::Add_1772
+
+[183] Add_310 (Add)
+   inputs:  onnx::Add_1771, input.604
+   outputs: input.644
+
+[184] Add_311 (Add)
+   inputs:  onnx::Add_1772, input.608
+   outputs: input.648
+
+[185] ConvTranspose_312 (ConvTranspose)
+   inputs:  input.644, mode/backbone/fpn_layer4/deconv/block/block/0/ConvTranspose.weight, mode/backbone/fpn_layer4/deconv/block/block/0/ConvTranspose.bias
+   outputs: input.652
+
+[186] ConvTranspose_313 (ConvTranspose)
+   inputs:  input.648, mode/backbone/fpn_layer4/deconv/block/block/0_1/ConvTranspose.weight, mode/backbone/fpn_layer4/deconv/block/block/0_1/ConvTranspose.bias
+   outputs: input.656
+
+[187] LeakyRelu_314 (LeakyRelu)
+   inputs:  input.652
+   outputs: onnx::Concat_1777
+
+[188] LeakyRelu_315 (LeakyRelu)
+   inputs:  input.656
+   outputs: onnx::Concat_1778
+
+[189] Concat_316 (Concat)
+   inputs:  input.524, onnx::Concat_1777
+   outputs: input.660
+
+[190] Concat_317 (Concat)
+   inputs:  input.528, onnx::Concat_1778
+   outputs: input.664
+
+[191] Conv_318 (Conv)
+   inputs:  input.660, mode/backbone/fpn_layer4/conv/block/block/0/Conv.weight, mode/backbone/fpn_layer4/conv/block/block/0/Conv.bias
+   outputs: input.668
+
+[192] Conv_319 (Conv)
+   inputs:  input.664, mode/backbone/fpn_layer4/conv/block/block/0_1/Conv.weight, mode/backbone/fpn_layer4/conv/block/block/0_1/Conv.bias
+   outputs: input.672
+
+[193] LeakyRelu_320 (LeakyRelu)
+   inputs:  input.668
+   outputs: input.676
+
+[194] LeakyRelu_321 (LeakyRelu)
+   inputs:  input.672
+   outputs: input.680
+
+[195] ConvTranspose_322 (ConvTranspose)
+   inputs:  input.676, mode/backbone/fpn_layer3/deconv/block/block/0/ConvTranspose.weight, mode/backbone/fpn_layer3/deconv/block/block/0/ConvTranspose.bias
+   outputs: input.684
+
+[196] ConvTranspose_323 (ConvTranspose)
+   inputs:  input.680, mode/backbone/fpn_layer3/deconv/block/block/0_1/ConvTranspose.weight, mode/backbone/fpn_layer3/deconv/block/block/0_1/ConvTranspose.bias
+   outputs: input.688
+
+[197] Conv_324 (Conv)
+   inputs:  input.676, mode/cost_agg/att4/conv0/Conv.weight, mode/cost_agg/att4/conv0/Conv.bias
+   outputs: input.692
+
+[198] Conv_325 (Conv)
+   inputs:  input.692, mode/cost_agg/att4/conv0_1/Conv.weight, mode/cost_agg/att4/conv0_1/Conv.bias
+   outputs: input.696
+
+[199] Conv_326 (Conv)
+   inputs:  input.692, mode/cost_agg/att4/conv1_1/Conv.weight, mode/cost_agg/att4/conv1_1/Conv.bias
+   outputs: input.700
+
+[200] Conv_327 (Conv)
+   inputs:  input.692, mode/cost_agg/att4/conv2_1/Conv.weight, mode/cost_agg/att4/conv2_1/Conv.bias
+   outputs: input.704
+
+[201] LeakyRelu_328 (LeakyRelu)
+   inputs:  input.684
+   outputs: onnx::Concat_1791
+
+[202] LeakyRelu_329 (LeakyRelu)
+   inputs:  input.688
+   outputs: onnx::Concat_1792
+
+[203] Conv_330 (Conv)
+   inputs:  input.696, mode/cost_agg/att4/conv0_2/Conv.weight, mode/cost_agg/att4/conv0_2/Conv.bias
+   outputs: onnx::Add_1793
+
+[204] Conv_331 (Conv)
+   inputs:  input.700, mode/cost_agg/att4/conv1_2/Conv.weight, mode/cost_agg/att4/conv1_2/Conv.bias
+   outputs: onnx::Add_1794
+
+[205] Conv_332 (Conv)
+   inputs:  input.704, mode/cost_agg/att4/conv2_2/Conv.weight, mode/cost_agg/att4/conv2_2/Conv.bias
+   outputs: onnx::Add_1795
+
+[206] Concat_333 (Concat)
+   inputs:  input.244, onnx::Concat_1791
+   outputs: input.708
+
+[207] Concat_334 (Concat)
+   inputs:  input.248, onnx::Concat_1792
+   outputs: input.712
+
+[208] Add_335 (Add)
+   inputs:  input.692, onnx::Add_1793
+   outputs: onnx::Add_1798
+
+[209] Conv_336 (Conv)
+   inputs:  input.708, mode/backbone/fpn_layer3/conv/block/block/0/Conv.weight, mode/backbone/fpn_layer3/conv/block/block/0/Conv.bias
+   outputs: input.716
+
+[210] Conv_337 (Conv)
+   inputs:  input.712, mode/backbone/fpn_layer3/conv/block/block/0_1/Conv.weight, mode/backbone/fpn_layer3/conv/block/block/0_1/Conv.bias
+   outputs: input.720
+
+[211] Add_338 (Add)
+   inputs:  onnx::Add_1798, onnx::Add_1794
+   outputs: onnx::Add_1801
+
+[212] LeakyRelu_339 (LeakyRelu)
+   inputs:  input.716
+   outputs: input.724
+
+[213] LeakyRelu_340 (LeakyRelu)
+   inputs:  input.720
+   outputs: input.728
+
+[214] Add_341 (Add)
+   inputs:  onnx::Add_1801, onnx::Add_1795
+   outputs: input.732
+
+[215] ConvTranspose_342 (ConvTranspose)
+   inputs:  input.724, mode/backbone/fpn_layer2/deconv/block/block/0/ConvTranspose.weight, mode/backbone/fpn_layer2/deconv/block/block/0/ConvTranspose.bias
+   outputs: input.736
+
+[216] ConvTranspose_343 (ConvTranspose)
+   inputs:  input.728, mode/backbone/fpn_layer2/deconv/block/block/0_1/ConvTranspose.weight, mode/backbone/fpn_layer2/deconv/block/block/0_1/ConvTranspose.bias
+   outputs: input.740
+
+[217] Conv_344 (Conv)
+   inputs:  input.724, mode/cost_agg/att2/conv0/Conv.weight, mode/cost_agg/att2/conv0/Conv.bias
+   outputs: input.744
+
+[218] Conv_345 (Conv)
+   inputs:  input.732, mode/cost_agg/att4/conv3/Conv.weight, mode/cost_agg/att4/conv3/Conv.bias
+   outputs: onnx::Mul_1808
+
+[219] Conv_346 (Conv)
+   inputs:  input.744, mode/cost_agg/att2/conv0_1/Conv.weight, mode/cost_agg/att2/conv0_1/Conv.bias
+   outputs: input.748
+
+[220] Conv_347 (Conv)
+   inputs:  input.744, mode/cost_agg/att2/conv1_1/Conv.weight, mode/cost_agg/att2/conv1_1/Conv.bias
+   outputs: input.752
+
+[221] Conv_348 (Conv)
+   inputs:  input.744, mode/cost_agg/att2/conv2_1/Conv.weight, mode/cost_agg/att2/conv2_1/Conv.bias
+   outputs: input.756
+
+[222] LeakyRelu_349 (LeakyRelu)
+   inputs:  input.736
+   outputs: onnx::Concat_1812
+
+[223] LeakyRelu_350 (LeakyRelu)
+   inputs:  input.740
+   outputs: onnx::Concat_1813
+
+[224] Conv_351 (Conv)
+   inputs:  input.748, mode/cost_agg/att2/conv0_2/Conv.weight, mode/cost_agg/att2/conv0_2/Conv.bias
+   outputs: onnx::Add_1814
+
+[225] Conv_352 (Conv)
+   inputs:  input.752, mode/cost_agg/att2/conv1_2/Conv.weight, mode/cost_agg/att2/conv1_2/Conv.bias
+   outputs: onnx::Add_1815
+
+[226] Conv_353 (Conv)
+   inputs:  input.756, mode/cost_agg/att2/conv2_2/Conv.weight, mode/cost_agg/att2/conv2_2/Conv.bias
+   outputs: onnx::Add_1816
+
+[227] Concat_354 (Concat)
+   inputs:  input.124, onnx::Concat_1812
+   outputs: input.760
+
+[228] Concat_355 (Concat)
+   inputs:  input.128, onnx::Concat_1813
+   outputs: input.764
+
+[229] Add_356 (Add)
+   inputs:  input.744, onnx::Add_1814
+   outputs: onnx::Add_1819
+
+[230] Conv_357 (Conv)
+   inputs:  input.760, mode/backbone/fpn_layer2/conv/block/block/0/Conv.weight, mode/backbone/fpn_layer2/conv/block/block/0/Conv.bias
+   outputs: input.768
+
+[231] Conv_358 (Conv)
+   inputs:  input.764, mode/backbone/fpn_layer2/conv/block/block/0_1/Conv.weight, mode/backbone/fpn_layer2/conv/block/block/0_1/Conv.bias
+   outputs: input.772
+
+[232] Add_359 (Add)
+   inputs:  onnx::Add_1819, onnx::Add_1815
+   outputs: onnx::Add_1822
+
+[233] LeakyRelu_360 (LeakyRelu)
+   inputs:  input.768
+   outputs: onnx::Pad_1823
+
+[234] LeakyRelu_361 (LeakyRelu)
+   inputs:  input.772
+   outputs: onnx::Pad_1824
+
+[235] Add_362 (Add)
+   inputs:  onnx::Add_1822, onnx::Add_1816
+   outputs: input.776
+
+[236] Pad_363 (Pad)
+   inputs:  onnx::Pad_1823, initializers.onnx_initializer_268
+   outputs: input.780
+
+[237] Pad_364 (Pad)
+   inputs:  onnx::Pad_1824, initializers.onnx_initializer_269
+   outputs: input.784
+
+[238] Conv_365 (Conv)
+   inputs:  input.776, mode/cost_agg/att2/conv3/Conv.weight, mode/cost_agg/att2/conv3/Conv.bias
+   outputs: onnx::Mul_1828
+
+[239] Conv_366 (Conv)
+   inputs:  input.780, mode/backbone/out_conv/block/block/0/Conv.weight
+   outputs: input_data
+
+[240] Conv_367 (Conv)
+   inputs:  input.784, mode/backbone/out_conv/block/block/0_1/Conv.weight
+   outputs: input_data.3
+
+[241] InstanceNormalization_368 (InstanceNormalization)
+   inputs:  input_data, initializers.onnx_initializer_274, initializers.onnx_initializer_275
+   outputs: input.788
+
+[242] InstanceNormalization_369 (InstanceNormalization)
+   inputs:  input_data.3, initializers.onnx_initializer_276, initializers.onnx_initializer_277
+   outputs: onnx::Pad_1832
+
+[243] Pad_370 (Pad)
+   inputs:  onnx::Pad_1832, initializers.onnx_initializer_278
+   outputs: input_tensor
+
+[244] Conv_371 (Conv)
+   inputs:  input.788, mode/cost_agg/att0/conv0/Conv.weight, mode/cost_agg/att0/conv0/Conv.bias
+   outputs: input.792
+
+[245] Conv_372 (Conv)
+   inputs:  input.788, mode/refine_1/refine_1/0/block/block/0/Conv.weight
+   outputs: input_data.7
+
+[246] Slice_373 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_282, initializers.onnx_initializer_283, initializers.onnx_initializer_284, initializers.onnx_initializer_285
+   outputs: onnx::Mul_1836
+
+[247] Slice_374 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_286, initializers.onnx_initializer_287, initializers.onnx_initializer_288, initializers.onnx_initializer_289
+   outputs: onnx::Mul_1837
+
+[248] Slice_375 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_290, initializers.onnx_initializer_291, initializers.onnx_initializer_292, initializers.onnx_initializer_293
+   outputs: onnx::Mul_1838
+
+[249] Slice_376 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_294, initializers.onnx_initializer_295, initializers.onnx_initializer_296, initializers.onnx_initializer_297
+   outputs: onnx::Mul_1839
+
+[250] Slice_377 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_298, initializers.onnx_initializer_299, initializers.onnx_initializer_300, initializers.onnx_initializer_301
+   outputs: onnx::Mul_1840
+
+[251] Slice_378 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_302, initializers.onnx_initializer_303, initializers.onnx_initializer_304, initializers.onnx_initializer_305
+   outputs: onnx::Mul_1841
+
+[252] Slice_379 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_306, initializers.onnx_initializer_307, initializers.onnx_initializer_308, initializers.onnx_initializer_309
+   outputs: onnx::Mul_1842
+
+[253] Slice_380 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_310, initializers.onnx_initializer_311, initializers.onnx_initializer_312, initializers.onnx_initializer_313
+   outputs: onnx::Mul_1843
+
+[254] Slice_381 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_314, initializers.onnx_initializer_315, initializers.onnx_initializer_316, initializers.onnx_initializer_317
+   outputs: onnx::Mul_1844
+
+[255] Slice_382 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_318, initializers.onnx_initializer_319, initializers.onnx_initializer_320, initializers.onnx_initializer_321
+   outputs: onnx::Mul_1845
+
+[256] Slice_383 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_322, initializers.onnx_initializer_323, initializers.onnx_initializer_324, initializers.onnx_initializer_325
+   outputs: onnx::Mul_1846
+
+[257] Slice_384 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_326, initializers.onnx_initializer_327, initializers.onnx_initializer_328, initializers.onnx_initializer_329
+   outputs: onnx::Mul_1847
+
+[258] Slice_385 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_330, initializers.onnx_initializer_331, initializers.onnx_initializer_332, initializers.onnx_initializer_333
+   outputs: onnx::Mul_1848
+
+[259] Slice_386 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_334, initializers.onnx_initializer_335, initializers.onnx_initializer_336, initializers.onnx_initializer_337
+   outputs: onnx::Mul_1849
+
+[260] Slice_387 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_338, initializers.onnx_initializer_339, initializers.onnx_initializer_340, initializers.onnx_initializer_341
+   outputs: onnx::Mul_1850
+
+[261] Slice_388 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_342, initializers.onnx_initializer_343, initializers.onnx_initializer_344, initializers.onnx_initializer_345
+   outputs: onnx::Mul_1851
+
+[262] Slice_389 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_346, initializers.onnx_initializer_347, initializers.onnx_initializer_348, initializers.onnx_initializer_349
+   outputs: onnx::Mul_1852
+
+[263] Slice_390 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_350, initializers.onnx_initializer_351, initializers.onnx_initializer_352, initializers.onnx_initializer_353
+   outputs: onnx::Mul_1853
+
+[264] Slice_391 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_354, initializers.onnx_initializer_355, initializers.onnx_initializer_356, initializers.onnx_initializer_357
+   outputs: onnx::Mul_1854
+
+[265] Slice_392 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_358, initializers.onnx_initializer_359, initializers.onnx_initializer_360, initializers.onnx_initializer_361
+   outputs: onnx::Mul_1855
+
+[266] Slice_393 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_362, initializers.onnx_initializer_363, initializers.onnx_initializer_364, initializers.onnx_initializer_365
+   outputs: onnx::Mul_1856
+
+[267] Slice_394 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_366, initializers.onnx_initializer_367, initializers.onnx_initializer_368, initializers.onnx_initializer_369
+   outputs: onnx::Mul_1857
+
+[268] Slice_395 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_370, initializers.onnx_initializer_371, initializers.onnx_initializer_372, initializers.onnx_initializer_373
+   outputs: onnx::Mul_1858
+
+[269] Slice_396 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_374, initializers.onnx_initializer_375, initializers.onnx_initializer_376, initializers.onnx_initializer_377
+   outputs: onnx::Mul_1859
+
+[270] Slice_397 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_378, initializers.onnx_initializer_379, initializers.onnx_initializer_380, initializers.onnx_initializer_381
+   outputs: onnx::Mul_1860
+
+[271] Slice_398 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_382, initializers.onnx_initializer_383, initializers.onnx_initializer_384, initializers.onnx_initializer_385
+   outputs: onnx::Mul_1861
+
+[272] Slice_399 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_386, initializers.onnx_initializer_387, initializers.onnx_initializer_388, initializers.onnx_initializer_389
+   outputs: onnx::Mul_1862
+
+[273] Slice_400 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_390, initializers.onnx_initializer_391, initializers.onnx_initializer_392, initializers.onnx_initializer_393
+   outputs: onnx::Mul_1863
+
+[274] Slice_401 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_394, initializers.onnx_initializer_395, initializers.onnx_initializer_396, initializers.onnx_initializer_397
+   outputs: onnx::Mul_1864
+
+[275] Slice_402 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_398, initializers.onnx_initializer_399, initializers.onnx_initializer_400, initializers.onnx_initializer_401
+   outputs: onnx::Mul_1865
+
+[276] Slice_403 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_402, initializers.onnx_initializer_403, initializers.onnx_initializer_404, initializers.onnx_initializer_405
+   outputs: onnx::Mul_1866
+
+[277] Slice_404 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_406, initializers.onnx_initializer_407, initializers.onnx_initializer_408, initializers.onnx_initializer_409
+   outputs: onnx::Mul_1867
+
+[278] Slice_405 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_410, initializers.onnx_initializer_411, initializers.onnx_initializer_412, initializers.onnx_initializer_413
+   outputs: onnx::Mul_1868
+
+[279] Slice_406 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_414, initializers.onnx_initializer_415, initializers.onnx_initializer_416, initializers.onnx_initializer_417
+   outputs: onnx::Mul_1869
+
+[280] Slice_407 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_418, initializers.onnx_initializer_419, initializers.onnx_initializer_420, initializers.onnx_initializer_421
+   outputs: onnx::Mul_1870
+
+[281] Slice_408 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_422, initializers.onnx_initializer_423, initializers.onnx_initializer_424, initializers.onnx_initializer_425
+   outputs: onnx::Mul_1871
+
+[282] Slice_409 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_426, initializers.onnx_initializer_427, initializers.onnx_initializer_428, initializers.onnx_initializer_429
+   outputs: onnx::Mul_1872
+
+[283] Slice_410 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_430, initializers.onnx_initializer_431, initializers.onnx_initializer_432, initializers.onnx_initializer_433
+   outputs: onnx::Mul_1873
+
+[284] Slice_411 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_434, initializers.onnx_initializer_435, initializers.onnx_initializer_436, initializers.onnx_initializer_437
+   outputs: onnx::Mul_1874
+
+[285] Slice_412 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_438, initializers.onnx_initializer_439, initializers.onnx_initializer_440, initializers.onnx_initializer_441
+   outputs: onnx::Mul_1875
+
+[286] Slice_413 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_442, initializers.onnx_initializer_443, initializers.onnx_initializer_444, initializers.onnx_initializer_445
+   outputs: onnx::Mul_1876
+
+[287] Slice_414 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_446, initializers.onnx_initializer_447, initializers.onnx_initializer_448, initializers.onnx_initializer_449
+   outputs: onnx::Mul_1877
+
+[288] Slice_415 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_450, initializers.onnx_initializer_451, initializers.onnx_initializer_452, initializers.onnx_initializer_453
+   outputs: onnx::Mul_1878
+
+[289] Slice_416 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_454, initializers.onnx_initializer_455, initializers.onnx_initializer_456, initializers.onnx_initializer_457
+   outputs: onnx::Mul_1879
+
+[290] Slice_417 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_458, initializers.onnx_initializer_459, initializers.onnx_initializer_460, initializers.onnx_initializer_461
+   outputs: onnx::Mul_1880
+
+[291] Slice_418 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_462, initializers.onnx_initializer_463, initializers.onnx_initializer_464, initializers.onnx_initializer_465
+   outputs: onnx::Mul_1881
+
+[292] Slice_419 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_466, initializers.onnx_initializer_467, initializers.onnx_initializer_468, initializers.onnx_initializer_469
+   outputs: onnx::Mul_1882
+
+[293] Slice_420 (Slice)
+   inputs:  input_tensor, initializers.onnx_initializer_470, initializers.onnx_initializer_471, initializers.onnx_initializer_472, initializers.onnx_initializer_473
+   outputs: onnx::Mul_1883
+
+[294] Conv_421 (Conv)
+   inputs:  input.792, mode/cost_agg/att0/conv0_1/Conv.weight, mode/cost_agg/att0/conv0_1/Conv.bias
+   outputs: input.796
+
+[295] Conv_422 (Conv)
+   inputs:  input.792, mode/cost_agg/att0/conv1_1/Conv.weight, mode/cost_agg/att0/conv1_1/Conv.bias
+   outputs: input.800
+
+[296] Conv_423 (Conv)
+   inputs:  input.792, mode/cost_agg/att0/conv2_1/Conv.weight, mode/cost_agg/att0/conv2_1/Conv.bias
+   outputs: input.804
+
+[297] InstanceNormalization_424 (InstanceNormalization)
+   inputs:  input_data.7, initializers.onnx_initializer_480, initializers.onnx_initializer_481
+   outputs: input.808
+
+[298] Mul_425 (Mul)
+   inputs:  input.788, onnx::Mul_1836
+   outputs: onnx::ReduceMean_1888
+
+[299] Mul_426 (Mul)
+   inputs:  input.788, onnx::Mul_1837
+   outputs: onnx::ReduceMean_1889
+
+[300] Mul_427 (Mul)
+   inputs:  input.788, onnx::Mul_1838
+   outputs: onnx::ReduceMean_1890
+
+[301] Mul_428 (Mul)
+   inputs:  input.788, onnx::Mul_1839
+   outputs: onnx::ReduceMean_1891
+
+[302] Mul_429 (Mul)
+   inputs:  input.788, onnx::Mul_1840
+   outputs: onnx::ReduceMean_1892
+
+[303] Mul_430 (Mul)
+   inputs:  input.788, onnx::Mul_1841
+   outputs: onnx::ReduceMean_1893
+
+[304] Mul_431 (Mul)
+   inputs:  input.788, onnx::Mul_1842
+   outputs: onnx::ReduceMean_1894
+
+[305] Mul_432 (Mul)
+   inputs:  input.788, onnx::Mul_1843
+   outputs: onnx::ReduceMean_1895
+
+[306] Mul_433 (Mul)
+   inputs:  input.788, onnx::Mul_1844
+   outputs: onnx::ReduceMean_1896
+
+[307] Mul_434 (Mul)
+   inputs:  input.788, onnx::Mul_1845
+   outputs: onnx::ReduceMean_1897
+
+[308] Mul_435 (Mul)
+   inputs:  input.788, onnx::Mul_1846
+   outputs: onnx::ReduceMean_1898
+
+[309] Mul_436 (Mul)
+   inputs:  input.788, onnx::Mul_1847
+   outputs: onnx::ReduceMean_1899
+
+[310] Mul_437 (Mul)
+   inputs:  input.788, onnx::Mul_1848
+   outputs: onnx::ReduceMean_1900
+
+[311] Mul_438 (Mul)
+   inputs:  input.788, onnx::Mul_1849
+   outputs: onnx::ReduceMean_1901
+
+[312] Mul_439 (Mul)
+   inputs:  input.788, onnx::Mul_1850
+   outputs: onnx::ReduceMean_1902
+
+[313] Mul_440 (Mul)
+   inputs:  input.788, onnx::Mul_1851
+   outputs: onnx::ReduceMean_1903
+
+[314] Mul_441 (Mul)
+   inputs:  input.788, onnx::Mul_1852
+   outputs: onnx::ReduceMean_1904
+
+[315] Mul_442 (Mul)
+   inputs:  input.788, onnx::Mul_1853
+   outputs: onnx::ReduceMean_1905
+
+[316] Mul_443 (Mul)
+   inputs:  input.788, onnx::Mul_1854
+   outputs: onnx::ReduceMean_1906
+
+[317] Mul_444 (Mul)
+   inputs:  input.788, onnx::Mul_1855
+   outputs: onnx::ReduceMean_1907
+
+[318] Mul_445 (Mul)
+   inputs:  input.788, onnx::Mul_1856
+   outputs: onnx::ReduceMean_1908
+
+[319] Mul_446 (Mul)
+   inputs:  input.788, onnx::Mul_1857
+   outputs: onnx::ReduceMean_1909
+
+[320] Mul_447 (Mul)
+   inputs:  input.788, onnx::Mul_1858
+   outputs: onnx::ReduceMean_1910
+
+[321] Mul_448 (Mul)
+   inputs:  input.788, onnx::Mul_1859
+   outputs: onnx::ReduceMean_1911
+
+[322] Mul_449 (Mul)
+   inputs:  input.788, onnx::Mul_1860
+   outputs: onnx::ReduceMean_1912
+
+[323] Mul_450 (Mul)
+   inputs:  input.788, onnx::Mul_1861
+   outputs: onnx::ReduceMean_1913
+
+[324] Mul_451 (Mul)
+   inputs:  input.788, onnx::Mul_1862
+   outputs: onnx::ReduceMean_1914
+
+[325] Mul_452 (Mul)
+   inputs:  input.788, onnx::Mul_1863
+   outputs: onnx::ReduceMean_1915
+
+[326] Mul_453 (Mul)
+   inputs:  input.788, onnx::Mul_1864
+   outputs: onnx::ReduceMean_1916
+
+[327] Mul_454 (Mul)
+   inputs:  input.788, onnx::Mul_1865
+   outputs: onnx::ReduceMean_1917
+
+[328] Mul_455 (Mul)
+   inputs:  input.788, onnx::Mul_1866
+   outputs: onnx::ReduceMean_1918
+
+[329] Mul_456 (Mul)
+   inputs:  input.788, onnx::Mul_1867
+   outputs: onnx::ReduceMean_1919
+
+[330] Mul_457 (Mul)
+   inputs:  input.788, onnx::Mul_1868
+   outputs: onnx::ReduceMean_1920
+
+[331] Mul_458 (Mul)
+   inputs:  input.788, onnx::Mul_1869
+   outputs: onnx::ReduceMean_1921
+
+[332] Mul_459 (Mul)
+   inputs:  input.788, onnx::Mul_1870
+   outputs: onnx::ReduceMean_1922
+
+[333] Mul_460 (Mul)
+   inputs:  input.788, onnx::Mul_1871
+   outputs: onnx::ReduceMean_1923
+
+[334] Mul_461 (Mul)
+   inputs:  input.788, onnx::Mul_1872
+   outputs: onnx::ReduceMean_1924
+
+[335] Mul_462 (Mul)
+   inputs:  input.788, onnx::Mul_1873
+   outputs: onnx::ReduceMean_1925
+
+[336] Mul_463 (Mul)
+   inputs:  input.788, onnx::Mul_1874
+   outputs: onnx::ReduceMean_1926
+
+[337] Mul_464 (Mul)
+   inputs:  input.788, onnx::Mul_1875
+   outputs: onnx::ReduceMean_1927
+
+[338] Mul_465 (Mul)
+   inputs:  input.788, onnx::Mul_1876
+   outputs: onnx::ReduceMean_1928
+
+[339] Mul_466 (Mul)
+   inputs:  input.788, onnx::Mul_1877
+   outputs: onnx::ReduceMean_1929
+
+[340] Mul_467 (Mul)
+   inputs:  input.788, onnx::Mul_1878
+   outputs: onnx::ReduceMean_1930
+
+[341] Mul_468 (Mul)
+   inputs:  input.788, onnx::Mul_1879
+   outputs: onnx::ReduceMean_1931
+
+[342] Mul_469 (Mul)
+   inputs:  input.788, onnx::Mul_1880
+   outputs: onnx::ReduceMean_1932
+
+[343] Mul_470 (Mul)
+   inputs:  input.788, onnx::Mul_1881
+   outputs: onnx::ReduceMean_1933
+
+[344] Mul_471 (Mul)
+   inputs:  input.788, onnx::Mul_1882
+   outputs: onnx::ReduceMean_1934
+
+[345] Mul_472 (Mul)
+   inputs:  input.788, onnx::Mul_1883
+   outputs: onnx::ReduceMean_1935
+
+[346] Conv_473 (Conv)
+   inputs:  input.796, mode/cost_agg/att0/conv0_2/Conv.weight, mode/cost_agg/att0/conv0_2/Conv.bias
+   outputs: onnx::Add_1936
+
+[347] Conv_474 (Conv)
+   inputs:  input.800, mode/cost_agg/att0/conv1_2/Conv.weight, mode/cost_agg/att0/conv1_2/Conv.bias
+   outputs: onnx::Add_1937
+
+[348] Conv_475 (Conv)
+   inputs:  input.804, mode/cost_agg/att0/conv2_2/Conv.weight, mode/cost_agg/att0/conv2_2/Conv.bias
+   outputs: onnx::Add_1938
+
+[349] LeakyRelu_476 (LeakyRelu)
+   inputs:  input.808
+   outputs: input.812
+
+[350] ReduceMean_477 (ReduceMean)
+   inputs:  onnx::ReduceMean_1888
+   outputs: onnx::Concat_1940
+
+[351] ReduceMean_478 (ReduceMean)
+   inputs:  onnx::ReduceMean_1889
+   outputs: onnx::Concat_1941
+
+[352] ReduceMean_479 (ReduceMean)
+   inputs:  onnx::ReduceMean_1890
+   outputs: onnx::Concat_1942
+
+[353] ReduceMean_480 (ReduceMean)
+   inputs:  onnx::ReduceMean_1891
+   outputs: onnx::Concat_1943
+
+[354] ReduceMean_481 (ReduceMean)
+   inputs:  onnx::ReduceMean_1892
+   outputs: onnx::Concat_1944
+
+[355] ReduceMean_482 (ReduceMean)
+   inputs:  onnx::ReduceMean_1893
+   outputs: onnx::Concat_1945
+
+[356] ReduceMean_483 (ReduceMean)
+   inputs:  onnx::ReduceMean_1894
+   outputs: onnx::Concat_1946
+
+[357] ReduceMean_484 (ReduceMean)
+   inputs:  onnx::ReduceMean_1895
+   outputs: onnx::Concat_1947
+
+[358] ReduceMean_485 (ReduceMean)
+   inputs:  onnx::ReduceMean_1896
+   outputs: onnx::Concat_1948
+
+[359] ReduceMean_486 (ReduceMean)
+   inputs:  onnx::ReduceMean_1897
+   outputs: onnx::Concat_1949
+
+[360] ReduceMean_487 (ReduceMean)
+   inputs:  onnx::ReduceMean_1898
+   outputs: onnx::Concat_1950
+
+[361] ReduceMean_488 (ReduceMean)
+   inputs:  onnx::ReduceMean_1899
+   outputs: onnx::Concat_1951
+
+[362] ReduceMean_489 (ReduceMean)
+   inputs:  onnx::ReduceMean_1900
+   outputs: onnx::Concat_1952
+
+[363] ReduceMean_490 (ReduceMean)
+   inputs:  onnx::ReduceMean_1901
+   outputs: onnx::Concat_1953
+
+[364] ReduceMean_491 (ReduceMean)
+   inputs:  onnx::ReduceMean_1902
+   outputs: onnx::Concat_1954
+
+[365] ReduceMean_492 (ReduceMean)
+   inputs:  onnx::ReduceMean_1903
+   outputs: onnx::Concat_1955
+
+[366] ReduceMean_493 (ReduceMean)
+   inputs:  onnx::ReduceMean_1904
+   outputs: onnx::Concat_1956
+
+[367] ReduceMean_494 (ReduceMean)
+   inputs:  onnx::ReduceMean_1905
+   outputs: onnx::Concat_1957
+
+[368] ReduceMean_495 (ReduceMean)
+   inputs:  onnx::ReduceMean_1906
+   outputs: onnx::Concat_1958
+
+[369] ReduceMean_496 (ReduceMean)
+   inputs:  onnx::ReduceMean_1907
+   outputs: onnx::Concat_1959
+
+[370] ReduceMean_497 (ReduceMean)
+   inputs:  onnx::ReduceMean_1908
+   outputs: onnx::Concat_1960
+
+[371] ReduceMean_498 (ReduceMean)
+   inputs:  onnx::ReduceMean_1909
+   outputs: onnx::Concat_1961
+
+[372] ReduceMean_499 (ReduceMean)
+   inputs:  onnx::ReduceMean_1910
+   outputs: onnx::Concat_1962
+
+[373] ReduceMean_500 (ReduceMean)
+   inputs:  onnx::ReduceMean_1911
+   outputs: onnx::Concat_1963
+
+[374] ReduceMean_501 (ReduceMean)
+   inputs:  onnx::ReduceMean_1912
+   outputs: onnx::Concat_1964
+
+[375] ReduceMean_502 (ReduceMean)
+   inputs:  onnx::ReduceMean_1913
+   outputs: onnx::Concat_1965
+
+[376] ReduceMean_503 (ReduceMean)
+   inputs:  onnx::ReduceMean_1914
+   outputs: onnx::Concat_1966
+
+[377] ReduceMean_504 (ReduceMean)
+   inputs:  onnx::ReduceMean_1915
+   outputs: onnx::Concat_1967
+
+[378] ReduceMean_505 (ReduceMean)
+   inputs:  onnx::ReduceMean_1916
+   outputs: onnx::Concat_1968
+
+[379] ReduceMean_506 (ReduceMean)
+   inputs:  onnx::ReduceMean_1917
+   outputs: onnx::Concat_1969
+
+[380] ReduceMean_507 (ReduceMean)
+   inputs:  onnx::ReduceMean_1918
+   outputs: onnx::Concat_1970
+
+[381] ReduceMean_508 (ReduceMean)
+   inputs:  onnx::ReduceMean_1919
+   outputs: onnx::Concat_1971
+
+[382] ReduceMean_509 (ReduceMean)
+   inputs:  onnx::ReduceMean_1920
+   outputs: onnx::Concat_1972
+
+[383] ReduceMean_510 (ReduceMean)
+   inputs:  onnx::ReduceMean_1921
+   outputs: onnx::Concat_1973
+
+[384] ReduceMean_511 (ReduceMean)
+   inputs:  onnx::ReduceMean_1922
+   outputs: onnx::Concat_1974
+
+[385] ReduceMean_512 (ReduceMean)
+   inputs:  onnx::ReduceMean_1923
+   outputs: onnx::Concat_1975
+
+[386] ReduceMean_513 (ReduceMean)
+   inputs:  onnx::ReduceMean_1924
+   outputs: onnx::Concat_1976
+
+[387] ReduceMean_514 (ReduceMean)
+   inputs:  onnx::ReduceMean_1925
+   outputs: onnx::Concat_1977
+
+[388] ReduceMean_515 (ReduceMean)
+   inputs:  onnx::ReduceMean_1926
+   outputs: onnx::Concat_1978
+
+[389] ReduceMean_516 (ReduceMean)
+   inputs:  onnx::ReduceMean_1927
+   outputs: onnx::Concat_1979
+
+[390] ReduceMean_517 (ReduceMean)
+   inputs:  onnx::ReduceMean_1928
+   outputs: onnx::Concat_1980
+
+[391] ReduceMean_518 (ReduceMean)
+   inputs:  onnx::ReduceMean_1929
+   outputs: onnx::Concat_1981
+
+[392] ReduceMean_519 (ReduceMean)
+   inputs:  onnx::ReduceMean_1930
+   outputs: onnx::Concat_1982
+
+[393] ReduceMean_520 (ReduceMean)
+   inputs:  onnx::ReduceMean_1931
+   outputs: onnx::Concat_1983
+
+[394] ReduceMean_521 (ReduceMean)
+   inputs:  onnx::ReduceMean_1932
+   outputs: onnx::Concat_1984
+
+[395] ReduceMean_522 (ReduceMean)
+   inputs:  onnx::ReduceMean_1933
+   outputs: onnx::Concat_1985
+
+[396] ReduceMean_523 (ReduceMean)
+   inputs:  onnx::ReduceMean_1934
+   outputs: onnx::Concat_1986
+
+[397] ReduceMean_524 (ReduceMean)
+   inputs:  onnx::ReduceMean_1935
+   outputs: onnx::Concat_1987
+
+[398] Add_525 (Add)
+   inputs:  input.792, onnx::Add_1936
+   outputs: onnx::Add_1988
+
+[399] Conv_526 (Conv)
+   inputs:  input.812, mode/refine_1/refine_1/1/block/block/0/Conv.weight
+   outputs: input_data.11
+
+[400] Concat_527 (Concat)
+   inputs:  onnx::Concat_1940, onnx::Concat_1941, onnx::Concat_1942, onnx::Concat_1943, onnx::Concat_1944, onnx::Concat_1945, onnx::Concat_1946, onnx::Concat_1947, onnx::Concat_1948, onnx::Concat_1949, onnx::Concat_1950, onnx::Concat_1951, onnx::Concat_1952, onnx::Concat_1953, onnx::Concat_1954, onnx::Concat_1955, onnx::Concat_1956, onnx::Concat_1957, onnx::Concat_1958, onnx::Concat_1959, onnx::Concat_1960, onnx::Concat_1961, onnx::Concat_1962, onnx::Concat_1963, onnx::Concat_1964, onnx::Concat_1965, onnx::Concat_1966, onnx::Concat_1967, onnx::Concat_1968, onnx::Concat_1969, onnx::Concat_1970, onnx::Concat_1971, onnx::Concat_1972, onnx::Concat_1973, onnx::Concat_1974, onnx::Concat_1975, onnx::Concat_1976, onnx::Concat_1977, onnx::Concat_1978, onnx::Concat_1979, onnx::Concat_1980, onnx::Concat_1981, onnx::Concat_1982, onnx::Concat_1983, onnx::Concat_1984, onnx::Concat_1985, onnx::Concat_1986, onnx::Concat_1987
+   outputs: input.816
+
+[401] Add_528 (Add)
+   inputs:  onnx::Add_1988, onnx::Add_1937
+   outputs: onnx::Add_1991
+
+[402] InstanceNormalization_529 (InstanceNormalization)
+   inputs:  input_data.11, initializers.onnx_initializer_489, initializers.onnx_initializer_490
+   outputs: input.820
+
+[403] Conv_530 (Conv)
+   inputs:  input.816, mode/cost_agg/conv0/conv0/0/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/0/pwconv/pwconv/0/Conv.bias
+   outputs: input.824
+
+[404] Add_531 (Add)
+   inputs:  onnx::Add_1991, onnx::Add_1938
+   outputs: input.828
+
+[405] Relu_532 (Relu)
+   inputs:  input.820
+   outputs: input.832
+
+[406] Clip_535 (Clip)
+   inputs:  input.824, onnx::Clip_1996, onnx::Clip_1997
+   outputs: input.836
+
+[407] Conv_536 (Conv)
+   inputs:  input.828, mode/cost_agg/att0/conv3/Conv.weight, mode/cost_agg/att0/conv3/Conv.bias
+   outputs: onnx::Mul_1999
+
+[408] ConvTranspose_537 (ConvTranspose)
+   inputs:  input.832, mode/refine_2/deconv/block/block/0/ConvTranspose.weight, mode/refine_2/deconv/block/block/0/ConvTranspose.bias
+   outputs: input.840
+
+[409] Conv_538 (Conv)
+   inputs:  input.836, mode/cost_agg/conv0/conv0/0/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/0/dwconv/dwconv/0/Conv.bias
+   outputs: input.844
+
+[410] Clip_541 (Clip)
+   inputs:  input.844, onnx::Clip_2002, onnx::Clip_2003
+   outputs: input.848
+
+[411] LeakyRelu_542 (LeakyRelu)
+   inputs:  input.840
+   outputs: onnx::Concat_2005
+
+[412] Conv_543 (Conv)
+   inputs:  input.848, mode/cost_agg/conv0/conv0/0/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/0/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2006
+
+[413] Concat_544 (Concat)
+   inputs:  onnx::Concat_1482, onnx::Concat_2005
+   outputs: input.852
+
+[414] Add_545 (Add)
+   inputs:  input.816, onnx::Add_2006
+   outputs: input.856
+
+[415] Conv_546 (Conv)
+   inputs:  input.852, mode/refine_2/conv/block/block/0/Conv.weight, mode/refine_2/conv/block/block/0/Conv.bias
+   outputs: input.860
+
+[416] Conv_547 (Conv)
+   inputs:  input.856, mode/cost_agg/conv0/conv0/1/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/1/pwconv/pwconv/0/Conv.bias
+   outputs: input.864
+
+[417] LeakyRelu_548 (LeakyRelu)
+   inputs:  input.860
+   outputs: input.868
+
+[418] Clip_551 (Clip)
+   inputs:  input.864, onnx::Clip_2012, onnx::Clip_2013
+   outputs: input.872
+
+[419] ConvTranspose_552 (ConvTranspose)
+   inputs:  input.868, mode/refine_3/block/block/0/ConvTranspose.weight
+   outputs: onnx::Softmax_2015
+
+[420] Conv_553 (Conv)
+   inputs:  input.872, mode/cost_agg/conv0/conv0/1/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/1/dwconv/dwconv/0/Conv.bias
+   outputs: input.876
+
+[421] Softmax_554 (Softmax)
+   inputs:  onnx::Softmax_2015
+   outputs: onnx::Mul_2017
+
+[422] Clip_557 (Clip)
+   inputs:  input.876, onnx::Clip_2018, onnx::Clip_2019
+   outputs: input.880
+
+[423] Conv_558 (Conv)
+   inputs:  input.880, mode/cost_agg/conv0/conv0/1/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/1/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2021
+
+[424] Add_559 (Add)
+   inputs:  input.856, onnx::Add_2021
+   outputs: input.884
+
+[425] Conv_560 (Conv)
+   inputs:  input.884, mode/cost_agg/conv0/conv0/2/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/2/pwconv/pwconv/0/Conv.bias
+   outputs: input.888
+
+[426] Clip_563 (Clip)
+   inputs:  input.888, onnx::Clip_2024, onnx::Clip_2025
+   outputs: input.892
+
+[427] Conv_564 (Conv)
+   inputs:  input.892, mode/cost_agg/conv0/conv0/2/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/2/dwconv/dwconv/0/Conv.bias
+   outputs: input.896
+
+[428] Clip_567 (Clip)
+   inputs:  input.896, onnx::Clip_2028, onnx::Clip_2029
+   outputs: input.900
+
+[429] Conv_568 (Conv)
+   inputs:  input.900, mode/cost_agg/conv0/conv0/2/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/2/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2031
+
+[430] Add_569 (Add)
+   inputs:  input.884, onnx::Add_2031
+   outputs: input.904
+
+[431] Conv_570 (Conv)
+   inputs:  input.904, mode/cost_agg/conv0/conv0/3/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/3/pwconv/pwconv/0/Conv.bias
+   outputs: input.908
+
+[432] Clip_573 (Clip)
+   inputs:  input.908, onnx::Clip_2034, onnx::Clip_2035
+   outputs: input.912
+
+[433] Conv_574 (Conv)
+   inputs:  input.912, mode/cost_agg/conv0/conv0/3/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/3/dwconv/dwconv/0/Conv.bias
+   outputs: input.916
+
+[434] Clip_577 (Clip)
+   inputs:  input.916, onnx::Clip_2038, onnx::Clip_2039
+   outputs: input.920
+
+[435] Conv_578 (Conv)
+   inputs:  input.920, mode/cost_agg/conv0/conv0/3/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/3/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2041
+
+[436] Add_579 (Add)
+   inputs:  input.904, onnx::Add_2041
+   outputs: input.924
+
+[437] Conv_580 (Conv)
+   inputs:  input.924, mode/cost_agg/conv0/conv0/4/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/4/pwconv/pwconv/0/Conv.bias
+   outputs: input.928
+
+[438] Clip_583 (Clip)
+   inputs:  input.928, onnx::Clip_2044, onnx::Clip_2045
+   outputs: input.932
+
+[439] Conv_584 (Conv)
+   inputs:  input.932, mode/cost_agg/conv0/conv0/4/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/4/dwconv/dwconv/0/Conv.bias
+   outputs: input.936
+
+[440] Clip_587 (Clip)
+   inputs:  input.936, onnx::Clip_2048, onnx::Clip_2049
+   outputs: input.940
+
+[441] Conv_588 (Conv)
+   inputs:  input.940, mode/cost_agg/conv0/conv0/4/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/4/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2051
+
+[442] Add_589 (Add)
+   inputs:  input.924, onnx::Add_2051
+   outputs: input.944
+
+[443] Conv_590 (Conv)
+   inputs:  input.944, mode/cost_agg/conv0/conv0/5/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/5/pwconv/pwconv/0/Conv.bias
+   outputs: input.948
+
+[444] Clip_593 (Clip)
+   inputs:  input.948, onnx::Clip_2054, onnx::Clip_2055
+   outputs: input.952
+
+[445] Conv_594 (Conv)
+   inputs:  input.952, mode/cost_agg/conv0/conv0/5/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/5/dwconv/dwconv/0/Conv.bias
+   outputs: input.956
+
+[446] Clip_597 (Clip)
+   inputs:  input.956, onnx::Clip_2058, onnx::Clip_2059
+   outputs: input.960
+
+[447] Conv_598 (Conv)
+   inputs:  input.960, mode/cost_agg/conv0/conv0/5/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/5/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2061
+
+[448] Add_599 (Add)
+   inputs:  input.944, onnx::Add_2061
+   outputs: input.964
+
+[449] Conv_600 (Conv)
+   inputs:  input.964, mode/cost_agg/conv0/conv0/6/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/6/pwconv/pwconv/0/Conv.bias
+   outputs: input.968
+
+[450] Clip_603 (Clip)
+   inputs:  input.968, onnx::Clip_2064, onnx::Clip_2065
+   outputs: input.972
+
+[451] Conv_604 (Conv)
+   inputs:  input.972, mode/cost_agg/conv0/conv0/6/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/6/dwconv/dwconv/0/Conv.bias
+   outputs: input.976
+
+[452] Clip_607 (Clip)
+   inputs:  input.976, onnx::Clip_2068, onnx::Clip_2069
+   outputs: input.980
+
+[453] Conv_608 (Conv)
+   inputs:  input.980, mode/cost_agg/conv0/conv0/6/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/6/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2071
+
+[454] Add_609 (Add)
+   inputs:  input.964, onnx::Add_2071
+   outputs: input.984
+
+[455] Conv_610 (Conv)
+   inputs:  input.984, mode/cost_agg/conv0/conv0/7/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/7/pwconv/pwconv/0/Conv.bias
+   outputs: input.988
+
+[456] Clip_613 (Clip)
+   inputs:  input.988, onnx::Clip_2074, onnx::Clip_2075
+   outputs: input.992
+
+[457] Conv_614 (Conv)
+   inputs:  input.992, mode/cost_agg/conv0/conv0/7/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv0/conv0/7/dwconv/dwconv/0/Conv.bias
+   outputs: input.996
+
+[458] Clip_617 (Clip)
+   inputs:  input.996, onnx::Clip_2078, onnx::Clip_2079
+   outputs: input.1000
+
+[459] Conv_618 (Conv)
+   inputs:  input.1000, mode/cost_agg/conv0/conv0/7/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv0/conv0/7/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2081
+
+[460] Add_619 (Add)
+   inputs:  input.984, onnx::Add_2081
+   outputs: onnx::Mul_2082
+
+[461] Mul_620 (Mul)
+   inputs:  onnx::Mul_1999, onnx::Mul_2082
+   outputs: input.1004
+
+[462] Conv_621 (Conv)
+   inputs:  input.1004, mode/cost_agg/conv1/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv1/pwconv/pwconv/0/Conv.bias
+   outputs: input.1008
+
+[463] Conv_622 (Conv)
+   inputs:  input.1004, mode/cost_agg/redir1/pwconv/pwconv/0/Conv.weight, mode/cost_agg/redir1/pwconv/pwconv/0/Conv.bias
+   outputs: input.1012
+
+[464] Clip_625 (Clip)
+   inputs:  input.1008, onnx::Clip_2086, onnx::Clip_2087
+   outputs: input.1016
+
+[465] Clip_628 (Clip)
+   inputs:  input.1012, onnx::Clip_2089, onnx::Clip_2090
+   outputs: input.1020
+
+[466] Conv_629 (Conv)
+   inputs:  input.1016, mode/cost_agg/conv1/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv1/dwconv/dwconv/0/Conv.bias
+   outputs: input.1024
+
+[467] Conv_630 (Conv)
+   inputs:  input.1020, mode/cost_agg/redir1/dwconv/dwconv/0/Conv.weight, mode/cost_agg/redir1/dwconv/dwconv/0/Conv.bias
+   outputs: input.1028
+
+[468] Clip_633 (Clip)
+   inputs:  input.1024, onnx::Clip_2094, onnx::Clip_2095
+   outputs: input.1032
+
+[469] Clip_636 (Clip)
+   inputs:  input.1028, onnx::Clip_2097, onnx::Clip_2098
+   outputs: input.1036
+
+[470] Conv_637 (Conv)
+   inputs:  input.1032, mode/cost_agg/conv1/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv1/pwliner/pwliner/0/Conv.bias
+   outputs: input.1040
+
+[471] Conv_638 (Conv)
+   inputs:  input.1036, mode/cost_agg/redir1/pwliner/pwliner/0/Conv.weight, mode/cost_agg/redir1/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2101
+
+[472] Conv_639 (Conv)
+   inputs:  input.1040, mode/cost_agg/conv2/conv2/0/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/0/pwconv/pwconv/0/Conv.bias
+   outputs: input.1044
+
+[473] Add_640 (Add)
+   inputs:  input.1004, onnx::Add_2101
+   outputs: onnx::Add_2103
+
+[474] Clip_643 (Clip)
+   inputs:  input.1044, onnx::Clip_2104, onnx::Clip_2105
+   outputs: input.1048
+
+[475] Conv_644 (Conv)
+   inputs:  input.1048, mode/cost_agg/conv2/conv2/0/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/0/dwconv/dwconv/0/Conv.bias
+   outputs: input.1052
+
+[476] Clip_647 (Clip)
+   inputs:  input.1052, onnx::Clip_2108, onnx::Clip_2109
+   outputs: input.1056
+
+[477] Conv_648 (Conv)
+   inputs:  input.1056, mode/cost_agg/conv2/conv2/0/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/0/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2111
+
+[478] Add_649 (Add)
+   inputs:  input.1040, onnx::Add_2111
+   outputs: input.1060
+
+[479] Conv_650 (Conv)
+   inputs:  input.1060, mode/cost_agg/conv2/conv2/1/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/1/pwconv/pwconv/0/Conv.bias
+   outputs: input.1064
+
+[480] Clip_653 (Clip)
+   inputs:  input.1064, onnx::Clip_2114, onnx::Clip_2115
+   outputs: input.1068
+
+[481] Conv_654 (Conv)
+   inputs:  input.1068, mode/cost_agg/conv2/conv2/1/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/1/dwconv/dwconv/0/Conv.bias
+   outputs: input.1072
+
+[482] Clip_657 (Clip)
+   inputs:  input.1072, onnx::Clip_2118, onnx::Clip_2119
+   outputs: input.1076
+
+[483] Conv_658 (Conv)
+   inputs:  input.1076, mode/cost_agg/conv2/conv2/1/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/1/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2121
+
+[484] Add_659 (Add)
+   inputs:  input.1060, onnx::Add_2121
+   outputs: input.1080
+
+[485] Conv_660 (Conv)
+   inputs:  input.1080, mode/cost_agg/conv2/conv2/2/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/2/pwconv/pwconv/0/Conv.bias
+   outputs: input.1084
+
+[486] Clip_663 (Clip)
+   inputs:  input.1084, onnx::Clip_2124, onnx::Clip_2125
+   outputs: input.1088
+
+[487] Conv_664 (Conv)
+   inputs:  input.1088, mode/cost_agg/conv2/conv2/2/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/2/dwconv/dwconv/0/Conv.bias
+   outputs: input.1092
+
+[488] Clip_667 (Clip)
+   inputs:  input.1092, onnx::Clip_2128, onnx::Clip_2129
+   outputs: input.1096
+
+[489] Conv_668 (Conv)
+   inputs:  input.1096, mode/cost_agg/conv2/conv2/2/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/2/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2131
+
+[490] Add_669 (Add)
+   inputs:  input.1080, onnx::Add_2131
+   outputs: input.1100
+
+[491] Conv_670 (Conv)
+   inputs:  input.1100, mode/cost_agg/conv2/conv2/3/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/3/pwconv/pwconv/0/Conv.bias
+   outputs: input.1104
+
+[492] Clip_673 (Clip)
+   inputs:  input.1104, onnx::Clip_2134, onnx::Clip_2135
+   outputs: input.1108
+
+[493] Conv_674 (Conv)
+   inputs:  input.1108, mode/cost_agg/conv2/conv2/3/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/3/dwconv/dwconv/0/Conv.bias
+   outputs: input.1112
+
+[494] Clip_677 (Clip)
+   inputs:  input.1112, onnx::Clip_2138, onnx::Clip_2139
+   outputs: input.1116
+
+[495] Conv_678 (Conv)
+   inputs:  input.1116, mode/cost_agg/conv2/conv2/3/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/3/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2141
+
+[496] Add_679 (Add)
+   inputs:  input.1100, onnx::Add_2141
+   outputs: input.1120
+
+[497] Conv_680 (Conv)
+   inputs:  input.1120, mode/cost_agg/conv2/conv2/4/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/4/pwconv/pwconv/0/Conv.bias
+   outputs: input.1124
+
+[498] Clip_683 (Clip)
+   inputs:  input.1124, onnx::Clip_2144, onnx::Clip_2145
+   outputs: input.1128
+
+[499] Conv_684 (Conv)
+   inputs:  input.1128, mode/cost_agg/conv2/conv2/4/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/4/dwconv/dwconv/0/Conv.bias
+   outputs: input.1132
+
+[500] Clip_687 (Clip)
+   inputs:  input.1132, onnx::Clip_2148, onnx::Clip_2149
+   outputs: input.1136
+
+[501] Conv_688 (Conv)
+   inputs:  input.1136, mode/cost_agg/conv2/conv2/4/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/4/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2151
+
+[502] Add_689 (Add)
+   inputs:  input.1120, onnx::Add_2151
+   outputs: input.1140
+
+[503] Conv_690 (Conv)
+   inputs:  input.1140, mode/cost_agg/conv2/conv2/5/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/5/pwconv/pwconv/0/Conv.bias
+   outputs: input.1144
+
+[504] Clip_693 (Clip)
+   inputs:  input.1144, onnx::Clip_2154, onnx::Clip_2155
+   outputs: input.1148
+
+[505] Conv_694 (Conv)
+   inputs:  input.1148, mode/cost_agg/conv2/conv2/5/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/5/dwconv/dwconv/0/Conv.bias
+   outputs: input.1152
+
+[506] Clip_697 (Clip)
+   inputs:  input.1152, onnx::Clip_2158, onnx::Clip_2159
+   outputs: input.1156
+
+[507] Conv_698 (Conv)
+   inputs:  input.1156, mode/cost_agg/conv2/conv2/5/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/5/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2161
+
+[508] Add_699 (Add)
+   inputs:  input.1140, onnx::Add_2161
+   outputs: input.1160
+
+[509] Conv_700 (Conv)
+   inputs:  input.1160, mode/cost_agg/conv2/conv2/6/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/6/pwconv/pwconv/0/Conv.bias
+   outputs: input.1164
+
+[510] Clip_703 (Clip)
+   inputs:  input.1164, onnx::Clip_2164, onnx::Clip_2165
+   outputs: input.1168
+
+[511] Conv_704 (Conv)
+   inputs:  input.1168, mode/cost_agg/conv2/conv2/6/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/6/dwconv/dwconv/0/Conv.bias
+   outputs: input.1172
+
+[512] Clip_707 (Clip)
+   inputs:  input.1172, onnx::Clip_2168, onnx::Clip_2169
+   outputs: input.1176
+
+[513] Conv_708 (Conv)
+   inputs:  input.1176, mode/cost_agg/conv2/conv2/6/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/6/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2171
+
+[514] Add_709 (Add)
+   inputs:  input.1160, onnx::Add_2171
+   outputs: input.1180
+
+[515] Conv_710 (Conv)
+   inputs:  input.1180, mode/cost_agg/conv2/conv2/7/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/7/pwconv/pwconv/0/Conv.bias
+   outputs: input.1184
+
+[516] Clip_713 (Clip)
+   inputs:  input.1184, onnx::Clip_2174, onnx::Clip_2175
+   outputs: input.1188
+
+[517] Conv_714 (Conv)
+   inputs:  input.1188, mode/cost_agg/conv2/conv2/7/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/7/dwconv/dwconv/0/Conv.bias
+   outputs: input.1192
+
+[518] Clip_717 (Clip)
+   inputs:  input.1192, onnx::Clip_2178, onnx::Clip_2179
+   outputs: input.1196
+
+[519] Conv_718 (Conv)
+   inputs:  input.1196, mode/cost_agg/conv2/conv2/7/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/7/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2181
+
+[520] Add_719 (Add)
+   inputs:  input.1180, onnx::Add_2181
+   outputs: input.1200
+
+[521] Conv_720 (Conv)
+   inputs:  input.1200, mode/cost_agg/conv2/conv2/8/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/8/pwconv/pwconv/0/Conv.bias
+   outputs: input.1204
+
+[522] Clip_723 (Clip)
+   inputs:  input.1204, onnx::Clip_2184, onnx::Clip_2185
+   outputs: input.1208
+
+[523] Conv_724 (Conv)
+   inputs:  input.1208, mode/cost_agg/conv2/conv2/8/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/8/dwconv/dwconv/0/Conv.bias
+   outputs: input.1212
+
+[524] Clip_727 (Clip)
+   inputs:  input.1212, onnx::Clip_2188, onnx::Clip_2189
+   outputs: input.1216
+
+[525] Conv_728 (Conv)
+   inputs:  input.1216, mode/cost_agg/conv2/conv2/8/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/8/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2191
+
+[526] Add_729 (Add)
+   inputs:  input.1200, onnx::Add_2191
+   outputs: input.1220
+
+[527] Conv_730 (Conv)
+   inputs:  input.1220, mode/cost_agg/conv2/conv2/9/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/9/pwconv/pwconv/0/Conv.bias
+   outputs: input.1224
+
+[528] Clip_733 (Clip)
+   inputs:  input.1224, onnx::Clip_2194, onnx::Clip_2195
+   outputs: input.1228
+
+[529] Conv_734 (Conv)
+   inputs:  input.1228, mode/cost_agg/conv2/conv2/9/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/9/dwconv/dwconv/0/Conv.bias
+   outputs: input.1232
+
+[530] Clip_737 (Clip)
+   inputs:  input.1232, onnx::Clip_2198, onnx::Clip_2199
+   outputs: input.1236
+
+[531] Conv_738 (Conv)
+   inputs:  input.1236, mode/cost_agg/conv2/conv2/9/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/9/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2201
+
+[532] Add_739 (Add)
+   inputs:  input.1220, onnx::Add_2201
+   outputs: input.1240
+
+[533] Conv_740 (Conv)
+   inputs:  input.1240, mode/cost_agg/conv2/conv2/10/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/10/pwconv/pwconv/0/Conv.bias
+   outputs: input.1244
+
+[534] Clip_743 (Clip)
+   inputs:  input.1244, onnx::Clip_2204, onnx::Clip_2205
+   outputs: input.1248
+
+[535] Conv_744 (Conv)
+   inputs:  input.1248, mode/cost_agg/conv2/conv2/10/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/10/dwconv/dwconv/0/Conv.bias
+   outputs: input.1252
+
+[536] Clip_747 (Clip)
+   inputs:  input.1252, onnx::Clip_2208, onnx::Clip_2209
+   outputs: input.1256
+
+[537] Conv_748 (Conv)
+   inputs:  input.1256, mode/cost_agg/conv2/conv2/10/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/10/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2211
+
+[538] Add_749 (Add)
+   inputs:  input.1240, onnx::Add_2211
+   outputs: input.1260
+
+[539] Conv_750 (Conv)
+   inputs:  input.1260, mode/cost_agg/conv2/conv2/11/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/11/pwconv/pwconv/0/Conv.bias
+   outputs: input.1264
+
+[540] Clip_753 (Clip)
+   inputs:  input.1264, onnx::Clip_2214, onnx::Clip_2215
+   outputs: input.1268
+
+[541] Conv_754 (Conv)
+   inputs:  input.1268, mode/cost_agg/conv2/conv2/11/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/11/dwconv/dwconv/0/Conv.bias
+   outputs: input.1272
+
+[542] Clip_757 (Clip)
+   inputs:  input.1272, onnx::Clip_2218, onnx::Clip_2219
+   outputs: input.1276
+
+[543] Conv_758 (Conv)
+   inputs:  input.1276, mode/cost_agg/conv2/conv2/11/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/11/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2221
+
+[544] Add_759 (Add)
+   inputs:  input.1260, onnx::Add_2221
+   outputs: input.1280
+
+[545] Conv_760 (Conv)
+   inputs:  input.1280, mode/cost_agg/conv2/conv2/12/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/12/pwconv/pwconv/0/Conv.bias
+   outputs: input.1284
+
+[546] Clip_763 (Clip)
+   inputs:  input.1284, onnx::Clip_2224, onnx::Clip_2225
+   outputs: input.1288
+
+[547] Conv_764 (Conv)
+   inputs:  input.1288, mode/cost_agg/conv2/conv2/12/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/12/dwconv/dwconv/0/Conv.bias
+   outputs: input.1292
+
+[548] Clip_767 (Clip)
+   inputs:  input.1292, onnx::Clip_2228, onnx::Clip_2229
+   outputs: input.1296
+
+[549] Conv_768 (Conv)
+   inputs:  input.1296, mode/cost_agg/conv2/conv2/12/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/12/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2231
+
+[550] Add_769 (Add)
+   inputs:  input.1280, onnx::Add_2231
+   outputs: input.1300
+
+[551] Conv_770 (Conv)
+   inputs:  input.1300, mode/cost_agg/conv2/conv2/13/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/13/pwconv/pwconv/0/Conv.bias
+   outputs: input.1304
+
+[552] Clip_773 (Clip)
+   inputs:  input.1304, onnx::Clip_2234, onnx::Clip_2235
+   outputs: input.1308
+
+[553] Conv_774 (Conv)
+   inputs:  input.1308, mode/cost_agg/conv2/conv2/13/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/13/dwconv/dwconv/0/Conv.bias
+   outputs: input.1312
+
+[554] Clip_777 (Clip)
+   inputs:  input.1312, onnx::Clip_2238, onnx::Clip_2239
+   outputs: input.1316
+
+[555] Conv_778 (Conv)
+   inputs:  input.1316, mode/cost_agg/conv2/conv2/13/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/13/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2241
+
+[556] Add_779 (Add)
+   inputs:  input.1300, onnx::Add_2241
+   outputs: input.1320
+
+[557] Conv_780 (Conv)
+   inputs:  input.1320, mode/cost_agg/conv2/conv2/14/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/14/pwconv/pwconv/0/Conv.bias
+   outputs: input.1324
+
+[558] Clip_783 (Clip)
+   inputs:  input.1324, onnx::Clip_2244, onnx::Clip_2245
+   outputs: input.1328
+
+[559] Conv_784 (Conv)
+   inputs:  input.1328, mode/cost_agg/conv2/conv2/14/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv2/conv2/14/dwconv/dwconv/0/Conv.bias
+   outputs: input.1332
+
+[560] Clip_787 (Clip)
+   inputs:  input.1332, onnx::Clip_2248, onnx::Clip_2249
+   outputs: input.1336
+
+[561] Conv_788 (Conv)
+   inputs:  input.1336, mode/cost_agg/conv2/conv2/14/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv2/conv2/14/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2251
+
+[562] Add_789 (Add)
+   inputs:  input.1320, onnx::Add_2251
+   outputs: onnx::Mul_2252
+
+[563] Mul_790 (Mul)
+   inputs:  onnx::Mul_1828, onnx::Mul_2252
+   outputs: input.1340
+
+[564] Conv_791 (Conv)
+   inputs:  input.1340, mode/cost_agg/conv3/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv3/pwconv/pwconv/0/Conv.bias
+   outputs: input.1344
+
+[565] Conv_792 (Conv)
+   inputs:  input.1340, mode/cost_agg/redir2/pwconv/pwconv/0/Conv.weight, mode/cost_agg/redir2/pwconv/pwconv/0/Conv.bias
+   outputs: input.1348
+
+[566] Clip_795 (Clip)
+   inputs:  input.1344, onnx::Clip_2256, onnx::Clip_2257
+   outputs: input.1352
+
+[567] Clip_798 (Clip)
+   inputs:  input.1348, onnx::Clip_2259, onnx::Clip_2260
+   outputs: input.1356
+
+[568] Conv_799 (Conv)
+   inputs:  input.1352, mode/cost_agg/conv3/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv3/dwconv/dwconv/0/Conv.bias
+   outputs: input.1360
+
+[569] Conv_800 (Conv)
+   inputs:  input.1356, mode/cost_agg/redir2/dwconv/dwconv/0/Conv.weight, mode/cost_agg/redir2/dwconv/dwconv/0/Conv.bias
+   outputs: input.1364
+
+[570] Clip_803 (Clip)
+   inputs:  input.1360, onnx::Clip_2264, onnx::Clip_2265
+   outputs: input.1368
+
+[571] Clip_806 (Clip)
+   inputs:  input.1364, onnx::Clip_2267, onnx::Clip_2268
+   outputs: input.1372
+
+[572] Conv_807 (Conv)
+   inputs:  input.1368, mode/cost_agg/conv3/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv3/pwliner/pwliner/0/Conv.bias
+   outputs: input.1376
+
+[573] Conv_808 (Conv)
+   inputs:  input.1372, mode/cost_agg/redir2/pwliner/pwliner/0/Conv.weight, mode/cost_agg/redir2/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2271
+
+[574] Conv_809 (Conv)
+   inputs:  input.1376, mode/cost_agg/conv4/conv4/0/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/0/pwconv/pwconv/0/Conv.bias
+   outputs: input.1380
+
+[575] Add_810 (Add)
+   inputs:  input.1340, onnx::Add_2271
+   outputs: onnx::Add_2273
+
+[576] Clip_813 (Clip)
+   inputs:  input.1380, onnx::Clip_2274, onnx::Clip_2275
+   outputs: input.1384
+
+[577] Conv_814 (Conv)
+   inputs:  input.1384, mode/cost_agg/conv4/conv4/0/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/0/dwconv/dwconv/0/Conv.bias
+   outputs: input.1388
+
+[578] Clip_817 (Clip)
+   inputs:  input.1388, onnx::Clip_2278, onnx::Clip_2279
+   outputs: input.1392
+
+[579] Conv_818 (Conv)
+   inputs:  input.1392, mode/cost_agg/conv4/conv4/0/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/0/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2281
+
+[580] Add_819 (Add)
+   inputs:  input.1376, onnx::Add_2281
+   outputs: input.1396
+
+[581] Conv_820 (Conv)
+   inputs:  input.1396, mode/cost_agg/conv4/conv4/1/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/1/pwconv/pwconv/0/Conv.bias
+   outputs: input.1400
+
+[582] Clip_823 (Clip)
+   inputs:  input.1400, onnx::Clip_2284, onnx::Clip_2285
+   outputs: input.1404
+
+[583] Conv_824 (Conv)
+   inputs:  input.1404, mode/cost_agg/conv4/conv4/1/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/1/dwconv/dwconv/0/Conv.bias
+   outputs: input.1408
+
+[584] Clip_827 (Clip)
+   inputs:  input.1408, onnx::Clip_2288, onnx::Clip_2289
+   outputs: input.1412
+
+[585] Conv_828 (Conv)
+   inputs:  input.1412, mode/cost_agg/conv4/conv4/1/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/1/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2291
+
+[586] Add_829 (Add)
+   inputs:  input.1396, onnx::Add_2291
+   outputs: input.1416
+
+[587] Conv_830 (Conv)
+   inputs:  input.1416, mode/cost_agg/conv4/conv4/2/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/2/pwconv/pwconv/0/Conv.bias
+   outputs: input.1420
+
+[588] Clip_833 (Clip)
+   inputs:  input.1420, onnx::Clip_2294, onnx::Clip_2295
+   outputs: input.1424
+
+[589] Conv_834 (Conv)
+   inputs:  input.1424, mode/cost_agg/conv4/conv4/2/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/2/dwconv/dwconv/0/Conv.bias
+   outputs: input.1428
+
+[590] Clip_837 (Clip)
+   inputs:  input.1428, onnx::Clip_2298, onnx::Clip_2299
+   outputs: input.1432
+
+[591] Conv_838 (Conv)
+   inputs:  input.1432, mode/cost_agg/conv4/conv4/2/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/2/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2301
+
+[592] Add_839 (Add)
+   inputs:  input.1416, onnx::Add_2301
+   outputs: input.1436
+
+[593] Conv_840 (Conv)
+   inputs:  input.1436, mode/cost_agg/conv4/conv4/3/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/3/pwconv/pwconv/0/Conv.bias
+   outputs: input.1440
+
+[594] Clip_843 (Clip)
+   inputs:  input.1440, onnx::Clip_2304, onnx::Clip_2305
+   outputs: input.1444
+
+[595] Conv_844 (Conv)
+   inputs:  input.1444, mode/cost_agg/conv4/conv4/3/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/3/dwconv/dwconv/0/Conv.bias
+   outputs: input.1448
+
+[596] Clip_847 (Clip)
+   inputs:  input.1448, onnx::Clip_2308, onnx::Clip_2309
+   outputs: input.1452
+
+[597] Conv_848 (Conv)
+   inputs:  input.1452, mode/cost_agg/conv4/conv4/3/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/3/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2311
+
+[598] Add_849 (Add)
+   inputs:  input.1436, onnx::Add_2311
+   outputs: input.1456
+
+[599] Conv_850 (Conv)
+   inputs:  input.1456, mode/cost_agg/conv4/conv4/4/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/4/pwconv/pwconv/0/Conv.bias
+   outputs: input.1460
+
+[600] Clip_853 (Clip)
+   inputs:  input.1460, onnx::Clip_2314, onnx::Clip_2315
+   outputs: input.1464
+
+[601] Conv_854 (Conv)
+   inputs:  input.1464, mode/cost_agg/conv4/conv4/4/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/4/dwconv/dwconv/0/Conv.bias
+   outputs: input.1468
+
+[602] Clip_857 (Clip)
+   inputs:  input.1468, onnx::Clip_2318, onnx::Clip_2319
+   outputs: input.1472
+
+[603] Conv_858 (Conv)
+   inputs:  input.1472, mode/cost_agg/conv4/conv4/4/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/4/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2321
+
+[604] Add_859 (Add)
+   inputs:  input.1456, onnx::Add_2321
+   outputs: input.1476
+
+[605] Conv_860 (Conv)
+   inputs:  input.1476, mode/cost_agg/conv4/conv4/5/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/5/pwconv/pwconv/0/Conv.bias
+   outputs: input.1480
+
+[606] Clip_863 (Clip)
+   inputs:  input.1480, onnx::Clip_2324, onnx::Clip_2325
+   outputs: input.1484
+
+[607] Conv_864 (Conv)
+   inputs:  input.1484, mode/cost_agg/conv4/conv4/5/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/5/dwconv/dwconv/0/Conv.bias
+   outputs: input.1488
+
+[608] Clip_867 (Clip)
+   inputs:  input.1488, onnx::Clip_2328, onnx::Clip_2329
+   outputs: input.1492
+
+[609] Conv_868 (Conv)
+   inputs:  input.1492, mode/cost_agg/conv4/conv4/5/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/5/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2331
+
+[610] Add_869 (Add)
+   inputs:  input.1476, onnx::Add_2331
+   outputs: input.1496
+
+[611] Conv_870 (Conv)
+   inputs:  input.1496, mode/cost_agg/conv4/conv4/6/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/6/pwconv/pwconv/0/Conv.bias
+   outputs: input.1500
+
+[612] Clip_873 (Clip)
+   inputs:  input.1500, onnx::Clip_2334, onnx::Clip_2335
+   outputs: input.1504
+
+[613] Conv_874 (Conv)
+   inputs:  input.1504, mode/cost_agg/conv4/conv4/6/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/6/dwconv/dwconv/0/Conv.bias
+   outputs: input.1508
+
+[614] Clip_877 (Clip)
+   inputs:  input.1508, onnx::Clip_2338, onnx::Clip_2339
+   outputs: input.1512
+
+[615] Conv_878 (Conv)
+   inputs:  input.1512, mode/cost_agg/conv4/conv4/6/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/6/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2341
+
+[616] Add_879 (Add)
+   inputs:  input.1496, onnx::Add_2341
+   outputs: input.1516
+
+[617] Conv_880 (Conv)
+   inputs:  input.1516, mode/cost_agg/conv4/conv4/7/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/7/pwconv/pwconv/0/Conv.bias
+   outputs: input.1520
+
+[618] Clip_883 (Clip)
+   inputs:  input.1520, onnx::Clip_2344, onnx::Clip_2345
+   outputs: input.1524
+
+[619] Conv_884 (Conv)
+   inputs:  input.1524, mode/cost_agg/conv4/conv4/7/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/7/dwconv/dwconv/0/Conv.bias
+   outputs: input.1528
+
+[620] Clip_887 (Clip)
+   inputs:  input.1528, onnx::Clip_2348, onnx::Clip_2349
+   outputs: input.1532
+
+[621] Conv_888 (Conv)
+   inputs:  input.1532, mode/cost_agg/conv4/conv4/7/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/7/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2351
+
+[622] Add_889 (Add)
+   inputs:  input.1516, onnx::Add_2351
+   outputs: input.1536
+
+[623] Conv_890 (Conv)
+   inputs:  input.1536, mode/cost_agg/conv4/conv4/8/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/8/pwconv/pwconv/0/Conv.bias
+   outputs: input.1540
+
+[624] Clip_893 (Clip)
+   inputs:  input.1540, onnx::Clip_2354, onnx::Clip_2355
+   outputs: input.1544
+
+[625] Conv_894 (Conv)
+   inputs:  input.1544, mode/cost_agg/conv4/conv4/8/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/8/dwconv/dwconv/0/Conv.bias
+   outputs: input.1548
+
+[626] Clip_897 (Clip)
+   inputs:  input.1548, onnx::Clip_2358, onnx::Clip_2359
+   outputs: input.1552
+
+[627] Conv_898 (Conv)
+   inputs:  input.1552, mode/cost_agg/conv4/conv4/8/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/8/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2361
+
+[628] Add_899 (Add)
+   inputs:  input.1536, onnx::Add_2361
+   outputs: input.1556
+
+[629] Conv_900 (Conv)
+   inputs:  input.1556, mode/cost_agg/conv4/conv4/9/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/9/pwconv/pwconv/0/Conv.bias
+   outputs: input.1560
+
+[630] Clip_903 (Clip)
+   inputs:  input.1560, onnx::Clip_2364, onnx::Clip_2365
+   outputs: input.1564
+
+[631] Conv_904 (Conv)
+   inputs:  input.1564, mode/cost_agg/conv4/conv4/9/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/9/dwconv/dwconv/0/Conv.bias
+   outputs: input.1568
+
+[632] Clip_907 (Clip)
+   inputs:  input.1568, onnx::Clip_2368, onnx::Clip_2369
+   outputs: input.1572
+
+[633] Conv_908 (Conv)
+   inputs:  input.1572, mode/cost_agg/conv4/conv4/9/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/9/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2371
+
+[634] Add_909 (Add)
+   inputs:  input.1556, onnx::Add_2371
+   outputs: input.1576
+
+[635] Conv_910 (Conv)
+   inputs:  input.1576, mode/cost_agg/conv4/conv4/10/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/10/pwconv/pwconv/0/Conv.bias
+   outputs: input.1580
+
+[636] Clip_913 (Clip)
+   inputs:  input.1580, onnx::Clip_2374, onnx::Clip_2375
+   outputs: input.1584
+
+[637] Conv_914 (Conv)
+   inputs:  input.1584, mode/cost_agg/conv4/conv4/10/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/10/dwconv/dwconv/0/Conv.bias
+   outputs: input.1588
+
+[638] Clip_917 (Clip)
+   inputs:  input.1588, onnx::Clip_2378, onnx::Clip_2379
+   outputs: input.1592
+
+[639] Conv_918 (Conv)
+   inputs:  input.1592, mode/cost_agg/conv4/conv4/10/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/10/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2381
+
+[640] Add_919 (Add)
+   inputs:  input.1576, onnx::Add_2381
+   outputs: input.1596
+
+[641] Conv_920 (Conv)
+   inputs:  input.1596, mode/cost_agg/conv4/conv4/11/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/11/pwconv/pwconv/0/Conv.bias
+   outputs: input.1600
+
+[642] Clip_923 (Clip)
+   inputs:  input.1600, onnx::Clip_2384, onnx::Clip_2385
+   outputs: input.1604
+
+[643] Conv_924 (Conv)
+   inputs:  input.1604, mode/cost_agg/conv4/conv4/11/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/11/dwconv/dwconv/0/Conv.bias
+   outputs: input.1608
+
+[644] Clip_927 (Clip)
+   inputs:  input.1608, onnx::Clip_2388, onnx::Clip_2389
+   outputs: input.1612
+
+[645] Conv_928 (Conv)
+   inputs:  input.1612, mode/cost_agg/conv4/conv4/11/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/11/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2391
+
+[646] Add_929 (Add)
+   inputs:  input.1596, onnx::Add_2391
+   outputs: input.1616
+
+[647] Conv_930 (Conv)
+   inputs:  input.1616, mode/cost_agg/conv4/conv4/12/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/12/pwconv/pwconv/0/Conv.bias
+   outputs: input.1620
+
+[648] Clip_933 (Clip)
+   inputs:  input.1620, onnx::Clip_2394, onnx::Clip_2395
+   outputs: input.1624
+
+[649] Conv_934 (Conv)
+   inputs:  input.1624, mode/cost_agg/conv4/conv4/12/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/12/dwconv/dwconv/0/Conv.bias
+   outputs: input.1628
+
+[650] Clip_937 (Clip)
+   inputs:  input.1628, onnx::Clip_2398, onnx::Clip_2399
+   outputs: input.1632
+
+[651] Conv_938 (Conv)
+   inputs:  input.1632, mode/cost_agg/conv4/conv4/12/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/12/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2401
+
+[652] Add_939 (Add)
+   inputs:  input.1616, onnx::Add_2401
+   outputs: input.1636
+
+[653] Conv_940 (Conv)
+   inputs:  input.1636, mode/cost_agg/conv4/conv4/13/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/13/pwconv/pwconv/0/Conv.bias
+   outputs: input.1640
+
+[654] Clip_943 (Clip)
+   inputs:  input.1640, onnx::Clip_2404, onnx::Clip_2405
+   outputs: input.1644
+
+[655] Conv_944 (Conv)
+   inputs:  input.1644, mode/cost_agg/conv4/conv4/13/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/13/dwconv/dwconv/0/Conv.bias
+   outputs: input.1648
+
+[656] Clip_947 (Clip)
+   inputs:  input.1648, onnx::Clip_2408, onnx::Clip_2409
+   outputs: input.1652
+
+[657] Conv_948 (Conv)
+   inputs:  input.1652, mode/cost_agg/conv4/conv4/13/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/13/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2411
+
+[658] Add_949 (Add)
+   inputs:  input.1636, onnx::Add_2411
+   outputs: input.1656
+
+[659] Conv_950 (Conv)
+   inputs:  input.1656, mode/cost_agg/conv4/conv4/14/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/14/pwconv/pwconv/0/Conv.bias
+   outputs: input.1660
+
+[660] Clip_953 (Clip)
+   inputs:  input.1660, onnx::Clip_2414, onnx::Clip_2415
+   outputs: input.1664
+
+[661] Conv_954 (Conv)
+   inputs:  input.1664, mode/cost_agg/conv4/conv4/14/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/14/dwconv/dwconv/0/Conv.bias
+   outputs: input.1668
+
+[662] Clip_957 (Clip)
+   inputs:  input.1668, onnx::Clip_2418, onnx::Clip_2419
+   outputs: input.1672
+
+[663] Conv_958 (Conv)
+   inputs:  input.1672, mode/cost_agg/conv4/conv4/14/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/14/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2421
+
+[664] Add_959 (Add)
+   inputs:  input.1656, onnx::Add_2421
+   outputs: input.1676
+
+[665] Conv_960 (Conv)
+   inputs:  input.1676, mode/cost_agg/conv4/conv4/15/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/15/pwconv/pwconv/0/Conv.bias
+   outputs: input.1680
+
+[666] Clip_963 (Clip)
+   inputs:  input.1680, onnx::Clip_2424, onnx::Clip_2425
+   outputs: input.1684
+
+[667] Conv_964 (Conv)
+   inputs:  input.1684, mode/cost_agg/conv4/conv4/15/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/15/dwconv/dwconv/0/Conv.bias
+   outputs: input.1688
+
+[668] Clip_967 (Clip)
+   inputs:  input.1688, onnx::Clip_2428, onnx::Clip_2429
+   outputs: input.1692
+
+[669] Conv_968 (Conv)
+   inputs:  input.1692, mode/cost_agg/conv4/conv4/15/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/15/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2431
+
+[670] Add_969 (Add)
+   inputs:  input.1676, onnx::Add_2431
+   outputs: input.1696
+
+[671] Conv_970 (Conv)
+   inputs:  input.1696, mode/cost_agg/conv4/conv4/16/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/16/pwconv/pwconv/0/Conv.bias
+   outputs: input.1700
+
+[672] Clip_973 (Clip)
+   inputs:  input.1700, onnx::Clip_2434, onnx::Clip_2435
+   outputs: input.1704
+
+[673] Conv_974 (Conv)
+   inputs:  input.1704, mode/cost_agg/conv4/conv4/16/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/16/dwconv/dwconv/0/Conv.bias
+   outputs: input.1708
+
+[674] Clip_977 (Clip)
+   inputs:  input.1708, onnx::Clip_2438, onnx::Clip_2439
+   outputs: input.1712
+
+[675] Conv_978 (Conv)
+   inputs:  input.1712, mode/cost_agg/conv4/conv4/16/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/16/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2441
+
+[676] Add_979 (Add)
+   inputs:  input.1696, onnx::Add_2441
+   outputs: input.1716
+
+[677] Conv_980 (Conv)
+   inputs:  input.1716, mode/cost_agg/conv4/conv4/17/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/17/pwconv/pwconv/0/Conv.bias
+   outputs: input.1720
+
+[678] Clip_983 (Clip)
+   inputs:  input.1720, onnx::Clip_2444, onnx::Clip_2445
+   outputs: input.1724
+
+[679] Conv_984 (Conv)
+   inputs:  input.1724, mode/cost_agg/conv4/conv4/17/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/17/dwconv/dwconv/0/Conv.bias
+   outputs: input.1728
+
+[680] Clip_987 (Clip)
+   inputs:  input.1728, onnx::Clip_2448, onnx::Clip_2449
+   outputs: input.1732
+
+[681] Conv_988 (Conv)
+   inputs:  input.1732, mode/cost_agg/conv4/conv4/17/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/17/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2451
+
+[682] Add_989 (Add)
+   inputs:  input.1716, onnx::Add_2451
+   outputs: input.1736
+
+[683] Conv_990 (Conv)
+   inputs:  input.1736, mode/cost_agg/conv4/conv4/18/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/18/pwconv/pwconv/0/Conv.bias
+   outputs: input.1740
+
+[684] Clip_993 (Clip)
+   inputs:  input.1740, onnx::Clip_2454, onnx::Clip_2455
+   outputs: input.1744
+
+[685] Conv_994 (Conv)
+   inputs:  input.1744, mode/cost_agg/conv4/conv4/18/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/18/dwconv/dwconv/0/Conv.bias
+   outputs: input.1748
+
+[686] Clip_997 (Clip)
+   inputs:  input.1748, onnx::Clip_2458, onnx::Clip_2459
+   outputs: input.1752
+
+[687] Conv_998 (Conv)
+   inputs:  input.1752, mode/cost_agg/conv4/conv4/18/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/18/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2461
+
+[688] Add_999 (Add)
+   inputs:  input.1736, onnx::Add_2461
+   outputs: input.1756
+
+[689] Conv_1000 (Conv)
+   inputs:  input.1756, mode/cost_agg/conv4/conv4/19/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/19/pwconv/pwconv/0/Conv.bias
+   outputs: input.1760
+
+[690] Clip_1003 (Clip)
+   inputs:  input.1760, onnx::Clip_2464, onnx::Clip_2465
+   outputs: input.1764
+
+[691] Conv_1004 (Conv)
+   inputs:  input.1764, mode/cost_agg/conv4/conv4/19/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/19/dwconv/dwconv/0/Conv.bias
+   outputs: input.1768
+
+[692] Clip_1007 (Clip)
+   inputs:  input.1768, onnx::Clip_2468, onnx::Clip_2469
+   outputs: input.1772
+
+[693] Conv_1008 (Conv)
+   inputs:  input.1772, mode/cost_agg/conv4/conv4/19/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/19/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2471
+
+[694] Add_1009 (Add)
+   inputs:  input.1756, onnx::Add_2471
+   outputs: input.1776
+
+[695] Conv_1010 (Conv)
+   inputs:  input.1776, mode/cost_agg/conv4/conv4/20/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/20/pwconv/pwconv/0/Conv.bias
+   outputs: input.1780
+
+[696] Clip_1013 (Clip)
+   inputs:  input.1780, onnx::Clip_2474, onnx::Clip_2475
+   outputs: input.1784
+
+[697] Conv_1014 (Conv)
+   inputs:  input.1784, mode/cost_agg/conv4/conv4/20/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/20/dwconv/dwconv/0/Conv.bias
+   outputs: input.1788
+
+[698] Clip_1017 (Clip)
+   inputs:  input.1788, onnx::Clip_2478, onnx::Clip_2479
+   outputs: input.1792
+
+[699] Conv_1018 (Conv)
+   inputs:  input.1792, mode/cost_agg/conv4/conv4/20/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/20/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2481
+
+[700] Add_1019 (Add)
+   inputs:  input.1776, onnx::Add_2481
+   outputs: input.1796
+
+[701] Conv_1020 (Conv)
+   inputs:  input.1796, mode/cost_agg/conv4/conv4/21/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/21/pwconv/pwconv/0/Conv.bias
+   outputs: input.1800
+
+[702] Clip_1023 (Clip)
+   inputs:  input.1800, onnx::Clip_2484, onnx::Clip_2485
+   outputs: input.1804
+
+[703] Conv_1024 (Conv)
+   inputs:  input.1804, mode/cost_agg/conv4/conv4/21/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/21/dwconv/dwconv/0/Conv.bias
+   outputs: input.1808
+
+[704] Clip_1027 (Clip)
+   inputs:  input.1808, onnx::Clip_2488, onnx::Clip_2489
+   outputs: input.1812
+
+[705] Conv_1028 (Conv)
+   inputs:  input.1812, mode/cost_agg/conv4/conv4/21/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/21/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2491
+
+[706] Add_1029 (Add)
+   inputs:  input.1796, onnx::Add_2491
+   outputs: input.1816
+
+[707] Conv_1030 (Conv)
+   inputs:  input.1816, mode/cost_agg/conv4/conv4/22/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/22/pwconv/pwconv/0/Conv.bias
+   outputs: input.1820
+
+[708] Clip_1033 (Clip)
+   inputs:  input.1820, onnx::Clip_2494, onnx::Clip_2495
+   outputs: input.1824
+
+[709] Conv_1034 (Conv)
+   inputs:  input.1824, mode/cost_agg/conv4/conv4/22/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/22/dwconv/dwconv/0/Conv.bias
+   outputs: input.1828
+
+[710] Clip_1037 (Clip)
+   inputs:  input.1828, onnx::Clip_2498, onnx::Clip_2499
+   outputs: input.1832
+
+[711] Conv_1038 (Conv)
+   inputs:  input.1832, mode/cost_agg/conv4/conv4/22/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/22/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2501
+
+[712] Add_1039 (Add)
+   inputs:  input.1816, onnx::Add_2501
+   outputs: input.1836
+
+[713] Conv_1040 (Conv)
+   inputs:  input.1836, mode/cost_agg/conv4/conv4/23/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/23/pwconv/pwconv/0/Conv.bias
+   outputs: input.1840
+
+[714] Clip_1043 (Clip)
+   inputs:  input.1840, onnx::Clip_2504, onnx::Clip_2505
+   outputs: input.1844
+
+[715] Conv_1044 (Conv)
+   inputs:  input.1844, mode/cost_agg/conv4/conv4/23/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/23/dwconv/dwconv/0/Conv.bias
+   outputs: input.1848
+
+[716] Clip_1047 (Clip)
+   inputs:  input.1848, onnx::Clip_2508, onnx::Clip_2509
+   outputs: input.1852
+
+[717] Conv_1048 (Conv)
+   inputs:  input.1852, mode/cost_agg/conv4/conv4/23/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/23/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2511
+
+[718] Add_1049 (Add)
+   inputs:  input.1836, onnx::Add_2511
+   outputs: input.1856
+
+[719] Conv_1050 (Conv)
+   inputs:  input.1856, mode/cost_agg/conv4/conv4/24/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/24/pwconv/pwconv/0/Conv.bias
+   outputs: input.1860
+
+[720] Clip_1053 (Clip)
+   inputs:  input.1860, onnx::Clip_2514, onnx::Clip_2515
+   outputs: input.1864
+
+[721] Conv_1054 (Conv)
+   inputs:  input.1864, mode/cost_agg/conv4/conv4/24/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/24/dwconv/dwconv/0/Conv.bias
+   outputs: input.1868
+
+[722] Clip_1057 (Clip)
+   inputs:  input.1868, onnx::Clip_2518, onnx::Clip_2519
+   outputs: input.1872
+
+[723] Conv_1058 (Conv)
+   inputs:  input.1872, mode/cost_agg/conv4/conv4/24/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/24/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2521
+
+[724] Add_1059 (Add)
+   inputs:  input.1856, onnx::Add_2521
+   outputs: input.1876
+
+[725] Conv_1060 (Conv)
+   inputs:  input.1876, mode/cost_agg/conv4/conv4/25/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/25/pwconv/pwconv/0/Conv.bias
+   outputs: input.1880
+
+[726] Clip_1063 (Clip)
+   inputs:  input.1880, onnx::Clip_2524, onnx::Clip_2525
+   outputs: input.1884
+
+[727] Conv_1064 (Conv)
+   inputs:  input.1884, mode/cost_agg/conv4/conv4/25/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/25/dwconv/dwconv/0/Conv.bias
+   outputs: input.1888
+
+[728] Clip_1067 (Clip)
+   inputs:  input.1888, onnx::Clip_2528, onnx::Clip_2529
+   outputs: input.1892
+
+[729] Conv_1068 (Conv)
+   inputs:  input.1892, mode/cost_agg/conv4/conv4/25/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/25/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2531
+
+[730] Add_1069 (Add)
+   inputs:  input.1876, onnx::Add_2531
+   outputs: input.1896
+
+[731] Conv_1070 (Conv)
+   inputs:  input.1896, mode/cost_agg/conv4/conv4/26/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/26/pwconv/pwconv/0/Conv.bias
+   outputs: input.1900
+
+[732] Clip_1073 (Clip)
+   inputs:  input.1900, onnx::Clip_2534, onnx::Clip_2535
+   outputs: input.1904
+
+[733] Conv_1074 (Conv)
+   inputs:  input.1904, mode/cost_agg/conv4/conv4/26/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/26/dwconv/dwconv/0/Conv.bias
+   outputs: input.1908
+
+[734] Clip_1077 (Clip)
+   inputs:  input.1908, onnx::Clip_2538, onnx::Clip_2539
+   outputs: input.1912
+
+[735] Conv_1078 (Conv)
+   inputs:  input.1912, mode/cost_agg/conv4/conv4/26/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/26/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2541
+
+[736] Add_1079 (Add)
+   inputs:  input.1896, onnx::Add_2541
+   outputs: input.1916
+
+[737] Conv_1080 (Conv)
+   inputs:  input.1916, mode/cost_agg/conv4/conv4/27/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/27/pwconv/pwconv/0/Conv.bias
+   outputs: input.1920
+
+[738] Clip_1083 (Clip)
+   inputs:  input.1920, onnx::Clip_2544, onnx::Clip_2545
+   outputs: input.1924
+
+[739] Conv_1084 (Conv)
+   inputs:  input.1924, mode/cost_agg/conv4/conv4/27/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/27/dwconv/dwconv/0/Conv.bias
+   outputs: input.1928
+
+[740] Clip_1087 (Clip)
+   inputs:  input.1928, onnx::Clip_2548, onnx::Clip_2549
+   outputs: input.1932
+
+[741] Conv_1088 (Conv)
+   inputs:  input.1932, mode/cost_agg/conv4/conv4/27/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/27/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2551
+
+[742] Add_1089 (Add)
+   inputs:  input.1916, onnx::Add_2551
+   outputs: input.1936
+
+[743] Conv_1090 (Conv)
+   inputs:  input.1936, mode/cost_agg/conv4/conv4/28/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/28/pwconv/pwconv/0/Conv.bias
+   outputs: input.1940
+
+[744] Clip_1093 (Clip)
+   inputs:  input.1940, onnx::Clip_2554, onnx::Clip_2555
+   outputs: input.1944
+
+[745] Conv_1094 (Conv)
+   inputs:  input.1944, mode/cost_agg/conv4/conv4/28/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/28/dwconv/dwconv/0/Conv.bias
+   outputs: input.1948
+
+[746] Clip_1097 (Clip)
+   inputs:  input.1948, onnx::Clip_2558, onnx::Clip_2559
+   outputs: input.1952
+
+[747] Conv_1098 (Conv)
+   inputs:  input.1952, mode/cost_agg/conv4/conv4/28/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/28/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2561
+
+[748] Add_1099 (Add)
+   inputs:  input.1936, onnx::Add_2561
+   outputs: input.1956
+
+[749] Conv_1100 (Conv)
+   inputs:  input.1956, mode/cost_agg/conv4/conv4/29/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/29/pwconv/pwconv/0/Conv.bias
+   outputs: input.1960
+
+[750] Clip_1103 (Clip)
+   inputs:  input.1960, onnx::Clip_2564, onnx::Clip_2565
+   outputs: input.1964
+
+[751] Conv_1104 (Conv)
+   inputs:  input.1964, mode/cost_agg/conv4/conv4/29/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/29/dwconv/dwconv/0/Conv.bias
+   outputs: input.1968
+
+[752] Clip_1107 (Clip)
+   inputs:  input.1968, onnx::Clip_2568, onnx::Clip_2569
+   outputs: input.1972
+
+[753] Conv_1108 (Conv)
+   inputs:  input.1972, mode/cost_agg/conv4/conv4/29/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/29/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2571
+
+[754] Add_1109 (Add)
+   inputs:  input.1956, onnx::Add_2571
+   outputs: input.1976
+
+[755] Conv_1110 (Conv)
+   inputs:  input.1976, mode/cost_agg/conv4/conv4/30/pwconv/pwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/30/pwconv/pwconv/0/Conv.bias
+   outputs: input.1980
+
+[756] Clip_1113 (Clip)
+   inputs:  input.1980, onnx::Clip_2574, onnx::Clip_2575
+   outputs: input.1984
+
+[757] Conv_1114 (Conv)
+   inputs:  input.1984, mode/cost_agg/conv4/conv4/30/dwconv/dwconv/0/Conv.weight, mode/cost_agg/conv4/conv4/30/dwconv/dwconv/0/Conv.bias
+   outputs: input.1988
+
+[758] Clip_1117 (Clip)
+   inputs:  input.1988, onnx::Clip_2578, onnx::Clip_2579
+   outputs: input.1992
+
+[759] Conv_1118 (Conv)
+   inputs:  input.1992, mode/cost_agg/conv4/conv4/30/pwliner/pwliner/0/Conv.weight, mode/cost_agg/conv4/conv4/30/pwliner/pwliner/0/Conv.bias
+   outputs: onnx::Add_2581
+
+[760] Add_1119 (Add)
+   inputs:  input.1976, onnx::Add_2581
+   outputs: onnx::Mul_2582
+
+[761] Mul_1120 (Mul)
+   inputs:  onnx::Mul_1808, onnx::Mul_2582
+   outputs: input.1996
+
+[762] ConvTranspose_1121 (ConvTranspose)
+   inputs:  input.1996, mode/cost_agg/conv5/conv5/0/ConvTranspose.weight, mode/cost_agg/conv5/conv5/0/ConvTranspose.bias
+   outputs: onnx::Add_2584
+
+[763] Add_1122 (Add)
+   inputs:  onnx::Add_2584, onnx::Add_2273
+   outputs: input.2000
+
+[764] Relu_1123 (Relu)
+   inputs:  input.2000
+   outputs: input.2004
+
+[765] ConvTranspose_1124 (ConvTranspose)
+   inputs:  input.2004, mode/cost_agg/conv6/conv6/0/ConvTranspose.weight, mode/cost_agg/conv6/conv6/0/ConvTranspose.bias
+   outputs: onnx::Add_2587
+
+[766] Add_1125 (Add)
+   inputs:  onnx::Add_2587, onnx::Add_2103
+   outputs: input.2008
+
+[767] Relu_1126 (Relu)
+   inputs:  input.2008
+   outputs: onnx::Softmax_2589
+
+[768] Softmax_1127 (Softmax)
+   inputs:  onnx::Softmax_2589
+   outputs: onnx::Mul_2590
+
+[769] Mul_1128 (Mul)
+   inputs:  onnx::Mul_2590, initializers.onnx_initializer_859
+   outputs: onnx::ReduceSum_2591
+
+[770] ReduceSum_1129 (ReduceSum)
+   inputs:  onnx::ReduceSum_2591, initializers.onnx_initializer_860
+   outputs: onnx::Mul_2592
+
+[771] Mul_1130 (Mul)
+   inputs:  onnx::Mul_2592, initializers.onnx_initializer_861
+   outputs: onnx::Pad_2593
+
+[772] Pad_1131 (Pad)
+   inputs:  onnx::Pad_2593, initializers.onnx_initializer_862
+   outputs: onnx::Gather_2594
+
+[773] Gather_1132 (Gather)
+   inputs:  onnx::Gather_2594, initializers.onnx_initializer_863
+   outputs: onnx::Gather_2595
+
+[774] Gather_1133 (Gather)
+   inputs:  onnx::Gather_2595, initializers.onnx_initializer_864
+   outputs: onnx::Transpose_2596
+
+[775] Transpose_1134 (Transpose)
+   inputs:  onnx::Transpose_2596
+   outputs: input_tensor.3
+
+[776] Reshape_1135 (Reshape)
+   inputs:  input_tensor.3, initializers.onnx_initializer_865
+   outputs: input_tensor.7
+
+[777] Resize_1136 (Resize)
+   inputs:  input_tensor.7, , , initializers.onnx_initializer_866
+   outputs: onnx::Mul_2601
+
+[778] Mul_1137 (Mul)
+   inputs:  onnx::Mul_2601, onnx::Mul_2017
+   outputs: onnx::ReduceSum_2602
+
+[779] ReduceSum_1138 (ReduceSum)
+   inputs:  onnx::ReduceSum_2602, initializers.onnx_initializer_867
+   outputs: disp_pred
+

@@ -40,6 +40,54 @@ https://github.com/XiandaGuo/OpenStereo/issues
  
 
 
+ # insert model autosparsity code before training
+import torch
+import torchvision.models as models
+from autosparsity.sparsity import sparsity_model
+
+...
+
+model = models.resnet34(pretrained=True).cuda()
+mode = 0
+sparsity_model(model, optimizer, mode)
+
+# normal training
+x, y = DataLoader(args)
+for epoch in range(epochs):
+    y_pred = model(x)
+    loss = loss_func(y_pred, y)
+    loss.backward()
+    optimizer.step()
+    ...
+
+
+
+| 工具                    | 功能对比                                          |
+| --------------------- | --------------------------------------------- |
+| **ONNX Simplifier**   | 自动去冗余，常量折叠，形状推导。黑盒式一键优化。                      |
+| **onnxoptimizer**     | 官方图优化工具，提供标准 pass（eliminate_nop_transpose 等）。 |
+| **onnx-graphsurgeon** | 手动控制粒度的“脚本式图编辑器”，适合自定义算子替换和子图融合。              |
+| **TensorRT Parser**   | 消费 ONNX 图生成 CUDA 内核，不编辑图。                     |
+
+工具	          维护者	        优化类型	      支持新算子	自定义能力	     是否推荐给 TensorRT
+onnxoptimizer	ONNX 官方	        固定规则	      ❌ 弱	     ❌ 无法自定义	  ⚠️ 一般不推荐
+onnx-simplifier	社区（@daquexian）	 高级图优化 + 校验	✅ 强	  ❌ 自动优化	    ✅ 推荐
+onnx-graphsurgeon	NVIDIA	       图编辑、子图融合	   ✅ 强	     ✅ 脚本化编辑	   ✅ 强烈推荐
+
+ONNX 模型 → onnx-simplifier → onnx-graphsurgeon 自定义编辑 → TensorRT 编译优化
+
+
+https://github.com/luchangli03/onnxsim_large_model
+https://www.paddlepaddle.org.cn/tutorials/projectdetail/3949129
+https://github.com/NVIDIA/TensorRT-Model-Optimizer
+
+PyTorch → cuDNN → CUDA → GPU
+ONNX 模型 → TensorRT Parser → 优化 → Engine
+Engine 执行时 → 调用 cuDNN / CUDA kernel
+
+
+https://docs.nvidia.com/
+
 
 
 
