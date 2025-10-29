@@ -12,7 +12,7 @@ def get_max(val):
     return val
 
 
-yaml_path = "/home/extra/share/mix/lightstereo_ptq_out/lightstereo_s_sceneflow_general_opt_256_512_sim_conv_quant_param.yaml"
+yaml_path = "/home/fays007/lc/share/mix/lightstereo_ptq_out/lightstereo_s_sceneflow_general_opt_256_512_sim_conv_quant_param.yaml"
 
 # 读取 YAML 文件
 with open(yaml_path, "r", encoding="utf-8") as f:
@@ -30,8 +30,13 @@ for layer in layers:
     layer_min = get_min(layer["min"])
     layer_max = get_max(layer["max"])
     diff = layer_max - layer_min
-
-    if diff > 30:
+    
+    
+    max_range = max(abs(layer_min), abs(layer_max))
+    
+    
+    if max_range > 10:
+    # if diff > 60:
         nbit = 16
         layer["nbit"] = nbit
         layer["static"] = 1

@@ -41,14 +41,29 @@ def compare_layers(board_file='./output/quant/disparity.npy',
     max_error = diff.max()
     mean_error = diff.mean()
     ratio_exceed = np.mean(diff > threshold)
+    top5 = np.sort(diff)[-10:][::-1]   # 从大到小排序取前5个
 
     # -------- 输出结果 --------
     print(f"\n📊 对比结果：")
     print(f"余弦相似度: {cosine_similarity:.6f}")
     print(f"欧式距离: {euclidean_distance:.6f}")
-    print(f"最大绝对误差: {max_error:.6e}")
+    
     print(f"平均绝对误差: {mean_error:.6e}")
+    print(f"最大绝对误差top5: {top5}")
+    
     print(f"差异超过阈值({threshold:.0e})的比例: {ratio_exceed:.2%}\n")
+    
+    
+    epsilon = 1e-8
+    percent_diff = diff / (np.abs(onnx_flat) + epsilon) * 100
+
+    mean_percent_loss = np.mean(percent_diff)
+    max_percent_loss = np.max(percent_diff)
+    
+    top5 = np.sort(percent_diff)[-10:][::-1]   # 从大到小排序取前5个
+
+    print(f"平均百分比损失: {mean_percent_loss:.4f}%")
+    print(f"最大百分比损失top5: {top5}%")
 
 
 
@@ -63,7 +78,7 @@ if __name__ == "__main__":
                         help="板端输出文件路径 (.npy)")
     parser.add_argument("--onnx", default="./output/export_disparity.npy",
                         help="ONNX 模型输出文件路径 (.npy)")
-    parser.add_argument("--threshold", type=float, default=1e-3,
+    parser.add_argument("--threshold", type=float, default=0.05,
                         help="误差阈值 (默认 1e-3)")
     args = parser.parse_args()
 

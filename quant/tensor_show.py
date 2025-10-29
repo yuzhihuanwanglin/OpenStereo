@@ -3,7 +3,11 @@ from PIL import Image
 import sys
 import cv2
 
-def txt_to_png(txt_file_path, output_png_path, width=512, height=256):
+
+
+# input_size = (256,160)
+input_size = (512,256)
+def txt_to_png(txt_file_path, output_png_path, width=input_size[0], height=input_size[1]):
     # 读取文本文件
     with open(txt_file_path, 'r') as f:
         lines = f.readlines()
@@ -54,10 +58,9 @@ def txt_to_png(txt_file_path, output_png_path, width=512, height=256):
     disp_uint8 = disp_normalized.astype(np.uint8)
     
     # 创建PIL图像并保存
-    if output_png_path is not None:
-        img = Image.fromarray(disp_uint8, mode='L')
-        img.save(output_png_path)
-        print(f"图像已保存到：{output_png_path}")
+    img = Image.fromarray(disp_uint8, mode='L')
+    img.save(output_png_path)
+    print(f"图像已保存到：{output_png_path}")
     
     
     disp_vis = cv2.normalize(disp_array, None, 0, 255, cv2.NORM_MINMAX)
@@ -70,12 +73,11 @@ def txt_to_png(txt_file_path, output_png_path, width=512, height=256):
             break
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("用法：python script.py <输入tensor文件>")
+    if len(sys.argv) != 3:
+        print("用法：python script.py <输入txt文件> <输出png文件>")
         sys.exit(1)
     
     input_txt = sys.argv[1]
-
-    output_png = None
+    output_png = sys.argv[2]
     
     txt_to_png(input_txt, output_png)

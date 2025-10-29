@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 # 输入 CSV 文件路径
-input_file = "/home/lc/share/gaoshantest/compare_light_out/compare_result.csv"
+input_file = "/home/fays007/lc/share/mgz4/compare_light_out/compare_result.csv"
 
 
 
@@ -16,8 +16,8 @@ pairs = list(zip(df.iloc[:, 1], df.iloc[:, 2]))
 for layer, node in pairs:
     # print(layer, " -> ", node)
     
-    npy_file = '/home/lc/share/gaoshantest/compare_light_out/layerdump/' + layer + '_quanted.npy'
-    bin_file = '/home/lc/share/gaoshantest/model_exec_out/TENSOR_01/tensor/' + node
+    npy_file = '/home/fays007/lc/share/mgz4/compare_light_out/layerdump/' + layer + '_quanted.npy'
+    bin_file = '/home/fays007/Downloads/tensors_int16/' + node
 
 
     if os.path.exists(npy_file) == False:
@@ -28,8 +28,8 @@ for layer, node in pairs:
         print(f"{bin_file} 文件不存在")
         continue
         
-    arr_bin = np.fromfile(bin_file, dtype=np.int8).astype(np.float32)
-    # print(arr_bin)
+    arr_bin = np.fromfile(bin_file, dtype=np.int16).astype(np.float32)
+    # print(arr_bin)    int value
 
 
     arr_npy = np.load(npy_file)
@@ -42,3 +42,7 @@ for layer, node in pairs:
     demon = np.linalg.norm(arr_bin_flat)*np.linalg.norm(arr_npy_flat)
 
     print(f'{npy_file} == {bin_file}: {num/demon}')
+    
+    if num/demon < 0.9:
+        print(f"==============")
+        print('------------------')
